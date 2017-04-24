@@ -1234,7 +1234,7 @@ textarea {
   background-color: #e6ebed;
 }
 .section--bright-gray {
-  background-color: #f4f7f8;
+  background-color: rgba(230,235,237,0.4);
 }
 .section--no-padding-bottom {
   padding-bottom: 0;
@@ -2910,6 +2910,9 @@ textarea {
   top: 1px;
   margin-right: 8px;
   vertical-align: middle;
+}
+.page-header__address-icon path {
+  fill: #ff0830;
 }
 .page-header__contacts {
   padding-top: 11px;
