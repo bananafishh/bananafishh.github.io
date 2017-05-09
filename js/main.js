@@ -48,6 +48,72 @@ $(function () {
 });
 
 
+var MainOfficeMap = Backbone.View.extend({
+	el: '#main-office',
+
+    initialize: function() {
+        ymaps.ready(init);
+        var myMap;
+
+        function init() {
+            myMap = new ymaps.Map("main-office", {
+                center: [55.718324068999664, 37.79198949999998],
+                zoom: 15,
+                controls: ['zoomControl']
+            });
+
+            myPlacemark = new ymaps.Placemark([55.718324068999664, 37.79198949999998], {
+                iconCaption: 'Рязанский проспект, 75к4'
+            }, {
+                preset: 'islands#redDotIconWithCaption',
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    }
+});
+
+$(function () {
+    App.Views.MainOfficeMap = new MainOfficeMap();
+});
+
+
+var RegionalOfficesMap = Backbone.View.extend({
+	el: '#regional-offices',
+
+    initialize: function() {
+        ymaps.ready(init);
+        var myMap;
+
+        function init() {
+            myMap = new ymaps.Map("regional-offices", {
+                center: [55.718324068999664, 37.79198949999998],
+                zoom: 5,
+                controls: ['zoomControl']
+            });
+
+            myPlacemark1 = new ymaps.Placemark([55.718324068999664, 37.79198949999998], {
+                 hintContent: '109456, Москва, Рязанский проспект, д.75, корп.4',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon--white.png',
+                iconImageSize: [26, 33]
+
+               // iconImageOffset: [-5, -38]
+            });
+
+
+
+            myMap.geoObjects.add(myPlacemark1);
+        }
+    }
+});
+
+$(function () {
+    App.Views.RegionalOfficesMap = new RegionalOfficesMap();
+});
+
+
 var Tabs = Backbone.View.extend({
 	el: '.js-tabs',
 
@@ -90,12 +156,66 @@ $(function () {
 });
 
 
+var VerticalTabs = Backbone.View.extend({
+	el: '.js-vertical-tabs',
+
+    initialize: function() {
+        this.tab = this.$('.js-vertical-tabs__tab');
+        this.tabsList = this.$('.js-vertical-tabs__list');
+        this.tabContent = this.$('.js-vertical-tabs__content');
+    },
+
+    events: {
+    	'click .js-vertical-tabs__tab': 'switchTabOnClick'
+
+    },
+
+    switchTabOnClick: function(e) {
+        this.tab.removeClass('is-active');
+        $(e.currentTarget).addClass('is-active');
+
+        this.targetId = $(e.currentTarget).data('id');
+
+        this.tabContent.removeClass('is-active');
+        $('#' + this.targetId).addClass('is-active');
+
+
+        this.tabsList.toggleClass('is-open');
+
+        //this.toggleTabsList();
+    },
+
+    toggleTabsList: function() {
+        this.tabsList.toggleClass('is-open');
+        // if($(window).outerWidth() < 880) {
+        //     this.tabsList.slideToggle('fast');
+        // }
+    }
+});
+
+$(function () {
+    App.Views.VerticalTabs = new VerticalTabs();
+});
+
+
 var MainNavView = Backbone.View.extend({
 	el: '.js-main-nav',
 
     initialize: function() {
     	this.mainNavBtn = this.$('.js-main-nav__btn');
     	this.mainNavList = this.$('.js-main-nav__list');
+        this.mainNavOffsetTop = this.$el.offset().top;
+        this.mainNavHeight = this.$el.outerHeight();
+
+        var self = this;
+
+        $(window).bind('resize', function () {
+            self.mainNavOffsetTop = self.$el.offset().top;
+        });
+
+        $(window).bind('scroll', function () {
+            self.fixedNav();
+        });
     },
 
     events: {
@@ -104,6 +224,14 @@ var MainNavView = Backbone.View.extend({
 
     toggleNav: function() {
     	this.mainNavList.toggleClass('main-nav__list--open')
+    },
+
+    fixedNav: function() {
+        if ( $(window).scrollTop() > this.mainNavOffsetTop + this.mainNavHeight ) {
+            this.$el.addClass('main-nav--fixed');
+        } else {
+            this.$el.removeClass('main-nav--fixed');
+        }
     }
 });
 
