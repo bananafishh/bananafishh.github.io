@@ -114,7 +114,7 @@ var RegionalOfficesMap = Backbone.View.extend({
 
             myMap.geoObjects
                 .add(myPlacemark1)
-                .add(myPlacemark2);;
+                .add(myPlacemark2);
         }
     }
 });
