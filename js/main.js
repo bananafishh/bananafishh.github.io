@@ -170,7 +170,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-16, -29]
+                iconImageOffset: [-16, -28]
             });
 
              myPlacemark10 = new ymaps.Placemark([47.27147357427328,39.761805999999986], {
