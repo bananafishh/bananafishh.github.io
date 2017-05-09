@@ -110,11 +110,23 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconImageOffset: [-15, -32]
             });
 
+            myPlacemark3 = new ymaps.Placemark([56.83566256788385, 60.59089], {
+                 hintContent: '620014, г. Екатеринбург, ул.Хохрякова, д.10',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon.png',
+                iconImageSize: [26, 33],
+                iconImageOffset: [-15, -32]
+            });
+
+
+
 
 
             myMap.geoObjects
                 .add(myPlacemark1)
-                .add(myPlacemark2);
+                .add(myPlacemark2)
+                .add(myPlacemark3);
         }
     }
 });
