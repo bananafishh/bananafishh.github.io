@@ -57,12 +57,12 @@ var MainOfficeMap = Backbone.View.extend({
 
         function init() {
             myMap = new ymaps.Map("main-office", {
-                center: [55.718324068999664, 37.79198949999998],
+                center: [55.718324068999664,37.79198949999998],
                 zoom: 15,
                 controls: ['zoomControl']
             });
 
-            myPlacemark = new ymaps.Placemark([55.718324068999664, 37.79198949999998], {
+            myPlacemark = new ymaps.Placemark([55.718324068999664,37.79198949999998], {
                 iconCaption: 'Рязанский проспект, 75к4'
             }, {
                 preset: 'islands#redDotIconWithCaption',
@@ -87,12 +87,12 @@ var RegionalOfficesMap = Backbone.View.extend({
 
         function init() {
             myMap = new ymaps.Map("regional-offices", {
-                center: [55.718324068999664, 37.79198949999998],
+                center: [54.404311668987056,46.3975481875],
                 zoom: 5,
                 controls: ['zoomControl']
             });
 
-            myPlacemark1 = new ymaps.Placemark([55.718324068999664, 37.79198949999998], {
+            myPlacemark1 = new ymaps.Placemark([55.718324068999664,37.79198949999998], {
                  hintContent: '109456, Москва, Рязанский проспект, д.75, корп.4',
             }, {
                 iconLayout: 'default#image',
@@ -101,7 +101,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconImageOffset: [-17, -33]
             });
 
-            myPlacemark2 = new ymaps.Placemark([59.92901056417907, 30.38784099999998], {
+            myPlacemark2 = new ymaps.Placemark([59.92901056417907,30.38784099999998], {
                  hintContent: '191167, Санкт-Петербург, Синопская набережная 22, 4 этаж',
             }, {
                 iconLayout: 'default#image',
@@ -110,8 +110,71 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconImageOffset: [-15, -32]
             });
 
-            myPlacemark3 = new ymaps.Placemark([56.83566256788385, 60.59089], {
-                 hintContent: '620014, г. Екатеринбург, ул.Хохрякова, д.10',
+            myPlacemark3 = new ymaps.Placemark([56.83566256788385,60.59089], {
+                 hintContent: '620014, Екатеринбург, ул.Хохрякова, д.10',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon.png',
+                iconImageSize: [26, 33],
+                iconImageOffset: [-15, -32]
+            });
+
+            myPlacemark4 = new ymaps.Placemark([51.66437307230397,39.19270549999995], {
+                 hintContent: '394018, Воронеж, ул.Никитинская,д.42',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon.png',
+                iconImageSize: [26, 33],
+                iconImageOffset: [-15, -32]
+            });
+
+            myPlacemark5 = new ymaps.Placemark([56.323328068402155,44.01145699999997], {
+                 hintContent: '603006, Нижний Новгород, ул.Ковалихинская, д.8',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon.png',
+                iconImageSize: [26, 33],
+                iconImageOffset: [-15, -32]
+            });
+
+            myPlacemark6 = new ymaps.Placemark([57.63180206699096,39.870699999999985], {
+                 hintContent: '150040, Ярославль, ул.Некрасова, д.41',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon.png',
+                iconImageSize: [26, 33],
+                iconImageOffset: [-15, -32]
+            });
+
+            myPlacemark7 = new ymaps.Placemark([55.79008406894568,49.11087849999998], {
+                 hintContent: '420111, Казань, ул.Право-Булачная, д.35/2',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon.png',
+                iconImageSize: [26, 33],
+                iconImageOffset: [-15, -32]
+            });
+
+            myPlacemark8 = new ymaps.Placemark([51.53263757238977,46.03906249999998], {
+                 hintContent: '410031, Саратов, ул.Московская, 55',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon.png',
+                iconImageSize: [26, 33],
+                iconImageOffset: [-15, -32]
+            });
+
+            myPlacemark9 = new ymaps.Placemark([54.81712156985457,56.077493499999946], {
+                 hintContent: '450112, Уфа, ул.Первомайская, д.29',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/assets/images/icon-balloon.png',
+                iconImageSize: [26, 33],
+                iconImageOffset: [-15, -32]
+            });
+
+             myPlacemark10 = new ymaps.Placemark([47.27147357427328,39.761805999999986], {
+                 hintContent: '344065, Ростов-на-Дону, ул.50-летия Ростсельмаша, 1/52',
             }, {
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
@@ -120,13 +183,17 @@ var RegionalOfficesMap = Backbone.View.extend({
             });
 
 
-
-
-
             myMap.geoObjects
                 .add(myPlacemark1)
                 .add(myPlacemark2)
-                .add(myPlacemark3);
+                .add(myPlacemark3)
+                .add(myPlacemark4)
+                .add(myPlacemark5)
+                .add(myPlacemark6)
+                .add(myPlacemark7)
+                .add(myPlacemark8)
+                .add(myPlacemark9)
+                .add(myPlacemark10);
         }
     }
 });
