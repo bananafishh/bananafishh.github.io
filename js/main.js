@@ -98,7 +98,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon--white.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-20, -17]
+                iconImageOffset: [-17, -4]
             });
 
 
