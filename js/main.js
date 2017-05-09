@@ -116,7 +116,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-15, -32]
+                iconImageOffset: [-13, -32]
             });
 
             myPlacemark4 = new ymaps.Placemark([51.66437307230397,39.19270549999995], {
@@ -125,7 +125,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-15, -32]
+                iconImageOffset: [-13, -31]
             });
 
             myPlacemark5 = new ymaps.Placemark([56.323328068402155,44.01145699999997], {
@@ -134,7 +134,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-15, -32]
+                iconImageOffset: [-14, -32]
             });
 
             myPlacemark6 = new ymaps.Placemark([57.63180206699096,39.870699999999985], {
@@ -143,7 +143,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-15, -32]
+                iconImageOffset: [-13, -31]
             });
 
             myPlacemark7 = new ymaps.Placemark([55.79008406894568,49.11087849999998], {
@@ -152,7 +152,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-15, -32]
+                iconImageOffset: [-14, -32]
             });
 
             myPlacemark8 = new ymaps.Placemark([51.53263757238977,46.03906249999998], {
@@ -161,7 +161,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-15, -32]
+                iconImageOffset: [-14, -32]
             });
 
             myPlacemark9 = new ymaps.Placemark([54.81712156985457,56.077493499999946], {
@@ -170,7 +170,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-15, -32]
+                iconImageOffset: [-16, -29]
             });
 
              myPlacemark10 = new ymaps.Placemark([47.27147357427328,39.761805999999986], {
@@ -179,7 +179,7 @@ var RegionalOfficesMap = Backbone.View.extend({
                 iconLayout: 'default#image',
                 iconImageHref: '/assets/images/icon-balloon.png',
                 iconImageSize: [26, 33],
-                iconImageOffset: [-15, -32]
+                iconImageOffset: [-15, -30]
             });
 
 
