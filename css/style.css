@@ -2741,6 +2741,24 @@ textarea.field-text__input {
     margin-bottom: -30px;
   }
 }
+@media (min-width: 1000px) {
+  .service-cards__column {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .service-cards__column::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .service-cards__column:last-child {
+    margin-right: 0%;
+  }
+}
 .service-cards__btn {
   margin-top: 40px;
   text-align: center;
@@ -3096,6 +3114,7 @@ textarea.field-text__input {
 .page-header__search-input {
   position: relative;
   width: 100%;
+  height: 24px;
   color: #fff;
   background-color: transparent;
   border: none;
@@ -4383,6 +4402,30 @@ border-bottom-color
 .like-no-link--white {
   color: #fff;
 }
+.cross-marker-list {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 18px;
+  list-style: none;
+}
+.cross-marker-list > li {
+  position: relative;
+  padding-left: 26px;
+}
+.cross-marker-list > li::before {
+  content: "";
+  position: absolute;
+  top: 0.285714285714286em;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj48ZGVmcz48c3R5bGU+LmNscy0xIHsgZmlsbDogI2ZmMTAzNzsgZmlsbC1ydWxlOiBldmVub2RkOyB9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMCA3VjVoMTJ2MkgweiIvPjxwYXRoIGlkPSJTaGFwZV81NDFfY29weSIgZGF0YS1uYW1lPSJTaGFwZSA1NDEgY29weSIgY2xhc3M9ImNscy0xIiBkPSJNNSAwaDJ2MTJINVYweiIvPjwvc3ZnPg==");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.cross-marker-list > li:not(:last-child) {
+  margin-bottom: 18px;
+}
 .dash-marker-list {
   padding-left: 0;
   margin-top: 0;
@@ -4823,25 +4866,6 @@ border-bottom-color
 @media (min-width: 768px) {
   .vertical-tabs__tab-title {
     font-size: 1.714285714285714em;
-  }
-}
-.vertical-tabs__select-menu {
-  min-height: 77px;
-  border: 5px solid #e6ebed;
-  border-left: none;
-}
-.vertical-tabs__select-menu::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 5px;
-  height: 77px;
-  background-color: #ff0830;
-}
-@media (min-width: 768px) {
-  .vertical-tabs__select-menu {
-    display: none;
   }
 }
 .video img {
