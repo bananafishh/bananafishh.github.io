@@ -1211,6 +1211,13 @@ textarea {
   font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.571;
 }
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 .section {
   padding-top: 33px;
   padding-bottom: 36px;
@@ -4372,6 +4379,9 @@ border-bottom-color
   color: #32404d;
   text-decoration: none;
   border-bottom: none;
+}
+.like-no-link--white {
+  color: #fff;
 }
 .dash-marker-list {
   padding-left: 0;
