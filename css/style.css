@@ -1290,6 +1290,9 @@ textarea {
   text-transform: uppercase;
   text-align: center;
 }
+.section__first-block {
+  padding-top: 5px;
+}
 .section__last-block {
   margin-bottom: 24px;
 }
@@ -1649,7 +1652,7 @@ textarea {
   }
 }
 .contacts__h3-like {
-  margin-bottom: 12px;
+  margin-bottom: 11px;
   font-size: 1.714285714285714em;
   font-weight: 700;
   line-height: 1.25;
@@ -1667,7 +1670,7 @@ textarea {
   width: 124px;
 }
 .contacts__card {
-  padding: 35px 40px 40px;
+  padding: 35px 40px;
   background-color: #e6ebed;
 }
 .contacts__card-title {
@@ -1706,10 +1709,23 @@ textarea {
   line-height: 1.444;
 }
 .contacts__map {
-  height: 416px;
+  height: 412px;
+  margin-top: 50px;
+}
+@media (min-width: 992px) {
+  .contacts__map {
+    margin-top: 5px;
+  }
 }
 .contacts__regional-offices-map {
-  height: 612px;
+  height: 617px;
+  padding-top: 5px;
+  margin-bottom: 45px;
+}
+@media (max-width: 991px) {
+  .contacts__regional-offices-map {
+    display: none;
+  }
 }
 .employees {
   padding-left: 0;
@@ -2750,6 +2766,11 @@ textarea.field-text__input {
   position: absolute;
   bottom: -22px;
   margin-left: -143px;
+}
+@media (max-width: 767px) {
+  .single-phone__icon {
+    display: none;
+  }
 }
 .social-links {
   padding-left: 0;
@@ -4342,6 +4363,11 @@ border-bottom-color
 }
 .underlined-link-like:hover {
   border-bottom-color: #0075b8;
+}
+.like-no-link {
+  color: #32404d;
+  text-decoration: none;
+  border-bottom: none;
 }
 .dash-marker-list {
   padding-left: 0;
