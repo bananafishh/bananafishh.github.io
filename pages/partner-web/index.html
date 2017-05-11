@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>gardium-bx-site-redesign</title>
+	<link rel="stylesheet" href="../../css/style.css" media="screen"/><!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script type="text/javascript" src="../../js/core.js"></script>
+	<script type="text/javascript" src="../../js/vendor.js"></script>
+	<script type="text/javascript" src="../../js/main.js"></script>
+</head><body>
+<header class="page-header">
+	<div class="page-header__top">
+		<div class="container">
+			<div class="row-md">
+				<div class="col-1-3-md"><a class="page-header__logo" href="/"><img src="../../assets/images/logo-min.png" width="219" height="60" alt="Логотип патентного бюро Гардиум"/></a></div>
+				<div class="col-1-3-md">
+					<div class="page-header__region-select">
+						<select class="select js-select">
+							<option value="Москва, Рязанский проспект, д.75, корп.4">Вся Россия</option>
+							<option value="Воронежская обл.">Воронежская обл.</option>
+							<option value="Москва, Рязанский проспект, д.75, корп.4" selected="selected">Московский регион</option>
+							<option value="Нижегородская обл.">Нижегородская обл.</option>
+							<option value="Респ-ка Татарстан">Респ-ка Татарстан</option>
+							<option value="Респ-ка Башкортостан">Респ-ка Башкортостан</option>
+							<option value="Ростовская обл.">Ростовская обл.</option>
+							<option value="Санкт-Петербург и обл.">Санкт-Петербург и обл.</option>
+							<option value="Саратовская обл.">Саратовская обл.</option>
+							<option value="Свердловская обл.">Свердловская обл.</option>
+							<option value="Ярославская обл.">Ярославская обл.</option>
+						</select>
+						<address class="page-header__address"><span class="page-header__address-icon"><svg width="11" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-map--red"></use></svg></span>Москва, Рязанский проспект, д.75, корп.4</address>
+					</div>
+				</div>
+				<div class="col-1-3-md">
+					<div class="page-header__contacts">
+						<address class="page-header__phone"><a class="like-no-link" href="tel:+74956658258">+7 (495) 665-82-58</a></address>
+						<button class="dotted-link" type="button">Заказать обратный звонок</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="main-nav js-main-nav">
+		<div class="main-nav__inner container">
+			<button class="main-nav__menu-btn js-main-nav__btn" type="button"><span class="main-nav__menu-icon"><svg width="15" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-hamburger"></use></svg></span>Меню</button><a class="main-nav__full-version-link" href="">Полная версия сайта</a>
+			<ul class="main-nav__list js-main-nav__list">
+				<li class="main-nav__item"><a class="main-nav__link" href="">О нас</a></li>
+				<li class="main-nav__item"><a class="main-nav__link" href="">Услуги и цены</a></li>
+				<li class="main-nav__item"><a class="main-nav__link" href="">Клиенты</a></li>
+				<li class="main-nav__item"><a class="main-nav__link" href="">Инфо</a></li>
+				<li class="main-nav__item"><a class="main-nav__link" href="">Контакты</a></li>
+			</ul>
+			<div class="page-header__search">
+				<form class="page-header__search-form">
+					<input class="page-header__search-input" type="search" placeholder="Поиск по сайту"/>
+					<button class="page-header__search-btn" type="submit">
+						Найти<svg width="14" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-search"></use></svg></button>
+				</form>
+			</div>
+		</div>
+	</nav>
+</header>
+<div class="main-slider">
+	<div class="main-slider__items js-main-slider">
+		<div class="main-slider__item main-slider__item--reliability">
+			<div class="main-slider__container container">
+				<div class="main-slider__inner">
+					<div class="main-slider__left">
+						<ul class="main-slider__features">
+							<li><span class="dotted-link dotted-link--white">10 лет на рынке</span></li>
+							<li><span class="dotted-link dotted-link--white">Более 5000 клиентов</span></li>
+							<li><span class="dotted-link dotted-link--white">Оценка удовлетворенности CSI 4,7 из 5</span></li>
+							<li><span class="dotted-link dotted-link--white">Полис страхования 10 млн. руб.</span></li>
+							<li><span class="dotted-link dotted-link--white">Автоматизированное делопроизводство</span></li>
+						</ul>
+					</div>
+					<div class="main-slider__right"><a class="main-slider__slogan" href="">
+							<div class="main-slider__slogan-title">Наивысшая надежность и&nbsp;ответственность<br/> <span class="main-slider__slogan-subtitle">В федеральном масштабе</span></div></a></div>
+				</div>
+			</div>
+		</div>
+		<div class="main-slider__item main-slider__item--defense">
+			<div class="main-slider__container container">
+				<div class="main-slider__inner row">
+					<div class="main-slider__left">
+						<ul class="main-slider__features">
+							<li><span class="dotted-link dotted-link--white">10 лет на рынке</span></li>
+							<li><span class="dotted-link dotted-link--white">Более 5000 клиентов</span></li>
+							<li><span class="dotted-link dotted-link--white">Оценка удовлетворенности CSI 4,7 из 5</span></li>
+							<li><span class="dotted-link dotted-link--white">Полис страхования 10 млн. руб.</span></li>
+							<li><span class="dotted-link dotted-link--white">Автоматизированное делопроизводство</span></li>
+						</ul>
+					</div>
+					<div class="main-slider__right"><a class="main-slider__slogan" href="">
+							<div class="main-slider__slogan-title">Гарантированная<br/> защита<br/> <span class="main-slider__slogan-subtitle">в Роспатенте и суде</span></div></a></div>
+				</div>
+			</div>
+		</div>
+		<div class="main-slider__item main-slider__item--confidentiality">
+			<div class="main-slider__container container">
+				<div class="main-slider__inner row">
+					<div class="main-slider__left">
+						<ul class="main-slider__features">
+							<li><span class="dotted-link dotted-link--white">10 лет на рынке</span></li>
+							<li><span class="dotted-link dotted-link--white">Более 5000 клиентов</span></li>
+							<li><span class="dotted-link dotted-link--white">Оценка удовлетворенности CSI 4,7 из 5</span></li>
+							<li><span class="dotted-link dotted-link--white">Полис страхования 10 млн. руб.</span></li>
+							<li><span class="dotted-link dotted-link--white">Автоматизированное делопроизводство</span></li>
+						</ul>
+					</div>
+					<div class="main-slider__right"><a class="main-slider__slogan" href="">
+							<div class="main-slider__slogan-title">Полная конфиденциальность<br/> <span class="main-slider__slogan-subtitle">информация под защитой</span></div></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<ul class="breadcrumbs container">
+	<li><a class="breadcrumbs__link" href="/">Главная</a></li>
+	<li><a class="breadcrumbs__link" href="/">Инфо</a></li>
+	<li>Международная сеть</li>
+</ul>
+<div class="section container">
+	<h1 class="section__title">Международная партнерская сеть</h1>
+	<div class="row-md">
+		<div class="col-1-2-md">
+			<p><a href="">Федеральное Патентное Бюро «ГАРДИУМ»</a> защищает интеллектуальную собственность своих клиентов не только в России, но и по всему миру.</p>
+			<p>Высокое качество услуг обеспечивает совместная работа нашего бюро с ведущими патентными бюро и юридические компании многих стран, которые объединены в Международную патентную сеть.</p>
+			<p>Перечень компаний, входящих в Международную партнерскую сеть Федерального Патентного Бюро «ГАРДИУМ»</p>
+		</div>
+		<div class="col-1-2-md hide-up-to-md section__first-block"><img class="section__img section__img--world-map" src="../../assets/images/img-world-map.png" width="440" height="217" alt="Карта мира"/></div>
+	</div>
+	<div class="partners partners--first-item">
+		<h2 class="partners__title">Южная америка</h2>
+		<ul class="partners__list">
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Уругвай</h3><a class="partners__partner-link" href="http://www.scavialaw.com/web/es/index.html" target="_blank" rel="noopener noreferrer">Cikato Lawyers - Intellectual Property</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Перу</h3><a class="partners__partner-link" href="http://www.scavialaw.com/web/es/index.html" target="_blank" rel="noopener noreferrer">SCAVIA&SCAVIA ABOGADOS S.A</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Перу</h3><a class="partners__partner-link" href="http://www.omcabogados.com.pe/" target="_blank" rel="noopener noreferrer">OMC ABOGADOS & CONSULTORES</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Перу</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">JP VAN HASSELT</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Венесуэла</h3><a class="partners__partner-link" href="http://www.mkmarcas.com/" target="_blank" rel="noopener noreferrer">MONTOYA, KOCIECKI & ASOCIADOS</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Венесуэла</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Escala & Blanco</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Бразилия</h3><a class="partners__partner-link" href="http://www.mjzanon.com/" target="_blank" rel="noopener noreferrer">Marcus JuliusZanon</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Бразилия</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Carvalho, Fairbairn & Guidi Advogados</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Аргентина</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Mende Argentina SH</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Аргентина</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Estudio Villano Attorneys at Law & IP Agents</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="partners">
+		<h2 class="partners__title">Европа</h2>
+		<ul class="partners__list">
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Эстония</h3><a class="partners__partner-link" href="http://turvaja.ee/" target="_blank" rel="noopener noreferrer">Patentdiburoo TURVAJA OU</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Украина</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Агентство патентных поверенных Веполь</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Турция</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">OZKUYU INTELLECTUAL PROPERTY LAW OFFICE</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Турция</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Landmark Patent Office/Simge Fikri ve Sanai Ltd</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Турция</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Fides Trademark Patent Translation Consulting Services Ltd</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Турция</h3><a class="partners__partner-link" href="http://www.1e1patent.com/" target="_blank" rel="noopener noreferrer">BİREBİR PATENT DANIŞMANLIK</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Турция</h3><a class="partners__partner-link" href="http://www.alpimpatent.com/en/" target="_blank" rel="noopener noreferrer">ALPIM Patent</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Турция</h3><a class="partners__partner-link" href="http://www.alimogluoruc.com/" target="_blank" rel="noopener noreferrer">Alimoglu Oruc</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Турция</h3><a class="partners__partner-link" href="https://www.acarpatent.com/" target="_blank" rel="noopener noreferrer">Acar Intellectual Property Law</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Словения</h3><a class="partners__partner-link" href="http://www.item.si/" target="_blank" rel="noopener noreferrer">Estudio Villano Attorneys at Law & IP Agents</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Румыния</h3><a class="partners__partner-link" href="http://www.teodoru.com/" target="_blank" rel="noopener noreferrer">TEODORU & ASSOCIATES S.R.L.</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Польша</h3><a class="partners__partner-link" href="http://www.kondrat.pl/" target="_blank" rel="noopener noreferrer">KONDRAT LAW & PATENT OFFICE</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Польша</h3><a class="partners__partner-link" href="http://sw-patent.pl/" target="_blank" rel="noopener noreferrer">Kancelaria Patentowa W.Sojka M.Wroblewki</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Молдова</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Бодюл Татьяна</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Молдова</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Agentia "TREI G" S.A.</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Македония</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">ARTPICK DOOEL Skopje</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Испания</h3><a class="partners__partner-link" href="http://www.zmp.eu/" target="_blank" rel="noopener noreferrer">ZIVKO MIJATOVIC & PARTNERS</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Исландия</h3><a class="partners__partner-link" href="http://www.gst.is/" target="_blank" rel="noopener noreferrer">GST PATENTBUREAU</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Болгария</h3><a class="partners__partner-link" href="http://www.patentcorrect.com/" target="_blank" rel="noopener noreferrer">Patentcorrect Ltd</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Антигуа</h3><a class="partners__partner-link" href="http://www.johnsongardiner.com/" target="_blank" rel="noopener noreferrer">JOHNSON GARDINER</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="partners">
+		<h2 class="partners__title">Азия</h2>
+		<ul class="partners__list">
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Шри-Ланка</h3><a class="partners__partner-link" href="http://www.dissnip.com/" target="_blank" rel="noopener noreferrer">Dissanayake M Sunil Intellectual Property</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Монголия</h3><a class="partners__partner-link" href="http://gncopat.mn/" target="_blank" rel="noopener noreferrer">GN & Co. Ltd</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Корея</h3><a class="partners__partner-link" href="http://www.deryook.co.kr/?ckattempt=1" target="_blank" rel="noopener noreferrer">Deryook International Patent & Law Firm</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Китай</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">SBZL Intellectual Property Office</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Китай</h3><a class="partners__partner-link" href="http://www.lehmanlaw.com/" target="_blank" rel="noopener noreferrer">LEHMAN, LEE & XU</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Китай</h3><a class="partners__partner-link" href="http://www.borsamip.com/" target="_blank" rel="noopener noreferrer">BORSAM INTELLECTUAL PROPERTY</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Кипр</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Markides, Markides & Co</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Кипр</h3><a class="partners__partner-link" href="http://www.chryslaw.com/" target="_blank" rel="noopener noreferrer">Chursanthou and Chrysanthou LLC</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Казахстан</h3><a class="partners__partner-link" href="http://www.intellhelp.com/" target="_blank" rel="noopener noreferrer">Патентное бюро Диалог</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Иран</h3><a class="partners__partner-link" href="http://www.irantm.com/" target="_blank" rel="noopener noreferrer">Raysan Patent & Trademark Agents</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Иран</h3><a class="partners__partner-link" href="http://www.amirshahilaw.com/" target="_blank" rel="noopener noreferrer">Dr. Hassan AMIRSHAHI & Associates IR</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Иордания</h3><a class="partners__partner-link" href="http://njq-ip.com/" target="_blank" rel="noopener noreferrer">NJQ & Associates</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Индонезия</h3><a class="partners__partner-link" href="http://www.suyud.com/" target="_blank" rel="noopener noreferrer">Suyud Margono & Associates Law Firm</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Индонезия</h3><a class="partners__partner-link" href="http://dlplawoffices.com/" target="_blank" rel="noopener noreferrer">Dwipo, Lubis & Partners</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Индонезия</h3><a class="partners__partner-link" href="http://www.barumun.co.id/" target="_blank" rel="noopener noreferrer">BARUMUN INTERNATIONAL PATENT</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Индия</h3><a class="partners__partner-link" href="http://www.trustman.org/" target="_blank" rel="noopener noreferrer">Trustman & Co</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Индия</h3><a class="partners__partner-link" href="http://www.selvamandselvam.in/" target="_blank" rel="noopener noreferrer">Selvam & Selvam</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Индия</h3><a class="partners__partner-link" href="http://www.jainandpartners.com/" target="_blank" rel="noopener noreferrer">Mende Argentina SH</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Индия</h3><a class="partners__partner-link" href="http://www.infinijuridique.com/" target="_blank" rel="noopener noreferrer">Infini Juridique</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Индия</h3><a class="partners__partner-link" href="http://www.aswal.com/" target="_blank" rel="noopener noreferrer">Aswal Associates</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Израиль</h3><a class="partners__partner-link" href="http://www.agranov-patents.co.il/" target="_blank" rel="noopener noreferrer">Dr. David Agranov Ltd</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Грузия</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Патентное бюро Гварамадзе</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Грузия</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Имнадзе Х.А.</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Вьетнам</h3><a class="partners__partner-link" href="http://www.wincolaw.com.vn/intro.html" target="_blank" rel="noopener noreferrer">WINCO - International Patent, Trademark & Copyright Law Firm</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Вьетнам</h3><a class="partners__partner-link" href="http://www.markpatent.net/members/memberweb.asp?URL=http://vintell.vn" target="_blank" rel="noopener noreferrer">Vintell Patent & Trademark Company Limited</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Вьетнам</h3><a class="partners__partner-link" href="http://www.trivietlaw.com.vn/" target="_blank" rel="noopener noreferrer">TRI VIET & ASSOCIATES</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Вьетнам</h3><a class="partners__partner-link" href="http://www.ipmax.vn/" target="_blank" rel="noopener noreferrer">IPMAX Law Firm</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Вьетнам</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Investconsult Group 1</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Вьетнам</h3><a class="partners__partner-link" href="http://www.investconsult.vn/" target="_blank" rel="noopener noreferrer">INVENCO</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Армения</h3><a class="partners__partner-link" href="http://www.nahapet.am/" target="_blank" rel="noopener noreferrer">Компания Наапет и К</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Бангладеш</h3><a class="partners__partner-link" href="http://www.munshiandassociates.com/" target="_blank" rel="noopener noreferrer">Munshi & Associates</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="partners section__last-block">
+		<h2 class="partners__title">Африка</h2>
+		<ul class="partners__list">
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Сейшельские острова</h3><a class="partners__partner-link" href="http://www.macipattorneys.com/" target="_blank" rel="noopener noreferrer">MacMillan's Intellectual Property Attorneys Ltd</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Нигерия</h3><a class="partners__partner-link" href="http://johnsonbryant.com/" target="_blank" rel="noopener noreferrer">JOHNSON BRYANT</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Кения</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">VERONICAH&MIENCHA ADVOCATES</a>
+				</div>
+			</li>
+			<li>
+				<div class="partners__partner">
+					<h3 class="partners__partner-title">Африканский союз</h3><a class="partners__partner-link" href="" target="_blank" rel="noopener noreferrer">Cabinet ISIS Conseils SCP</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<footer class="page-footer">
+	<div class="page-footer__top container">
+		<div class="row-md">
+			<div class="page-footer__col">
+				<div class="page-footer__copyright">© 2005–2017, ООО «Гардиум» <br/> Все права защищены</div>
+				<ul class="social-links">
+					<li class="social-links__item"><a class="social-links__link" href="https://www.facebook.com/gardiumrussia"><svg width="32" height="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-fb"></use></svg></a></li>
+					<li class="social-links__item"><a class="social-links__link" href="https://vk.com/gardium"><svg width="32" height="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-vk"></use></svg></a></li>
+					<li class="social-links__item"><a class="social-links__link" href="https://www.youtube.com/channel/UCGRvz9YiNWQ5xLiu6gWNfiw"><svg width="32" height="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-youtube"></use></svg></a></li>
+					<li class="social-links__item"><a class="social-links__link" href="https://plus.google.com/+Legal-supportRu"><svg width="32" height="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-google-plus"></use></svg></a></li>
+				</ul>
+			</div>
+			<div class="page-footer__col">
+				<address>
+					<div class="page-footer__phone"><a class="like-no-link like-no-link--white" href="tel:+74956658258">+7 (495) 665-82-58</a></div>
+					<div class="page-footer__address"><span class="page-footer__address-icon"><svg width="11" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-map"></use></svg></span><span class="page-footer__address-text">Москва, Рязанский проспект, д.75, корп.4</span></div>
+					<div class="page-footer__payment-systems"><svg width="52" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-visa"></use></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="20" viewBox="0 0 34 20"><defs><filter id="filter" x="13.625" y="0" width="20.375" height="20" filterUnits="userSpaceOnUse"><feFlood result="flood" flood-color="#fead33"/><feComposite result="composite" operator="in" in2="SourceGraphic"/><feBlend result="blend" in2="SourceGraphic"/></filter><filter id="filter-2" x="0" y="0" width="20.375" height="20" filterUnits="userSpaceOnUse"><feFlood result="flood" flood-color="#d62e19"/><feComposite result="composite" operator="in" in2="SourceGraphic"/><feBlend result="blend" in2="SourceGraphic"/></filter><filter id="filter-4" x="13.625" y="0" width="20.375" height="20" filterUnits="userSpaceOnUse"><feImage preserveAspectRatio="none" x="13.625" width="20.375" height="20" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAuMzc1IiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAuMzc1IDIwIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjEwLjE4OCIgeTE9IjIwIiB4Mj0iMTAuMTg4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmNzIwMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZWFkMzMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjIwLjM3NSIgaGVpZ2h0PSIyMCIvPgo8L3N2Zz4K"/><feComposite result="composite" operator="in" in2="SourceGraphic"/><feBlend result="blend" in2="SourceGraphic"/><feFlood result="flood" flood-color="#fead33"/><feComposite result="composite-2" operator="in" in2="SourceGraphic"/><feBlend result="blend-2" in2="blend"/></filter></defs><path id="Ellipse_1_copy_2" data-name="Ellipse 1 copy 2" fill="#fead33" fill-rule="evenodd" filter="url(#filter)" d="M23.808.005A10.088 10.088 0 0 1 33.988 10a10.18 10.18 0 0 1-20.36 0A10.088 10.088 0 0 1 23.808.005z"/><circle id="Ellipse_1_copy_3" data-name="Ellipse 1 copy 3" fill="#d73333" filter="url(#filter-2)" cx="10.188" cy="10" r="10.188"/><path id="Rectangle_1_copy_5" data-name="Rectangle 1 copy 5" fill="#fead33" fill-rule="evenodd" d="M13.628 4.73h7.345v1.053h-7.345V4.73zm0-2.11h7.345v1.054h-7.345V2.62zm0 6.325h7.345V10h-7.345V8.945zm0-2.108h7.345V7.89h-7.345V6.838zm0 6.325h7.345v1.054h-7.345v-1.054zm0 2.11h7.345v1.053h-7.345V15.27zm0-4.218h7.345v1.054h-7.345v-1.054z"/><circle id="Ellipse_1_copy" data-name="Ellipse 1 copy" fill="#d73333" filter="url(#filter-2)" cx="10.188" cy="10" r="10.188"/><path fill="#fead33" fill-rule="evenodd" filter="url(#filter-4)" d="M23.808.005A10.088 10.088 0 0 1 33.988 10a10.18 10.18 0 0 1-20.36 0A10.088 10.088 0 0 1 23.808.005z"/></svg>
+					</div>
+				</address>
+			</div>
+			<div class="page-footer__col page-footer__col--hidden-on-tablet"><a class="dotted-link dotted-link--white" href="">Другие компании</a> консалтинговой группы <img class="page-footer__logo" src="../../assets/images/logo-wiseadvice-min.png" alt="Логотип компании WiseAdvice"/></div>
+			<div class="page-footer__col">
+				<div class="page-footer__logo"><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-footer__bottom">
+		<div class="container">
+			<ul class="page-footer__nav row-md">
+				<li class="col-1-4-md"><a class="page-footer__nav-link" href="">Патентное бюро</a>
+					<ul class="page-footer__nav-list">
+						<li><a class="page-footer__nav-link" href="">О нас</a></li>
+						<li><a class="page-footer__nav-link" href="">Услуги и цены</a></li>
+						<li><a class="page-footer__nav-link" href="">Клиенты</a></li>
+						<li><a class="page-footer__nav-link" href="">Инфо</a></li>
+						<li><a class="page-footer__nav-link" href="">Контакты</a></li>
+					</ul>
+				</li>
+				<li class="col-1-4-md"><a class="page-footer__nav-link" href="">Товарные знаки</a>
+					<ul class="page-footer__nav-list">
+						<li><a class="page-footer__nav-link" href="">Регистрация товарного знака</a></li>
+						<li><a class="page-footer__nav-link" href="">Регистрация торговой марки</a></li>
+						<li><a class="page-footer__nav-link" href="">Регистрация логотипа</a></li>
+						<li><a class="page-footer__nav-link" href="">Международная регистрация</a></li>
+						<li><a class="page-footer__nav-link" href="">Реестр товарных знаков</a></li>
+					</ul>
+				</li>
+				<li class="col-1-4-md"><a class="page-footer__nav-link" href="">Патентование</a>
+					<ul class="page-footer__nav-list">
+						<li><a class="page-footer__nav-link" href="">Патент на изобретение</a></li>
+						<li><a class="page-footer__nav-link" href="">Патент на полезную модель</a></li>
+						<li><a class="page-footer__nav-link" href="">Патент на промышленный образец</a></li>
+						<li><a class="page-footer__nav-link" href="">Патентный поиск</a></li>
+						<li><a class="page-footer__nav-link" href="">Патентные поверенные</a></li>
+					</ul>
+				</li>
+				<li class="col-1-4-md"><a class="page-footer__nav-link" href="">Договоры</a>
+					<ul class="page-footer__nav-list">
+						<li><a class="page-footer__nav-link" href="">Лицензионный договор</a></li>
+						<li><a class="page-footer__nav-link" href="">Договор отчуждения</a></li>
+						<li><a class="page-footer__nav-link" href="">Договор коммерческой концессии</a></li>
+						<li><a class="page-footer__nav-link" href="">Договор авторского заказа</a></li>
+						<li><a class="page-footer__nav-link" href="">Залог исключительных прав</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="buttons-round buttons-round--hidden js-back-to-top">
+		<div class="buttons-round__left">
+			<button class="btn-round btn-round--call-us js-back-to-top" type="button">Позвонить</button>
+		</div>
+		<div class="buttons-round__right">
+			<button class="btn-round btn-round--back-to-top js-back-to-top__btn" type="button">
+				<svg width="36" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-arrow-up"></use></svg>Наверх</button>
+		</div>
+	</div>
+</div></body>
+</html>
