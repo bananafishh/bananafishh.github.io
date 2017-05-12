@@ -203,6 +203,58 @@ $(function () {
 });
 
 
+var SectionNav = Backbone.View.extend({
+	el: '.js-section-nav',
+
+    initialize: function() {
+        this.item = this.$('.js-section-nav__item');
+        this.list = this.$('.js-section-nav__list');
+    },
+
+    events: {
+    	'click .js-section-nav__item': 'switchActiveState'
+
+    },
+
+    switchActiveState: function(e) {
+        this.item.removeClass('is-active');
+        $(e.currentTarget).addClass('is-active');
+
+        this.list.toggleClass('is-open');
+    },
+
+    toggleList: function() {
+        this.list.toggleClass('is-open');
+    }
+});
+
+$(function () {
+    App.Views.SectionNav = new SectionNav();
+});
+
+
+var SwitchActiveState = Backbone.View.extend({
+	el: '.js-switch-active',
+
+    initialize: function() {
+        this.btn =  this.$('.js-switch-active__btn');
+    },
+
+    events: {
+    	'click .js-switch-active__btn': 'switchActiveState'
+    },
+
+    switchActiveState: function(e) {
+        this.btn.siblings().removeClass('is-active');
+        $(e.currentTarget).addClass('is-active')
+    }
+});
+
+$(function () {
+    App.Views.SwitchActiveState = new SwitchActiveState();
+});
+
+
 var Tabs = Backbone.View.extend({
 	el: '.js-tabs',
 

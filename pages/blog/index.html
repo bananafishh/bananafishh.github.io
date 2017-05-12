@@ -128,12 +128,12 @@
 	<div class="container">
 		<h1 class="section__title">Блог</h1>
 	</div>
-	<div class="tabs tabs--section-nav">
+	<div class="section-nav js-section-nav">
 		<div class="container">
-			<ul class="tabs__list js-tabs__list">
-				<li class="js-tabs__tab active">Все темы</li>
-				<li class="js-tabs__tab">Товарные знаки</li>
-				<li class="js-tabs__tab">Патентование</li>
+			<ul class="section-nav__list js-section-nav__list">
+				<li class="section-nav__item js-section-nav__item is-active"><a class="section-nav__link" href="">Все темы</a></li>
+				<li class="section-nav__item js-section-nav__item"><a class="section-nav__link" href="">Товарные знаки</a></li>
+				<li class="section-nav__item js-section-nav__item"><a class="section-nav__link" href="">Патентование</a></li>
 			</ul>
 		</div>
 	</div>
@@ -203,13 +203,25 @@
 				<p>Многие думают, что мировой финансовый кризис создает условия, при которых нужно экономить на всем, а регистрацию товарных знаков вообще считают...</p>
 			</article>
 		</div>
+		<ul class="pagination pagination--after-clients js-switch-active">
+			<li class="pagination__item is-active js-switch-active__btn"><a href="">1</a></li>
+			<li class="pagination__item js-switch-active__btn"><a href="">2</a></li>
+			<li class="pagination__item js-switch-active__btn"><a href="">3</a></li>
+		</ul>
 	</div>
-	<ul class="pagination pagination--after-clients">
-		<li class="pagination__item pagination__item--active"><a href="">1</a></li>
-		<li class="pagination__item"><a href="">2</a></li>
-		<li class="pagination__item"><a href="">3</a></li>
-	</ul>
 </div>
+<section class="section section--gray section--content-center">
+	<div class="container">
+		<h2 class="section__title">Будьте в курсе событий</h2>
+		<p>Подпишитесь на информационную рассылку, чтобы получать уведомления об изменениях в законодательстве, заранее узнавать о новых правилах ФИПС и ценовых предложениях для наших клиентов.</p>
+		<form class="form-subscription" action="">
+			<div class="field-text form-subscription__input">
+				<input class="field-text__input" type="text" placeholder="Введите ваш e-mail"/>
+			</div>
+			<input class="form-subscription__submit underlined-link-like" type="submit" value="Подписаться"/>
+		</form>
+	</div>
+</section>
 <footer class="page-footer">
 	<div class="page-footer__top container">
 		<div class="row-md">
