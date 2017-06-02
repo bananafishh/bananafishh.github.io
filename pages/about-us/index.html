@@ -7,10 +7,7 @@
 	<title>gardium-bx-site-redesign</title>
 	<link rel="stylesheet" href="../../css/style.css" media="screen"/><!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script type="text/javascript" src="../../js/core.js"></script>
-	<script type="text/javascript" src="../../js/vendor.js"></script>
-	<script type="text/javascript" src="../../js/main.js"></script>
 </head><body>
 <header class="page-header">
 	<div class="page-header__top">
@@ -213,19 +210,20 @@
 		<h2 class="section__title">Принципы работы</h2>
 	</div>
 	<div class="tabs js-tabs">
-		<div class="container">
-			<div class="tabs__select-menu tabs__select-menu--white-text js-tabs__select-menu">Конфиденциальность</div>
-			<ul class="tabs__list tabs__list--white-text js-tabs__list">
-				<li class="js-tabs__tab active" data-id="confidentiality">Конфиденциальность</li>
-				<li class="js-tabs__tab" data-id="responsibility">Ответственность</li>
-				<li class="js-tabs__tab" data-id="efficiency">Эффективность</li>
-				<li class="js-tabs__tab" data-id="effectiveness">Результативность</li>
-				<li class="js-tabs__tab" data-id="partnership">Партнерство</li>
-			</ul>
+		<div class="tabs__list-wrap tabs__list-wrap--white-border">
+			<div class="container">
+				<ul class="tabs__list tabs__list--white-text js-tabs__list">
+					<li class="tabs__tab js-tabs__tab is-active" data-id="confidentiality">Конфиденциальность</li>
+					<li class="tabs__tab js-tabs__tab" data-id="responsibility">Ответственность</li>
+					<li class="tabs__tab js-tabs__tab" data-id="efficiency">Эффективность</li>
+					<li class="tabs__tab js-tabs__tab" data-id="effectiveness">Результативность</li>
+					<li class="tabs__tab js-tabs__tab" data-id="partnership">Партнерство</li>
+				</ul>
+			</div>
 		</div>
 		<div class="tabs__container tabs__container--white-border">
 			<div class="container">
-				<div class="tabs__content js-tabs__content active" id="confidentiality">
+				<div class="tabs__content js-tabs__content is-active" id="confidentiality">
 					<div class="work-principle">
 						<p class="work-principle__lead-text">С каждым клиентом мы заключаем соглашение о неразглашении информации, которое действует бессрочно</p>
 						<p class="work-principle__subtitle-text">Каждый наш сотрудник несет ответственность за сохранение информации по каждому проекту, в котором участвует.</p>
@@ -262,20 +260,21 @@
 		<h2 class="section__title">Наша команда</h2>
 	</div>
 	<div class="tabs js-tabs">
-		<div class="container">
-			<div class="tabs__select-menu js-tabs__select-menu">Топ-менеджмент</div>
-			<ul class="tabs__list js-tabs__list">
-				<li class="js-tabs__tab active" data-id="top-management">Топ-менеджмент</li>
-				<li class="js-tabs__tab" data-id="trademarks">Товарные знаки</li>
-				<li class="js-tabs__tab" data-id="patenting">Патентование</li>
-				<li class="js-tabs__tab" data-id="computer-programms">Программы ЭВМ</li>
-				<li class="js-tabs__tab" data-id="disputes">Споры</li>
-				<li class="js-tabs__tab" data-id="customer-department">Клиентский отдел</li>
-			</ul>
+		<div class="tabs__list-wrap">
+			<div class="container">
+				<ul class="tabs__list js-tabs__list">
+					<li class="tabs__tab js-tabs__tab is-active" data-id="top-management">Топ-менеджмент</li>
+					<li class="tabs__tab js-tabs__tab" data-id="trademarks">Товарные знаки</li>
+					<li class="tabs__tab js-tabs__tab" data-id="patenting">Патентование</li>
+					<li class="tabs__tab js-tabs__tab" data-id="computer-programms">Программы ЭВМ</li>
+					<li class="tabs__tab js-tabs__tab" data-id="disputes">Споры</li>
+					<li class="tabs__tab js-tabs__tab" data-id="customer-department">Клиентский отдел</li>
+				</ul>
+			</div>
 		</div>
 		<div class="tabs__container tabs__container--block-content">
 			<div class="container">
-				<div class="tabs__content js-tabs__content active" id="top-management">
+				<div class="tabs__content js-tabs__content is-active" id="top-management">
 					<ul class="employees employees--content-center">
 						<li class="employee"><a class="employee__link" href=""><img class="employee__img" src="../../assets/images/img-employee--aleksej-abramov-min.jpg" width="216" height="306" alt="Алексей Абрамов"/><span class="employee__name">Алексей Абрамов</span>
 								<div class="employee__position">Управляющий партнер Федерального Патентного Бюро «Гардиум»</div></a></li>
@@ -291,18 +290,8 @@
 								<div class="employee__position">Патентный поверенный № 1027</div></a></li>
 					</ul>
 				</div>
-				<div class="tabs__content js-tabs__content" id="patenting">
-					<ul class="employees employees--carousel">
-						<li class="employee"><a class="employee__link" href=""><img class="employee__img" src="../../assets/images/img-employee--elena-kupcova-min.jpg" width="216" height="306" alt="Елена Купцова"/><span class="employee__name">Елена Купцова</span>
-								<div class="employee__position">Руководитель отдела патентования. Патентный поверенный № 1264</div></a></li>
-					</ul>
-				</div>
-				<div class="tabs__content js-tabs__content" id="computer-programms">
-					<ul class="employees employees--carousel">
-						<li class="employee"><a class="employee__link" href=""><img class="employee__img" src="../../assets/images/img-employee--elena-vorobeva-min.jpg" width="216" height="306" alt="Елена Воробьева"/><span class="employee__name">Елена Воробьева</span>
-								<div class="employee__position">Руководитель отдела регистрации товарных знаков. Патентный поверенный № 1391</div></a></li>
-					</ul>
-				</div>
+				<div class="tabs__content js-tabs__content" id="patenting"></div>
+				<div class="tabs__content js-tabs__content" id="computer-programms"></div>
 				<div class="tabs__content js-tabs__content" id="disputes"></div>
 				<div class="tabs__content js-tabs__content" id="customer-department"></div>
 			</div>
@@ -443,5 +432,7 @@
 				<svg width="36" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-arrow-up"></use></svg>Наверх</button>
 		</div>
 	</div>
-</div></body>
+</div>
+<script type="text/javascript" src="../../js/vendor.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script></body>
 </html>

@@ -13848,6 +13848,44 @@ return jQuery;
   return Backbone;
 });
 
-window.App = {
-    Views: {}
+var App = {
+    Views: {},
+    Control: {
+        instance : function(options) {
+            Backbone.View.call(this, options);
+        },
+        install : function(options) {
+            Backbone.$(function() {
+                if (!Backbone.$(options.el).length) {
+                    return false;
+                }
+				App.Views[options.name] = [];
+                if (Backbone.$(options.el).length > 1) {
+                    var objArr = [];
+                    Backbone.$(options.el).each(function() {
+                        objArr.push(App.Control.construct(Backbone.$(this),options));
+                    });
+                    App.Views[options.name] = objArr;
+                } else {
+                    App.Views[options.name] = App.Control.construct(Backbone.$(options.el),options);
+                }
+				return App.Views[options.name];
+            })
+        },
+        construct : function($el,options) {
+            var vOpts = _.extend(_.clone(options),{el:$el});
+            var CAppViewInstance = this.instance.extend(vOpts);
+            var CAppView = new CAppViewInstance;
+            $el.attr('cid', CAppView.cid);
+            $el.addClass(options.name + 'Control');
+			return CAppView;
+        }
+    }
 };
+
+_.extend(App.Control.instance.prototype, Backbone.View.prototype, {
+    initialize: function() { }
+});
+
+App.Control.instance.extend = Backbone.View.extend;
+
