@@ -195,6 +195,46 @@ var RegionalOfficesMap = {
 };
 
 App.Control.install(RegionalOfficesMap);
+var PartiallyHidden = {
+    el: '.js-partially-hidden',
+    name: 'PartiallyHidden',
+
+    initialize: function() {
+        this.btn = this.$('.js-partially-hidden__btn');
+        this.btnWrap = this.$('.js-partially-hidden__btn-wrap');
+        this.hiddenBlock = this.$('.js-partially-hidden__block');
+        this.hiddenContent = this.$('.js-partially-hidden__content');
+        this.clicked = false;
+
+        var self = this;
+
+        $(window).bind('resize', function() {
+            if(self.clicked) {
+                self.hiddenContentHeight = self.hiddenContent.outerHeight();
+                self.hiddenBlock.outerHeight(self.hiddenContentHeight);
+            }
+        });
+    },
+
+    events: {
+        'click .js-partially-hidden__btn': 'showHiddenBlock'
+    },
+
+    showHiddenBlock: function(ev) {
+        var self = this;
+        this.clicked = true;
+
+        this.hiddenContentHeight = this.hiddenContent.outerHeight();
+
+        this.hiddenBlock.animate({
+            height: this.hiddenContentHeight
+        }, 500, function() {
+            self.btnWrap.fadeOut(300);
+        });
+    }
+};
+
+App.Control.install(PartiallyHidden);
 var SectionNav = {
     el: '.js-section-nav',
     name: 'SectionNav',
