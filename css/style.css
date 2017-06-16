@@ -1348,10 +1348,22 @@ input[type="submit"] {
 .section__h3--white {
   color: #fff;
 }
+.section__h3-like--alert,
+.section__h3--alert {
+  margin-top: 21px;
+  margin-bottom: 27px;
+  text-transform: none;
+}
 @media (min-width: 768px) {
   .section__h3-like--after-row,
   .section__h3--after-row {
     margin-top: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .section__h3-like--alert-after-row,
+  .section__h3--alert-after-row {
+    margin-top: 3px;
   }
 }
 .section__h4-like {
@@ -1440,6 +1452,8 @@ input[type="submit"] {
   font-size: 1.285714285714286em;
   font-weight: 700;
   line-height: 1.444;
+}
+.text-large--blue {
   color: #0075b8;
 }
 .text-large--dotted {
@@ -2235,8 +2249,14 @@ input[type="submit"] {
   }
 }
 @media (min-width: 480px) {
-  .features__icon--briefcase {
+  .features__icon--briefcase,
+  .features__icon--scales {
     padding-top: 6px;
+  }
+}
+@media (min-width: 480px) {
+  .features__icon--bokk {
+    padding-top: 5px;
   }
 }
 .field-text {
@@ -3182,8 +3202,11 @@ textarea.field-text__input {
 .pricing-plan__price-number {
   color: #32404d;
 }
+.pricing-plan__calculate-btn {
+  margin-bottom: 34px;
+}
 .pricing-plan__btn {
-  margin: 34px 2px 0 1px;
+  margin: 24px 2px 0 1px;
 }
 .pricing-plan__btn .btn {
   width: 100%;
