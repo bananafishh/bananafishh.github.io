@@ -44,6 +44,18 @@ var BackToTop = {
 };
 
 App.Control.install(BackToTop);
+var ContentSlider = {
+    el: '.js-content-slider',
+    name: 'ContentSlider',
+    initialize: function() {
+        this.$el.bxSlider({
+            mode: 'fade',
+            pager: false
+        });
+    }
+};
+
+App.Control.install(ContentSlider);
 var MainOfficeMap = {
     el: '#main-office',
     name: 'MainOfficeMap',
@@ -235,6 +247,42 @@ var PartiallyHidden = {
 };
 
 App.Control.install(PartiallyHidden);
+var ScrollTo = {
+    el: '.js-scroll-to',
+    name: 'ScrollTo',
+    initialize: function() {},
+
+    events: {
+        'click': 'scrollTo'
+    },
+
+    scrollTo: function(ev) {
+        ev.preventDefault();
+
+        this.targetId = $(ev.currentTarget).attr('href').substring(1);
+        this.targetObject = $('#' + this.targetId);
+        this.targetOffsetTop = this.targetObject.offset().top;
+
+        if($(window).outerWidth() < 900) {
+            this.topOffset = 80;
+        } else {
+            this.topOffset = 20;
+        }
+
+        if(!$('.main-nav').hasClass('main-nav--fixed') && $(window).outerWidth() < 900) {
+            this.targetOffsetTop -= $('.main-nav').outerHeight();
+        } else {
+            this.targetOffsetTop = this.targetObject.offset().top;
+        }
+
+
+        $('html, body').animate({
+            scrollTop: this.targetOffsetTop - this.topOffset
+        }, 1000);
+    }
+};
+
+App.Control.install(ScrollTo);
 var SectionNav = {
     el: '.js-section-nav',
     name: 'SectionNav',
