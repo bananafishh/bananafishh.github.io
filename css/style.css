@@ -1399,6 +1399,11 @@ input[type="submit"] {
   padding: 33px 30px 34px 40px;
   background-color: #e6ebed;
 }
+@media (max-width: 767px) {
+  .section__centered-block {
+    text-align: center;
+  }
+}
 .section__first-block {
   padding-top: 5px;
 }
