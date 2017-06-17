@@ -1327,11 +1327,13 @@ input[type="submit"] {
   line-height: 1.25;
   text-transform: uppercase;
 }
-.section__h3-like:first-child {
-  margin-top: 0;
-}
 .section__h3-like--first-in-section {
   margin-top: 11px;
+}
+@media (min-width: 768px) {
+  .section__h3-like--first-in-row {
+    margin-top: 10px;
+  }
 }
 .section__h3-like--before-post-previews {
   margin-bottom: 27px;
@@ -1358,9 +1360,11 @@ input[type="submit"] {
   }
 }
 .section__h4-like {
-  margin-bottom: 9px;
+  margin-top: -2px;
+  margin-bottom: 7px;
   font-size: 1.285714285714286em;
   font-weight: 700;
+  line-height: 1.444;
 }
 @media (max-width: 767px) {
   .section__text br {
