@@ -2349,6 +2349,7 @@ textarea.field-text__input {
 }
 .free-consult__photo-holder {
   padding-top: 6px;
+  margin-bottom: 7px;
 }
 @media (min-width: 520px) {
   .free-consult__photo-holder {
