@@ -3907,7 +3907,7 @@ textarea.field-text__input {
 }
 .page-header__top {
   padding-top: 41px;
-  padding-bottom: 34px;
+  padding-bottom: 38px;
 }
 @media (max-width: 767px) {
   .page-header__top {
@@ -3917,6 +3917,12 @@ textarea.field-text__input {
 .page-header__logo {
   display: inline-block;
   padding-top: 3px;
+  border-bottom: none;
+}
+.page-header__logo img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 @media (max-width: 767px) {
   .page-header__logo {
@@ -3963,13 +3969,6 @@ textarea.field-text__input {
   font-size: 1.714285714285714em;
   font-weight: 700;
   line-height: 1.167;
-}
-.page-header__logo {
-  border-bottom: none;
-}
-.page-header__logo img {
-  max-width: 100%;
-  height: auto;
 }
 .page-header__search-form {
   position: relative;
