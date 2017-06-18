@@ -1,10 +1,14 @@
 $(document).ready(function() {
 	svg4everybody();
 
-  $(".js-select").select2({
-  	minimumResultsForSearch: Infinity
-  });
+	$(".js-select").select2({
+  		minimumResultsForSearch: Infinity
+  	});
 
+	$('.js-tooltip').tooltipster({
+		theme: 'tooltipster-light',
+		maxWidth: 443
+	});
 });
 
 
