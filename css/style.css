@@ -2737,6 +2737,7 @@ input[type="submit"] {
 }
 .fb-widget--with-social-links {
   display: inline-block;
+  width: 100%;
   margin-bottom: 12px;
   vertical-align: top;
 }
@@ -2746,10 +2747,6 @@ input[type="submit"] {
 @media (min-width: 530px) {
   .fb-widget--with-social-links {
     width: 83.2258%;
-  }
-}
-@media (min-width: 480px) {
-  .fb-widget--with-social-links {
     margin-right: 8px;
   }
 }
