@@ -4343,7 +4343,7 @@ textarea.field-text__input {
   height: 64px;
   line-height: 62px;
 }
-.social-links__link--big svg {
+.social-links__link--big span {
   position: absolute;
   top: 50%;
   left: 50%;
