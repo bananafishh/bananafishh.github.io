@@ -4352,13 +4352,23 @@ textarea.field-text__input {
 .social-links--with-fb-widget {
   padding-bottom: 30px;
 }
+@media (max-width: 529px) {
+  .social-links--with-fb-widget .social-links__item:not(:last-child) {
+    margin-right: 7px;
+  }
+}
 @media (min-width: 530px) and (max-width: 767px) {
   .social-links--with-fb-widget .social-links__item:not(:last-child) {
     display: block;
     margin-bottom: 11px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 768px) and (max-width: 1029px) {
+  .social-links--with-fb-widget .social-links__item:not(:last-child) {
+    margin-right: 7px;
+  }
+}
+@media (min-width: 1030px) {
   .social-links--with-fb-widget .social-links__item:not(:last-child) {
     display: block;
     margin-bottom: 11px;
@@ -4370,7 +4380,7 @@ textarea.field-text__input {
     vertical-align: top;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1030px) {
   .social-links--with-fb-widget {
     display: inline-block;
     vertical-align: top;
