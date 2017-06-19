@@ -53,8 +53,12 @@ var ContentSlider = {
     name: 'ContentSlider',
     initialize: function() {
         this.$el.bxSlider({
-            mode: 'fade',
-            pager: false
+            //mode: 'fade',
+            pager: false,
+            slideWidth: 960,
+            minSlides: 1,
+            maxSlides: 1,
+            adaptiveHeight: true
         });
     }
 };
