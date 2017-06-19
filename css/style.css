@@ -2737,12 +2737,16 @@ input[type="submit"] {
 }
 .fb-widget--with-social-links {
   display: inline-block;
-  width: 83.2258%;
   margin-bottom: 12px;
   vertical-align: top;
 }
 .fb-widget--with-social-links iframe {
   vertical-align: middle;
+}
+@media (min-width: 530px) {
+  .fb-widget--with-social-links {
+    width: 83.2258%;
+  }
 }
 @media (min-width: 480px) {
   .fb-widget--with-social-links {
@@ -2750,13 +2754,17 @@ input[type="submit"] {
   }
 }
 .fb-widget-col {
-  max-width: 465px;
+  max-width: 387px;
 }
 @media (max-width: 529px) {
   .fb-widget-col {
-    max-width: 387px;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+@media (min-width: 530px) {
+  .fb-widget-col {
+    max-width: 465px;
   }
 }
 @media (min-width: 768px) and (max-width: 1029px) {
