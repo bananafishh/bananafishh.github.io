@@ -2737,6 +2737,7 @@ input[type="submit"] {
 }
 .fb-widget--with-social-links {
   display: inline-block;
+  width: 83.2258%;
   margin-bottom: 12px;
   vertical-align: top;
 }
@@ -4315,11 +4316,7 @@ textarea.field-text__input {
   display: block;
   width: 34px;
   height: 34px;
-  text-align: center;
   border: 1px solid #3d627f;
-}
-.social-links__link svg {
-  vertical-align: middle;
 }
 .social-links__link:hover {
   border-color: #fff;
@@ -4332,9 +4329,18 @@ textarea.field-text__input {
   border-color: #a5b1bc;
 }
 .social-links__link--big {
+  position: relative;
   width: 65px;
   height: 64px;
   line-height: 62px;
+}
+.social-links__link--big svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .social-links__link--blue-bg {
   background-color: #e6ebed;
