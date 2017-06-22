@@ -64,6 +64,18 @@ var ContentSlider = {
 };
 
 App.Control.install(ContentSlider);
+App.Control.install({
+    el: '.js-form',
+    name: 'FormFabric',
+    initialize: function () {
+
+        this.$('.js-select-editable').select2({
+            minimumResultsForSearch: Infinity,
+            theme: "editable"
+        });
+
+    }
+});
 var MainOfficeMap = {
     el: '#main-office',
     name: 'MainOfficeMap',

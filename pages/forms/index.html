@@ -118,15 +118,81 @@
 </div>
 <ul class="breadcrumbs container">
 	<li><a class="breadcrumbs__link" href="/">Главная</a></li>
-	<li>Заявка принята</li>
+	<li>Формы</li>
 </ul>
 <div class="container clearfix">
-	<h1 class="main-title">Ваша заявка принята!</h1>
+	<h1 class="main-title">Заявка на услуги в области патентования</h1>
 </div>
-<section class="section section--content-center">
-	<div class="container">
-		<div class="section__subtitle section__subtitle--before-text-block">Благодарим Вас за обращение.<br/> Мы свяжемся с вами в указанное рабочее время.<br/> Работаем ПН—ПТ с 9:00 до 19:00 по Москве.</div>
-		<p class="section__text">Если с вами не связались в указанное вами время,<br/> позвоните, пожалуйста, Ксении Третьяковой, руководителю отдела по работе с клиентами,<br/> по телефону <b><a href="tel:+74656658258">+7&nbsp;(465)&nbsp;665&#8209;82&#8209;58</a></b> доб.&nbsp;<b>211</b></p>
+<section class="section container">
+	<div class="form js-form">
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-1-1">Ваше имя<span class="asterisk">*</span></label>
+					<input id="form-input-1-1" type="text" placeholder="Сергей Заказчиков"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-1-2">E-mail<span class="asterisk">*</span></label>
+					<input id="form-input-1-2" type="text" placeholder="zakazchikov@gmail.com"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-1-3">Телефон<span class="asterisk">*</span></label>
+					<input id="form-input-1-3" type="text" placeholder="+7 (925) 490-22-10"/>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--select">
+					<label for="form-input-2-1">Вид объекта</label>
+					<select class="js-select-editable" id="form-input-2-1">
+						<option>Изобретение</option>
+						<option>Изобретение2</option>
+						<option>Изобретение3</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-2-2">Отрасль</label>
+					<select class="js-select-editable" id="form-input-2-2">
+						<option>Нанотехнологии</option>
+						<option>Нанотехнологии2</option>
+						<option>Нанотехнологии3</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-2-3">Выбранный пакет услуг</label>
+					<select class="js-select-editable" id="form-input-2-3">
+						<option>Оптимум</option>
+						<option>Оптимум2</option>
+						<option>Оптимум3</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-col">
+				<div class="form-input form-input--text">
+					<label for="form-input-3-1">Предполагаемое название патента <span class="tooltip">Что из себя представляет товарный знак? Это слово, изображение или комбинация двух видов? Если знак звуковой, объемный или световой - выбирайте "другое"</span></label>
+					<input id="form-input-3-1" type="text"/>
+				</div>
+			</div>
+			<div class="form-col">
+				<div class="form-input form-input--text-textarea">
+					<label for="form-input-3-2">Комментарий</label>
+					<textarea id="form-input-3-2"></textarea>
+				</div>
+			</div>
+		</div>
+		<hr/>
 	</div>
 </section>
 <footer class="page-footer">
