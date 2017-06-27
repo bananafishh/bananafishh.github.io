@@ -3530,6 +3530,7 @@ textarea.field-text__input {
   background-color: #cd3939;
 }
 .promo-post__title {
+  padding-right: 7px;
   font-size: 1.285714285714286em;
   font-weight: 700;
   line-height: 1.444;
