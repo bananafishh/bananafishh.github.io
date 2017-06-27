@@ -5990,10 +5990,8 @@ textarea.field-text__input {
   .highlighted-block--inside-col .highlighted-block__icon {
     position: relative;
     top: auto;
-    display: block;
     width: auto;
     margin-bottom: 14px;
-    text-align: left;
   }
 }
 @media (min-width: 768px) and (max-width: 934px) {
