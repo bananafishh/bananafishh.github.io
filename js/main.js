@@ -401,6 +401,21 @@ var VerticalTabs = {
 };
 
 App.Control.install(VerticalTabs);
+var DottedNavSlider = {
+    el: '.js-dotted-nav-slider',
+    name: 'DottedNavSlider',
+    initialize: function() {
+        this.$el.bxSlider({
+            controls: false,
+            slideWidth: 706,
+            minSlides: 1,
+            maxSlides: 1,
+            adaptiveHeight: true
+        });
+    }
+};
+
+App.Control.install(DottedNavSlider);
 var MainNavView = {
     el: '.js-main-nav',
     name: 'MainNavView',
