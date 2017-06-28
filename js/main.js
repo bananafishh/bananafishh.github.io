@@ -74,6 +74,11 @@ App.Control.install({
             theme: "editable"
         });
 
+        this.$('.js-form-select').select2({
+            minimumResultsForSearch: Infinity,
+            theme: "form-select"
+        });
+
     }
 });
 var MainOfficeMap = {
