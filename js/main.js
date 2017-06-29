@@ -6,9 +6,23 @@ $(document).ready(function() {
   	});
 
 	$('.js-tooltip').tooltipster({
-		theme: 'tooltipster-light',
+		theme: ['tooltipster-light', 'tooltipster-light-customized'],
 		maxWidth: 443
 	});
+
+	$('.js-fancy-img').fancybox({
+        wrapCSS: 'fancy-img',
+        margin: ($(window).width() > 937) ? 20 : 5,
+        fitToView: true,
+        padding: 15,
+        helpers : {
+          overlay : {
+            css : {
+              'background' : 'rgba(27, 71, 105, 0.7)'
+            }
+          }
+        }
+    });
 });
 
 
@@ -48,6 +62,23 @@ var BackToTop = {
 };
 
 App.Control.install(BackToTop);
+App.Control.install({
+    el: '.input-checkbox',
+    name: 'InputCheckbox',
+    initialize: function () {
+        if(this.$('input').is(':checked'))
+            this.$el.addClass('_checked');
+    },
+    events: {
+        'change input': 'toggle'
+    },
+    toggle: function() {
+        if(this.$('input').is(':checked'))
+            this.$el.addClass('_checked');
+        else
+            this.$el.removeClass('_checked');
+    }
+});
 var ContentSlider = {
     el: '.js-content-slider',
     name: 'ContentSlider',
@@ -272,6 +303,19 @@ var PartiallyHidden = {
 };
 
 App.Control.install(PartiallyHidden);
+App.Control.install({
+    el: '.que',
+    name: 'QueTip',
+    initialize: function () {
+        var self = this;
+        this.$el.tooltipster({
+            side: 'right',
+            content: self.$el.html(),
+            theme: ['tooltipster-light', 'tooltipster-light-customized'],
+            maxWidth: 443
+        });
+    }
+});
 var ScrollTo = {
     el: '.js-scroll-to',
     name: 'ScrollTo',
