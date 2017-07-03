@@ -183,7 +183,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="form-col form-col--bm-0">
+			<div class="form-col form-col--mb-0">
 				<div class="form-input form-input--text">
 					<label for="form-input-1-7">Предполагаемое название патента <span class="que">Что из себя представляет товарный знак? Это слово, изображение или комбинация двух видов? Если знак звуковой, объемный или световой - выбирайте "другое"</span></label>
 					<input id="form-input-1-7" type="text"/>
@@ -201,6 +201,57 @@
 			<div class="form-col">
 				<div class="form-text"><span class="icon-new-file">Получите сразу
 						<button class="dotted spoiler-link" data-closest="data-closest" type="button"><span>соглашение о конфедициальности на почту</span></button></span></div>
+			</div>
+			<div class="spoiler-content spoiler-content--form-col">
+				<div class="form-col form-col-1-3">
+					<div class="form-input form-input--radio js-form-radio-choise">
+						<div class="form-radio-wrapper">
+							<label class="input-radio">
+								<input type="radio" name="form-input-1-11" checked="checked"/> Юридическое лицо
+							</label>
+							<label class="input-radio">
+								<input type="radio" name="form-input-1-11"/> Физическое лицо
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="js-form-radio-content">
+					<div class="js-form-radio-content-block">
+						<div class="form-col form-col-2-3">
+							<div class="form-input form-input--text">
+								<label for="form-input-1-12">Полное наименование организации<span class="asterisk">*</span></label>
+								<input id="form-input-1-12" type="text" placeholder=""/>
+							</div>
+							<div class="form-input form-input--file">
+								<label>Реквизиты организации<span class="asterisk">*</span></label>
+								<div class="input-file">
+									<label>
+										<input id="form-input-1-13" type="file"/>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="js-form-radio-content-block">
+						<div class="form-col form-col-2-3">
+							<div class="form-input form-input--text">
+								<label for="form-input-1-14">Фамилия Имя Отчество<span class="asterisk">*</span></label>
+								<input id="form-input-1-14" type="text" placeholder=""/>
+							</div>
+							<div class="form-input form-input--file form-input--text js-form-tabs-changer">
+								<label class="js-form-tabs-changer-btns">Паспортные данные: <span class="form-tabs-changer-btn">загрузить файлом</span> <span class="form-tabs-changer-btn">написать вручную</span></label>
+								<div class="js-form-tabs-changer-content">
+									<div class="input-file js-form-tabs-changer-block">
+										<label>
+											<input id="form-input-1-16" type="file"/>
+										</label>
+									</div>
+									<input class="js-form-tabs-changer-block" id="form-input-1-15" type="text" placeholder=""/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<hr/>
@@ -223,9 +274,453 @@
 				</div>
 			</div>
 			<div class="form-col">
-				<div class="form-input form-input--check-footer">
+				<div class="form-input form-input--check-footer js-form-privacy-agree">
 					<label class="input-checkbox">
-						<input id="form-input-1-10" type="checkbox"/> Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a>
+						<input id="form-input-1-17" type="checkbox"/><span class="hide-md js-form-privacy-agree-short">Соглашаюсь на
+							<button class="dotted js-form-privacy-agree-responsive-btn" type="button" target="_blank"><span>обработку персональных данных</span></button></span><span class="hide-up-to-md js-form-privacy-agree-full">Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container clearfix">
+	<h1 class="main-title">Заявка на регистрацию товарного знака</h1>
+</div>
+<section class="section container">
+	<div class="form js-form">
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-2-1">Ваше имя<span class="asterisk">*</span></label>
+					<input id="form-input-2-1" type="text" placeholder="Сергей Заказчиков"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-2-2">E-mail<span class="asterisk">*</span></label>
+					<input id="form-input-2-2" type="text" placeholder="zakazchikov@gmail.com"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-2-3">Телефон<span class="asterisk">*</span></label>
+					<input id="form-input-2-3" type="text" placeholder="+7 (925) 490-22-10"/>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--select">
+					<label for="form-input-2-4">Вид обозначения <span class="que">Подсказка</span></label>
+					<div class="form-select-wrapper">
+						<select class="js-select-editable" id="form-input-2-4">
+							<option value="0" selected="selected">Комбинирование</option>
+							<option value="0">Комбинирование2</option>
+							<option value="0">Комбинирование3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-2-5">Выбранный пакет услуг <span class="que">Подсказка</span></label>
+					<div class="form-select-wrapper">
+						<select class="js-select-editable" id="form-input-2-5">
+							<option value="0" selected="selected">Все включено ("под ключ")</option>
+							<option value="0">Все включено ("под ключ") 2</option>
+							<option value="0">Все включено ("под ключ") 3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-col form-col-1-2 form-col--mb-0">
+				<div class="form-input form-input--text">
+					<label for="form-input-2-7">Словесная часть товарного знака <span class="que">Подсказка</span></label>
+					<input id="form-input-2-7" type="text"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-2 form-col--mb-0">
+				<div class="form-input form-input--file">
+					<label>Файл с изображением товарного знака <span class="que">Подсказка</span></label>
+					<div class="input-file">
+						<label>
+							<input id="form-input-2-8" type="file"/>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-col">
+				<div class="form-input form-input--text-textarea">
+					<label for="form-input-2-9">Комментарий</label>
+					<textarea id="form-input-2-9"></textarea>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col">
+				<div class="form-text"><span class="icon-new-file">Получите сразу проект договора и счет на услуги, заполнив
+						<button class="dotted spoiler-link" data-closest="data-closest" type="button"><span>полную форму заказа</span></button></span></div>
+			</div>
+			<div class="spoiler-content spoiler-content--form-col">
+				<div class="form-col">
+					<div class="form-input form-input--text">
+						<label for="form-input-2-10">Название организации</label>
+						<input id="form-input-2-10" type="text" placeholder=""/>
+					</div>
+					<div class="form-input form-input--file">
+						<label>Реквизиты</label>
+						<div class="input-file">
+							<label>
+								<input id="form-input-2-14" type="file"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--select">
+					<label for="form-input-2-15">Удобное время связи:</label>
+					<div class="form-select-wrapper">
+						<select class="js-form-select" id="form-input-2-15">
+							<option value="0" selected="selected">В течение дня</option>
+							<option value="0">В течение дня2</option>
+							<option value="0">В течение дня3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--button">
+					<button class="btn btn-full" type="button">Заказать услугу</button>
+				</div>
+			</div>
+			<div class="form-col">
+				<div class="form-input form-input--check-footer js-form-privacy-agree">
+					<label class="input-checkbox">
+						<input id="form-input-2-16" type="checkbox"/><span class="hide-md js-form-privacy-agree-short">Соглашаюсь на
+							<button class="dotted js-form-privacy-agree-responsive-btn" type="button" target="_blank"><span>обработку персональных данных</span></button></span><span class="hide-up-to-md js-form-privacy-agree-full">Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container clearfix">
+	<h1 class="main-title">Заявка на проверку товарного знака</h1>
+</div>
+<section class="section container">
+	<div class="form js-form">
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-3-1">Ваше имя<span class="asterisk">*</span></label>
+					<input id="form-input-3-1" type="text" placeholder="Сергей Заказчиков"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-3-2">E-mail<span class="asterisk">*</span></label>
+					<input id="form-input-3-2" type="text" placeholder="zakazchikov@gmail.com"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-3-3">Телефон<span class="asterisk">*</span></label>
+					<input id="form-input-3-3" type="text" placeholder="+7 (925) 490-22-10"/>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-3-4">Название организации<span class="asterisk">*</span></label>
+					<input id="form-input-3-4" type="text"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-3-5">Количество классов МКТУ<span class="asterisk">*</span> <span class="que">Подсказка</span></label>
+					<input id="form-input-3-5" type="text"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--select">
+					<label for="form-input-3-6">Выбранный пакет услуг <span class="que">Подсказка</span></label>
+					<div class="form-select-wrapper">
+						<select class="js-select-editable" id="form-input-3-6">
+							<option value="0" selected="selected">Все включено ("под ключ")</option>
+							<option value="0">Все включено ("под ключ") 2</option>
+							<option value="0">Все включено ("под ключ") 3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-2-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-3-7">Словесная часть товарного знака (название)<span class="asterisk">*</span> <span class="que">Подсказка</span></label>
+					<input id="form-input-3-7" type="text"/>
+				</div>
+				<div class="form-input form-input--text">
+					<label for="form-input-3-8">Перечень классов МКТУ (видов деятельности)<span class="asterisk">*</span> <span class="que">Подсказка</span></label>
+					<input id="form-input-3-8" type="text"/>
+				</div>
+				<div class="form-input form-input--text-textarea">
+					<label for="form-input-3-9">Комментарий</label>
+					<textarea id="form-input-3-9"></textarea>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--multifile">
+					<label>Комбинированное обозначение товарного знака <span class="que">Подсказка</span></label>
+					<div class="input-multifile" data-name="form-input-3-10[]">
+						<input id="form-input-3-10" type="file" name="form-input-3-10[]"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--select">
+					<label for="form-input-3-11">Удобное время связи:</label>
+					<div class="form-select-wrapper">
+						<select class="js-form-select" id="form-input-3-11">
+							<option value="0" selected="selected">В течение дня</option>
+							<option value="0">В течение дня2</option>
+							<option value="0">В течение дня3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--button">
+					<button class="btn btn-full" type="button">Заказать услугу</button>
+				</div>
+			</div>
+			<div class="form-col">
+				<div class="form-input form-input--check-footer js-form-privacy-agree">
+					<label class="input-checkbox">
+						<input id="form-input-3-12" type="checkbox"/><span class="hide-md js-form-privacy-agree-short">Соглашаюсь на
+							<button class="dotted js-form-privacy-agree-responsive-btn" type="button" target="_blank"><span>обработку персональных данных</span></button></span><span class="hide-up-to-md js-form-privacy-agree-full">Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container clearfix">
+	<h1 class="main-title">Задать вопрос эксперту и получить бесплатную консультацию</h1>
+</div>
+<section class="section container">
+	<div class="form js-form">
+		<div class="form-row">
+			<div class="form-col form-col-1-2">
+				<div class="form-input form-input--text">
+					<label for="form-input-4-1">Ваше имя<span class="asterisk">*</span></label>
+					<input id="form-input-4-1" type="text"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-2">
+				<div class="form-input form-input--text">
+					<label for="form-input-4-2">Ваш телефон<span class="asterisk">*</span></label>
+					<input id="form-input-4-2" type="text"/>
+				</div>
+			</div>
+			<div class="form-col">
+				<div class="form-input form-input--text-textarea">
+					<label for="form-input-4-3">Опишите суть вашего вопроса</label>
+					<textarea id="form-input-4-3"></textarea>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--select">
+					<label for="form-input-4-5">Удобное время связи:</label>
+					<div class="form-select-wrapper">
+						<select class="js-form-select" id="form-input-4-5">
+							<option value="0" selected="selected">В течение дня</option>
+							<option value="0">В течение дня2</option>
+							<option value="0">В течение дня3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--button">
+					<button class="btn btn-full" type="button">Отправить</button>
+				</div>
+			</div>
+			<div class="form-col">
+				<div class="form-input form-input--check-footer js-form-privacy-agree">
+					<label class="input-checkbox">
+						<input id="form-input-4-6" type="checkbox"/><span class="hide-md js-form-privacy-agree-short">Соглашаюсь на
+							<button class="dotted js-form-privacy-agree-responsive-btn" type="button" target="_blank"><span>обработку персональных данных</span></button></span><span class="hide-up-to-md js-form-privacy-agree-full">Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container clearfix">
+	<h1 class="main-title">Заявка на услугу</h1>
+</div>
+<section class="section container">
+	<div class="form js-form">
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-5-1">Ваше имя<span class="asterisk">*</span></label>
+					<input id="form-input-5-1" type="text" placeholder="Сергей Заказчиков"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-5-2">E-mail<span class="asterisk">*</span></label>
+					<input id="form-input-5-2" type="text" placeholder="zakazchikov@gmail.com"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-5-3">Телефон<span class="asterisk">*</span></label>
+					<input id="form-input-5-3" type="text" placeholder="+7 (925) 490-22-10"/>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col">
+				<div class="form-input form-input--select">
+					<label for="form-input-5-4">Услуга <span class="que">Подсказка</span></label>
+					<div class="form-select-wrapper">
+						<select class="js-select-editable" id="form-input-5-4">
+							<option value="0" selected="selected">Защита коммерческих обозначений</option>
+							<option value="0">Защита коммерческих обозначений 2</option>
+							<option value="0">Защита коммерческих обозначений 3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-col form-col-2-3">
+				<div class="form-input form-input--text-textarea">
+					<label for="form-input-5-5">Комментарий</label>
+					<textarea id="form-input-5-5"></textarea>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--multifile">
+					<label>Приложите файлы если нужно</label>
+					<div class="input-multifile" data-name="form-input-5-6[]">
+						<input id="form-input-5-6" type="file" name="form-input-5-6[]"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--select">
+					<label for="form-input-5-7">Удобное время связи:</label>
+					<div class="form-select-wrapper">
+						<select class="js-form-select" id="form-input-5-7">
+							<option value="0" selected="selected">В течение дня</option>
+							<option value="0">В течение дня2</option>
+							<option value="0">В течение дня3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--button">
+					<button class="btn btn-full" type="button">Заказать услугу</button>
+				</div>
+			</div>
+			<div class="form-col">
+				<div class="form-input form-input--check-footer js-form-privacy-agree">
+					<label class="input-checkbox">
+						<input id="form-input-5-8" type="checkbox"/><span class="hide-md js-form-privacy-agree-short">Соглашаюсь на
+							<button class="dotted js-form-privacy-agree-responsive-btn" type="button" target="_blank"><span>обработку персональных данных</span></button></span><span class="hide-up-to-md js-form-privacy-agree-full">Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container clearfix">
+	<h1 class="main-title">Сообщить о нарушении авторских прав</h1>
+</div>
+<section class="section container">
+	<div class="form js-form">
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-6-1">Ваше имя<span class="asterisk">*</span></label>
+					<input id="form-input-6-1" type="text" placeholder="Сергей Заказчиков"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-6-2">E-mail<span class="asterisk">*</span></label>
+					<input id="form-input-6-2" type="text" placeholder="zakazchikov@gmail.com"/>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--text">
+					<label for="form-input-6-3">Телефон<span class="asterisk">*</span></label>
+					<input id="form-input-6-3" type="text" placeholder="+7 (925) 490-22-10"/>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-2">
+				<div class="form-input form-input--text-textarea">
+					<label for="form-input-6-4">На каких ресурсах нарушаются ваши права?</label>
+					<textarea id="form-input-6-4"></textarea>
+				</div>
+			</div>
+			<div class="form-col form-col-1-2">
+				<div class="form-input form-input--text-textarea">
+					<label for="form-input-6-5">Опишите ситуацию</label>
+					<textarea id="form-input-6-5"></textarea>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--select">
+					<label for="form-input-6-6">Удобное время связи:</label>
+					<div class="form-select-wrapper">
+						<select class="js-form-select" id="form-input-6-6">
+							<option value="0" selected="selected">В течение дня</option>
+							<option value="0">В течение дня2</option>
+							<option value="0">В течение дня3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-col form-col-1-3">
+				<div class="form-input form-input--button">
+					<button class="btn btn-full" type="button">Отправить</button>
+				</div>
+			</div>
+			<div class="form-col">
+				<div class="form-input form-input--check-footer js-form-privacy-agree">
+					<label class="input-checkbox">
+						<input id="form-input-6-7" type="checkbox"/><span class="hide-md js-form-privacy-agree-short">Соглашаюсь на
+							<button class="dotted js-form-privacy-agree-responsive-btn" type="button" target="_blank"><span>обработку персональных данных</span></button></span><span class="hide-up-to-md js-form-privacy-agree-full">Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a></span>
 					</label>
 				</div>
 			</div>

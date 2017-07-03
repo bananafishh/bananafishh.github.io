@@ -110,6 +110,113 @@ App.Control.install({
             theme: "form-select"
         });
 
+        this.choiseRadioContent = this.$el.find('.js-form-radio-choise');
+        this.choiseTabsContent = this.$el.find('.js-form-tabs-changer');
+        this.privacyAgree = this.$el.find('.js-form-privacy-agree');
+
+        if(this.choiseRadioContent)
+            this.initRadioChoisingControl();
+
+        if(this.choiseTabsContent)
+            this.initTabsContentControl();
+
+        if(this.privacyAgree)
+            this.initPrivacyAgree();
+
+    },
+
+    initPrivacyAgree: function () {
+        var self = this;
+        this.privacyAgree.find('.js-form-privacy-agree-responsive-btn').on( 'click', function() {
+            //self.contentTabChange($(this));
+            self.privacyAgree.find('.js-form-privacy-agree-full').removeClass('hide-up-to-md');
+            self.privacyAgree.find('.js-form-privacy-agree-short').hide(0);
+        });
+    },
+
+    initTabsContentControl: function () {
+        var self = this;
+        _.each(this.choiseTabsContent, function(tabsContent){
+            $tabsContent = $(tabsContent);
+            $controlBtns = $tabsContent.find('.js-form-tabs-changer-btns')
+                .find('span');
+            $controlTabs = $tabsContent.find('.js-form-tabs-changer-content')
+                .find('.js-form-tabs-changer-block');
+
+            $controlTabs.hide(0);
+
+            if($controlBtns.length > 0) {
+                $activeBtn = $controlBtns.eq(0);
+                $controlBtns.not($activeBtn)
+                    .addClass('dotted cur-pointer');
+                $activeTab = $controlTabs.eq(0);
+                $activeTab.show(0);
+            }
+
+            $controlBtns.on( 'click', function() {
+                self.contentTabChange($(this));
+            });
+        });
+    },
+    contentTabChange: function($el) {
+        $tabsContent = $el.closest('.js-form-tabs-changer');
+        $controlBtns = $tabsContent.find('.js-form-tabs-changer-btns')
+            .find('span');
+        $controlTabs = $tabsContent.find('.js-form-tabs-changer-content')
+            .find('.js-form-tabs-changer-block');
+
+        $el.removeClass('dotted cur-pointer');
+        $tab2Show = $controlTabs.eq($controlBtns.index($el));
+        $controlTabs.not($tab2Show)
+            .hide(0);
+        $tab2Show.show(0);
+        $controlBtns.not($el)
+            .addClass('dotted cur-pointer');
+    },
+
+    initRadioChoisingControl: function () {
+        var self = this;
+        _.each(this.choiseRadioContent, function(radioCollection){
+            $control = $(radioCollection);
+            $controlRadios = $control.find('input[type="radio"]');
+            $controledBlocks = $controlled = self.findClosestChoisingBlock($control)
+                .find('.js-form-radio-content-block');
+            $controledBlocks.hide(0);
+            $activeRadioOpt = $controlRadios.filter(':checked');
+            if($activeRadioOpt) {
+                $activeOptIndex = $controlRadios.index($activeRadioOpt);
+                if($activeOptIndex >= 0) {
+                    $controledBlocks.eq($activeOptIndex)
+                        .show(0);
+                }
+            }
+            $controlRadios.on( 'click', function() {
+                self.choisingBlockChange($(this));
+            });
+        });
+    },
+    choisingBlockChange: function($el) {
+        $control = $el.closest('.js-form-radio-choise');
+        $controledBlocks = this.findClosestChoisingBlock($control)
+            .find('.js-form-radio-content-block');
+        $block2Show = $controledBlocks.eq($control.find('input[type="radio"]')
+            .index($el));
+        $controledBlocks.not($block2Show)
+            .hide(0);
+        $block2Show.show(0);
+    },
+    findClosestChoisingBlock: function($el) {
+        if($el.parent().length > 0) {
+            $findRes = $el.parent()
+                .find('.js-form-radio-content');
+            if ($findRes.length > 0) {
+                return $($findRes[0]);
+            } else {
+                return  this.findClosestChoisingBlock($el.parent())
+            }
+        }
+        else
+            return $();
     }
 });
 var MainOfficeMap = {
@@ -516,3 +623,242 @@ var MainSlider = {
 };
 
 App.Control.install(MainSlider);
+App.Control.install({
+    el: '.input-checkbox',
+    name: 'InputCheckbox',
+    initialize: function () {
+        if(this.$('input').is(':checked'))
+            this.$el.addClass('_checked');
+    },
+    events: {
+        'change input': 'toggle'
+    },
+    toggle: function() {
+        if(this.$('input').is(':checked'))
+            this.$el.addClass('_checked');
+        else
+            this.$el.removeClass('_checked');
+    }
+});
+App.Control.install({
+    el: '.input-file',
+    name: 'InputFile',
+    initialize: function () {
+        //this.$('input')
+        this.$inputFile = this.$('input[type=file]')
+            .addClass('file-hidden');
+
+        this.$inputPath = $(document.createElement('input'))
+            .addClass('file-path-input')
+            .attr('type','text')
+            .attr('readonly',true)
+            .prependTo(this.$el);
+
+        this.$inputButton = $(document.createElement('div'))
+            .addClass('btn btn-input-file')
+            .html('Обзор...')
+            .prependTo(this.$('label'));
+
+        this.$el.addClass('input-file2');
+
+    },
+    events: {
+        'change [type=file]': 'changeValue'
+    },
+    changeValue: function() {
+        this.$inputPath.val(this.$inputFile.val().replace('C:\\fakepath\\',''));
+    }
+});
+App.Control.install({
+    el: '.input-multifile',
+    name: 'InputMultiFile',
+    initialize: function () {
+        //this.$('input')
+
+        var self = this;
+
+        this.inputName = this.$el.data('name');
+
+        this.$inputButton = $(document.createElement('div'))
+            .addClass('btn btn-input-multifile')
+            .html('Выбрать файлы')
+            .prependTo(this.$el);
+
+        this.$fileList = $(document.createElement('div'))
+            .addClass('input-multifile__file-list')
+            .prependTo(this.$el);
+
+        this.$inputButton.on( 'click', function() {
+            self.startChoose($(this));
+        });
+
+        this.$('input[type=file]')
+            .addClass('file-hidden');
+
+        /*
+        this.$inputFile = this.$('input[type=file]')
+            .addClass('file-hidden');
+
+        this.$inputPath = $(document.createElement('input'))
+            .addClass('file-path-input')
+            .attr('type','text')
+            .attr('readonly',true)
+            .prependTo(this.$el);
+
+        this.$inputButton = $(document.createElement('div'))
+            .addClass('btn btn-input-file')
+            .html('Обзор...')
+            .prependTo(this.$('label'));
+
+        this.$el.addClass('input-file2');
+        */
+
+    },
+    events: {
+        //'change [type=file]': 'changeValue'
+    },
+    startChoose: function() {
+        var self = this;
+        $lastInput = this.$el.find('input[type=file]').last();
+        $lastInput.trigger('click');
+        $lastInput.one( 'change', function() {
+            if(!_.isEmpty($lastInput.val())) {
+                self.addtitionsFile2List($(this));
+            } else {
+                $(this).off();
+            }
+        });
+        //console.log($lastInput);
+        //this.$inputPath.val(this.$inputFile.val().replace('C:\\fakepath\\',''));
+    },
+    addtitionsFile2List: function($input) {
+        var self = this,
+            addFilePath = $input.val().replace('C:\\fakepath\\','');
+
+        $inputIndex = this.$el.find('input[type=file]').index($input);
+
+        if(_.isUndefined(this.$fileList.find('.input-multifile__file-item').get($inputIndex))) {
+
+            var $itemFileRemoveBtn = $(document.createElement('span'))
+                .addClass('input-multifile__file-item-remove')
+                .html('&times;')
+                .one( 'click', function() {
+                    self.removeFile4List($(this));
+                });
+
+            var $itemFileName = $(document.createElement('span'))
+                .addClass('input-multifile__file-item-name')
+                .html(addFilePath);
+
+            var $fileItem = $(document.createElement('div'))
+                .addClass('input-multifile__file-item')
+                .append($itemFileName)
+                .append($itemFileRemoveBtn)
+                .appendTo(this.$fileList);
+
+            var $nextFileInput = $(document.createElement('input'))
+                .attr('type','file')
+                .attr('name',this.inputName)
+                .addClass('file-hidden')
+                .appendTo(this.$el);
+        } else
+            return null;
+
+        /*
+        this.$fileList = $(document.createElement('div'))
+            .addClass('input-multifile__file-list')
+            .prependTo(this.$el);
+        /*
+        $lastInput = this.$el.find('input[type=file]').last();
+        $lastInput.trigger('click');
+        $lastInput.one( 'change', function() {
+            //console.log($lastInput.val());
+            self.addtitionsFile2List($lastInput);
+        });
+        */
+        //console.log($lastInput);
+        //this.$inputPath.val(this.$inputFile.val().replace('C:\\fakepath\\',''));
+    },
+    removeFile4List: function($removeBtn) {
+        var self = this;
+        $fileItem = $removeBtn.parent();
+        $inputIndex = this.$fileList.find('.input-multifile__file-item').index($fileItem);
+
+        $input = this.$el.find('input[type=file]').get($inputIndex);
+
+        $fileItem.remove();
+        $input.remove();
+
+
+    }
+});
+App.Control.install({
+    el: '.input-radio',
+    name: 'InputRadio',
+    initialize: function () {
+
+        if(this.$('input').is(':checked'))
+            this.$el.addClass('_checked');
+
+        this.inputName = this.$('input').attr('name');
+        this.$arOptions = $('body')
+            .find('input[name=\'' + this.inputName + '\']')
+            .parent();
+
+    },
+    events: {
+        'change input': 'toggle'
+    },
+    toggle: function() {
+
+        _.each(this.$arOptions, function(input){
+            $(input).removeClass('_checked');
+        });
+
+        this.$el.addClass('_checked');
+
+    }
+});
+App.Control.install({
+    el: '.spoiler-link',
+    name: 'SpoilerContent',
+    initialize: function () {
+        this.$content = $();
+        this.hidden = true;
+
+        if(this.$el.data('closest'))
+            this.$content = this.findClosest(this.$el);
+
+        this.$content.hide(0);
+    },
+    events: {
+        'click': 'toggle'
+    },
+    toggle: function() {
+        if(this.hidden) {
+            this.$el.addClass('_rolldown');
+            this.hidden = false;
+            this.$content.slideDown(400, function ()
+                {}
+            );
+        } else {
+            this.$el.removeClass('_rolldown');
+            this.hidden = true;
+            this.$content.slideUp(400, function ()
+                {}
+            );
+        }
+    },
+    findClosest: function($el) {
+        if($el.parent().length > 0) {
+            $findRes = $el.parent().find('.spoiler-content');
+            if ($findRes.length > 0) {
+                return $($findRes[0]);
+            } else {
+                return  this.findClosest($el.parent())
+            }
+        }
+        else
+            return $();
+    }
+});
