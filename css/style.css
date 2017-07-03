@@ -4565,6 +4565,22 @@ textarea.field-text__input {
   font-style: italic;
   color: #a5b1bc;
 }
+.social-likes .ya-share2__link {
+  border-bottom: none;
+}
+.social-likes::before {
+  content: "";
+  width: 82px;
+  height: 2px;
+  background-color: #ff1037;
+}
+.social-likes__title {
+  margin-right: 6px;
+}
+.social-likes__buttons {
+  display: inline-block;
+  vertical-align: middle;
+}
 .social-links {
   padding-left: 0;
   margin: 0;
