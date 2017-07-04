@@ -3201,8 +3201,8 @@ input[type="submit"] {
   }
 }
 @media (min-width: 768px) {
-  .ctx-right--mb30 {
-    margin-bottom: 30px;
+  .ctx-right--mb25 {
+    margin-bottom: 25px;
   }
 }
 @media (max-width: 767px) {
