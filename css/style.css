@@ -8372,11 +8372,6 @@ html [type="button"],
   }
 }
 @media (min-width: 768px) and (max-width: 934px) {
-  .highlighted-block--inside-col .highlighted-block__icon--pdf-align {
-    margin-bottom: 14px;
-  }
-}
-@media (min-width: 768px) and (max-width: 934px) {
   .highlighted-block--inside-col .highlighted-block__text {
     display: block;
     width: auto;
@@ -8428,9 +8423,6 @@ html [type="button"],
     vertical-align: middle;
   }
 }
-.highlighted-block__icon--align-top {
-  vertical-align: top;
-}
 .highlighted-block__icon--pdf::before {
   content: "";
   display: inline-block;
@@ -8444,16 +8436,6 @@ html [type="button"],
   .highlighted-block__icon--pdf::before {
     background-image: url("../assets/sprites/sprite@2x.png");
     background-size: 62px 541px;
-  }
-}
-.highlighted-block__icon--pdf-align {
-  vertical-align: top;
-}
-@media (min-width: 480px) {
-  .highlighted-block__icon--pdf-align {
-    position: relative;
-    top: 3px;
-    margin-bottom: 5px;
   }
 }
 .highlighted-block__icon--document::before {
