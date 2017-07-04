@@ -8416,11 +8416,6 @@ html [type="button"],
 .highlighted-block__icon img {
   vertical-align: middle;
 }
-.highlighted-block__icon::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-}
 @media (max-width: 479px) {
   .highlighted-block__icon {
     margin-bottom: 14px;
@@ -8437,6 +8432,9 @@ html [type="button"],
   vertical-align: top;
 }
 .highlighted-block__icon--pdf::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
   background-image: url("../assets/sprites/sprite.png");
   background-position: 0px -397px;
   width: 57px;
@@ -8459,6 +8457,9 @@ html [type="button"],
   }
 }
 .highlighted-block__icon--document::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
   background-image: url("../assets/sprites/sprite.png");
   background-position: 0px -470px;
   width: 56px;
