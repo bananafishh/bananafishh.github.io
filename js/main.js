@@ -62,23 +62,6 @@ var BackToTop = {
 };
 
 App.Control.install(BackToTop);
-App.Control.install({
-    el: '.input-checkbox',
-    name: 'InputCheckbox',
-    initialize: function () {
-        if(this.$('input').is(':checked'))
-            this.$el.addClass('_checked');
-    },
-    events: {
-        'change input': 'toggle'
-    },
-    toggle: function() {
-        if(this.$('input').is(':checked'))
-            this.$el.addClass('_checked');
-        else
-            this.$el.removeClass('_checked');
-    }
-});
 var ContentSlider = {
     el: '.js-content-slider',
     name: 'ContentSlider',
@@ -108,6 +91,17 @@ App.Control.install({
         this.$('.js-form-select').select2({
             minimumResultsForSearch: Infinity,
             theme: "form-select"
+        });
+
+        this.$('.js-form-multiselect').selectpicker({
+            //countSelectedText: 1,
+            selectedTextFormat: "count",
+            selectOnTab: true,
+            //noneSelectedText: "",
+            //style: "",
+            //title: "",
+            //width: "",
+            //windowPadding: "",
         });
 
         this.choiseRadioContent = this.$el.find('.js-form-radio-choise');
@@ -459,6 +453,82 @@ var ScrollTo = {
 };
 
 App.Control.install(ScrollTo);
+var ScrollBarEmployees = {
+    el: '.js-scroll-employees',
+    name: 'ScrollBarEmployees',
+    initialize: function() {
+
+        this.contentClass = _.isUndefined(this.$el.data("scrollbarContentClass")) ? 'hscroll-wrapper' : this.$el.data("scrollbarContentClass");
+        this.brackpointRules = {
+            360 : 2,
+            515 : 3,
+            768 : 4
+        };
+        this.responsiveMarginPersent = 3;
+
+        this.initScrollbar();
+
+    },
+
+    initScrollbar: function() {
+
+        var self = this;
+
+        this.$el.children().first().addClass(this.contentClass);
+
+        this.scrollbar = this.$el.mCustomScrollbar({
+            axis:"x",
+            theme:"dark-2",
+            autoExpandScrollbar:true,
+            scrollInertia: 500,
+            mouseWheel: {
+                enable: true,
+                normalizeDelta: true
+            },
+            keyboard:{
+                enable: false
+            },
+            advanced:{
+                autoExpandHorizontalScroll:true,
+                updateOnContentResize: true
+            },
+            callbacks:{
+                onBeforeUpdate:function(){
+                    self.initItems();
+                },
+                onUpdate:function(){
+                    self.resizeItems();
+                }
+            }
+        });
+    },
+
+    initItems: function() {
+
+        this.$('.'+this.contentClass).children().css('float', 'left');
+
+    },
+
+    resizeItems: function() {
+
+        var itemsInRow = 1;
+
+        _.mapObject(this.brackpointRules, function(val, key) {
+            if($(window).width() > key)
+                itemsInRow = val;
+        });
+
+        var marginWidth = (this.$el.width() * (this.responsiveMarginPersent / 100));
+        this.$('.'+this.contentClass).children()
+            .width( ( (this.$el.width() - ( marginWidth * (itemsInRow -1) ) ) / itemsInRow) + 'px' )
+            .slice(1)
+            .css('margin-left', marginWidth + 'px');
+
+
+    }
+};
+
+App.Control.install(ScrollBarEmployees);
 var SectionNav = {
     el: '.js-section-nav',
     name: 'SectionNav',
@@ -640,6 +710,106 @@ App.Control.install({
             this.$el.removeClass('_checked');
     }
 });
+/* ============================================================
+ * bootstrap-dropdown.js v2.0.3
+ * http://twitter.github.com/bootstrap/javascript.html#dropdowns
+ * ============================================================
+ * Copyright 2012 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ============================================================ */
+
+
+!function ($) {
+
+    "use strict"; // jshint ;_;
+
+
+    /* DROPDOWN CLASS DEFINITION
+     * ========================= */
+
+    var toggle = '[data-toggle="dropdown"]'
+        , Dropdown = function (element) {
+        var $el = $(element).on('click.dropdown.data-api', this.toggle)
+        $('html').on('click.dropdown.data-api', function () {
+            $el.parent().removeClass('open')
+        })
+    }
+
+    Dropdown.prototype = {
+
+        constructor: Dropdown
+
+        , toggle: function (e) {
+            var $this = $(this)
+                , $parent
+                , selector
+                , isActive
+
+            if ($this.is('.disabled, :disabled')) return
+
+            selector = $this.attr('data-target')
+
+            if (!selector) {
+                selector = $this.attr('href')
+                selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
+            }
+
+            $parent = $(selector)
+            $parent.length || ($parent = $this.parent())
+
+            isActive = $parent.hasClass('open')
+
+            clearMenus()
+
+            if (!isActive) $parent.toggleClass('open')
+
+            return false
+        }
+
+    }
+
+    function clearMenus() {
+        $(toggle).parent().removeClass('open')
+    }
+
+
+    /* DROPDOWN PLUGIN DEFINITION
+     * ========================== */
+
+    $.fn.dropdown = function (option) {
+        return this.each(function () {
+            var $this = $(this)
+                , data = $this.data('dropdown')
+            if (!data) $this.data('dropdown', (data = new Dropdown(this)))
+            if (typeof option == 'string') data[option].call($this)
+        })
+    }
+
+    $.fn.dropdown.Constructor = Dropdown
+
+
+    /* APPLY TO STANDARD DROPDOWN ELEMENTS
+     * =================================== */
+
+    $(function () {
+        $('html').on('click.dropdown.data-api', clearMenus)
+        $('body')
+            .on('click.dropdown', '.dropdown form', function (e) { e.stopPropagation() })
+            .on('click.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+    })
+
+}(window.jQuery);
 App.Control.install({
     el: '.input-file',
     name: 'InputFile',
