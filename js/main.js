@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	svg4everybody();
 
-	$(".js-select").select2({
+	$('.js-select').select2({
   		minimumResultsForSearch: Infinity
   	});
 
@@ -11,18 +11,18 @@ $(document).ready(function() {
 	});
 
 	$('.js-fancy-img').fancybox({
-        wrapCSS: 'fancy-img',
-        margin: ($(window).width() > 937) ? 20 : 5,
-        fitToView: true,
-        padding: 15,
-        helpers : {
-          overlay : {
-            css : {
-              'background' : 'rgba(27, 71, 105, 0.7)'
-            }
-          }
+    wrapCSS: 'fancy-img',
+    margin: ($(window).width() > 937) ? 20 : 5,
+    fitToView: true,
+    padding: 15,
+    helpers : {
+      overlay : {
+        css : {
+          'background' : 'rgba(27, 71, 105, 0.7)'
         }
-    });
+      }
+    }
+  });
 });
 
 
@@ -93,20 +93,12 @@ App.Control.install({
             theme: "form-select"
         });
 
-        this.$('.js-form-multiselect').selectpicker({
-            //countSelectedText: 1,
-            selectedTextFormat: "count",
-            selectOnTab: true,
-            //noneSelectedText: "",
-            //style: "",
-            //title: "",
-            //width: "",
-            //windowPadding: "",
-        });
-
+        this.multiSelectInputs = this.$el.find('.js-form-multiselect');
         this.choiseRadioContent = this.$el.find('.js-form-radio-choise');
         this.choiseTabsContent = this.$el.find('.js-form-tabs-changer');
         this.privacyAgree = this.$el.find('.js-form-privacy-agree');
+        this.slider = this.$el.find('.js-slider-widget');
+        this.sliderValue = this.$el.find('.js-slider-value');
 
         if(this.choiseRadioContent)
             this.initRadioChoisingControl();
@@ -117,12 +109,34 @@ App.Control.install({
         if(this.privacyAgree)
             this.initPrivacyAgree();
 
+        if(this.multiSelectInputs)
+            this.initMultiSelectControl();
+
+        if(this.slider && this.sliderValue)
+            this.initFormSlider();
+
+    },
+
+    initMultiSelectControl: function () {
+        var self = this;
+        _.each(this.multiSelectInputs, function(multiSelect){
+
+            $multiSelect = $(multiSelect);
+
+            var emptyText = !_.isEmpty($multiSelect.data('emptyText')) ? $multiSelect.data('emptyText') : 'Ничго не выбрано';
+
+            this.$('.js-form-multiselect').selectpicker({
+                selectedTextFormat: "count > 2",
+                selectOnTab: true,
+                noneSelectedText: emptyText,
+            });
+
+        });
     },
 
     initPrivacyAgree: function () {
         var self = this;
         this.privacyAgree.find('.js-form-privacy-agree-responsive-btn').on( 'click', function() {
-            //self.contentTabChange($(this));
             self.privacyAgree.find('.js-form-privacy-agree-full').removeClass('hide-up-to-md');
             self.privacyAgree.find('.js-form-privacy-agree-short').hide(0);
         });
@@ -211,6 +225,26 @@ App.Control.install({
         }
         else
             return $();
+    },
+
+    initFormSlider: function() {
+        var self = this;
+
+        this.slider.slider({
+            range: 'min',
+            min: 1,
+            max: 45,
+            step: 1,
+            value: self.sliderValue.val(),
+
+            slide: function(event, ui) {
+                self.sliderValue.val(ui.value);
+            }
+        });
+
+        this.sliderValue.on('input', function(e) {
+            self.slider.slider('value', $(e.currentTarget).val());
+        })
     }
 });
 var MainOfficeMap = {
@@ -814,7 +848,7 @@ App.Control.install({
     el: '.input-file',
     name: 'InputFile',
     initialize: function () {
-        //this.$('input')
+
         this.$inputFile = this.$('input[type=file]')
             .addClass('file-hidden');
 
@@ -843,7 +877,6 @@ App.Control.install({
     el: '.input-multifile',
     name: 'InputMultiFile',
     initialize: function () {
-        //this.$('input')
 
         var self = this;
 
@@ -865,27 +898,6 @@ App.Control.install({
         this.$('input[type=file]')
             .addClass('file-hidden');
 
-        /*
-        this.$inputFile = this.$('input[type=file]')
-            .addClass('file-hidden');
-
-        this.$inputPath = $(document.createElement('input'))
-            .addClass('file-path-input')
-            .attr('type','text')
-            .attr('readonly',true)
-            .prependTo(this.$el);
-
-        this.$inputButton = $(document.createElement('div'))
-            .addClass('btn btn-input-file')
-            .html('Обзор...')
-            .prependTo(this.$('label'));
-
-        this.$el.addClass('input-file2');
-        */
-
-    },
-    events: {
-        //'change [type=file]': 'changeValue'
     },
     startChoose: function() {
         var self = this;
@@ -898,8 +910,6 @@ App.Control.install({
                 $(this).off();
             }
         });
-        //console.log($lastInput);
-        //this.$inputPath.val(this.$inputFile.val().replace('C:\\fakepath\\',''));
     },
     addtitionsFile2List: function($input) {
         var self = this,
@@ -934,22 +944,9 @@ App.Control.install({
         } else
             return null;
 
-        /*
-        this.$fileList = $(document.createElement('div'))
-            .addClass('input-multifile__file-list')
-            .prependTo(this.$el);
-        /*
-        $lastInput = this.$el.find('input[type=file]').last();
-        $lastInput.trigger('click');
-        $lastInput.one( 'change', function() {
-            //console.log($lastInput.val());
-            self.addtitionsFile2List($lastInput);
-        });
-        */
-        //console.log($lastInput);
-        //this.$inputPath.val(this.$inputFile.val().replace('C:\\fakepath\\',''));
     },
     removeFile4List: function($removeBtn) {
+
         var self = this;
         $fileItem = $removeBtn.parent();
         $inputIndex = this.$fileList.find('.input-multifile__file-item').index($fileItem);
@@ -958,7 +955,6 @@ App.Control.install({
 
         $fileItem.remove();
         $input.remove();
-
 
     }
 });
