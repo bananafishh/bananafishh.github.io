@@ -5141,7 +5141,7 @@ textarea.field-text__input {
   clear: both;
 }
 .post-header__img {
-  padding-top: 5px;
+  margin-top: 5px;
 }
 @media (min-width: 480px) {
   .post-header__img {
