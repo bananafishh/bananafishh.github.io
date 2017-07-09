@@ -3319,10 +3319,10 @@ input[type="submit"] {
 .news .news-preview {
   margin-bottom: 29px;
 }
-.news--latest {
+.news--only-in-section {
   margin-bottom: -11px;
 }
-.news--all {
+.news--before-pagination {
   padding-bottom: 1px;
   margin-bottom: -24px;
 }
@@ -5131,6 +5131,40 @@ textarea.field-text__input {
 }
 .partners__partner-link:hover span {
   border-bottom-color: #0075b8;
+}
+.post-header {
+  margin-bottom: 34px;
+}
+.post-header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.post-header__author-img {
+  float: left;
+  padding-top: 5px;
+}
+@media (max-width: 479px) {
+  .post-header__author-img {
+    display: none;
+  }
+}
+@media (min-width: 480px) {
+  .post-header__text {
+    margin-left: 127px;
+  }
+}
+.post-header__meta {
+  margin-bottom: 6px;
+  font-style: italic;
+  color: #a5b1bc;
+}
+.post-header__author-name {
+  margin-bottom: 7px;
+  font-size: 1.285714285714286em;
+  font-weight: 700;
+  line-height: 1.444;
+  color: #0075b8;
 }
 .price-list {
   padding-left: 0;
