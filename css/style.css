@@ -3821,6 +3821,9 @@ input[type="submit"] {
 .comments {
   padding-top: 26px;
 }
+.comments--after-social-likes {
+  padding-top: 50px;
+}
 .contacts-table {
   width: 100%;
   border-collapse: collapse;
@@ -5145,7 +5148,7 @@ textarea.field-text__input {
 }
 @media (max-width: 479px) {
   .post-header__img {
-    margin-bottom: 5px;
+    margin-bottom: 9px;
   }
 }
 @media (min-width: 480px) {
