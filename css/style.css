@@ -5140,12 +5140,19 @@ textarea.field-text__input {
   display: table;
   clear: both;
 }
-.post-header__author-img {
-  float: left;
+.post-header__img {
   padding-top: 5px;
 }
+@media (min-width: 480px) {
+  .post-header__img {
+    float: left;
+  }
+}
+.post-header__img--bordered {
+  border: 5px solid #e6ebed;
+}
 @media (max-width: 479px) {
-  .post-header__author-img {
+  .post-header__img--author {
     display: none;
   }
 }
@@ -5154,10 +5161,19 @@ textarea.field-text__input {
     margin-left: 127px;
   }
 }
+@media (min-width: 480px) {
+  .post-header__text--margin-lg {
+    margin-left: 220px;
+  }
+}
 .post-header__meta {
   margin-bottom: 6px;
   font-style: italic;
   color: #a5b1bc;
+}
+.post-header__slash {
+  margin-right: 5px;
+  margin-left: 5px;
 }
 .post-header__author-name {
   margin-bottom: 7px;
