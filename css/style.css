@@ -5143,6 +5143,11 @@ textarea.field-text__input {
 .post-header__img {
   margin-top: 5px;
 }
+@media (max-width: 479px) {
+  .post-header__img {
+    margin-bottom: 5px;
+  }
+}
 @media (min-width: 480px) {
   .post-header__img {
     float: left;
