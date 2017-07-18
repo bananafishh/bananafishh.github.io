@@ -6051,7 +6051,7 @@ textarea.field-text__input {
   }
 }
 @media (min-width: 480px) and (max-width: 700px) {
-  .service-cards--info-cards .serice-card__icon {
+  .service-cards--info-cards .service-card__icon {
     display: block;
     width: auto;
     margin-bottom: 10px;
