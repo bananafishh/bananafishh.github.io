@@ -114,6 +114,41 @@ var DottedNavSlider = {
 };
 
 App.Control.install(DottedNavSlider);
+var EqualHeight = {
+    el: '.js-equal-height',
+    name: 'EqualHeight',
+
+    initialize: function() {
+        this.block = this.$('.js-equal-height__block');
+        this.svg = this.$('svg');
+
+        var self = this;
+
+        this.setEqualHeight();
+
+        $(window).bind('resize', function() {
+            self.setEqualHeight();
+        });
+    },
+
+    setEqualHeight: function() {
+        var maxHeight = 0;
+
+        this.block.css('height', 'auto');
+
+        this.block.each(function(index) {
+            var blockHeight = parseInt($(this).outerHeight());
+
+            if (blockHeight > maxHeight) {
+                maxHeight = blockHeight;
+            }
+        });
+
+        this.block.css('height', maxHeight);
+    }
+};
+
+App.Control.install(EqualHeight);
 App.Control.install({
     el: '.js-form',
     name: 'FormFabric',
