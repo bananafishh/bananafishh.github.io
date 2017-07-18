@@ -13850,12 +13850,17 @@ return jQuery;
 
 var App = {
     Views: {},
+	Plugins: {},
     Control: {
         instance : function(options) {
             Backbone.View.call(this, options);
         },
         install : function(options) {
             Backbone.$(function() {
+				if(!_.isEmpty(App.Plugins[options.name])) {
+					console.error('Application error: "' + options.name + '" plugin is already define.');
+				}
+				App.Plugins[options.name] = options;
                 if (!Backbone.$(options.el).length) {
                     return false;
                 }
@@ -13879,6 +13884,15 @@ var App = {
             $el.attr('cid', CAppView.cid);
             $el.addClass(options.name + 'Control');
 			return CAppView;
+        },
+        extend : function(pluginName, options) {
+			Backbone.$(function() {
+				if(_.isEmpty(App.Plugins[pluginName])) {
+					console.error('Application error: can not install "' + options.name + '" plugin. Extendable "' + pluginName + '" plugin is not define.');
+					return false;
+				}
+				App.Control.install(_.extend(_.clone(App.Plugins[pluginName]),options));
+			})
         }
     }
 };

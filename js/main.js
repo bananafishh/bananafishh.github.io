@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var sliderWidgetValue = $('.js-slider-widget__value').val();
+
 	svg4everybody();
 
 	$('.js-select').select2({
@@ -21,6 +23,25 @@ $(document).ready(function() {
           'background' : 'rgba(27, 71, 105, 0.7)'
         }
       }
+    }
+  });
+
+  $('.js-fancy-modal').fancybox({
+    wrapCSS: 'fancy-modal',
+    margin: ($(window).width() > 937) ? 20 : 5,
+    fitToView: true,
+    padding: 0,
+    maxWidth: 650,
+    helpers : {
+      overlay : {
+        css : {
+          'background' : 'rgba(27, 71, 105, 0.7)'
+        }
+      }
+    },
+    afterClose: function() {
+      $('.js-slider-widget__value').val(sliderWidgetValue);
+      $('.js-slider-widget__slider').slider('value', sliderWidgetValue);
     }
   });
 });
@@ -78,6 +99,21 @@ var ContentSlider = {
 };
 
 App.Control.install(ContentSlider);
+var DottedNavSlider = {
+    el: '.js-dotted-nav-slider',
+    name: 'DottedNavSlider',
+    initialize: function() {
+        this.$el.bxSlider({
+            controls: false,
+            slideWidth: 706,
+            minSlides: 1,
+            maxSlides: 1,
+            adaptiveHeight: true
+        });
+    }
+};
+
+App.Control.install(DottedNavSlider);
 App.Control.install({
     el: '.js-form',
     name: 'FormFabric',
@@ -93,12 +129,19 @@ App.Control.install({
             theme: "form-select"
         });
 
+
+        // Select2 внутри fancybox работает некорректно, так как z-index fancybox больше.
+        // Инициализируем плагин с дополнительным классом form-select-in-modal
+        // для задания нужного z-index выпадающему списку
+        this.$('.js-form-select-in-modal').select2({
+            minimumResultsForSearch: Infinity,
+            theme: "form-select form-select-in-modal"
+        });
+
         this.multiSelectInputs = this.$el.find('.js-form-multiselect');
         this.choiseRadioContent = this.$el.find('.js-form-radio-choise');
         this.choiseTabsContent = this.$el.find('.js-form-tabs-changer');
         this.privacyAgree = this.$el.find('.js-form-privacy-agree');
-        this.slider = this.$el.find('.js-slider-widget');
-        this.sliderValue = this.$el.find('.js-slider-value');
 
         if(this.choiseRadioContent)
             this.initRadioChoisingControl();
@@ -111,10 +154,6 @@ App.Control.install({
 
         if(this.multiSelectInputs)
             this.initMultiSelectControl();
-
-        if(this.slider && this.sliderValue)
-            this.initFormSlider();
-
     },
 
     initMultiSelectControl: function () {
@@ -225,26 +264,6 @@ App.Control.install({
         }
         else
             return $();
-    },
-
-    initFormSlider: function() {
-        var self = this;
-
-        this.slider.slider({
-            range: 'min',
-            min: 1,
-            max: 45,
-            step: 1,
-            value: self.sliderValue.val(),
-
-            slide: function(event, ui) {
-                self.sliderValue.val(ui.value);
-            }
-        });
-
-        this.sliderValue.on('input', function(e) {
-            self.slider.slider('value', $(e.currentTarget).val());
-        })
     }
 });
 var MainOfficeMap = {
@@ -487,19 +506,15 @@ var ScrollTo = {
 };
 
 App.Control.install(ScrollTo);
-var ScrollBarEmployees = {
-    el: '.js-scroll-employees',
-    name: 'ScrollBarEmployees',
+App.Control.install({
+    el: '.js-scrollbar',
+    name: 'ScrollBar',
+    responsiveMarginPersent: 0,
+    brackpointRulesItems: {},
+
     initialize: function() {
 
         this.contentClass = _.isUndefined(this.$el.data("scrollbarContentClass")) ? 'hscroll-wrapper' : this.$el.data("scrollbarContentClass");
-        this.brackpointRules = {
-            360 : 2,
-            515 : 3,
-            768 : 4
-        };
-        this.responsiveMarginPersent = 3;
-
         this.initScrollbar();
 
     },
@@ -545,24 +560,49 @@ var ScrollBarEmployees = {
 
     resizeItems: function() {
 
-        var itemsInRow = 1;
+        if(!_.isEmpty(this.brackpointRulesItems)) {
 
-        _.mapObject(this.brackpointRules, function(val, key) {
-            if($(window).width() > key)
-                itemsInRow = val;
-        });
+            var itemsInRow = 1;
 
-        var marginWidth = (this.$el.width() * (this.responsiveMarginPersent / 100));
-        this.$('.'+this.contentClass).children()
-            .width( ( (this.$el.width() - ( marginWidth * (itemsInRow -1) ) ) / itemsInRow) + 'px' )
-            .slice(1)
-            .css('margin-left', marginWidth + 'px');
+            _.mapObject(this.brackpointRulesItems, function (val, key) {
+                if ($(window).width() > key)
+                    itemsInRow = val;
+            });
+
+            var marginWidth = (this.$el.width() * (this.responsiveMarginPersent / 100));
+            this.$('.' + this.contentClass).children()
+                .width(( (this.$el.width() - ( marginWidth * (itemsInRow - 1) ) ) / itemsInRow) + 'px')
+                .slice(1)
+                .css('margin-left', marginWidth + 'px');
+
+        }
+    }
+});
 
 
+var ScrollBarEmployees = {
+    el: '.js-scroll-employees',
+    name: 'ScrollBarEmployees',
+    responsiveMarginPersent: 3,
+    brackpointRulesItems: {
+        360 : 2,
+        515 : 3,
+        768 : 4
     }
 };
+App.Control.extend('ScrollBar', ScrollBarEmployees);
 
-App.Control.install(ScrollBarEmployees);
+
+App.Control.extend('ScrollBar', {
+    el: '.js-scroll-mass-media',
+    name: 'ScrollBarMassMedia',
+    responsiveMarginPersent: 3,
+    brackpointRulesItems: {
+        360 : 2,
+        515 : 3,
+        768 : 4
+    }
+});
 var SectionNav = {
     el: '.js-section-nav',
     name: 'SectionNav',
@@ -661,21 +701,6 @@ var VerticalTabs = {
 };
 
 App.Control.install(VerticalTabs);
-var DottedNavSlider = {
-    el: '.js-dotted-nav-slider',
-    name: 'DottedNavSlider',
-    initialize: function() {
-        this.$el.bxSlider({
-            controls: false,
-            slideWidth: 706,
-            minSlides: 1,
-            maxSlides: 1,
-            adaptiveHeight: true
-        });
-    }
-};
-
-App.Control.install(DottedNavSlider);
 var MainNavView = {
     el: '.js-main-nav',
     name: 'MainNavView',
@@ -985,6 +1010,40 @@ App.Control.install({
 
     }
 });
+var SliderWidget = {
+	el: '.js-slider-widget',
+	name: 'SliderWidget',
+
+	initialize: function() {
+		this.slider = this.$el.find('.js-slider-widget__slider');
+        this.sliderValue = this.$el.find('.js-slider-widget__value');
+        this.sliderDefaultValue = 1;
+
+        this.initFormSlider();
+	},
+
+	initFormSlider: function() {
+        var self = this;
+
+        this.slider.slider({
+            range: 'min',
+            min: 1,
+            max: self.slider.data('max-value'),
+            step: 1,
+            value: self.sliderValue.val(),
+
+            slide: function(event, ui) {
+                self.sliderValue.val(ui.value);
+            }
+        });
+
+        this.sliderValue.on('input', function(e) {
+            self.slider.slider('value', $(e.currentTarget).val());
+        })
+    }
+};
+
+App.Control.install(SliderWidget);
 App.Control.install({
     el: '.spoiler-link',
     name: 'SpoilerContent',
