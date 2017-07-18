@@ -6053,8 +6053,8 @@ textarea.field-text__input {
 @media (min-width: 480px) and (max-width: 700px) {
   .service-cards--info-cards .service-card__icon {
     display: block;
-    width: auto;
     margin-bottom: 10px;
+    text-align: left;
   }
 }
 @media (min-width: 480px) and (max-width: 700px) {
@@ -6068,9 +6068,12 @@ textarea.field-text__input {
     padding-left: 30px;
   }
 }
-@media (min-width: 480px) and (max-width: 700px) {
-  .service-cards--info-cards .service-card__title {
-    min-height: 50px;
+.service-cards--info-cards .service-card__title br {
+  display: none;
+}
+@media (min-width: 480px) and (max-width: 660px) {
+  .service-cards--info-cards .service-card__title br {
+    display: block;
   }
 }
 .service-cards__inner {
