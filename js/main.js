@@ -120,11 +120,15 @@ var EqualHeight = {
 
     initialize: function() {
         this.block = this.$('.js-equal-height__block');
-        this.svg = this.$('svg');
+        this.img = this.$('img');
 
         var self = this;
 
         this.setEqualHeight();
+
+        this.img.bind('load', function() {
+            self.setEqualHeight();
+        });
 
         $(window).bind('resize', function() {
             self.setEqualHeight();
