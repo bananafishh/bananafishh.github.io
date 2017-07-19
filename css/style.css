@@ -3276,7 +3276,7 @@ input[type="submit"] {
 .tooltipster-sidetip.tooltipster-light.tooltipster-light-customized .tooltipster-content {
   padding: 18px 25px 19px;
   line-height: 1.571;
-  text-align: center;
+  color: #32404d;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-light-customized.tooltipster-top .tooltipster-arrow-border,
 .tooltipster-sidetip.tooltipster-light.tooltipster-light-customized.tooltipster-top .tooltipster-arrow-background {
@@ -3852,16 +3852,13 @@ input[type="submit"] {
 }
 @media (min-width: 360px) {
   .contacts-table td:first-child {
-    width: 126px;
+    width: 128px;
   }
 }
 @media (min-width: 480px) {
   .contacts-table--fips td:first-child {
     width: 160px;
   }
-}
-.contacts-table--before-block {
-  margin-bottom: 34px;
 }
 .contacts__h3-like {
   margin-bottom: 17px;
@@ -3881,13 +3878,20 @@ input[type="submit"] {
   }
 }
 .contacts__card {
+  max-width: 465px;
   padding: 35px 40px;
+  margin-top: 34px;
   background-color: #e6ebed;
+}
+@media (min-width: 610px) and (max-width: 991px) {
+  .contacts__card {
+    margin-top: 0;
+  }
 }
 .contacts__card-title {
   margin-bottom: 9px;
   font-size: 1.285714285714286em;
-  font-style: 700px;
+  font-weight: 700;
   line-height: 1.444;
 }
 .contacts__card-text {
@@ -3937,6 +3941,29 @@ input[type="submit"] {
 @media (max-width: 991px) {
   .contacts__regional-offices-map {
     display: none;
+  }
+}
+.contacts__inner::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+@media (min-width: 610px) and (max-width: 991px) {
+  .contacts__col {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .contacts__col::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .contacts__col:last-child {
+    margin-right: 0%;
   }
 }
 .content-slider .bx-wrapper {
@@ -8307,7 +8334,6 @@ html [type="button"],
   padding-top: 10px;
 }
 .form .form-row .form-col .form-input--check .input-checkbox {
-  margin-top: 14px;
   font-weight: 400;
 }
 .form .form-row .form-col .form-input--check .input-checkbox::before {
@@ -8332,28 +8358,17 @@ html [type="button"],
   padding-top: 6px;
 }
 .form .form-row .form-col .form-input-title {
+  margin-bottom: 14px;
   font-weight: 700;
 }
-.form .form-row .form-col--pt0 {
-  padding-top: 0;
+.form .form-row .form-col--pt5 {
+  padding-top: 5px;
 }
 .form .form-row .form-col--pb0 {
   padding-bottom: 0;
 }
 .form .form-row .form-col--mb-0 {
   padding-bottom: 0;
-}
-.form .form-row--pt0 {
-  padding-top: 0;
-}
-.form .form-row--pt5 {
-  padding-top: 5px;
-}
-.form .form-row--pb0 {
-  padding-bottom: 0;
-}
-.form .form-row--pb7 {
-  padding-bottom: 7px;
 }
 .form .form-row--first-in-block {
   padding-top: 24px;
@@ -8420,6 +8435,7 @@ html [type="button"],
 .form-adv-row {
   display: table;
   width: 100%;
+  margin-bottom: 7px;
 }
 @media (min-width: 768px) and (max-width: 940px) {
   .form-adv-row--inside-col .form-adv-col--2-5,
@@ -8565,6 +8581,9 @@ html [type="button"],
 .input-checkbox button {
   text-align: left;
 }
+.input-checkbox--inside-col {
+  margin-bottom: 11px;
+}
 .input-radio {
   position: relative;
   cursor: pointer;
@@ -8670,6 +8689,8 @@ html [type="button"],
 }
 @media (min-width: 480px) {
   .input-file2 label {
+    position: relative;
+    top: -2px;
     display: table-cell !important;
     width: 93px !important;
     padding-left: 11px;
