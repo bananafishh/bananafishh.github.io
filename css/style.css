@@ -6231,10 +6231,23 @@ textarea.field-text__input {
   display: block;
   width: 34px;
   height: 34px;
+  text-align: center;
   border: 1px solid #3d627f;
+}
+.social-links__link span {
+  display: inline-block;
+  vertical-align: middle;
 }
 .social-links__link:hover {
   border-color: #fff;
+}
+.social-links__link::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  margin-right: -4px;
+  vertical-align: middle;
 }
 .social-links__link--gray-bg {
   background-color: #a5b1bc;
