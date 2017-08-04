@@ -9351,6 +9351,8 @@ border-bottom-color
 .check-marker-list > li {
   position: relative;
   padding-left: 25px;
+}
+.check-marker-list > li:not(:last-child) {
   margin-bottom: 18px;
 }
 .check-marker-list > li::before {
@@ -9380,6 +9382,8 @@ border-bottom-color
 .cross-marker-list > li {
   position: relative;
   padding-left: 26px;
+}
+.cross-marker-list > li:not(:last-child) {
   margin-bottom: 18px;
 }
 .cross-marker-list > li::before {
@@ -9402,6 +9406,8 @@ border-bottom-color
 .dash-marker-list > li {
   position: relative;
   padding-left: 24px;
+}
+.dash-marker-list > li:not(:last-child) {
   margin-bottom: 18px;
 }
 .dash-marker-list > li::before {
