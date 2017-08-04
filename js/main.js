@@ -1,7 +1,5 @@
 $(document).ready(function() {
-  var sliderWidgetValue = $('.js-slider-widget__value').val();
-
-	svg4everybody();
+  svg4everybody();
 
 	$('.js-select').select2({
   		minimumResultsForSearch: Infinity
@@ -12,10 +10,15 @@ $(document).ready(function() {
 		maxWidth: 443
 	});
 
-	$('.js-fancy-img').fancybox({
-    wrapCSS: 'fancy-img',
+  $('.js-tooltip-right').tooltipster({
+    side: 'right',
+    theme: ['tooltipster-light', 'tooltipster-light-customized'],
+    maxWidth: 443
+  });
+
+	$('.js-fancy-media').fancybox({
+    wrapCSS: 'fancy-media',
     margin: ($(window).width() > 937) ? 20 : 5,
-    fitToView: true,
     padding: 15,
     helpers : {
       overlay : {
@@ -29,7 +32,6 @@ $(document).ready(function() {
   $('.js-fancy-modal').fancybox({
     wrapCSS: 'fancy-modal',
     margin: ($(window).width() > 937) ? 20 : 5,
-    fitToView: true,
     padding: 0,
     maxWidth: 650,
     helpers : {
@@ -38,10 +40,20 @@ $(document).ready(function() {
           'background' : 'rgba(27, 71, 105, 0.7)'
         }
       }
-    },
-    afterClose: function() {
-      $('.js-slider-widget__value').val(sliderWidgetValue);
-      $('.js-slider-widget__slider').slider('value', sliderWidgetValue);
+    }
+  });
+
+  $('.js-fancy-big-modal').fancybox({
+    wrapCSS: 'fancy-big-modal',
+    margin: ($(window).width() > 937) ? 20 : 5,
+    fitToView: false,
+    padding: 20,
+    helpers : {
+      overlay : {
+        css : {
+          'background' : 'rgba(27, 71, 105, 0.7)'
+        }
+      }
     }
   });
 });
@@ -83,22 +95,6 @@ var BackToTop = {
 };
 
 App.Control.install(BackToTop);
-var ContentSlider = {
-    el: '.js-content-slider',
-    name: 'ContentSlider',
-    initialize: function() {
-        this.$el.bxSlider({
-            //mode: 'fade',
-            pager: false,
-            slideWidth: 960,
-            minSlides: 1,
-            maxSlides: 1,
-            adaptiveHeight: true
-        });
-    }
-};
-
-App.Control.install(ContentSlider);
 var DottedNavSlider = {
     el: '.js-dotted-nav-slider',
     name: 'DottedNavSlider',
@@ -615,6 +611,10 @@ App.Control.install({
                 .css('margin-left', marginWidth + 'px');
 
         }
+    },
+
+    destroyScrollbar: function() {
+        this.$el.mCustomScrollbar('destroy');
     }
 });
 
@@ -640,6 +640,36 @@ App.Control.extend('ScrollBar', {
         360 : 2,
         515 : 3,
         768 : 4
+    }
+});
+
+
+App.Control.extend('ScrollBar', {
+    el: '.js-scroll-employees-reviews',
+    name: 'ScrollBarEmployeesReviews',
+    responsiveMarginPersent: 3,
+
+    initialize: function() {
+        this.scrollBarDestroyBreakpoint = 1135;
+        this.scrollbarIsInitialized = false;
+        var self = this;
+
+        if($(window).outerWidth() <= this.scrollBarDestroyBreakpoint) {
+            this.contentClass = _.isUndefined(this.$el.data("scrollbarContentClass")) ? 'hscroll-wrapper' : this.$el.data("scrollbarContentClass");
+            this.initScrollbar();
+            this.scrollbarIsInitialized = true;
+        }
+
+        $(window).bind('resize', function() {
+            if($(window).outerWidth() > self.scrollBarDestroyBreakpoint && self.scrollbarIsInitialized) {
+                self.destroyScrollbar();
+                self.scrollbarIsInitialized = false;
+            } else if($(window).outerWidth() <= self.scrollBarDestroyBreakpoint  && !self.scrollbarIsInitialized) {
+                self.contentClass = _.isUndefined(self.$el.data("scrollbarContentClass")) ? 'hscroll-wrapper' : self.$el.data("scrollbarContentClass");
+                self.initScrollbar();
+                self.scrollbarIsInitialized = true;
+            }
+        });
     }
 });
 var SectionNav = {
@@ -668,6 +698,43 @@ var SectionNav = {
 };
 
 App.Control.install(SectionNav);
+var SliderEmployeesReviews = {
+    el: '.js-slider-employees-reviews',
+    name: 'SliderEmployeesReviews',
+
+    initialize: function() {
+        this.sliderIsInititalized = false;
+        this.sliderDestroyBreakpoint = 1136;
+        var self = this;
+
+        if($(window).outerWidth() >= this.sliderDestroyBreakpoint) {
+            this.initSlider();
+            this.sliderIsInititalized = true;
+        }
+
+        $(window).bind('resize', function() {
+            if($(window).outerWidth() < self.sliderDestroyBreakpoint && self.sliderIsInititalized) {
+                self.$el.destroySlider();
+                self.sliderIsInititalized = false;
+            } else if($(window).outerWidth() >= self.sliderDestroyBreakpoint && !self.sliderIsInititalized) {
+                self.initSlider();
+                self.sliderIsInititalized = true;
+            }
+        });
+    },
+
+    initSlider: function() {
+        this.$el.bxSlider({
+            pager: false,
+            slideWidth: 960,
+            minSlides: 1,
+            maxSlides: 1,
+            adaptiveHeight: true
+        });
+    }
+};
+
+App.Control.install(SliderEmployeesReviews);
 var SwitchActiveState = {
     el: '.js-switch-active',
     name: 'SwitchActiveState',
