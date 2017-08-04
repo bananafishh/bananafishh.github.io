@@ -6221,14 +6221,10 @@ textarea.field-text__input {
 .social-links {
   padding-left: 0;
   margin: 0;
-  font-size: 0;
   list-style: none;
 }
 .social-links__item {
   display: inline-block;
-}
-.social-links__item:not(:last-child) {
-  margin-right: 4px;
 }
 .social-links__link {
   display: block;
@@ -6243,6 +6239,7 @@ textarea.field-text__input {
 }
 .social-links__link svg {
   display: block;
+  fill: #fff;
 }
 .social-links__link:hover {
   border-color: #fff;
@@ -6269,6 +6266,9 @@ textarea.field-text__input {
   background-color: #e6ebed;
   border-color: #e6ebed;
 }
+.social-links__link--blue-bg svg {
+  fill: #1b4769;
+}
 .social-links__link--blue-bg:hover {
   border-color: #e6ebed;
 }
@@ -6280,6 +6280,12 @@ textarea.field-text__input {
   position: relative;
   top: 1px;
   left: 1px;
+}
+.social-links--inline {
+  font-size: 0;
+}
+.social-links--inline .social-links__item:not(:last-child) {
+  margin-right: 4px;
 }
 .social-links--with-fb-widget {
   padding-bottom: 30px;
