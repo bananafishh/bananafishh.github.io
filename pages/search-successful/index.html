@@ -115,53 +115,242 @@
 		</div>
 	</div>
 </div>
-<ul class="breadcrumbs container">
-	<li><a class="breadcrumbs__link" href="/">Главная</a></li>
-	<li>О нас</li>
-</ul>
-<main>
-	<div class="section">
+<div class="form-search">
+	<ul class="breadcrumbs container">
+		<li><a class="breadcrumbs__link" href="/">Главная</a></li>
+		<li>Поиск по сайту</li>
+	</ul>
+	<div class="container clearfix">
+		<h1 class="main-title">Поиск по сайту</h1>
+	</div>
+	<div class="container">
+		<form class="form-search__form row-sm" action="" method="">
+			<div class="col-2-3-sm col-3-4-md">
+				<div class="field-text">
+					<input class="field-text__input field-text__input--lg form-search__input" type="search"/>
+				</div>
+			</div>
+			<div class="col-1-3-sm col-1-4-md">
+				<input class="btn btn-full" type="submit" value="Найти"/>
+			</div>
+		</form>
+	</div>
+	<div class="filter-tabs">
 		<div class="container">
-			<article class="team-member">
-				<header class="team-member__header">
-					<h1 class="section__title section__title--align-left section__title--mb5">Алексей Абрамов</h1>
-					<div class="team-member__position">Управляющий партнер Федерального Патентного Бюро «Гардиум»</div>
-				</header>
-				<div class="team-member__img section__before-text-block"><img src="../../assets/images/img-employee--aleksej-abramov-big.jpg" alt="Алексей Абрамов" width="300" height="425"/>
-					<div class="team-member__specialty">
-						<h2 class="team-member__title team-member__title--mt0">Отрасли права</h2>
-						<ul class="dash-marker-list">
-							<li>Арбитражное судопроизводство</li>
-							<li>Интеллектуальная собственность</li>
-							<li>M&A</li>
-							<li>Корпоративное право</li>
-						</ul>
-					</div>
-					<div class="section__after-block hide-up-to-md"><a class="btn btn--sm team-member__btn" href="">Задать вопрос эксперту</a></div>
-				</div>
-				<div class="team-member__content">
-					<p>У Алексея Абрамова более 16 лет юридического стажа, 12 из которых на руководящих должностях и в качестве владельца/совладельца бизнесов в этой отрасли. За годы работы успешно реализовал проекты, в том числе в арбитражном судопроизводстве, на стороне крупнейших компаний России: Мечел, Евраз, Русский уголь, РАО ЕЭС. Часть успешного проектного опыта получена в отрасли слияний и поглощений при работе в инвестиционной компании «Росбилдинг», являвшейся неоспоримым лидером всего российского рынка M&A конца 90-х и начала 2000-х.</p>
-					<p>В 23 года Алексей возглавил юридический департамент представительства инвестиционной компании Free Alliance Ink. (совокупный капитал пула инвесторов под управлением 470 млн долл.). Позже Алексей стал заместителем главы представительства по правовым вопросам. В данной должности Алексей руководил due diligence и последующим структурированием сделок по входу в такие направления как сельское хозяйство, кинопроизводство, логистические комплексы, перевозка и др.</p>
-					<p>С 2009 года совладелец и управляющий партнер в «Гардиум».</p>
-					<p>Увлечения в свободное время: единоборства.</p>
-					<div class="team-member__specialty team-member__specialty--in-text-flow">
-						<h2 class="team-member__title">Специализация</h2>
-						<ul class="dash-marker-list">
-							<li>Участие в разработке стратегии</li>
-							<li>Маркетинг и продажи</li>
-							<li>Руководство сложными проектами</li>
-						</ul>
-					</div>
-					<h2 class="team-member__title">Образование</h2>
-					<ul class="dash-marker-list">
-						<li>Всероссийская академия внешней торговли МЭРТ РФ</li>
-						<li>Московский институт предпринимательства и права, диплом с отличием</li>
-					</ul>
-					<div class="section__after-text-block section__last-block hide-md"><a class="btn btn--sm team-member__btn" href="">Задать вопрос эксперту</a></div>
-				</div>
-			</article>
+			<ul class="filter-tabs__list js-switch-active">
+				<li class="filter-tabs__tab is-active js-switch-active__btn">По дате</li>
+				<li class="filter-tabs__tab js-switch-active__btn">По релевантности</li>
+			</ul>
 		</div>
 	</div>
+</div>
+<main>
+	<section class="section">
+		<div class="container">
+			<div class="partially-hidden is-hidden js-partially-hidden">
+				<div class="partially-hidden__block partially-hidden__block--search-results js-partially-hidden__block">
+					<div class="partially-hidden__content js-partially-hidden__content js-show-more">
+						<div class="search-results">
+							<div class="js-show-more__item">
+								<article class="search-results__preview">
+									<header class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Как правильно купить товарный знак?</a></div>
+									</header>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Какие основные причины для отказа в регистрации товарного знака?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag search-results__tag--green">информация</span>
+										</div>
+										<div class="search-results__title"><a href="">Сколько компании нужно товарных знаков?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag search-results__tag--red">практика</span>
+										</div>
+										<div class="search-results__title"><a href="">Как узнать, зарегистрирован ли товарный знак?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Как подать заявление на регистрацию товарного знака?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag search-results__tag--green">информация</span>
+										</div>
+										<div class="search-results__title"><a href="">Сколько компании нужно товарных знаков?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag search-results__tag--red">практика</span>
+										</div>
+										<div class="search-results__title"><a href="">Как узнать, зарегистрирован ли товарный знак?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Как подать заявление на регистрацию товарного знака?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Как правильно купить товарный знак?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Какие основные причины для отказа в регистрации товарного знака?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+							</div>
+							<div class="is-hidden js-show-more__item">
+								<article class="search-results__preview">
+									<header class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Как правильно купить товарный знак?</a></div>
+									</header>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Какие основные причины для отказа в регистрации товарного знака?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag search-results__tag--green">информация</span>
+										</div>
+										<div class="search-results__title"><a href="">Сколько компании нужно товарных знаков?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag search-results__tag--red">практика</span>
+										</div>
+										<div class="search-results__title"><a href="">Как узнать, зарегистрирован ли товарный знак?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Как подать заявление на регистрацию товарного знака?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag search-results__tag--green">информация</span>
+										</div>
+										<div class="search-results__title"><a href="">Сколько компании нужно товарных знаков?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag search-results__tag--red">практика</span>
+										</div>
+										<div class="search-results__title"><a href="">Как узнать, зарегистрирован ли товарный знак?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Как подать заявление на регистрацию товарного знака?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Как правильно купить товарный знак?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+								<article class="search-results__preview">
+									<div class="search-results__header">
+										<div class="search-results__meta">
+											<time datetime="2017-02-28">28.02.2017</time><span class="search-results__tag">услуги и цены</span>
+										</div>
+										<div class="search-results__title"><a href="">Какие основные причины для отказа в регистрации товарного знака?</a></div>
+									</div>
+									<p>Во-первых, необходимо проверить, что <b>товарный знак</b> имеет действующую регистрацию. Попросите у продавца <b>товарного знака</b> предоставить его номер, и проверьте его по открытому реестру <b>товарных знаков</b> на сайте Федерального института промышленной собственности (филиал Роспатента). В карточке <b>товарного знака</b> будет указан срок его действия.</p>
+								</article>
+							</div>
+						</div>
+						<div class="js-show-more__pagination">
+								<ul class="pagination js-switch-active pagination--after-search-results">
+									<li class="pagination__item is-active js-switch-active__btn"><a href="">1</a></li>
+									<li class="pagination__item js-switch-active__btn"><a href="">2</a></li>
+									<li class="pagination__item js-switch-active__btn"><a href="">3</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>
+				<div class="partially-hidden__btn js-partially-hidden__btn-wrap">
+					<button class="btn js-partially-hidden__btn" type="button">Показать все результаты</button>
+				</div>
+			</div>
+		</div>
+	</section>
 </main>
 <footer class="page-footer">
 	<div class="page-footer__top container">

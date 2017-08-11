@@ -19,6 +19,7 @@ $(document).ready(function() {
 	$('.js-fancy-media').fancybox({
     wrapCSS: 'fancy-media',
     margin: ($(window).width() > 937) ? 20 : 5,
+    fitToView: false,
     padding: 15,
     helpers : {
       overlay : {
@@ -32,6 +33,7 @@ $(document).ready(function() {
   $('.js-fancy-modal').fancybox({
     wrapCSS: 'fancy-modal',
     margin: ($(window).width() > 937) ? 20 : 5,
+    fitToView: false,
     padding: 0,
     maxWidth: 650,
     helpers : {
@@ -59,6 +61,25 @@ $(document).ready(function() {
 });
 
 
+var ActiveStateSwitch = {
+	el: '.js-active-state-switch',
+	name: 'ActiveStateSwitch',
+
+	initialize: function() {
+		this.item = this.$('.js-active-state-switch__item');
+	},
+
+	events: {
+        'click .js-active-state-switch__item': 'switchActiveState'
+    },
+
+    switchActiveState: function(e) {
+        this.item.removeClass('is-active');
+        $(e.currentTarget).addClass('is-active');
+    }
+};
+
+App.Control.install(ActiveStateSwitch);
 var BackToTop = {
     el: '.js-back-to-top',
     name: 'BackToTop',
@@ -481,6 +502,7 @@ var PartiallyHidden = {
         var self = this;
         this.clicked = true;
 
+        this.$el.removeClass('is-hidden');
         this.hiddenContentHeight = this.hiddenContent.outerHeight();
 
         this.hiddenBlock.animate({
@@ -698,6 +720,94 @@ var SectionNav = {
 };
 
 App.Control.install(SectionNav);
+var ShowContent = {
+	el: '.js-show-content',
+	name: 'ShowContent',
+
+	initialize: function() {
+		this.btn = this.$('.js-show-content__btn');
+		this.hiddenContent = this.$('.js-show-content__content');
+	},
+
+	events: {
+        'click .js-show-content__btn': 'showContent'
+    },
+
+	scrollTo: function() {
+		var self = this;
+
+		$('html, body').animate({
+			scrollTop: $('[data-target=' + self.dataTarget + ']').offset().top - 60
+		}, 1500);
+	},
+
+	showContent: function(e) {
+		e.preventDefault();
+
+		var needScroll = false;
+		if(!$(e.currentTarget).hasClass('open') && $(e.currentTarget).data('scroll-to')) {
+			needScroll = true;
+		}
+
+		$(e.currentTarget).toggleClass('open');
+		if(!$(e.currentTarget).data('attribute')) {
+			$(e.currentTarget).next(this.hiddenContent).slideToggle();
+		}
+
+		// Если скрытую информацию и кнопку-триггер невозможно разместить в общем контейнере
+		// Или скрытая информация расположена не после кнопки-триггера
+		if(this.$el.filter('[data-attribute]')) {
+			this.dataTarget = $(e.currentTarget).attr('data-attribute');
+			$('[data-target=' + this.dataTarget + ']').slideToggle();
+		}
+
+		if(needScroll) {
+			this.scrollTo();
+		}
+	}
+};
+
+App.Control.install(ShowContent);
+var ShowMore = {
+	el: '.js-show-more',
+	name: 'ShowMore',
+
+	initialize: function() {
+		this.pagination = this.$('.js-show-more__pagination');
+		this.item = this.$('.js-show-more__item');
+
+		this.replaceDefaultPagination();
+	},
+
+	events: {
+		'click .js-show-more__btn': 'showMoreItem'
+	},
+
+	replaceDefaultPagination: function() {
+		this.pagination.remove();
+
+		var brandNewBtn = $(document.createElement('button'))
+			.addClass('btn js-show-more__btn')
+			.attr('type', 'button')
+			.text('Показать еще');
+
+		var brandNewBtnContainer = $(document.createElement('div'))
+			.addClass('btn-shadow')
+			.append(brandNewBtn)
+			.appendTo(this.$el);
+	},
+
+	showMoreItem: function() {
+		if(this.$el.hasClass('js-partially-hidden__content')) {
+			this.$el.parent('.js-partially-hidden__block').css({'height': 'auto'});
+		}
+
+		this.item.slideDown()
+		         .removeClass('is-hidden');
+	}
+};
+
+App.Control.install(ShowMore);
 var SliderEmployeesReviews = {
     el: '.js-slider-employees-reviews',
     name: 'SliderEmployeesReviews',
@@ -858,6 +968,49 @@ var MainSlider = {
 };
 
 App.Control.install(MainSlider);
+var VisitedPages = {
+	el: '.js-visited-pages',
+	name: 'VisitedPages',
+
+	initialize: function() {
+		this.mainSlider = $('.main-slider');
+		this.mainSliderOffsetTop = this.mainSlider.offset().top;
+		this.mainSliderHeight = this.mainSlider.outerHeight();
+
+		this.container = this.$el.parent('.container');
+		this.containerWidth = this.container.outerWidth();
+		this.elWidth = ($(window).width() - this.containerWidth) / 2;
+
+		this.pushPoint = this.mainSliderOffsetTop + this.mainSliderHeight;
+
+		var self = this;
+
+		this.setStickyBlockWidth();
+
+		$(window).bind('resize', function() {
+			self.elWidth = ($(window).width() - self.containerWidth) / 2;
+			self.setStickyBlockWidth();
+		});
+
+		$(window).bind('scroll', function() {
+			self.stickyOnScroll();
+		});
+	},
+
+	setStickyBlockWidth: function() {
+		this.$el.css({'width': this.elWidth});
+	},
+
+	stickyOnScroll: function() {
+		if($(window).scrollTop() >= this.pushPoint) {
+			this.$el.addClass('visited-pages--fixed');
+		} else {
+			this.$el.removeClass('visited-pages--fixed');
+		}
+	}
+};
+
+App.Control.install(VisitedPages);
 App.Control.install({
     el: '.input-checkbox',
     name: 'InputCheckbox',
