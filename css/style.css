@@ -3084,7 +3084,8 @@ strong {
 textarea,
 input[type="text"],
 input[type="button"],
-input[type="submit"] {
+input[type="submit"],
+input[type="search"] {
   -webkit-appearance: none;
   border-radius: 0;
 }
