@@ -1,4 +1,38 @@
 $(document).ready(function() {
+
+  // Управление загрузкой кастомного шрифта
+  if( sessionStorage.foutFontsLoaded ) {
+    document.documentElement.className += " fonts-loaded";
+    return;
+  }
+
+  var font = new FontFaceObserver('Roboto', {
+    weight: 400,
+    style: 'normal'
+  });
+
+  var fontBold = new FontFaceObserver('Roboto', {
+    weight: 700,
+    style: 'normal'
+  });
+
+  var fontItalic = new FontFaceObserver('Roboto', {
+    weight: 400,
+    style: 'italic'
+  });
+
+  var fontBoldItalic = new FontFaceObserver('Roboto', {
+    weight: 700,
+    style: 'italic'
+  });
+
+  Promise.all([font.load(), fontBold.load(), fontItalic.load(), fontBoldItalic.load()]).then(function () {
+    document.documentElement.className += " fonts-loaded";
+
+    sessionStorage.foutFontsLoaded = true;
+  });
+
+
   svg4everybody();
 
 	$('.js-select').select2({
@@ -35,7 +69,6 @@ $(document).ready(function() {
     margin: ($(window).width() > 937) ? 20 : 5,
     fitToView: false,
     padding: 0,
-    // maxWidth: 650,
     helpers : {
       overlay : {
         css : {
