@@ -35,7 +35,7 @@ $(document).ready(function() {
     margin: ($(window).width() > 937) ? 20 : 5,
     fitToView: false,
     padding: 0,
-    maxWidth: 650,
+    // maxWidth: 650,
     helpers : {
       overlay : {
         css : {

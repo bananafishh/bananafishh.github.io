@@ -3288,6 +3288,14 @@ input[type="search"] {
   padding-top: 0;
   padding-bottom: 0;
 }
+.fancy-modal {
+  width: auto !important;
+  max-width: 650px;
+}
+.fancy-modal .fancybox-inner {
+  width: auto !important;
+  max-width: 650px;
+}
 .news .news-preview {
   margin-bottom: 29px;
 }
