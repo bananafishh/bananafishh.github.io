@@ -61,25 +61,6 @@ $(document).ready(function() {
 });
 
 
-var ActiveStateSwitch = {
-	el: '.js-active-state-switch',
-	name: 'ActiveStateSwitch',
-
-	initialize: function() {
-		this.item = this.$('.js-active-state-switch__item');
-	},
-
-	events: {
-        'click .js-active-state-switch__item': 'switchActiveState'
-    },
-
-    switchActiveState: function(e) {
-        this.item.removeClass('is-active');
-        $(e.currentTarget).addClass('is-active');
-    }
-};
-
-App.Control.install(ActiveStateSwitch);
 var BackToTop = {
     el: '.js-back-to-top',
     name: 'BackToTop',
@@ -692,6 +673,18 @@ App.Control.extend('ScrollBar', {
                 self.scrollbarIsInitialized = true;
             }
         });
+    }
+});
+
+
+App.Control.extend('ScrollBar', {
+    el: '.js-scroll-clients',
+    name: 'ScrollBarClients',
+    responsiveMarginPersent: 3,
+    brackpointRulesItems: {
+        360 : 2,
+        515 : 3,
+        768 : 4
     }
 });
 var SectionNav = {
