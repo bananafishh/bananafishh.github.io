@@ -149,6 +149,27 @@ var NewsSlider = {
 };
 
 App.Control.install(NewsSlider);
+var PartiallyHidden = {
+	el: '.js-partially-hidden',
+	name: 'PartiallyHidden',
+
+	initialize: function() {
+		this.hiddenContent = this.$('.is-hide');
+		this.btn = this.$('.js-partially-hidden__btn');
+	},
+
+	events: {
+		'click .js-partially-hidden__btn': 'showHiddenContent'
+	},
+
+	showHiddenContent: function() {
+		this.hiddenContent.toggleClass('is-hide');
+		this.btn.toggleClass('is-open');
+		this.$el.toggleClass('is-hide');
+	}
+};
+
+App.Control.install(PartiallyHidden);
 var Scrollbar = {
 	el: '.js-scrollbar',
 	name: 'Scrollbar',
@@ -208,6 +229,34 @@ var PartiallyHiddenContent = {
 };
 
 App.Control.install(PartiallyHiddenContent);
+var ShowContent = {
+	el: '.js-show-content',
+	name: 'ShowContent',
+
+	initialize: function() {
+		this.btn = this.$('.js-show-content__btn');
+		this.hiddenContent = this.$('.js-show-content__content');
+	},
+
+	events: {
+        'click .js-show-content__btn': 'showContent'
+    },
+
+	showContent: function(e) {
+		e.preventDefault();
+
+		$(e.currentTarget).toggleClass('is-open');
+		this.hiddenContent.toggle().toggleClass('is-hide');
+
+		if ($(e.currentTarget).hasClass('is-open')) {
+			$(e.currentTarget).text('скрыть');
+		} else {
+			$(e.currentTarget).text('продолжение');
+		}
+	}
+};
+
+App.Control.install(ShowContent);
 var Tabs = {
     el: '.js-tabs',
     name: 'Tabs',

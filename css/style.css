@@ -2654,11 +2654,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   color: #323232;
 }
 .fonts-loaded body {
-  font-family: "Segoe UI", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -2936,6 +2936,24 @@ strong {
     background-image: url("../assets/sprites/sprite@2x.png");
     background-size: 47px 853px;
   }
+}
+.btn--has-arrow::after {
+  content: "";
+  position: relative;
+  top: 3px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 8px;
+  vertical-align: middle;
+  border: solid transparent;
+  border-width: 6px 3px;
+  border-top-color: #cb1313;
+}
+.btn--has-arrow.is-open::after {
+  top: -3px;
+  border-top-color: transparent;
+  border-bottom-color: #cb1313;
 }
 .link {
   color: #cb1313;
@@ -3370,7 +3388,7 @@ strong {
   border-width: 6px 3px;
   border-top-color: #cb1313;
 }
-.expertises__btn.is-active::after {
+.expertises__btn.is-open::after {
   top: -4px;
   border-top-color: transparent;
   border-bottom-color: #cb1313;
@@ -4116,7 +4134,7 @@ strong {
   list-style: none;
 }
 .reviews__item:not(:last-child) {
-  margin-bottom: 4px;
+  margin-bottom: 22px;
 }
 .review {
   margin: 0;
@@ -4125,17 +4143,20 @@ strong {
   margin-bottom: 6px;
 }
 .review cite {
-  font-weight: 700;
+  font-weight: 800;
   font-style: normal;
 }
+.review .is-hide {
+  display: none;
+}
 .review__service {
-  margin-left: 14px;
+  margin-left: 19px;
   font-style: italic;
 }
 .review__service::before {
   content: "";
   position: relative;
-  top: -3px;
+  top: -1px;
   display: inline-block;
   margin-right: 11px;
   vertical-align: middle;
@@ -4153,6 +4174,7 @@ strong {
   }
 }
 .review__service--realty-damage::before {
+  top: -3px;
   background-image: url("../assets/sprites/sprite.png");
   background-position: 0px -108px;
   width: 18px;
@@ -4165,6 +4187,7 @@ strong {
   }
 }
 .review__service--legal::before {
+  top: -4px;
   background-image: url("../assets/sprites/sprite.png");
   background-position: 0px -145px;
   width: 17px;
@@ -4175,6 +4198,9 @@ strong {
     background-image: url("../assets/sprites/sprite@2x.png");
     background-size: 47px 853px;
   }
+}
+.review__show-more {
+  margin-left: 5px;
 }
 .service-cards::after {
   content: '';
@@ -4343,6 +4369,15 @@ strong {
     margin-right: 36px;
   }
 }
+.social-tabs #vk_groups,
+.social-tabs #ok_group_widget {
+  margin: auto;
+}
+@media (max-width: 991px) {
+  .social-tabs {
+    display: none;
+  }
+}
 .social-tabs__tabs {
   padding-left: 0;
   margin: 0;
@@ -4365,6 +4400,7 @@ strong {
   padding-left: 14px;
   vertical-align: bottom;
   background-color: #fff;
+  cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -4394,7 +4430,11 @@ strong {
   width: 28.8172%;
 }
 .social-tabs__tab--fb svg {
+  margin-right: 15px;
   fill: #004999;
+}
+.social-tabs__tab--fb .social-tabs__tab-title {
+  margin-left: 7px;
 }
 .social-tabs__tab--fb.is-active {
   background-color: #004999;
@@ -4406,7 +4446,11 @@ strong {
   width: 39.13978%;
 }
 .social-tabs__tab--ok svg {
+  margin-right: 12px;
   fill: #ea5b0c;
+}
+.social-tabs__tab--ok .social-tabs__tab-title {
+  margin-left: 4px;
 }
 .social-tabs__tab--ok.is-active {
   background-color: #ea5b0c;
@@ -4417,15 +4461,10 @@ strong {
 .social-tabs__tab-title {
   line-height: 40px;
 }
-.social-tabs__tab-title--vk svg,
-.social-tabs__tab-title--fb svg {
-  margin-right: 16px;
-}
-.social-tabs__tab-title--ok svg {
-  margin-right: 13px;
-}
 .social-tabs__container {
-  padding: 23px 20px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  text-align: center;
   background-color: #fff;
 }
 .social-tabs__content {
@@ -4433,6 +4472,10 @@ strong {
 }
 .social-tabs__content.is-active {
   display: block;
+}
+.social-tabs--only-in-col {
+  margin-top: 9px;
+  margin-bottom: 23px;
 }
 .social-links {
   padding-left: 0;
