@@ -2,699 +2,493 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>gardium-bx-site-redesign</title>
+	<title>MyProject</title>
 	<link rel="stylesheet" href="../../css/style.css" media="screen"/><!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!-- @todo: add modernizer or shim and other respond.js-->
 	<script type="text/javascript" src="../../js/core.js"></script>
+	<script type="text/javascript" src="../../js/vendor.js"></script>
+	<script type="text/javascript" src="../../js/main.js"></script>
 </head><body>
 <header class="page-header">
-	<div class="page-header__top">
-		<div class="container">
-			<div class="row-md">
-				<div class="col-1-3-md"><a class="page-header__logo" href="/"><img src="../../assets/images/logo.png" width="213" height="71" alt="Гардиум - патентные поверенные и судебные адвокаты"/></a></div>
-				<div class="col-1-3-md">
-					<div class="page-header__region-select">
-						<select class="select js-select">
-							<option value="Москва, Рязанский проспект, д.75, корп.4">Вся Россия</option>
-							<option value="Воронежская обл.">Воронежская обл.</option>
-							<option value="Москва, Рязанский проспект, д.75, корп.4" selected="selected">Московский регион</option>
-							<option value="Нижегородская обл.">Нижегородская обл.</option>
-							<option value="Респ-ка Татарстан">Респ-ка Татарстан</option>
-							<option value="Респ-ка Башкортостан">Респ-ка Башкортостан</option>
-							<option value="Ростовская обл.">Ростовская обл.</option>
-							<option value="Санкт-Петербург и обл.">Санкт-Петербург и обл.</option>
-							<option value="Саратовская обл.">Саратовская обл.</option>
-							<option value="Свердловская обл.">Свердловская обл.</option>
-							<option value="Ярославская обл.">Ярославская обл.</option>
-						</select>
-						<address class="page-header__address"><span class="page-header__address-icon"><svg width="11" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-map--red"></use></svg></span>Москва, Рязанский проспект, д.75, корп.4</address>
-					</div>
-				</div>
-				<div class="col-1-3-md">
-					<div class="page-header__contacts">
-						<address class="page-header__phone"><a href="tel:+74956658258">+7 (495) 665-82-58</a></address><a class="dotted js-fancy-modal" href="#call-order">Заказать обратный звонок</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<nav class="main-nav js-main-nav">
-		<div class="main-nav__inner container">
-			<button class="main-nav__menu-btn js-main-nav__btn" type="button"><span class="main-nav__menu-icon"><svg width="15" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-hamburger"></use></svg></span>Меню</button><a class="main-nav__full-version-link" href="">Полная версия сайта</a>
-			<ul class="main-nav__list js-main-nav__list">
-				<li class="main-nav__item"><a class="main-nav__link" href="">О нас</a></li>
-				<li class="main-nav__item"><a class="main-nav__link" href="">Услуги и цены</a></li>
-				<li class="main-nav__item"><a class="main-nav__link" href="">Клиенты</a></li>
-				<li class="main-nav__item"><a class="main-nav__link" href="">Инфо</a></li>
-				<li class="main-nav__item"><a class="main-nav__link" href="">Контакты</a></li>
-			</ul>
-			<div class="page-header__search">
-				<form class="page-header__search-form">
-					<input class="page-header__search-input" type="search" placeholder="Поиск по сайту"/>
-					<button class="page-header__search-btn" type="submit">
-						Найти<svg width="14" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-search"></use></svg></button>
-				</form>
-			</div>
-		</div>
-	</nav>
-</header>
-<div class="main-slider">
-	<div class="main-slider__items js-main-slider">
-		<div class="main-slider__item main-slider__item--reliability">
-			<div class="main-slider__container container">
-				<div class="main-slider__inner">
-					<div class="main-slider__left">
-						<ul class="main-slider__features">
-							<li><span class="dotted dotted--white js-tooltip-right" title="Консалтинговая группа WiseAdvice образована в 2003 году. С 2004 года в группе начало работу Патентное бюро.">10 лет на рынке</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Нам доверяют крупнейшие Российские и международные компании, средний и малый бизнес, а также ученые.">Более 5000 клиентов</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Удовлетворенность каждого клиента исследуется по методике Customer Satisfaction Index (CSI)">Оценка удовлетворенности CSI 4,7 из 5</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Полис №ОК26-140400530/1/WV-D22 от 30 апреля 2014 года выдан ОАО Страховая компания «Альянс»">Полис страхования 10 млн. руб.</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Мы используем специально разработанную автоматизированную систему делопроизводства для исключения риска совершения ошибок.">Автоматизированное делопроизводство</span></li>
-						</ul>
-					</div>
-					<div class="main-slider__right"><a class="main-slider__slogan" href="">
-							<div class="main-slider__slogan-title">Наивысшая надежность и&nbsp;ответственность<br/> <span class="main-slider__slogan-subtitle">В федеральном масштабе</span></div></a></div>
-				</div>
-			</div>
-		</div>
-		<div class="main-slider__item main-slider__item--defense">
-			<div class="main-slider__container container">
-				<div class="main-slider__inner row">
-					<div class="main-slider__left">
-						<ul class="main-slider__features">
-							<li><span class="dotted dotted--white js-tooltip-right" title="Консалтинговая группа WiseAdvice образована в 2003 году. С 2004 года в группе начало работу Патентное бюро.">10 лет на рынке</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Нам доверяют крупнейшие Российские и международные компании, средний и малый бизнес, а также ученые.">Более 5000 клиентов</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Удовлетворенность каждого клиента исследуется по методике Customer Satisfaction Index (CSI)">Оценка удовлетворенности CSI 4,7 из 5</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Полис №ОК26-140400530/1/WV-D22 от 30 апреля 2014 года выдан ОАО Страховая компания «Альянс»">Полис страхования 10 млн. руб.</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Мы используем специально разработанную автоматизированную систему делопроизводства для исключения риска совершения ошибок.">Автоматизированное делопроизводство</span></li>
-						</ul>
-					</div>
-					<div class="main-slider__right"><a class="main-slider__slogan" href="">
-							<div class="main-slider__slogan-title">Гарантированная<br/> защита<br/> <span class="main-slider__slogan-subtitle">в Роспатенте и суде</span></div></a></div>
-				</div>
-			</div>
-		</div>
-		<div class="main-slider__item main-slider__item--confidentiality">
-			<div class="main-slider__container container">
-				<div class="main-slider__inner row">
-					<div class="main-slider__left">
-						<ul class="main-slider__features">
-							<li><span class="dotted dotted--white js-tooltip-right" title="Консалтинговая группа WiseAdvice образована в 2003 году. С 2004 года в группе начало работу Патентное бюро.">10 лет на рынке</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Нам доверяют крупнейшие Российские и международные компании, средний и малый бизнес, а также ученые.">Более 5000 клиентов</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Удовлетворенность каждого клиента исследуется по методике Customer Satisfaction Index (CSI)">Оценка удовлетворенности CSI 4,7 из 5</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Полис №ОК26-140400530/1/WV-D22 от 30 апреля 2014 года выдан ОАО Страховая компания «Альянс»">Полис страхования 10 млн. руб.</span></li>
-							<li><span class="dotted dotted--white js-tooltip-right" title="Мы используем специально разработанную автоматизированную систему делопроизводства для исключения риска совершения ошибок.">Автоматизированное делопроизводство</span></li>
-						</ul>
-					</div>
-					<div class="main-slider__right"><a class="main-slider__slogan" href="">
-							<div class="main-slider__slogan-title">Полная конфиденциальность<br/> <span class="main-slider__slogan-subtitle">информация под защитой</span></div></a></div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="breadcrumbs breadcrumbs--clear"></div>
-<div class="container clearfix">
-	<h1 class="main-title">Патентное бюро «Гардиум»</h1>
-</div>
-<main>
 	<div class="container">
-		<div class="row-md">
-			<div class="col-1-2-md push-1-2-md">
-				<div class="col-block">
-					<div class="video"><a class="video__play-btn js-fancy-media" href="http://www.youtube.com/embed/rNcVWks4QaU?autoplay=1&amp;origin=https://www.youtube.com/watch?v=rNcVWks4QaU" data-fancybox-type="iframe"><img src="../../assets/images/img-video-thumbnail--abramov.jpg" alt="Интервью с Алексеем Абрамовым"/></a></div>
-				</div>
-				<div class="col-block hide-up-to-md">
-					<div class="highlighted-block">
-						<div class="highlighted-block__icon highlighted-block__icon--briefcase"><svg width="87" height="79"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-briefcase"></use></svg></div>
-						<div class="highlighted-block__text">
-							<p>Приглашаем опытных<br/> аттестованных патентных поверенных и практикующих юристов <a href="">работать в&nbsp;нашем Патентном Бюро</a></p>
-						</div>
-					</div>
-				</div>
+		<div class="page-header__inner">
+			<div class="page-header__logo"><a href="/"><img src="../../assets/images/logo-min.png"/></a></div>
+			<div class="page-header__slogan">
+				<div class="page-header__slogan-title">Независимая экспертиза №1</div>
+				<div class="page-header__slogan-text">в Московском регионе</div><a href="#">Подробнее</a>
 			</div>
-			<div class="col-1-2-md pull-1-2-md">
-				<p>Федеральное Патентное Бюро «Гардиум» с 2004 года занимается защитой прав интеллектуальной собственности в России и по всему миру.</p>
-				<p>Мы входим в список Патентных Бюро России — <strong>лидеров в области регистрации и патентования</strong> объектов интеллектуальной собственности и сделок с ними.</p>
-				<p class="lead">Ежегодно наше патентное бюро регистрирует более 1000 объектов интеллектуальной собственности!</p>
-				<p>Наше Бюро входит в состав Консалтинговой группы WiseAdvice, которая является одной из крупнейших, созданных после 2003 года с нуля.</p>
-				<p class="hide-up-to-md">Оперативность и высокое качество услуг обеспечивает <strong>международная партнерская сеть</strong>, в которую входят ведущие патентные бюро и юридические компании зарубежных стран. Именно поэтому к нам обращаются клиенты для защиты интеллектуальной собственности не только на территории России, но и в международных патентных ведомствах по всему Миру.</p>
+			<div class="page-header__contacts">
+				<select class="js-city-selection">
+					<option value="Москва" selected="selected">Москва</option>
+					<option value="Санкт-Петербург">Санкт-Петербург</option>
+					<option value="Нальчик">Нальчик</option>
+				</select>
+				<address class="page-header__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>
+				<div class="page-header__call-order"><a class="btn btn--icon-phone-before" href="">Заказать обратный звонок</a></div><a class="link link--icon-metro" href="#">Рязанский проспект</a>
 			</div>
 		</div>
 	</div>
-	<div class="container hide-up-to-md">
-		<div class="row-md">
-			<p>Центральный офис нашего патентного бюро расположен в Москве, но для удобства взаимодействия с клиентами, мы открыли дополнительные офисы в других регионах России. Сейчас воспользоваться услугами нашего бюро, вы можете в следующих городах на территории РФ: Санкт-Петербург, Екатеринбург, Воронеж, Нижний Новгород, Ярославль, Казань, Саратов, Уфа, Ростов-на-Дону.</p>
-			<p>Официальный сайт патентного бюро «Гардиум» содержит подробную информацию о защите Вашей интеллектуальной собственности, однако, если Вы хотите получить оперативный ответ на свой вопрос, воспользуйтесь формой - «<a href="">Задать вопрос эксперту</a>» или получите консультацию у экспертов бюро по <a href="">телефону</a>.</p>
+</header>
+<nav class="main-nav js-main-nav">
+	<div class="main-nav__inner">
+		<div class="main-nav__menu-btn-wrap js-main-nav__btn">
+			<button class="main-nav__menu-btn" type="button">Меню</button>
+		</div>
+		<ul class="main-nav__list js-main-nav__list">
+			<li class="main-nav__item"><a class="main-nav__link" href="">О&nbsp;компании</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="">Экспертиза после ДТП</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="">Залив квартиры</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="">Независимая экспертиза</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="">Юристы (суд)</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="">Цены</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="">Контакты</a></li>
+		</ul>
+	</div>
+</nav>
+<section class="section">
+	<div class="container">
+		<h1>Независимая экспертиза и оценка</h1>
+		<p>Юридическое бюро «Хонест» проводит независимые экспертизы автомобилей, квартир после пожара или потопа, профессиональной оценкой ущерба имуществу, а так же многими другими экспертизами и оценками.</p>
+		<p>Мы помогаем клиентам отстоять их интересы и получить достойную компенсацию.</p>
+		<p>Наши автоэкспеты проводят независимую экспертизу и оценку автомобилей после ДТП или некачественного ремонта. Профессиональные эксперты проведут оценку нанесенного урона квартире после потопа или пожара.</p>
+		<p>Все эти операции осуществляют независимые эксперты с многолетним опытом работы и соответствующим образованием. Наши заключения можно использовать в спорах со страховой и в судах.</p>
+		<div class="service-cards service-cards--two-column service-cards--within-text js-equal-height-blocks">
+			<article class="service-card service-card--gray js-equal-height-blocks__item">
+				<div class="service-card__img service-card__img--big"><img src="../../assets/images/img-expertise--car.jpg" alt="Поврежденный автомобиль"/></div>
+				<div class="service-card__text service-card__text--with-big-img">
+					<h2 class="service-card__title"><a href="">Автоэкспертиза после ДТП</a></h2>
+					<p>Оценка ущерба автомобиля за 2 часа</p><a href="">Другие виды автоэкспертиз</a>
+				</div>
+			</article>
+			<article class="service-card service-card--gray js-equal-height-blocks__item">
+				<div class="service-card__img service-card__img--big service-card__img--apartment-damage"><img src="../../assets/images/img-expertise--apartment-damage.jpg" alt="Дом в спасательном круге"/></div>
+				<div class="service-card__text service-card__text--with-big-img">
+					<h2 class="service-card__title"><a href="">Экспертиза<br/> ущерба квартиры</a></h2>
+					<p>Независимая оценка ущерба недвижимости</p>
+					<ul class="service-card__links service-card__links--inline">
+						<li><a href="">При заливе</a></li>
+						<li><a href="">При пожаре</a></li>
+					</ul>
+				</div>
+			</article>
+		</div>
+		<div class="expertises is-hide js-partially-hidden-content">
+			<div class="expertises__inner">
+				<ul class="expertises__list expertises__list--one-third-col">
+					<li class="expertise expertise--active"><a class="expertise__link expertise__link--forensic" href="#"><span class="expertise__link-text">Судебная экспертиза</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--construction" href="#"><span class="expertise__link-text">Строительно-техническая экспертиза</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--trasological" href="#"><span class="expertise__link-text">Трасологическая экспертиза (экспертиза следов)</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--portrait" href="#"><span class="expertise__link-text">Портретная экспертиза (фото/видео)</span></a></li>
+				</ul>
+				<ul class="expertises__list expertises__list--one-third-col">
+					<li class="expertise"><a class="expertise__link expertise__link--transport-trasological" href="#"><span class="expertise__link-text">Транспортно-трасологическая экспертиза</span></a></li>
+					<li class="expertise"><a class="expertise__link expertise__link--criminalistic" href="#"><span class="expertise__link-text">Криминалистическая экспертиза</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--documents" href="#"><span class="expertise__link-text">Экспертиза срока давности документа</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--fingerprint" href="#"><span class="expertise__link-text">Дактилоскопическая экспертиза</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--merchandising" href="#"><span class="expertise__link-text">Товароведческая экспертиза</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--handwriting" href="#"><span class="expertise__link-text">Почерковедческая экспертиза (экспертиза почерка и подписи)</span></a></li>
+				</ul>
+				<ul class="expertises__list expertises__list--one-third-col">
+					<li class="expertise"><a class="expertise__link expertise__link--documents-technical-examination" href="#"><span class="expertise__link-text">Технико-криминалистическая экспертиза документов</span></a></li>
+					<li class="expertise"><a class="expertise__link expertise__link--ballistic" href="#"><span class="expertise__link-text">Баллистическая экспертиза</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--securities" href="#"><span class="expertise__link-text">Экспертиза ценных бумаг</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--cold-weapon" href="#"><span class="expertise__link-text">Экспертиза холодного оружия</span></a></li>
+					<li class="expertise is-hide"><a class="expertise__link expertise__link--appliances" href="#"><span class="expertise__link-text">Экспертиза бытовой техники</span></a></li>
+				</ul>
+			</div>
+			<div class="expertises__btn-wrap">
+				<button class="btn expertises__btn js-partially-hidden-content__btn" type="button"><span>Все виды экспертиз</span></button>
+			</div>
 		</div>
 	</div>
-	<section class="section section--bright-gray">
-		<div class="container">
-			<h2 class="section__title">Патентные поверенные и юристы Бюро</h2>
-			<div class="section__scrollbar">
-				<div class="js-scroll-employees">
-					<ul class="employees employees--hscroll">
-						<li class="employee"><a class="employee__link" href=""><img class="employee__img" src="../../assets/images/img-employee--elena-vorobeva.jpg" width="216" height="306" alt="Елена Воробьева"/>
-								<div class="employee__name"><span>Елена Воробьева</span></div>
-								<div class="employee__position">Руководитель отдела патентования. Патентный поверенный № 1264</div></a></li>
-						<li class="employee"><a class="employee__link js-fancy-big-modal" href="#kupcova"><img class="employee__img" src="../../assets/images/img-employee--elena-kupcova.jpg" width="216" height="306" alt="Елена Купцова"/>
-								<div class="employee__name"><span>Елена Купцова</span></div>
-								<div class="employee__position">Руководитель отдела регистрации товарных знаков. Патентный поверенный № 1391</div></a></li>
-						<li class="employee"><a class="employee__link js-fancy-big-modal" href="#naumova"><img class="employee__img" src="../../assets/images/img-employee--natalia-naumova.jpg" width="216" height="306" alt="Наталья Наумова"/>
-								<div class="employee__name"><span>Наталья Наумова</span></div>
-								<div class="employee__position">Патентный поверенный № 1522</div></a></li>
-						<li class="employee"><a class="employee__link" href=""><img class="employee__img" src="../../assets/images/img-employee--irina-mihalchenko.jpg" width="216" height="306" alt="Ирина Михальченко"/>
-								<div class="employee__name"><span>Ирина Михальченко</span></div>
-								<div class="employee__position">Патентный поверенный № 1027</div></a></li>
-						<li class="employee"><a class="employee__link js-fancy-big-modal" href="#kupcova"><img class="employee__img" src="../../assets/images/img-employee--elena-kupcova.jpg" width="216" height="306" alt="Елена Купцова"/>
-								<div class="employee__name"><span>Елена Купцова</span></div>
-								<div class="employee__position"></div></a></li>
-						<li class="employee"><a class="employee__link" href=""><img class="employee__img" src="../../assets/images/img-employee--elena-vorobeva.jpg" width="216" height="306" alt="Елена Воробьева"/>
-								<div class="employee__name"><span>Елена Воробьева</span></div>
-								<div class="employee__position">Руководитель отдела патентования. Патентный поверенный № 1264</div></a></li>
-						<li class="employee"><a class="employee__link js-fancy-big-modal" href="#naumova"><img class="employee__img" src="../../assets/images/img-employee--natalia-naumova.jpg" width="216" height="306" alt="Наталья Наумова"/>
-								<div class="employee__name"><span>Наталья Наумова</span></div>
-								<div class="employee__position">Патентный поверенный № 1522</div></a></li>
-					</ul>
+</section>
+<section class="section section--gray">
+	<div class="container">
+		<h2>Уникальные готовые решения при ущербе по ОСАГО</h2>
+		<div class="row-lg">
+			<div class="col-1-2-lg push-1-2-lg">
+				<div class="video video--next-to-service-cards">
+					<h3 class="video__title">3 решения<br/> <span>возмещения ущерба при ДТП</span></h3>
+					<div class="video__player"><a class="video__play-btn" href="#">Начать просмотр видео</a></div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<section class="section section--gray">
-		<div class="container">
-			<h2 class="section__title">Популярные патентные услуги</h2>
-			<div class="service-cards service-cards--two-column section__only-block">
-				<div class="service-cards__inner">
-					<div class="service-card">
-						<div class="service-card__inner">
-							<div class="service-card__icon service-card__icon--trademark"></div>
-							<div class="service-card__text">
-								<h3 class="service-card__title"><a href="">Регистрация товарного знака (торговой марки, бренда, логотипа)</a></h3>
-							</div>
+			<div class="col-1-2-lg pull-1-2-lg">
+				<div class="service-cards section__only-block">
+					<article class="service-card">
+						<div class="service-card__img service-card__img--wallet"><img src="../../assets/images/img-service--debt-buybacks-min.jpg" alt=""/></div>
+						<div class="service-card__text">
+							<h3 class="service-card__title"><a href="">Выкуп долга: выплата денег за 3 дня</a></h3>
+							<p>50% от суммы нашей оценки ущерба в течение 3-х дней или 70% после суда.</p>
 						</div>
-					</div>
-					<div class="service-card">
-						<div class="service-card__inner">
-							<div class="service-card__icon service-card__icon--magnifier"><svg width="49" height="48"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-magnifier"></use></svg></div>
-							<div class="service-card__text">
-								<h3 class="service-card__title"><a href="">Патентные исследования</a></h3>
-							</div>
+					</article>
+					<article class="service-card">
+						<div class="service-card__img service-card__img--car-repair"><img src="../../assets/images/img-service--free-repair-min.jpg" alt=""/></div>
+						<div class="service-card__text">
+							<h3 class="service-card__title"><a href="">Бесплатный<br/> ремонт</a></h3>
+							<p>Мы бесплатно починим вашу ласточку, а со страховой разберемся сами.</p>
 						</div>
-					</div>
-					<div class="service-card">
-						<div class="service-card__inner">
-							<div class="service-card__icon"><svg width="44" height="51"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-shield"></use></svg></div>
-							<div class="service-card__text">
-								<h3 class="service-card__title"><a href="">Защита в суде по интеллектуальным правам</a></h3>
-							</div>
-						</div>
-					</div>
-					<div class="service-card">
-						<div class="service-card__inner">
-							<div class="service-card__icon"><svg width="52" height="52"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-copyright"></use></svg></div>
-							<div class="service-card__text">
-								<h3 class="service-card__title"><a href="">Защита авторских прав</a></h3>
-							</div>
-						</div>
-					</div>
-					<div class="service-card">
-						<div class="service-card__inner">
-							<div class="service-card__icon service-card__icon--top-align service-card__icon--file"><svg width="38" height="52"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-file"></use></svg></div>
-							<div class="service-card__text service-card__text--top-align">
-								<h3 class="service-card__title"><a href="">Договоры</a></h3>
-								<ul class="service-card__list">
-									<li><a href="">Лицензионные договоры</a></li>
-									<li><a href="">Договоры концессии (франчайзинга)</a></li>
-									<li><a href="">Договор отчуждения</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="service-card">
-						<div class="service-card__inner">
-							<div class="service-card__icon service-card__icon--top-align service-card__icon--scroll"><svg width="55" height="48"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-scroll"></use></svg></div>
-							<div class="service-card__text service-card__text--top-align">
-								<h3 class="service-card__title"><a href="">Патентование</a></h3>
-								<ul class="service-card__list">
-									<li><a href="">Патентование изобретений</a></li>
-									<li><a href="">Патентование полезных моделей</a></li>
-									<li><a href="">Патентование промышленных образцов</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="service-cards__btn"><a class="btn" href="">Все услуги</a></div>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="container">
-			<h2 class="section__title"><a href="">Наши клиенты</a></h2>
-			<div class="section__scrollbar">
-				<div class="js-scroll-clients">
-					<ul class="logos">
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-client--posco.jpg" width="216" height="127" alt="Логотип компании POSCO"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-client--rzhd.jpg" width="216" height="127" alt="Логотип компании Российские железные дороги"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-client--uralsib.jpg" width="216" height="127" alt="Логотип банка УРАЛСИБ"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-client--auchan.jpg" width="216" height="127" alt="Логотип компании Ашан"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-client--mrsk.jpg" width="216" height="127" alt="Логотип Межрегиональной распределительной сетевой компании Северного Кавказа"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-client--vtb.jpg" width="216" height="127" alt="Логотип банка ВТБ"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-client--unicredit-bank.jpg" width="216" height="127" alt="Логотип ЮниКредит Банка"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-client--sviaznoi.jpg" width="216" height="127" alt="Логотип компании Связной"/></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="section section--bright-gray">
-		<div class="container">
-			<h2 class="section__title">Комплексная защита<br/> интеллектуальной собственности</h2>
-			<div class="row-lg">
-				<div class="col-1-2-lg">
-					<p>Наше патентное бюро не просто решает разовые задачи своих клиентов, а осуществляет комплексную защиту интеллектуальной собственности. Мы обеспечиваем максимальную охрану исключительных прав бизнеса, а также частных лиц, и помогаем получать максимальную прибыль от использования свое интеллектуальной собственности.</p>
-					<p>Ежегодно мы ведем десятки проектов по сопровождению комплексной защиты прав крупных и средних предприятий, групп компаний и промышленных холдингов.</p>
-				</div>
-				<div class="col-1-2-lg">
-					<p class="lead lead--intellectual-property">Мы помогаем своим клиентам выстроить эффективную систему защиты интеллектуальной собственности внутри бизнеса.</p>
-					<p>Наши эксперты знают, как сохранить Ваши исключительные права на товарные знаки, бренды, коммерческие обозначения и другие средства индивидуализации, а также технические решения, патенты, программы ЭВМ и устранить все возможные виды нарушений.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="achievements section section--gray">
-		<div class="container">
-			<h2 class="section__title">Наши достижения</h2>
-			<div class="row-md">
-				<div class="col-1-2-md push-1-2-md">
-										<div class="rating-logos achievements__rating-logos"><a class="rating-logos__logo" href=""><img src="../../assets/images/logo-pravo-300.png" width="56" height="46" alt="Логотип Право300"/></a><a class="rating-logos__logo rating-logos__logo--iraex" href=""><img src="../../assets/images/logo-iraex.png" width="96" height="22" alt="Логотип Iraex"/></a></div>
-				</div>
-				<p class="col-1-2-md pull-1-2-md">Консалтинговая группа WiseAdvice входит в ежегодные рейтинги крупнейших консалтинговых групп страны Рейтингового агентства «Эксперт», а также ежегодные рейтинги крупнейших юридических фирм страны «ПРАВО.RU 300». Патентное бюро вносит ощутимый вклад в успехи компании.</p>
-			</div>
-			<div class="achievements-list row-lg">
-				<div class="achievements-list__col col-1-2-lg">
-					<div class="achievements-list__item">
-						<div class="achievements-list__header">
-							<div class="achievements-list__title">4</div>
-							<div class="achievements-list__subtitle">место</div>
-						</div>
-						<div class="achievements-list__text">
-							<p>WiseAdvice занимает 4 место в рейтинге юридических фирм по интеллектуальной собственности</p>
-						</div>
-					</div>
-					<div class="achievements-list__item">
-						<div class="achievements-list__header">
-							<div class="achievements-list__title">30</div>
-							<div class="achievements-list__subtitle">топ</div>
-						</div>
-						<div class="achievements-list__text">
-							<p>Мы входим в  ТОП-30 профессиональных юридических компаний страны</p>
-						</div>
-					</div>
-				</div>
-				<div class="achievements-list__col col-1-2-lg">
-					<div class="achievements-list__item">
-						<div class="achievements-list__header">
-							<div class="achievements-list__title">12</div>
-							<div class="achievements-list__subtitle">лет</div>
-						</div>
-						<div class="achievements-list__text">
-							<p>Наша команда — это сертифицированные патентные поверенные и юристы, средний опыт работы которых составляет 10–12 лет.</p>
-						</div>
-					</div>
-					<div class="achievements-list__item">
-						<div class="achievements-list__header">
-							<div class="achievements-list__title">60</div>
-							<div class="achievements-list__subtitle">топ</div>
-						</div>
-						<div class="achievements-list__text">
-							<p>Группа компаний WiseAdvice входит в  ТОП-60 консалтинговых компаний страны.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row-lg">
-				<div class="col-1-2-lg">
-					<p>Мы являемся самой крупной консалтинговой группой, созданной после 2003 года с нуля.</p>
-				</div>
-				<div class="col-1-2-lg">
-					<p>Специалисты бюро имеют опыт работы в Федеральном институте промышленной собственности, иных ведомствах и государственных органах.</p>
-				</div>
-			</div>
-			<p class="achievements__more-link"><a href="">Подробнее о консалтинговой группе</a></p>
-		</div>
-	</section>
-	<section class="section">
-		<div class="container">
-			<h2 class="section__title">Сотрудничество со СМИ</h2>
-			<div class="section__scrollbar">
-				<div class="js-scroll-mass-media">
-					<ul class="logos">
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-mass-media--bfm-ru.jpg" width="216" height="127" alt="Логотип интернет-портала BFM.ru"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-mass-media--sostav-ru.jpg" width="216" height="127" alt="Логотип интернет-портала Sostav.ru"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-mass-media--rossijskaja-gazeta.jpg" width="216" height="127" alt="Логотип Российской газеты"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-mass-media--finansovyj-direktor.jpg" width="216" height="127" alt="Логотип журнала Финансовый директор"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-mass-media--rossijskaja-gazeta.jpg" width="216" height="127" alt="Логотип Российской газеты"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-mass-media--sostav-ru.jpg" width="216" height="127" alt="Логотип интернет-портала Sostav.ru"/></li>
-						<li class="logos__item"><img class="logos__logo" src="../../assets/images/logo-mass-media--bfm-ru.jpg" width="216" height="127" alt="Логотип интернет-портала BFM.ru"/></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="section section--bright-gray">
-		<div class="container">
-			<h2 class="section__title"><a href="">Новости</a></h2>
-			<div class="news news--only-in-section row-md">
-				<div class="col-1-2-md">
-					<article class="news-preview">
-						<div class="news-preview__author">
-							<div class="news-preview__author-img"><img src="../../assets/images/img-post-author--elena-kupcova.png" width="111" height="127" alt="Елена Купцова"/></div>
-							<div class="news-preview__author-name">Елена <br/> Купцова</div>
-						</div>
-						<div class="news-preview__text">
-							<time datetime="2017-01-12">12.01.2017</time>
-							<h3 class="news-preview__big-title"><a href="">Пошлины за регистрацию товарных знаков и патентов будут увеличены уже в этом году</a></h3>
-							<p>Согласно поправкам, подготовленным Роспатентом, стоимость регистрации товарного знака увеличится на 30%, а патентования изобретения - в 2 раза.</p>
+					</article>
+					<article class="service-card">
+						<div class="service-card__img service-card__img--gavel"><img src="../../assets/images/img-service--court-min.jpg" alt=""/></div>
+						<div class="service-card__text">
+							<h3 class="service-card__title"><a href="">Комплекс услуг: от&nbsp;оценки до&nbsp;суда</a></h3>
+							<p>Независимая экспертиза ущерба автомобиля + юридическая помощь при ДТП.</p>
 						</div>
 					</article>
 				</div>
-				<div class="col-1-2-md">
-					<div class="news-preview">
-						<time datetime="2017-01-12">12.01.2017</time>
-						<div class="news-preview__title"><a href="">Что ждет российских правообладателей патентов на дизайн после окончательного присоединения России к Гаагской системе?</a></div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="call-us">
+	<div class="container call-us__inner">
+		<div class="call-us__left-col">
+			<div class="call-us__col-inner">
+				<div class="call-us__title">Появились вопросы?</div>
+				<p class="call-us__text">Наш специалист ответит на них по телефону<br><strong>Консультация бесплатная!</strong></p>
+			</div>
+		</div>
+		<div class="call-us__right-col">
+			<div class="call-us__col-inner">
+				<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
+				<div class="call-us__text">Ваш промо-код: 29755<br/><a class="btn btn--link btn--icon-phone-after" href="">Заказать обратный звонок</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+<section class="section">
+	<div class="container">
+		<h2>Наши статусы</h2>
+		<p>Бюро независимой экспертизы и оценки «Хонест» заботится о собственной репутации, поэтому оказывает услуги на самом высоком уровне. Подтверждением этому служат многочисленные премии и награды. Компания также является почетным членом следующих организаций: Российского общества оценщиков, Российского федерального центра судебной экспертизы, Палат судэкспертов.</p>
+		<ul class="our-statuses our-statuses--after-text">
+			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/img-prize-cup-min.jpg" alt="1 место"/>
+				<p>По&nbsp;объему независимых экспертиз в&nbsp;Москве и&nbsp;Московской области</p>
+			</li>
+			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--roo-min.jpg" alt="Логотип Российского общества оценок"/>
+				<p>Член Российского общества оценщиков</p>
+			</li>
+			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--sudex-min.jpg" alt="Логотип Палаты судэкспертов"/>
+				<p>Член Палаты судэкспертов</p>
+			</li>
+			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--rfcse-min.jpg" alt="Логотип Российского федерального центра судебной экспертизы"/>
+				<p>Дипломант Российского федерального центра судебной экспертизы</p>
+			</li>
+			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--audatex-min.jpg" alt="Логотип компании Аудатэкс"/>
+				<p>Мы&nbsp;используем лицензионное ПО для&nbsp;автоэкспертизы</p>
+			</li>
+		</ul>
+	</div>
+</section>
+<section class="section section--gray">
+	<div class="container">
+		<h2>Наши независимые эксперты и оценщики</h2>
+		<p>Гордостью и опорой компании «Хонест» являются независимые эксперты, криминалисты, инженеры-техники. Все сотрудники проходят строгий отбор, который подтверждает их высокую квалификацию. Они в обязательном порядке имеют сертификаты Федерального центра судебной экспертизы и состоят в «Российском обществе оценщиков».</p>
+		<div class="employees employees--after-text">
+			<ul class="employees__list js-content-slider">
+				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--zheltov-nikita-min.jpg" alt="Желтов Никита"/>
+					<div class="employees__name"><strong class="employees__name">Желтов Никита <br/></strong>Автоэксперт</div>
+					<p class="employees__about">Самый молодой и&nbsp;самый быстрый специалист</p>
+				</li>
+				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--brusov-ilia-min.jpg" alt="Брусов Илья"/>
+					<div class="employees__name"><strong class="employees__name">Брусов Илья <br/></strong>Менеджер по продажам</div>
+					<p class="employees__about">Первый взрослый разряд по экспертизе</p>
+				</li>
+				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--feofanov-roman-min.jpg" alt="Феофанов Роман"/>
+					<div class="employees__name"><strong class="employees__name">Феофанов Роман <br/></strong>Менеджер по работе с&nbsp;клиентами</div>
+					<p class="employees__about">Специалист по кузовному ремонту</p>
+				</li>
+				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--medinskii-gleb-min.jpg" alt="Мединский Глеб"/>
+					<div class="employees__name"><strong class="employees__name">Мединский Глеб <br/></strong>Автоэксперт</div>
+					<p class="employees__about">Провел 3385 автоэкспертиз<br/> (1 в процессе)</p>
+				</li>
+				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--lutov-vitalii-min.jpg" alt="Лютов Виталий"/>
+					<div class="employees__name"><strong class="employees__name">Лютов Виталий <br/></strong>Менеджер по продажам</div>
+					<p class="employees__about">3&nbsp;года в Хонесте, 13&nbsp;лет в продажах</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="section">
+	<div class="container">
+		<h2>Наши клиенты</h2>
+		<p>Изначально компания Хонест работала только с физическими лицами, но со временем к нам стали обращаться крупные компании, поэтому для таких клиентов мы разработали особые условия.</p>
+		<p>Также мы предлагаем партнерскую программу для юристов и адвокатов, которым требуется провести независимую экспертизу для суда.</p>
+		<p><b>Нашими клиентами уже стали:</b></p>
+		<div class="row-lg section__only-block">
+			<div class="col-1-2-lg">
+				<div class="clients js-scrollbar">
+					<ul class="clients__list">
+						<li class="clients__item"><img src="../../assets/images/logo-client--dhl.jpg" alt="DHL"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--pervyj-kanal.jpg" alt="Первый канал"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--russia-today.jpg" alt="Russia today"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--mosgortrans.jpg" alt="Мосгортранс"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--sedmoj-kontinent.jpg" alt="Седьмой континент"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--microsoft.jpg" alt="Microsoft"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--specstroj-rossii.jpg" alt="Спецстрой России"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--backaldrin.jpg" alt="Backaldrin"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--nezavisimost.jpg" alt="Группа компаний Независимость"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--rushimmetall.jpg" alt="РусХимМеталл"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--rekom.jpg" alt="Завод деталей трубопроводов Реком"/></li>
+						<li class="clients__item"><img src="../../assets/images/logo-client--pirelli.jpg" alt="Pirelli"/></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-1-2-lg">
+				<div class="offer" style="background-image: url(../../assets/backgrounds/bg-offer-for-legal-persons-min.jpg);">
+					<div class="offer__text">
+						<h3 class="offer__title"><a href="">Выгодное предложение для&nbsp;юридических лиц</a></h3>
+						<p>Скидка до 50% на автоэкспертизу и выплаты до 70% от суммы нашей оценки за 5 дней для корпоратив&shy;ных клиентов</p>
 					</div>
-					<div class="news-preview">
-						<time datetime="2016-12-29">29.12.2016</time>
-						<div class="news-preview__title"><a href="">Эксперт ФПБ «Гардиум» получила статус патентного поверенного</a></div>
-					</div>
-					<div class="news-preview">
-						<time datetime="2017-01-09">09.01.2017</time>
-						<div class="news-preview__title"><a href="">Присоединение России к Гаагской системе: изменения в патентовании промобразцов</a></div>
+				</div>
+				<div class="offer offer--small" style="background-image: url(../../assets/backgrounds/bg-affiliate-program-min.jpg);">
+					<div class="offer__text">
+						<h3 class="offer__title"><a href="">Партнерская программа для&nbsp;юристов и&nbsp;адвокатов</a></h3>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<section class="section">
-		<div class="container">
-			<h2 class="section__title"><a href="">Наш опыт</a></h2>
-			<div class="post-previews post-previews--three-col row-sm">
-				<article class="post-preview col-1-2-sm col-1-3-lg">
-					<div class="post-preview__meta">
-						<time datetime="2017-03-17">17.03.2017</time><br/>Споры в области интеллектуальной собственности
-					</div><a class="post-preview__link" href=""><img class="post-preview__img post-preview__img--bordered" src="../../assets/images/img-post.jpg" width="194" height="118" alt="Бутылки антикоррозийной смазки бренда UP40"/>
-						<h3 class="post-preview__title"><span>Эксперты «Гардиума» защитили клиента от обвинений в нарушении прав на товарный знак</span></h3></a>
-					<p>Суд признал отсутствие сходства обозначения, размещенного на продукции реализуемой клиентом, с товарным знаком WD-40. Конфискованный товар был ему возвращен.</p>
-				</article>
-				<article class="post-preview col-1-2-sm col-1-3-lg">
-					<div class="post-preview__meta">
-						<time datetime="2017-02-28">28.02.2017</time><br/>Регистрация товарных знаков<br/> и патентование
-					</div><a class="post-preview__link" href=""><img class="post-preview__img post-preview__img--bordered" src="../../assets/images/img-post2.jpg" width="194" height="118" alt="Эмблема УАЗа"/>
-						<h3 class="post-preview__title"><span>Товарный знак УАЗ стал общеизвестным благодаря юристам «Гардиум»</span></h3></a>
-					<p>В 2016 году легендарному российскому производителю автомобилей повышенной проходимости, Ульяновскому автомобильному заводу, исполнилось 75 лет.</p>
-				</article>
-				<article class="post-preview col-1-2-sm col-1-3-lg">
-					<div class="post-preview__meta">
-						<time datetime="2017-02-10">10.02.2017</time><br/>Споры в области интеллектуальной собственности
-					</div><a class="post-preview__link" href=""><img class="post-preview__img post-preview__img--bordered" src="../../assets/images/img-post3.jpg" width="194" height="118" alt="Автомобильные запчасти"/>
-						<h3 class="post-preview__title"><span>Эксперты «Гардиума» добились признания недействительным патента КАМАЗа</span></h3></a>
-					<p>Роспатент признал, что КАМАЗ незаконно получил патент на запчасти для своих автомобилей, так как их подробные схемы много лет были в открытом доступе.</p>
-				</article>
+	</div>
+</section>
+<div class="call-us">
+	<div class="container call-us__inner">
+		<div class="call-us__left-col">
+			<div class="call-us__col-inner">
+				<div class="call-us__title">Появились вопросы?</div>
+				<p class="call-us__text">Наш специалист ответит на них по телефону<br><strong>Консультация бесплатная!</strong></p>
 			</div>
 		</div>
-	</section>
-</main>
-<div class="modal" id="kupcova">
-						<article class="team-member section">
-							<header class="team-member__header">
-								<h1 class="section__title section__title--align-left section__title--mb5">Елена Купцова</h1>
-								<div class="team-member__position">Руководитель отдела патентования. Патентный поверенный № 1264</div>
-							</header>
-							<div class="team-member__img section__before-text-block"><img src="../../assets/images/img-employee--elena-kupcova-big.jpg" alt="Елена Купцова" width="300" height="425"/>
-								<div class="team-member__specialty">
-									<h2 class="team-member__title">Квалификация</h2>
-									<ul class="dash-marker-list">
-										<li>Патентный поверенный №1264 по изобретениям, полезным моделям, промышленным образцам с 2008 года.</li>
-										<li>Патентный поверенный по товарным знакам и знакам обслуживания с 2015 года</li>
-										<li>Курсы повышения квалификации Всемирной организации интеллектуальной собственности.</li>
-									</ul>
-								</div>
-								<div class="section__after-block hide-up-to-md"><a class="btn btn--sm team-member__btn" href="">Задать вопрос эксперту</a></div>
-							</div>
-							<div class="team-member__content">
-								<p>Елена Купцова более 15 лет работает в области защиты интеллектуальной собственности, в том числе 4 года государственным экспертом в Федеральном институте промышленной собственности и 2 года патентоведом в Научно-исследовательском институте пожарной техники. Она присоединилась к ФПБ «Гардиум» в 2007 году. Возглавила отдел патентования в 2014 году.</p>
-								<p>Участвовала в проектах по регистрации товарных знаков и лицензионных договоров сети быстрого питания «Теремок» с 2009 года, передаче прав на знак обслуживания ЮниКредит Банка в России, международной регистрации логотипа и договоров коммерческой концессии международной службы курьерской доставки почты и грузов Dimex более чем в 30 странах мира.</p>
-								<h2 class="team-member__title">Секторы экономики</h2>
-								<ul class="dash-marker-list team-member__two-cols-list">
-									<li>Банковский сектор</li>
-									<li>Ветеринария</li>
-									<li>Медицинская промышленность</li>
-									<li>Нефтедобывающая промышленность</li>
-									<li>Пищевая промышленность</li>
-									<li>Строительство</li>
-									<li>Торговля</li>
-									<li>Химическая промышленность</li>
-								</ul>
-								<div class="team-member__specialty team-member__specialty--in-text-flow">
-									<h2 class="team-member__title">Специализация</h2>
-									<ul class="dash-marker-list">
-										<li>Патентование изобретений, полезных моделей и промышленных образцов в России.</li>
-										<li>Патентные исследования на патентную чистоту, уровень и тенденции развития техники.</li>
-										<li>Патентование за рубежом (США, Китай, Япония, страны Европы), оформление евразийских и европейских патентов.</li>
-										<li>Международное патентование по процедуре PCT.</li>
-										<li>Представительство заявителей и правообладателей в Федеральном институте промышленной собственности.</li>
-										<li>Представительство в Палате по патентным спорам.</li>
-										<li>Представительство в арбитражных судах, Суде по интеллектуальным правам.</li>
-										<li>Патентная экспертиза на определение нарушений исключительного права, в том числе по определению суда.</li>
-										<li>Оформление и регистрация лицензионных договоров, договоров коммерческой концессии, договоров об отчуждении исключительного права и других договоров.</li>
-									</ul>
-								</div>
-								<h2 class="team-member__title">Образование</h2>
-								<ul class="dash-marker-list">
-									<li>Московский государственный университет инженерной экологии (ранее – Московский институт химического машиностроения), 2001</li>
-								</ul>
-								<div class="section__after-text-block section__last-block hide-md"><a class="btn btn--sm team-member__btn" href="">Задать вопрос эксперту</a></div>
-							</div>
-						</article>
+		<div class="call-us__right-col">
+			<div class="call-us__col-inner">
+				<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
+				<div class="call-us__text">Ваш промо-код: 29755<br/><a class="btn btn--link btn--icon-phone-after" href="">Заказать обратный звонок</a></div>
+			</div>
+		</div>
+	</div>
 </div>
-<div class="modal" id="naumova">
-						<article class="team-member section">
-							<header class="team-member__header">
-								<h1 class="section__title section__title--align-left section__title--mb5">Наталья Наумова</h1>
-								<div class="team-member__position">Патентный поверенный № 1522</div>
-							</header>
-							<div class="team-member__img section__before-text-block"><img src="../../assets/images/img-employee--natalia-naumova-big.jpg" alt="Наталья Наумова" width="300" height="425"/>
-								<div class="team-member__specialty">
-									<h2 class="team-member__title">Квалификация</h2>
-									<ul class="dash-marker-list">
-										<li>Патентный поверенный № 1522 по товарным знакам и знакам обслуживания с 2013 года.</li>
-									</ul>
-								</div>
-								<div class="section__after-block hide-up-to-md"><a class="btn btn--sm team-member__btn" href="">Задать вопрос эксперту</a></div>
+<section class="section news">
+	<div class="container">
+		<h2><a href="">Новости и события</a></h2>
+		<div class="news__list section__last-block">
+			<div class="js-news-slider">
+				<div>
+					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" alt=""/>
+						<div class="news-preview__text"><a class="news-preview__title" href="">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
+							<div class="news-preview__meta">
+								<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="">Новости Honest</a>
 							</div>
-							<div class="team-member__content">
-								<p>Наталия более 10 лет практикует в области защиты интеллектуальной собственности, в том числе 4 года была экспертом в Правовом управлении Роспатента. Она присоединилась к ФПБ «Гардиум» в 2013 году.</p>
-								<p>Наталия участвует в регистрации объектов интеллектуальной собственности сети магазинов детских товаров «Кораблик», ведущего европейского производителя оборудования для предприятий пищевой, фармацевтической промышленности, пивоварения и производства напитков «Кизельманн РУС», транспортного оператора по России, СНГ и Балтии «Н-Транс», группы компаний в области экологического менеджмента «Эко-система», компании в области проектирования и управления строительством объектов нефтегазового сектора «ТЕКНИП РУС».</p>
-								<h2 class="team-member__title">Секторы экономики</h2>
-								<ul class="dash-marker-list team-member__two-cols-list">
-									<li>Банковский сектор</li>
-									<li>Ветеринария</li>
-									<li>Медицинская промышленность</li>
-									<li>Нефтедобывающая промышленность</li>
-									<li>Пищевая промышленность</li>
-									<li>Строительство</li>
-									<li>Торговля</li>
-									<li>Химическая промышленность</li>
-								</ul>
-								<div class="team-member__specialty team-member__specialty--in-text-flow">
-									<h2 class="team-member__title">Специализация</h2>
-									<ul class="dash-marker-list">
-										<li>Регистрация товарных знаков и знаков обслуживания в России.</li>
-										<li>Внесение товарных знаков в Таможенный реестр объектов интеллектуальной собственности.</li>
-										<li>Международная регистрация товарных знаков.</li>
-										<li>Регистрация лицензионных договоров, договоров об отчуждении исключительного права.</li>
-										<li>Представительство в Палате по патентным спорам.</li>
-										<li>Представительство заявителей и правообладателей в Федеральном институте промышленной собственности.</li>
-									</ul>
-								</div>
-								<h2 class="team-member__title">Образование</h2>
-								<ul class="dash-marker-list">
-									<li>Российский государственный институт интеллектуальной собственности, юридический факультет, 2000 – 2005</li>
-								</ul>
-								<div class="section__after-text-block section__last-block hide-md"><a class="btn btn--sm team-member__btn" href="">Задать вопрос эксперту</a></div>
+						</div>
+					</div>
+					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" alt=""/>
+						<div class="news-preview__text"><a class="news-preview__title" href="">Послезавтра. Тарифы на ОСАГО</a>
+							<div class="news-preview__meta">
+								<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="">Новости Honest</a> <a class="news-preview__tag" href="">Наши расследования</a>
 							</div>
-						</article>
-</div>
-<footer class="page-footer">
-	<div class="page-footer__top container">
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
+						<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+							<div class="news-preview__meta">
+								<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+							</div>
+						</div>
+					</div>
+					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
+						<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+							<div class="news-preview__meta">
+								<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
+						<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+							<div class="news-preview__meta">
+								<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+							</div>
+						</div>
+					</div>
+					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
+						<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+							<div class="news-preview__meta">
+								<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section section--gray">
+	<div class="container">
 		<div class="row-md">
+			<div class="col-1-2-md">
+				<h2><a href="">Отзывы клиентов</a></h2>
+				<ul class="reviews">
+					<li class="reviews__item">
+						<blockquote class="review">
+							<footer>
+								<cite>Игорь</cite><span class="review__service review__service--car-damage">Opel Astra</span>
+							</footer>
+							<p>«Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить...</p>
+						</blockquote>
+					</li>
+					<li class="reviews__item">
+						<blockquote class="review">
+							<footer>
+								<cite>Владимир</cite><span class="review__service review__service--realty-damage">Залив</span>
+							</footer>
+							<p>«Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы...</p>
+						</blockquote>
+					</li>
+					<li class="reviews__item">
+						<blockquote class="review">
+							<footer>
+								<cite>Елена</cite><span class="review__service review__service--legal">Юридические услуги</span>
+							</footer>
+							<p>«Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest...</p>
+						</blockquote>
+					</li>
+				</ul>
+			</div>
+			<div class="col-1-2-md">
+				<div class="social-tabs js-tabs js-tabs--social">
+					<ul class="social-tabs__tabs social-tabs__tabs--vk-is-active js-tabs__tabs">
+						<li class="social-tabs__tab social-tabs__tab--vk is-active js-tabs__tab" data-id="vk"><span class="social-tabs__tab-title">
+								<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"><path fill-rule="evenodd" d="M1009.86,4839.92a4.294,4.294,0,0,0-2.32-1.24v-0.08a3.393,3.393,0,0,0,1.58-1.31,3.708,3.708,0,0,0,.57-2.04,3.556,3.556,0,0,0-.42-1.74,2.962,2.962,0,0,0-1.25-1.2,6.146,6.146,0,0,0-2.02-.31,16.165,16.165,0,0,0-2,0h-6v15h6c1.08,0,2.43.01,3.17-.06a3.916,3.916,0,0,0,1.93-.98,4.255,4.255,0,0,0,1.19-1.46,4.569,4.569,0,0,0,.44-2.04A3.592,3.592,0,0,0,1009.86,4839.92Zm-4.33-2.98a1.3,1.3,0,0,1-.65.61,2.281,2.281,0,0,1-.84.22c-0.27.01-.74,0.02-1.41,0.02h-0.49v-3.3h0.27c0.7,0,1.23,0,1.58.01a2.547,2.547,0,0,1,.92.19,1.191,1.191,0,0,1,.6.57,1.786,1.786,0,0,1,.19.78A2.293,2.293,0,0,1,1005.53,4836.94Zm0.91,6.45a1.5,1.5,0,0,1-.78.68,3.272,3.272,0,0,1-1.19.28c-0.39.02-1.1,0.02-2.12,0.02h-0.21v-3.91h0.72c0.7,0,1.26.01,1.68,0.02a3.1,3.1,0,0,1,.98.15,1.826,1.826,0,0,1,.88.62,1.946,1.946,0,0,1,.29,1.13A1.966,1.966,0,0,1,1006.44,4843.39ZM995.312,4826h16.378a5.313,5.313,0,0,1,5.31,5.31v16.38a5.313,5.313,0,0,1-5.31,5.31H995.312a5.312,5.312,0,0,1-5.311-5.31v-16.38A5.312,5.312,0,0,1,995.312,4826Z" transform="translate(-990 -4826)"/></svg>Вконтакте</span></li>
+						<li class="social-tabs__tab social-tabs__tab--fb js-tabs__tab" data-id="fb"><span class="social-tabs__tab-title">
+								<svg xmlns="http://www.w3.org/2000/svg" width="12.1" height="27" viewBox="0 0 12.1 27"><path fill-rule="evenodd" d="M1153.42,4834.38h-4.65v-2.79c0-1.05,1.2-.94,1.68-0.94s2.97,0.01,2.97.01v-4.65h-4.65c-4.45,0-4.65,3.37-4.65,5.58v2.79h-2.8v4.65h2.8v13.96h4.65v-13.96h3.72Z" transform="translate(-1141.31 -4826)"/></svg>Facebook</span></li>
+						<li class="social-tabs__tab social-tabs__tab--ok js-tabs__tab" data-id="ok"><span class="social-tabs__tab-title">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18.41" height="29.03" viewBox="0 0 18.41 29.03"><path fill-rule="evenodd" d="M1291.57,4845.25a23.746,23.746,0,0,1-2.95.88l-0.01-.01s-0.01.01,0.01,0.01l4.66,4.22-0.02.04a2.146,2.146,0,0,1,.49,1.35,2.338,2.338,0,0,1-2.41,2.26,2.532,2.532,0,0,1-1.17-.29h0v-0.01a1.557,1.557,0,0,1-.28-0.16l-0.04.02-4.51-4.23-4.68,4.23-0.04-.02a2.448,2.448,0,0,1-1.44.46,2.338,2.338,0,0,1-2.41-2.26,2.159,2.159,0,0,1,.48-1.35l-0.02-.04,4.68-4.23s-4.06-.64-5.46-2.45a0.87,0.87,0,0,1-.09-0.11,3.256,3.256,0,0,1-.21-0.39,1.224,1.224,0,0,1-.09-0.27c-0.01-.04-0.02-0.08-0.03-0.11a1.046,1.046,0,0,1-.04-0.17,1.788,1.788,0,0,1,1.2-2.08,2.333,2.333,0,0,1,1.06-.25,2.715,2.715,0,0,1,.49.05,3.363,3.363,0,0,1,1.14.24,9.851,9.851,0,0,0,5.14,1.46,13.972,13.972,0,0,0,5.46-1.32,2.979,2.979,0,0,1,1.11-.37,2.242,2.242,0,0,1,.52-0.06,0.375,0.375,0,0,1,.11.01c0.05,0,.08-0.01.13-0.01a1,1,0,0,1,.52.13,2.127,2.127,0,0,1,1.5,1.9v0.01S1294.69,4844.22,1291.57,4845.25Zm-6.31-4.96a7.677,7.677,0,1,1,8.18-7.66A7.932,7.932,0,0,1,1285.26,4840.29Zm0-10.8a3.142,3.142,0,1,0,3.35,3.14A3.253,3.253,0,0,0,1285.26,4829.49Z" transform="translate(-1275.97 -4824.97)"/></svg>Одноклассники</span></li>
+					</ul>
+					<div class="social-tabs__container">
+						<div class="social-tabs__content is-active js-tabs__content" id="vk">
+							<script type="text/javascript" src="//vk.com/js/api/openapi.js?146"></script>
+							<div id="vk_groups"></div>
+							<script type="text/javascript">
+								VK.Widgets.Group("vk_groups", {mode: 0, width: "430", height: "290", color1: 'ffffff', color2: '54769D', color3: '54769D'}, 51646324);
+								
+								
+							</script>
+						</div>
+						<div class="social-tabs__content js-tabs__content" id="fb">
+							<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHonest-%25D0%25BD%25D0%25B5%25D0%25B7%25D0%25B0%25D0%25B2%25D0%25B8%25D1%2581%25D0%25B8%25D0%25BC%25D0%25B0%25D1%258F-%25D1%258D%25D0%25BA%25D1%2581%25D0%25BF%25D0%25B5%25D1%2580%25D1%2582%25D0%25B8%25D0%25B7%25D0%25B0-187781641370532%2F&amp;tabs&amp;width=430&amp;height=290&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" width="430" height="290" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+						</div>
+						<div class="social-tabs__content js-tabs__content" id="ok">
+							<div id="ok_group_widget"></div>
+							<script>
+								!function (d, id, did, st) {
+									var js = d.createElement("script");
+									js.src = "http://connect.ok.ru/connect.js";
+									js.onload = js.onreadystatechange = function () {
+									if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+										if (!this.executed) {
+										  this.executed = true;
+										  setTimeout(function () {
+										    OK.CONNECT.insertGroupWidget(id,did,st);
+										  }, 0);
+										}
+									}}
+									d.documentElement.appendChild(js);
+									}(document,"ok_group_widget","54155400314880","{width:430,height:305}");
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section">
+	<div class="container">
+		<h2>Независимая экспертиза и оценка в Москве и&nbsp;Санкт-Петербурге</h2>
+		<div class="section__inner">
+			<div class="section__one-half-col">
+				<p>Проведение государственной независимой экспертизы необходимо не только для установления точного размера нанесенного урона, но и для отстаивания собственных прав во время судебного разбирательства.</p>
+				<p class="lead">Дело в том, что большинство страховых компаний недобросовестно относятся к выполнению своих обязательств и стремятся всячески занизить сумму выплаты.</p>
+				<p>Чтобы уличить их в обмане и добиться справедливой денежной компенсации, следует обратиться в надежное и проверенное бюро независимой экспертизы в Москве и Санкт-Петербурге, такое как «Хонест».</p>
+			</div>
+			<div class="section__one-half-col"><img src="../../assets/images/img-post--1-min.jpg" alt=""/></div>
+		</div>
+		<div class="alert">
+			<p>Чаще всего людей обманывают после попадания в ДТП, когда страховщику необходимо выплачивать кругленькую сумму физическому лицу. Здесь и начинается использования мудреных схем и проведение махинаций. Юридически не подкованному человеку сложно разобраться самостоятельно во всех тонкостях и нюансах автоэкспертизы, поэтому он становится жертвой акул страхового бизнеса.</p>
+		</div>
+		<p>Чтобы не быть таким же простофилей, необходимо позвать на помощь независимых экспертов. Они проведут объективную оценку нанесенного урона, зафиксируют все повреждения на листе бумаге и заверят информацию печатью авторитетной фирмы. Экспертное заключение является основанием для пересмотра суммы страховой выплаты. Оно отсылается соответствующей компании по почте, после чего ожидается ответ. В случае непризнания независимой экспертизы авто и отказе в положенной денежной выплате, клиент имеет возможность подать исковое заявление в суд.</p>
+		<p class="lead">Бюро независимой экспертизы и оценки «Хонест» предоставит грамотных юристов, которые сумеют отстоять интересы потерпевшего и выиграть дело. Мы можем практически со 100% уверенностью гарантировать положительный результат судебного разбирательства.</p>
+		<p>Примерно такой же алгоритм действий предстоит пройти в том случае, если вас затопили соседи сверху или стали виновниками пожара. Страховщики также стараются ограничить собственные убытки и хитрым образом занижают сумму денежной компенсации. Пресечь попытки обмана можно проведя независимую экспертизу в доме. Опытные специалисты учтут причину возникновения пожара или потопа, особенности квартиры, стоимость сделанного ремонта и дорогостоящей бытовой техники, которая вышла из строя.</p>
+		<div class="section__inner">
+			<div class="section__one-half-col">
+				<p>Почему для проведения независимой экспертизы автомобиля и дома следует обращаться к нам?</p>
+				<p>Экспертно-правовое бюро «Хонест» работает в этой сфере продолжительный период времени, имеет множество полезных деловых связей, квалифицированный персонал и безупречную репутацию. Компания предоставляет очень широкий спектр услуг, всегда учитывает просьбы и пожелания клиентов и заботиться об их удовлетворении. Огромное количество положительных отзывов подтверждает сей факт.</p>
+				<p>Обслуживанием клиентов занимаются настоящие профессионалы, прекрасно знающие свое дело и умеющие решать любые проблемы. Обращайтесь в любое удобное для вас время по одному из контактных телефонов. Мы за плодотворное и взаимовыгодное сотрудничество!</p>
+			</div>
+			<div class="section__one-half-col"><img src="../../assets/images/img-post--2-min.jpg" alt=""/></div>
+		</div>
+	</div>
+</section>
+<footer class="page-footer">
+	<div class="container">
+		<div class="page-footer__inner">
 			<div class="page-footer__col">
-				<div class="page-footer__copyright">© 2005–2017, ООО «Гардиум» <br/> Все права защищены</div>
-				<ul class="social-links social-links--inline">
-					<li class="social-links__item"><a class="social-links__link" href="https://www.facebook.com/gardiumrussia" target="_blank" rel="noopener noreferrer"><span><svg width="8" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-fb"></use></svg></span></a></li>
-					<li class="social-links__item"><a class="social-links__link social-links__link--vk" href="https://vk.com/gardium" target="_blank" rel="noopener noreferrer"><span><svg width="15" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-vk"></use></svg></span></a></li>
-					<li class="social-links__item"><a class="social-links__link" href="https://www.youtube.com/channel/UCGRvz9YiNWQ5xLiu6gWNfiw" target="_blank" rel="noopener noreferrer"><span><svg width="16" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-youtube"></use></svg></span></a></li>
-					<li class="social-links__item"><a class="social-links__link social-links__link--google-plus" href="https://plus.google.com/+Legal-supportRu" target="_blank" rel="noopener noreferrer"><span><svg width="17.031" height="15.97"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-google-plus"></use></svg></span></a></li>
+				<div class="page-footer__copyright">© 2005—2016, «Honest»<br> Все права защищены</div>
+								<ul class="social-links page-footer__social-links">
+									<li><a class="social-links__link social-links__link--fb" href="https://www.facebook.com/pages/Honest-%D0%BD%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%B0%D1%8F-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D1%82%D0%B8%D0%B7%D0%B0/187781641370532" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+									<li><a class="social-links__link social-links__link--vk" href="http://vk.com/honestexpert" target="_blank" rel="noopener noreferrer">Вконтакте</a></li>
+									<li><a class="social-links__link social-links__link--ok" href="http://ok.ru/honest.expert" target="_blank" rel="noopener noreferrer">Одноклассники</a></li>
+									<li><a class="social-links__link social-links__link--google" href="https://plus.google.com/u/0/102624426359032386043/posts" target="_blank" rel="noopener noreferrer">Google Plus</a></li>
+								</ul>
+				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="dotted dotted--plain-text" href="">Схема проезда</a>
+			</div>
+			<div class="page-footer__col">
+				<div class="page-footer__promo">
+					<address class="page-footer__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>Ваш промо-код: 28925
+				</div><a class="dotted dotted--plain-text" href="">Заказать обратный звонок</a>
+				<table class="page-footer__working-hours">
+					<tbody>
+						<tr>
+							<td>пн-пт</td>
+							<td>9:00-20:00</td>
+						</tr>
+						<tr>
+							<td>сб</td>
+							<td>10:00-14:00</td>
+						</tr>
+						<tr>
+							<td>вс</td>
+							<td>выходной</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="page-footer__col">
+				<ul class="page-footer__nav">
+					<li><a href="">Независимая автоэкспертиза</a></li>
+					<li><a href="">Оценка ущерба: залив</a></li>
+					<li><a href="">20+ видов экспертиз</a></li>
+					<li><a href="">Юристы (суд)</a></li>
+					<li><a href="">Судебная экспертиза</a></li>
+					<li><a href="">Выкуп долга ОСАГО за 1 день</a></li>
+					<li><a href="">Бесплатный ремонт по ОСАГО</a></li>
+					<li><a href="">Партнерская программа</a></li>
+					<li><a href="">Корпоративным клиентам</a></li>
 				</ul>
 			</div>
 			<div class="page-footer__col">
-				<address>
-					<div class="page-footer__phone"><a href="tel:+74956658258">+7 (495) 665-82-58</a></div>
-					<div class="page-footer__address"><span class="page-footer__address-icon"><svg width="11" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-map"></use></svg></span><span class="page-footer__address-text">Москва, Рязанский проспект, д.75, корп.4</span></div>
-				</address>
-			</div>
-			<div class="page-footer__col page-footer__col--hidden-on-tablet">
-				<div class="js-show-content">
-					<button class="dotted dotted--white js-show-content__btn" type="button" data-scroll-to="true" data-attribute="other-wiseadvice-companies"><span>Другие компании</span></button> консалтинговой группы <img class="page-footer__logo" src="../../assets/images/logo-wiseadvice.png" alt="Логотип компании WiseAdvice"/>
-				</div>
-			</div>
-			<div class="page-footer__col">
-				<div class="page-footer__payment-systems"><svg width="52" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-visa"></use></svg>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="20" viewBox="0 0 34 20"><defs><filter id="filter" x="13.625" y="0" width="20.375" height="20" filterUnits="userSpaceOnUse"><feFlood result="flood" flood-color="#fead33"/><feComposite result="composite" operator="in" in2="SourceGraphic"/><feBlend result="blend" in2="SourceGraphic"/></filter><filter id="filter-2" x="0" y="0" width="20.375" height="20" filterUnits="userSpaceOnUse"><feFlood result="flood" flood-color="#d62e19"/><feComposite result="composite" operator="in" in2="SourceGraphic"/><feBlend result="blend" in2="SourceGraphic"/></filter><filter id="filter-4" x="13.625" y="0" width="20.375" height="20" filterUnits="userSpaceOnUse"><feImage preserveAspectRatio="none" x="13.625" width="20.375" height="20" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAuMzc1IiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAuMzc1IDIwIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjEwLjE4OCIgeTE9IjIwIiB4Mj0iMTAuMTg4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmNzIwMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZWFkMzMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjIwLjM3NSIgaGVpZ2h0PSIyMCIvPgo8L3N2Zz4K"/><feComposite result="composite" operator="in" in2="SourceGraphic"/><feBlend result="blend" in2="SourceGraphic"/><feFlood result="flood" flood-color="#fead33"/><feComposite result="composite-2" operator="in" in2="SourceGraphic"/><feBlend result="blend-2" in2="blend"/></filter></defs><path id="Ellipse_1_copy_2" data-name="Ellipse 1 copy 2" fill="#fead33" fill-rule="evenodd" filter="url(#filter)" d="M23.808.005A10.088 10.088 0 0 1 33.988 10a10.18 10.18 0 0 1-20.36 0A10.088 10.088 0 0 1 23.808.005z"/><circle id="Ellipse_1_copy_3" data-name="Ellipse 1 copy 3" fill="#d73333" filter="url(#filter-2)" cx="10.188" cy="10" r="10.188"/><path id="Rectangle_1_copy_5" data-name="Rectangle 1 copy 5" fill="#fead33" fill-rule="evenodd" d="M13.628 4.73h7.345v1.053h-7.345V4.73zm0-2.11h7.345v1.054h-7.345V2.62zm0 6.325h7.345V10h-7.345V8.945zm0-2.108h7.345V7.89h-7.345V6.838zm0 6.325h7.345v1.054h-7.345v-1.054zm0 2.11h7.345v1.053h-7.345V15.27zm0-4.218h7.345v1.054h-7.345v-1.054z"/><circle id="Ellipse_1_copy" data-name="Ellipse 1 copy" fill="#d73333" filter="url(#filter-2)" cx="10.188" cy="10" r="10.188"/><path fill="#fead33" fill-rule="evenodd" filter="url(#filter-4)" d="M23.808.005A10.088 10.088 0 0 1 33.988 10a10.18 10.18 0 0 1-20.36 0A10.088 10.088 0 0 1 23.808.005z"/></svg>
+				<div class="page-footer__author">Разработка сайта — <br/><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
+								<ul class="payment-systems page-footer__payment-systems">
+									<li class="payment-systems__item--visa">Платежная система Visa</li>
+									<li class="payment-systems__item--mastercard">Платежная система MasterCard</li>
+								</ul>
+				<div class="page-footer__our-companies">Другие компании консалтинговой группы <br/>
+					<button class="dotted dotted--with-arrow" type="button"><span class="dotted__text">Wiseadvice</span></button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="page-footer__bottom">
-		<div class="container">
-			<ul class="page-footer__nav row-lg">
-				<li class="col-1-4-lg"><a class="page-footer__nav-link" href="">Патентное бюро</a>
-					<ul class="page-footer__nav-list">
-						<li><a class="page-footer__nav-link" href="">О нас</a></li>
-						<li><a class="page-footer__nav-link" href="">Услуги и цены</a></li>
-						<li><a class="page-footer__nav-link" href="">Клиенты</a></li>
-						<li><a class="page-footer__nav-link" href="">Инфо</a></li>
-						<li><a class="page-footer__nav-link" href="">Контакты</a></li>
-					</ul>
-				</li>
-				<li class="col-1-4-lg"><a class="page-footer__nav-link" href="">Товарные знаки</a>
-					<ul class="page-footer__nav-list">
-						<li><a class="page-footer__nav-link" href="">Регистрация товарного знака</a></li>
-						<li><a class="page-footer__nav-link" href="">Регистрация торговой марки</a></li>
-						<li><a class="page-footer__nav-link" href="">Регистрация логотипа</a></li>
-						<li><a class="page-footer__nav-link" href="">Международная регистрация</a></li>
-						<li><a class="page-footer__nav-link" href="">Реестр товарных знаков</a></li>
-					</ul>
-				</li>
-				<li class="col-1-4-lg"><a class="page-footer__nav-link" href="">Патентование</a>
-					<ul class="page-footer__nav-list">
-						<li><a class="page-footer__nav-link" href="">Патент на изобретение</a></li>
-						<li><a class="page-footer__nav-link" href="">Патент на полезную модель</a></li>
-						<li><a class="page-footer__nav-link" href="">Патент на промышленный образец</a></li>
-						<li><a class="page-footer__nav-link" href="">Патентный поиск</a></li>
-						<li><a class="page-footer__nav-link" href="">Патентные поверенные</a></li>
-					</ul>
-				</li>
-				<li class="col-1-4-lg"><a class="page-footer__nav-link" href="">Договоры</a>
-					<ul class="page-footer__nav-list">
-						<li><a class="page-footer__nav-link" href="">Лицензионный договор</a></li>
-						<li><a class="page-footer__nav-link" href="">Договор отчуждения</a></li>
-						<li><a class="page-footer__nav-link" href="">Договор коммерческой концессии</a></li>
-						<li><a class="page-footer__nav-link" href="">Договор авторского заказа</a></li>
-						<li><a class="page-footer__nav-link" href="">Залог исключительных прав</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="page-footer__links row-sm" data-target="other-wiseadvice-companies">
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://arplaw.ru/"><b>Арбитражное адвокатское бюро «АРП»</b></a><br/>арбитраж, споры и конфликты, юридические услуги</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://1c-wiseadvice.ru/book-keeping/"><b>Бухгалтерские услуги в Москве</b></a></li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://arplaw.ru/"><b>Налоговые адвокаты и юристы</b></a><br/>налоговые проверки ИФНС, ОБЭП, возмещение НДС</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://www.pravovest-audit.ru"><b>Аудиторская фирма «WiseAdvice»</b></a><br/>аудиторские услуги по РСБУ и МСФО</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://intelis-it.ru/"><b>Услуги 1С Франчайзи</b></a><br/>внедрение, сопровождение, проекты по 1С</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://www.damages.ru"><b>Независимая экспертиза №1 «Хонест»</b></a><br/>автоэкспертиза, возмещение ущерба от ДТП, залива и пр.</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://www.intelis-ocenka.ru/"><b>Услуги по независимой оценке</b></a><br/>оценка недвижимости, оборудования, бизнеса</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://www.1cashflow.ru/"><b>Программы на 1С - «Финансист»</b></a><br/>автоматизация бюджетирования, казначейства, упр.учета</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://you-right.ru/"><b>Линейка программ «Юрайт»</b></a><br/>программы для юристов и юридических фирм</li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="modal" id="call-order">
-	<form class="form form--mt0 form--call-order js-form">
-		<div class="form-header">Заказ обратного звонка</div>
-		<div class="form-row">
-			<div class="form-col form-col--pb0">
-				<div class="form-input form-input--text">
-					<label for="form-input-10-1">Ваше имя<span class="asterisk">*</span></label>
-					<input id="form-input-10-1" type="text" placeholder="Сергей Заказчиков"/>
-				</div>
-			</div>
-			<div class="form-col">
-				<div class="form-input form-input--text">
-					<label for="form-input-10-2">Телефон<span class="asterisk">*</span></label>
-					<input id="form-input-10-2" type="text" placeholder="+7 (925) 490-22-10"/>
-				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="form-row">
-			<div class="form-col form-col--pb0">
-				<div class="form-input-title form-input-title--radio">Что вас интересует?</div>
-				<div class="form-input form-input--radio js-form-radio-choise">
-					<div class="form-radio-wrapper">
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3" checked="checked"/> Товарные знаки
-						</label>
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3"/> Патенты (изобретения, полезные модели, пром. образцы)
-						</label>
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3"/> Программы ЭВМ
-						</label>
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3"/> Патентные споры
-						</label>
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3"/> Другое
-						</label>
-					</div>
-				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="form-row">
-			<div class="form-col">
-				<div class="form-input form-input--select">
-					<label for="form-input-1-9">Удобное время связи:</label>
-					<div class="form-select-wrapper">
-						<select class="js-form-select-in-modal" id="form-input-1-9">
-							<option value="0" selected="selected">В течение дня</option>
-							<option value="0">В течение дня2</option>
-							<option value="0">В течение дня3</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			<div class="form-col form-col--pt0">
-				<div class="form-input form-input--button">
-					<button class="btn btn-full" type="button">Заказать услугу</button>
-				</div>
-			</div>
-			<div class="form-col">
-				<div class="form-input form-input--check-footer js-form-privacy-agree">
-					<label class="input-checkbox">
-						<input id="form-input-1-17" type="checkbox" checked="checked"/><span class="hide-md js-form-privacy-agree-short">Соглашаюсь на
-							<button class="dotted js-form-privacy-agree-responsive-btn" type="button" target="_blank"><span>обработку персональных данных</span></button></span><span class="hide-up-to-md js-form-privacy-agree-full">Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a></span>
-					</label>
-				</div>
-			</div>
-		</div>
-	</form>
-</div>
-<div class="container">
-	<div class="buttons-round buttons-round--hidden js-back-to-top">
-		<div class="buttons-round__left">
-			<button class="btn-round btn-round--call-us js-back-to-top" type="button">Позвонить</button>
-		</div>
-		<div class="buttons-round__right">
-			<button class="btn-round btn-round--back-to-top js-back-to-top__btn" type="button">
-				<svg width="36" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-arrow-up"></use></svg>Наверх</button>
-		</div>
-	</div>
-</div>
-<script type="text/javascript" src="../../js/vendor.js"></script>
-<script type="text/javascript" src="../../js/main.js"></script></body>
+</footer></body>
 </html>
