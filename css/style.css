@@ -2424,25 +2424,25 @@
   font-family: "Segoe UI";
   font-weight: 400;
   font-style: normal;
-  src: url("../../markup/assets/fonts/SegoeUIRegular/SegoeUIRegular.woff2") format("woff2"), url("../../markup/assets/fonts/SegoeUIRegular/SegoeUIRegular.woff") format("woff");
+  src: url("../assets/fonts/SegoeUIRegular/SegoeUIRegular.woff2") format("woff2"), url("../assets/fonts/SegoeUIRegular/SegoeUIRegular.woff") format("woff");
 }
 @font-face {
   font-family: "Segoe UI";
   font-weight: 400;
   font-style: italic;
-  src: url("../../markup/assets/fonts/SegoeUIItalic/SegoeUIItalic.woff2") format("woff2"), url("../../markup/assets/fonts/SegoeUIItalic/SegoeUIItalic.woff") format("woff");
+  src: url("../assets/fonts/SegoeUIItalic/SegoeUIItalic.woff2") format("woff2"), url("../assets/fonts/SegoeUIItalic/SegoeUIItalic.woff") format("woff");
 }
 @font-face {
   font-family: "Segoe UI";
   font-weight: 700;
   font-style: normal;
-  src: url("../../markup/assets/fonts/SegoeUISemiBold/SegoeUISemiBold.woff2") format("woff2"), url("../../markup/assets/fonts/SegoeUISemiBold/SegoeUISemiBold.woff") format("woff");
+  src: url("../assets/fonts/SegoeUISemiBold/SegoeUISemiBold.woff2") format("woff2"), url("../assets/fonts/SegoeUISemiBold/SegoeUISemiBold.woff") format("woff");
 }
 @font-face {
   font-family: "Segoe UI";
   font-weight: 800;
   font-style: normal;
-  src: url("../../markup/assets/fonts/SegoeUIBold/SegoeUIBold.woff2") format("woff2"), url("../../markup/assets/fonts/SegoeUIBold/SegoeUIBold.woff") format("woff");
+  src: url("../assets/fonts/SegoeUIBold/SegoeUIBold.woff2") format("woff2"), url("../assets/fonts/SegoeUIBold/SegoeUIBold.woff") format("woff");
 }
 html {
   font-family: sans-serif;
