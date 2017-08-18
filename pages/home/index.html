@@ -7,8 +7,6 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!-- @todo: add modernizer or shim and other respond.js-->
 	<script type="text/javascript" src="../../js/core.js"></script>
-	<script type="text/javascript" src="../../js/vendor.js"></script>
-	<script type="text/javascript" src="../../js/main.js"></script>
 </head><body>
 <header class="page-header">
 	<div class="container">
@@ -25,7 +23,7 @@
 					<option value="Нальчик">Нальчик</option>
 				</select>
 				<address class="page-header__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>
-				<div class="page-header__call-order"><a class="btn btn--icon-phone-before" href="">Заказать обратный звонок</a></div><a class="link link--icon-metro" href="#">Рязанский проспект</a>
+				<div class="page-header__call-order"><a class="btn btn--icon-phone-before js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div><a class="link link--icon-metro" href="#">Рязанский проспект</a>
 			</div>
 		</div>
 	</div>
@@ -46,413 +44,376 @@
 		</ul>
 	</div>
 </nav>
-<section class="section">
-	<div class="container">
-		<h1>Независимая экспертиза и оценка</h1>
-		<p>Юридическое бюро «Хонест» проводит независимые экспертизы автомобилей, квартир после пожара или потопа, профессиональной оценкой ущерба имуществу, а так же многими другими экспертизами и оценками.</p>
-		<p>Мы помогаем клиентам отстоять их интересы и получить достойную компенсацию.</p>
-		<p>Наши автоэкспеты проводят независимую экспертизу и оценку автомобилей после ДТП или некачественного ремонта. Профессиональные эксперты проведут оценку нанесенного урона квартире после потопа или пожара.</p>
-		<p>Все эти операции осуществляют независимые эксперты с многолетним опытом работы и соответствующим образованием. Наши заключения можно использовать в спорах со страховой и в судах.</p>
-		<div class="service-cards service-cards--two-column service-cards--within-text js-equal-height-blocks">
-			<article class="service-card service-card--gray js-equal-height-blocks__item">
-				<div class="service-card__img service-card__img--big"><img src="../../assets/images/img-expertise--car.jpg" alt="Поврежденный автомобиль"/></div>
-				<div class="service-card__text service-card__text--with-big-img">
-					<h2 class="service-card__title"><a href="">Автоэкспертиза после ДТП</a></h2>
-					<p>Оценка ущерба автомобиля за 2 часа</p><a href="">Другие виды автоэкспертиз</a>
-				</div>
-			</article>
-			<article class="service-card service-card--gray js-equal-height-blocks__item">
-				<div class="service-card__img service-card__img--big service-card__img--apartment-damage"><img src="../../assets/images/img-expertise--apartment-damage.jpg" alt="Дом в спасательном круге"/></div>
-				<div class="service-card__text service-card__text--with-big-img">
-					<h2 class="service-card__title"><a href="">Экспертиза<br/> ущерба квартиры</a></h2>
-					<p>Независимая оценка ущерба недвижимости</p>
-					<ul class="service-card__links service-card__links--inline">
-						<li><a href="">При заливе</a></li>
-						<li><a href="">При пожаре</a></li>
+<main>
+	<section class="section">
+		<div class="container">
+			<h1>Независимая экспертиза и оценка</h1>
+			<p>Юридическое бюро «Хонест» проводит независимые экспертизы автомобилей, квартир после пожара или потопа, профессиональной оценкой ущерба имуществу, а так же многими другими экспертизами и оценками.</p>
+			<p>Мы помогаем клиентам отстоять их интересы и получить достойную компенсацию.</p>
+			<p>Наши автоэкспеты проводят независимую экспертизу и оценку автомобилей после ДТП или некачественного ремонта. Профессиональные эксперты проведут оценку нанесенного урона квартире после потопа или пожара.</p>
+			<p>Все эти операции осуществляют независимые эксперты с многолетним опытом работы и соответствующим образованием. Наши заключения можно использовать в спорах со страховой и в судах.</p>
+			<div class="service-cards service-cards--two-column service-cards--within-text">
+				<article class="service-card service-card--gray">
+					<div class="service-card__img service-card__img--big"><img src="../../assets/images/img-expertise--car.jpg" alt="Поврежденный автомобиль"/></div>
+					<div class="service-card__text service-card__text--with-big-img">
+						<h2 class="service-card__title"><a href="">Автоэкспертиза после ДТП</a></h2>
+						<p>Оценка ущерба автомобиля за 2 часа</p><a href="">Другие виды автоэкспертиз</a>
+					</div>
+				</article>
+				<article class="service-card service-card--gray">
+					<div class="service-card__img service-card__img--big service-card__img--apartment-damage"><img src="../../assets/images/img-expertise--apartment-damage.jpg" alt="Дом в спасательном круге"/></div>
+					<div class="service-card__text service-card__text--with-big-img">
+						<h2 class="service-card__title"><a href="">Экспертиза<br/> ущерба квартиры</a></h2>
+						<p>Независимая оценка ущерба недвижимости</p>
+						<ul class="service-card__links service-card__links--inline">
+							<li><a href="">При заливе</a></li>
+							<li><a href="">При пожаре</a></li>
+						</ul>
+					</div>
+				</article>
+			</div>
+			<div class="expertises is-hide js-partially-hidden">
+				<div class="expertises__inner">
+					<ul class="expertises__list expertises__list--one-third-col">
+						<li class="expertise expertise--active"><a class="expertise__link expertise__link--forensic" href="#"><span class="expertise__link-text">Судебная экспертиза</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--construction" href="#"><span class="expertise__link-text">Строительно-техническая экспертиза</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--trasological" href="#"><span class="expertise__link-text">Трасологическая экспертиза (экспертиза следов)</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--portrait" href="#"><span class="expertise__link-text">Портретная экспертиза (фото/видео)</span></a></li>
+					</ul>
+					<ul class="expertises__list expertises__list--one-third-col">
+						<li class="expertise"><a class="expertise__link expertise__link--transport-trasological" href="#"><span class="expertise__link-text">Транспортно-трасологическая экспертиза</span></a></li>
+						<li class="expertise"><a class="expertise__link expertise__link--criminalistic" href="#"><span class="expertise__link-text">Криминалистическая экспертиза</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--documents" href="#"><span class="expertise__link-text">Экспертиза срока давности документа</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--fingerprint" href="#"><span class="expertise__link-text">Дактилоскопическая экспертиза</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--merchandising" href="#"><span class="expertise__link-text">Товароведческая экспертиза</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--handwriting" href="#"><span class="expertise__link-text">Почерковедческая экспертиза (экспертиза почерка и подписи)</span></a></li>
+					</ul>
+					<ul class="expertises__list expertises__list--one-third-col">
+						<li class="expertise"><a class="expertise__link expertise__link--documents-technical-examination" href="#"><span class="expertise__link-text">Технико-криминалистическая экспертиза документов</span></a></li>
+						<li class="expertise"><a class="expertise__link expertise__link--ballistic" href="#"><span class="expertise__link-text">Баллистическая экспертиза</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--securities" href="#"><span class="expertise__link-text">Экспертиза ценных бумаг</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--cold-weapon" href="#"><span class="expertise__link-text">Экспертиза холодного оружия</span></a></li>
+						<li class="expertise is-hide"><a class="expertise__link expertise__link--appliances" href="#"><span class="expertise__link-text">Экспертиза бытовой техники</span></a></li>
 					</ul>
 				</div>
-			</article>
-		</div>
-		<div class="expertises is-hide js-partially-hidden">
-			<div class="expertises__inner">
-				<ul class="expertises__list expertises__list--one-third-col">
-					<li class="expertise expertise--active"><a class="expertise__link expertise__link--forensic" href="#"><span class="expertise__link-text">Судебная экспертиза</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--construction" href="#"><span class="expertise__link-text">Строительно-техническая экспертиза</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--trasological" href="#"><span class="expertise__link-text">Трасологическая экспертиза (экспертиза следов)</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--portrait" href="#"><span class="expertise__link-text">Портретная экспертиза (фото/видео)</span></a></li>
-				</ul>
-				<ul class="expertises__list expertises__list--one-third-col">
-					<li class="expertise"><a class="expertise__link expertise__link--transport-trasological" href="#"><span class="expertise__link-text">Транспортно-трасологическая экспертиза</span></a></li>
-					<li class="expertise"><a class="expertise__link expertise__link--criminalistic" href="#"><span class="expertise__link-text">Криминалистическая экспертиза</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--documents" href="#"><span class="expertise__link-text">Экспертиза срока давности документа</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--fingerprint" href="#"><span class="expertise__link-text">Дактилоскопическая экспертиза</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--merchandising" href="#"><span class="expertise__link-text">Товароведческая экспертиза</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--handwriting" href="#"><span class="expertise__link-text">Почерковедческая экспертиза (экспертиза почерка и подписи)</span></a></li>
-				</ul>
-				<ul class="expertises__list expertises__list--one-third-col">
-					<li class="expertise"><a class="expertise__link expertise__link--documents-technical-examination" href="#"><span class="expertise__link-text">Технико-криминалистическая экспертиза документов</span></a></li>
-					<li class="expertise"><a class="expertise__link expertise__link--ballistic" href="#"><span class="expertise__link-text">Баллистическая экспертиза</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--securities" href="#"><span class="expertise__link-text">Экспертиза ценных бумаг</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--cold-weapon" href="#"><span class="expertise__link-text">Экспертиза холодного оружия</span></a></li>
-					<li class="expertise is-hide"><a class="expertise__link expertise__link--appliances" href="#"><span class="expertise__link-text">Экспертиза бытовой техники</span></a></li>
-				</ul>
-			</div>
-			<div class="expertises__btn-wrap">
-				<button class="btn expertises__btn js-partially-hidden__btn" type="button"><span>Все виды экспертиз</span></button>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="section section--gray">
-	<div class="container">
-		<h2>Уникальные готовые решения при ущербе по ОСАГО</h2>
-		<div class="row-lg">
-			<div class="col-1-2-lg push-1-2-lg">
-				<div class="video video--next-to-service-cards">
-					<h3 class="video__title">3 решения<br/> <span>возмещения ущерба при ДТП</span></h3>
-					<div class="video__player"><a class="video__play-btn" href="#">Начать просмотр видео</a></div>
+				<div class="expertises__btn-wrap">
+					<button class="btn expertises__btn js-partially-hidden__btn" type="button"><span>Все виды экспертиз</span></button>
 				</div>
 			</div>
-			<div class="col-1-2-lg pull-1-2-lg">
-				<div class="service-cards section__only-block">
-					<article class="service-card">
-						<div class="service-card__img service-card__img--wallet"><img src="../../assets/images/img-service--debt-buybacks-min.jpg" alt=""/></div>
-						<div class="service-card__text">
-							<h3 class="service-card__title"><a href="">Выкуп долга: выплата денег за 3 дня</a></h3>
-							<p>50% от суммы нашей оценки ущерба в течение 3-х дней или 70% после суда.</p>
-						</div>
-					</article>
-					<article class="service-card">
-						<div class="service-card__img service-card__img--car-repair"><img src="../../assets/images/img-service--free-repair-min.jpg" alt=""/></div>
-						<div class="service-card__text">
-							<h3 class="service-card__title"><a href="">Бесплатный<br/> ремонт</a></h3>
-							<p>Мы бесплатно починим вашу ласточку, а со страховой разберемся сами.</p>
-						</div>
-					</article>
-					<article class="service-card">
-						<div class="service-card__img service-card__img--gavel"><img src="../../assets/images/img-service--court-min.jpg" alt=""/></div>
-						<div class="service-card__text">
-							<h3 class="service-card__title"><a href="">Комплекс услуг: от&nbsp;оценки до&nbsp;суда</a></h3>
-							<p>Независимая экспертиза ущерба автомобиля + юридическая помощь при ДТП.</p>
-						</div>
-					</article>
+		</div>
+	</section>
+	<section class="section section--gray">
+		<div class="container">
+			<h2>Уникальные готовые решения при ущербе по ОСАГО</h2>
+			<div class="row-lg">
+				<div class="col-1-2-lg push-1-2-lg">
+					<div class="video video--next-to-service-cards">
+						<h3 class="video__title">3 решения<br/> <span>возмещения ущерба при ДТП</span></h3>
+						<div class="video__player"><a class="video__play-btn" href="#">Начать просмотр видео</a></div>
+					</div>
+				</div>
+				<div class="col-1-2-lg pull-1-2-lg">
+					<div class="service-cards section__only-block">
+						<article class="service-card">
+							<div class="service-card__img service-card__img--wallet"><img src="../../assets/images/img-service--debt-buybacks-min.jpg" alt=""/></div>
+							<div class="service-card__text">
+								<h3 class="service-card__title"><a href="">Выкуп долга: выплата денег за 3 дня</a></h3>
+								<p>50% от суммы нашей оценки ущерба в течение 3-х дней или 70% после суда.</p>
+							</div>
+						</article>
+						<article class="service-card">
+							<div class="service-card__img service-card__img--car-repair"><img src="../../assets/images/img-service--free-repair-min.jpg" alt=""/></div>
+							<div class="service-card__text">
+								<h3 class="service-card__title"><a href="">Бесплатный<br/> ремонт</a></h3>
+								<p>Мы бесплатно починим вашу ласточку, а со страховой разберемся сами.</p>
+							</div>
+						</article>
+						<article class="service-card">
+							<div class="service-card__img service-card__img--gavel"><img src="../../assets/images/img-service--court-min.jpg" alt=""/></div>
+							<div class="service-card__text">
+								<h3 class="service-card__title"><a href="">Комплекс услуг: от&nbsp;оценки до&nbsp;суда</a></h3>
+								<p>Независимая экспертиза ущерба автомобиля + юридическая помощь при ДТП.</p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="call-us">
+		<div class="container call-us__inner">
+			<div class="call-us__left-col">
+				<div class="call-us__col-inner">
+					<div class="call-us__title">Появились вопросы?</div>
+					<p class="call-us__text">Наш специалист ответит на них по телефону<br><strong>Консультация бесплатная!</strong></p>
+				</div>
+			</div>
+			<div class="call-us__right-col">
+				<div class="call-us__col-inner">
+					<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
+					<div class="call-us__text">Ваш промо-код: 29755<br/><a class="btn btn--link btn--icon-phone-after js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>
-<div class="call-us">
-	<div class="container call-us__inner">
-		<div class="call-us__left-col">
-			<div class="call-us__col-inner">
-				<div class="call-us__title">Появились вопросы?</div>
-				<p class="call-us__text">Наш специалист ответит на них по телефону<br><strong>Консультация бесплатная!</strong></p>
-			</div>
-		</div>
-		<div class="call-us__right-col">
-			<div class="call-us__col-inner">
-				<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
-				<div class="call-us__text">Ваш промо-код: 29755<br/><a class="btn btn--link btn--icon-phone-after" href="">Заказать обратный звонок</a></div>
-			</div>
-		</div>
-	</div>
-</div>
-<section class="section">
-	<div class="container">
-		<h2>Наши статусы</h2>
-		<p>Бюро независимой экспертизы и оценки «Хонест» заботится о собственной репутации, поэтому оказывает услуги на самом высоком уровне. Подтверждением этому служат многочисленные премии и награды. Компания также является почетным членом следующих организаций: Российского общества оценщиков, Российского федерального центра судебной экспертизы, Палат судэкспертов.</p>
-		<ul class="our-statuses our-statuses--after-text">
-			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/img-prize-cup-min.jpg" alt="1 место"/>
-				<p>По&nbsp;объему независимых экспертиз в&nbsp;Москве и&nbsp;Московской области</p>
-			</li>
-			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--roo-min.jpg" alt="Логотип Российского общества оценок"/>
-				<p>Член Российского общества оценщиков</p>
-			</li>
-			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--sudex-min.jpg" alt="Логотип Палаты судэкспертов"/>
-				<p>Член Палаты судэкспертов</p>
-			</li>
-			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--rfcse-min.jpg" alt="Логотип Российского федерального центра судебной экспертизы"/>
-				<p>Дипломант Российского федерального центра судебной экспертизы</p>
-			</li>
-			<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--audatex-min.jpg" alt="Логотип компании Аудатэкс"/>
-				<p>Мы&nbsp;используем лицензионное ПО для&nbsp;автоэкспертизы</p>
-			</li>
-		</ul>
-	</div>
-</section>
-<section class="section section--gray">
-	<div class="container">
-		<h2>Наши независимые эксперты и оценщики</h2>
-		<p>Гордостью и опорой компании «Хонест» являются независимые эксперты, криминалисты, инженеры-техники. Все сотрудники проходят строгий отбор, который подтверждает их высокую квалификацию. Они в обязательном порядке имеют сертификаты Федерального центра судебной экспертизы и состоят в «Российском обществе оценщиков».</p>
-		<div class="employees employees--after-text">
-			<ul class="employees__list js-content-slider">
-				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--zheltov-nikita-min.jpg" alt="Желтов Никита"/>
-					<div class="employees__name"><strong class="employees__name">Желтов Никита <br/></strong>Автоэксперт</div>
-					<p class="employees__about">Самый молодой и&nbsp;самый быстрый специалист</p>
+	<section class="section">
+		<div class="container">
+			<h2>Наши статусы</h2>
+			<p>Бюро независимой экспертизы и оценки «Хонест» заботится о собственной репутации, поэтому оказывает услуги на самом высоком уровне. Подтверждением этому служат многочисленные премии и награды. Компания также является почетным членом следующих организаций: Российского общества оценщиков, Российского федерального центра судебной экспертизы, Палат судэкспертов.</p>
+			<ul class="our-statuses our-statuses--after-text">
+				<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/img-prize-cup-min.jpg" alt="1 место"/>
+					<p>По&nbsp;объему независимых экспертиз в&nbsp;Москве и&nbsp;Московской области</p>
 				</li>
-				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--brusov-ilia-min.jpg" alt="Брусов Илья"/>
-					<div class="employees__name"><strong class="employees__name">Брусов Илья <br/></strong>Менеджер по продажам</div>
-					<p class="employees__about">Первый взрослый разряд по экспертизе</p>
+				<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--roo-min.jpg" alt="Логотип Российского общества оценок"/>
+					<p>Член Российского общества оценщиков</p>
 				</li>
-				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--feofanov-roman-min.jpg" alt="Феофанов Роман"/>
-					<div class="employees__name"><strong class="employees__name">Феофанов Роман <br/></strong>Менеджер по работе с&nbsp;клиентами</div>
-					<p class="employees__about">Специалист по кузовному ремонту</p>
+				<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--sudex-min.jpg" alt="Логотип Палаты судэкспертов"/>
+					<p>Член Палаты судэкспертов</p>
 				</li>
-				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--medinskii-gleb-min.jpg" alt="Мединский Глеб"/>
-					<div class="employees__name"><strong class="employees__name">Мединский Глеб <br/></strong>Автоэксперт</div>
-					<p class="employees__about">Провел 3385 автоэкспертиз<br/> (1 в процессе)</p>
+				<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--rfcse-min.jpg" alt="Логотип Российского федерального центра судебной экспертизы"/>
+					<p>Дипломант Российского федерального центра судебной экспертизы</p>
 				</li>
-				<li class="employees__item"><img class="employees__img" src="../../assets/images/img-expert--lutov-vitalii-min.jpg" alt="Лютов Виталий"/>
-					<div class="employees__name"><strong class="employees__name">Лютов Виталий <br/></strong>Менеджер по продажам</div>
-					<p class="employees__about">3&nbsp;года в Хонесте, 13&nbsp;лет в продажах</p>
+				<li class="our-statuses__item"><img class="our-statuses__img" src="../../assets/images/logo-status--audatex-min.jpg" alt="Логотип компании Аудатэкс"/>
+					<p>Мы&nbsp;используем лицензионное ПО для&nbsp;автоэкспертизы</p>
 				</li>
 			</ul>
 		</div>
-	</div>
-</section>
-<section class="section">
-	<div class="container">
-		<h2>Наши клиенты</h2>
-		<p>Изначально компания Хонест работала только с физическими лицами, но со временем к нам стали обращаться крупные компании, поэтому для таких клиентов мы разработали особые условия.</p>
-		<p>Также мы предлагаем партнерскую программу для юристов и адвокатов, которым требуется провести независимую экспертизу для суда.</p>
-		<p><b>Нашими клиентами уже стали:</b></p>
-		<div class="row-lg section__only-block">
-			<div class="col-1-2-lg">
-				<div class="clients js-scrollbar">
-					<ul class="clients__list">
-						<li class="clients__item"><img src="../../assets/images/logo-client--dhl.jpg" alt="DHL"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--pervyj-kanal.jpg" alt="Первый канал"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--russia-today.jpg" alt="Russia today"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--mosgortrans.jpg" alt="Мосгортранс"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--sedmoj-kontinent.jpg" alt="Седьмой континент"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--microsoft.jpg" alt="Microsoft"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--specstroj-rossii.jpg" alt="Спецстрой России"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--backaldrin.jpg" alt="Backaldrin"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--nezavisimost.jpg" alt="Группа компаний Независимость"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--rushimmetall.jpg" alt="РусХимМеталл"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--rekom.jpg" alt="Завод деталей трубопроводов Реком"/></li>
-						<li class="clients__item"><img src="../../assets/images/logo-client--pirelli.jpg" alt="Pirelli"/></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-1-2-lg">
-				<div class="offer" style="background-image: url(../../assets/backgrounds/bg-offer-for-legal-persons-min.jpg);">
-					<div class="offer__text">
-						<h3 class="offer__title"><a href="">Выгодное предложение для&nbsp;юридических лиц</a></h3>
-						<p>Скидка до 50% на автоэкспертизу и выплаты до 70% от суммы нашей оценки за 5 дней для корпоратив&shy;ных клиентов</p>
-					</div>
-				</div>
-				<div class="offer offer--small" style="background-image: url(../../assets/backgrounds/bg-affiliate-program-min.jpg);">
-					<div class="offer__text">
-						<h3 class="offer__title"><a href="">Партнерская программа для&nbsp;юристов и&nbsp;адвокатов</a></h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<div class="call-us">
-	<div class="container call-us__inner">
-		<div class="call-us__left-col">
-			<div class="call-us__col-inner">
-				<div class="call-us__title">Появились вопросы?</div>
-				<p class="call-us__text">Наш специалист ответит на них по телефону<br><strong>Консультация бесплатная!</strong></p>
-			</div>
-		</div>
-		<div class="call-us__right-col">
-			<div class="call-us__col-inner">
-				<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
-				<div class="call-us__text">Ваш промо-код: 29755<br/><a class="btn btn--link btn--icon-phone-after" href="">Заказать обратный звонок</a></div>
-			</div>
-		</div>
-	</div>
-</div>
-<section class="section news">
-	<div class="container">
-		<h2><a href="">Новости и события</a></h2>
-		<div class="news__list section__last-block">
-			<div class="js-news-slider">
-				<div>
-					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" alt=""/>
-						<div class="news-preview__text"><a class="news-preview__title" href="">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
-							<div class="news-preview__meta">
-								<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="">Новости Honest</a>
-							</div>
-						</div>
-					</div>
-					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" alt=""/>
-						<div class="news-preview__text"><a class="news-preview__title" href="">Послезавтра. Тарифы на ОСАГО</a>
-							<div class="news-preview__meta">
-								<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="">Новости Honest</a> <a class="news-preview__tag" href="">Наши расследования</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
-						<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
-							<div class="news-preview__meta">
-								<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
-							</div>
-						</div>
-					</div>
-					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
-						<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
-							<div class="news-preview__meta">
-								<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
-						<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
-							<div class="news-preview__meta">
-								<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
-							</div>
-						</div>
-					</div>
-					<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
-						<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
-							<div class="news-preview__meta">
-								<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="section section--gray">
-	<div class="container">
-		<div class="row-lg">
-			<div class="col-1-2-lg">
-				<h2><a href="">Отзывы клиентов</a></h2>
-				<ul class="reviews">
-					<li class="reviews__item">
-						<blockquote class="review js-show-content">
-							<footer>
-								<cite>Игорь</cite><span class="review__service review__service--car-damage">Opel Astra</span>
-							</footer>
-							<p>«Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить... <span class="js-show-content__content is-hide">Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить»</span> 
-								<button class="btn btn--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
-							</p>
-						</blockquote>
+	</section>
+	<section class="section section--gray">
+		<div class="container">
+			<h2>Наши независимые эксперты и оценщики</h2>
+			<p>Гордостью и опорой компании «Хонест» являются независимые эксперты, криминалисты, инженеры-техники. Все сотрудники проходят строгий отбор, который подтверждает их высокую квалификацию. Они в обязательном порядке имеют сертификаты Федерального центра судебной экспертизы и состоят в «Российском обществе оценщиков».</p>
+			<div class="employees employees--after-text">
+				<ul class="employees__list js-content-slider">
+					<li class="employee employees__item">
+						<div class="employee__images"><img class="employee__img" src="../../assets/images/img-expert--zheltov-nikita.jpg" alt="Желтов Никита"/><img class="employee__img employee__img--is-hide" src="../../assets/images/img-expert--zheltov-nikita-smiling.jpg" alt="Улыбающийся Желтов Никита"/></div>
+						<div class="employee__name"><strong class="employee__name">Желтов Никита <br/></strong>Автоэксперт</div>
+						<p class="employee__about">Самый молодой и&nbsp;самый быстрый специалист</p>
 					</li>
-					<li class="reviews__item">
-						<blockquote class="review js-show-content">
-							<footer>
-								<cite>Владимир</cite><span class="review__service review__service--realty-damage">Залив</span>
-							</footer>
-							<p>«Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы... <span class="js-show-content__content is-hide">Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы»</span> 
-								<button class="btn btn--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
-							</p>
-						</blockquote>
+					<li class="employee employees__item">
+						<div class="employee__images"><img class="employee__img" src="../../assets/images/img-expert--brusov-ilia.jpg" alt="Брусов Илья"/><img class="employee__img employee__img--is-hide" src="../../assets/images/img-expert--brusov-ilia-smiling.jpg" alt="Улыбающийся Брусов Илья"/></div>
+						<div class="employee__name"><strong class="employee__name">Брусов Илья <br/></strong>Менеджер по продажам</div>
+						<p class="employee__about">Первый взрослый разряд по экспертизе</p>
 					</li>
-					<li class="reviews__item">
-						<blockquote class="review js-show-content">
-							<footer>
-								<cite>Елена</cite><span class="review__service review__service--legal">Юридические услуги</span>
-							</footer>
-							<p>«Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest... <span class="js-show-content__content is-hide">Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest</span> 
-								<button class="btn btn--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
-							</p>
-						</blockquote>
+					<li class="employee employees__item">
+						<div class="employee__images"><img class="employee__img" src="../../assets/images/img-expert--feofanov-roman.jpg" alt="Феофанов Роман"/><img class="employee__img employee__img--is-hide" src="../../assets/images/img-expert--feofanov-roman-smiling.jpg" alt="Улыбающийся Феофанов Роман"/></div>
+						<div class="employee__name"><strong class="employee__name">Феофанов Роман <br/></strong>Менеджер по работе с&nbsp;клиентами</div>
+						<p class="employee__about">Специалист по кузовному ремонту</p>
+					</li>
+					<li class="employee employees__item">
+						<div class="employee__images"><img class="employee__img" src="../../assets/images/img-expert--medinskii-gleb.jpg" alt="Мединский Глеб"/><img class="employee__img employee__img--is-hide" src="../../assets/images/img-expert--medinskii-gleb-smiling.jpg" alt="Улыбающийся Мединский Глеб"/></div>
+						<div class="employee__name"><strong class="employee__name">Мединский Глеб <br/></strong>Автоэксперт</div>
+						<p class="employee__about">Провел 3385 автоэкспертиз<br/> (1 в процессе)</p>
+					</li>
+					<li class="employee employees__item">
+						<div class="employee__images"><img class="employee__img" src="../../assets/images/img-expert--lutov-vitalii.jpg" alt="Лютов Виталий"/><img class="employee__img employee__img--is-hide" src="../../assets/images/img-expert--lutov-vitalii-smiling.jpg" alt="Улыбающийся Лютов Виталий"/></div>
+						<div class="employee__name"><strong class="employee__name">Лютов Виталий <br/></strong>Менеджер по продажам</div>
+						<p class="employee__about">3&nbsp;года в Хонесте, 13&nbsp;лет в продажах</p>
 					</li>
 				</ul>
 			</div>
-			<div class="col-1-2-lg">
-				<div class="social-tabs social-tabs--only-in-col js-tabs js-tabs--social">
-					<ul class="social-tabs__tabs social-tabs__tabs--vk-is-active js-tabs__tabs">
-						<li class="social-tabs__tab social-tabs__tab--vk is-active js-tabs__tab" data-id="vk"><span class="social-tabs__tab-title">
-								<svg width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-vk"></use></svg>Вконтакте</span></li>
-						<li class="social-tabs__tab social-tabs__tab--fb js-tabs__tab" data-id="fb"><span class="social-tabs__tab-title">
-								<svg width="12.1" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-fb"></use></svg>Facebook</span></li>
-						<li class="social-tabs__tab social-tabs__tab--ok js-tabs__tab" data-id="ok"><span class="social-tabs__tab-title">
-								<svg width="18.41" height="29.03"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-ok"></use></svg>Одноклассники</span></li>
-					</ul>
-					<div class="social-tabs__container">
-						<div class="social-tabs__content is-active js-tabs__content" id="vk">
-							<script type="text/javascript" src="//vk.com/js/api/openapi.js?146"></script>
-							<div id="vk_groups"></div>
-							<script type="text/javascript">
-								VK.Widgets.Group("vk_groups", {mode: 0, width: "430", height: "290", color1: 'ffffff', color2: '54769D', color3: '54769D'}, 51646324);
-								
-							</script>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<h2>Наши клиенты</h2>
+			<p>Изначально компания Хонест работала только с физическими лицами, но со временем к нам стали обращаться крупные компании, поэтому для таких клиентов мы разработали особые условия.</p>
+			<p>Также мы предлагаем партнерскую программу для юристов и адвокатов, которым требуется провести независимую экспертизу для суда.</p>
+			<p><b>Нашими клиентами уже стали:</b></p>
+			<div class="row-lg section__only-block">
+				<div class="col-1-2-lg">
+					<div class="clients js-scrollbar">
+						<ul class="clients__list">
+							<li class="clients__item"><img src="../../assets/images/logo-client--dhl.jpg" alt="DHL"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--pervyj-kanal.jpg" alt="Первый канал"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--russia-today.jpg" alt="Russia today"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--mosgortrans.jpg" alt="Мосгортранс"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--sedmoj-kontinent.jpg" alt="Седьмой континент"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--microsoft.jpg" alt="Microsoft"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--specstroj-rossii.jpg" alt="Спецстрой России"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--backaldrin.jpg" alt="Backaldrin"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--nezavisimost.jpg" alt="Группа компаний Независимость"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--rushimmetall.jpg" alt="РусХимМеталл"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--rekom.jpg" alt="Завод деталей трубопроводов Реком"/></li>
+							<li class="clients__item"><img src="../../assets/images/logo-client--pirelli.jpg" alt="Pirelli"/></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-1-2-lg">
+					<div class="offer" style="background-image: url(../../assets/backgrounds/bg-offer-for-legal-persons-min.jpg);">
+						<div class="offer__text">
+							<h3 class="offer__title"><a href="">Выгодное предложение для&nbsp;юридических лиц</a></h3>
+							<p>Скидка до 50% на автоэкспертизу и выплаты до 70% от суммы нашей оценки за 5 дней для корпоратив&shy;ных клиентов</p>
 						</div>
-						<div class="social-tabs__content js-tabs__content" id="fb">
-							<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHonest-%25D0%25BD%25D0%25B5%25D0%25B7%25D0%25B0%25D0%25B2%25D0%25B8%25D1%2581%25D0%25B8%25D0%25BC%25D0%25B0%25D1%258F-%25D1%258D%25D0%25BA%25D1%2581%25D0%25BF%25D0%25B5%25D1%2580%25D1%2582%25D0%25B8%25D0%25B7%25D0%25B0-187781641370532%2F&amp;tabs&amp;width=430&amp;height=290&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" width="430" height="290" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-						</div>
-						<div class="social-tabs__content js-tabs__content" id="ok">
-							<div id="ok_group_widget"></div>
-							<script>
-								!function (d, id, did, st) {
-									var js = d.createElement("script");
-									js.src = "https://connect.ok.ru/connect.js";
-									js.onload = js.onreadystatechange = function () {
-									if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-										if (!this.executed) {
-										  this.executed = true;
-										  setTimeout(function () {
-										    OK.CONNECT.insertGroupWidget(id,did,st);
-										  }, 0);
-										}
-									}}
-									d.documentElement.appendChild(js);
-									}(document,"ok_group_widget","54155400314880","{width:430,height:305}");
-							</script>
+					</div>
+					<div class="offer offer--small" style="background-image: url(../../assets/backgrounds/bg-affiliate-program-min.jpg);">
+						<div class="offer__text">
+							<h3 class="offer__title"><a href="">Партнерская программа для&nbsp;юристов и&nbsp;адвокатов</a></h3>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<section class="section">
-	<div class="container">
-		<h2>Независимая экспертиза и оценка в Москве и&nbsp;Санкт-Петербурге</h2>
-		<div class="section__inner">
-			<div class="section__one-half-col">
-				<p>Проведение государственной независимой экспертизы необходимо не только для установления точного размера нанесенного урона, но и для отстаивания собственных прав во время судебного разбирательства.</p>
-				<p class="lead">Дело в том, что большинство страховых компаний недобросовестно относятся к выполнению своих обязательств и стремятся всячески занизить сумму выплаты.</p>
-				<p>Чтобы уличить их в обмане и добиться справедливой денежной компенсации, следует обратиться в надежное и проверенное бюро независимой экспертизы в Москве и Санкт-Петербурге, такое как «Хонест».</p>
+	</section>
+	<div class="call-us">
+		<div class="container call-us__inner">
+			<div class="call-us__left-col">
+				<div class="call-us__col-inner">
+					<div class="call-us__title">Появились вопросы?</div>
+					<p class="call-us__text">Наш специалист ответит на них по телефону<br><strong>Консультация бесплатная!</strong></p>
+				</div>
 			</div>
-			<div class="section__one-half-col"><img src="../../assets/images/img-post--1-min.jpg" alt=""/></div>
-		</div>
-		<div class="alert">
-			<p>Чаще всего людей обманывают после попадания в ДТП, когда страховщику необходимо выплачивать кругленькую сумму физическому лицу. Здесь и начинается использования мудреных схем и проведение махинаций. Юридически не подкованному человеку сложно разобраться самостоятельно во всех тонкостях и нюансах автоэкспертизы, поэтому он становится жертвой акул страхового бизнеса.</p>
-		</div>
-		<p>Чтобы не быть таким же простофилей, необходимо позвать на помощь независимых экспертов. Они проведут объективную оценку нанесенного урона, зафиксируют все повреждения на листе бумаге и заверят информацию печатью авторитетной фирмы. Экспертное заключение является основанием для пересмотра суммы страховой выплаты. Оно отсылается соответствующей компании по почте, после чего ожидается ответ. В случае непризнания независимой экспертизы авто и отказе в положенной денежной выплате, клиент имеет возможность подать исковое заявление в суд.</p>
-		<p class="lead">Бюро независимой экспертизы и оценки «Хонест» предоставит грамотных юристов, которые сумеют отстоять интересы потерпевшего и выиграть дело. Мы можем практически со 100% уверенностью гарантировать положительный результат судебного разбирательства.</p>
-		<p>Примерно такой же алгоритм действий предстоит пройти в том случае, если вас затопили соседи сверху или стали виновниками пожара. Страховщики также стараются ограничить собственные убытки и хитрым образом занижают сумму денежной компенсации. Пресечь попытки обмана можно проведя независимую экспертизу в доме. Опытные специалисты учтут причину возникновения пожара или потопа, особенности квартиры, стоимость сделанного ремонта и дорогостоящей бытовой техники, которая вышла из строя.</p>
-		<div class="section__inner">
-			<div class="section__one-half-col">
-				<p>Почему для проведения независимой экспертизы автомобиля и дома следует обращаться к нам?</p>
-				<p>Экспертно-правовое бюро «Хонест» работает в этой сфере продолжительный период времени, имеет множество полезных деловых связей, квалифицированный персонал и безупречную репутацию. Компания предоставляет очень широкий спектр услуг, всегда учитывает просьбы и пожелания клиентов и заботиться об их удовлетворении. Огромное количество положительных отзывов подтверждает сей факт.</p>
-				<p>Обслуживанием клиентов занимаются настоящие профессионалы, прекрасно знающие свое дело и умеющие решать любые проблемы. Обращайтесь в любое удобное для вас время по одному из контактных телефонов. Мы за плодотворное и взаимовыгодное сотрудничество!</p>
+			<div class="call-us__right-col">
+				<div class="call-us__col-inner">
+					<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
+					<div class="call-us__text">Ваш промо-код: 29755<br/><a class="btn btn--link btn--icon-phone-after js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div>
+				</div>
 			</div>
-			<div class="section__one-half-col"><img src="../../assets/images/img-post--2-min.jpg" alt=""/></div>
 		</div>
 	</div>
-</section>
+	<section class="section news">
+		<div class="container">
+			<h2><a href="">Новости и события</a></h2>
+			<div class="news__list section__last-block">
+				<div class="js-news-slider">
+					<div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="">Новости Honest</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Послезавтра. Тарифы на ОСАГО</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="">Новости Honest</a> <a class="news-preview__tag" href="">Наши расследования</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section section--gray">
+		<div class="container">
+			<div class="row-lg">
+				<div class="col-1-2-lg">
+					<h2><a href="">Отзывы клиентов</a></h2>
+					<ul class="reviews">
+						<li class="reviews__item">
+							<blockquote class="review js-show-content js-show-content--toggle">
+								<footer>
+									<cite>Игорь</cite><span class="review__service review__service--car-damage">Opel Astra</span>
+								</footer>
+								<p>«Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить... <span class="js-show-content__content is-hide">Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить»</span> 
+									<button class="btn btn--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+								</p>
+							</blockquote>
+						</li>
+						<li class="reviews__item">
+							<blockquote class="review js-show-content">
+								<footer>
+									<cite>Владимир</cite><span class="review__service review__service--realty-damage">Залив</span>
+								</footer>
+								<p>«Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы... <span class="js-show-content__content is-hide">Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы»</span> 
+									<button class="btn btn--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+								</p>
+							</blockquote>
+						</li>
+						<li class="reviews__item">
+							<blockquote class="review js-show-content">
+								<footer>
+									<cite>Елена</cite><span class="review__service review__service--legal">Юридические услуги</span>
+								</footer>
+								<p>«Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest... <span class="js-show-content__content is-hide">Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest</span> 
+									<button class="btn btn--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+								</p>
+							</blockquote>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section text-container">
+		<div class="container">
+			<h2>Независимая экспертиза и оценка в Москве и&nbsp;Санкт&#8209;Петербурге</h2>
+			<div class="row-md">
+				<div class="col-1-2-md">
+					<p>Проведение государственной независимой экспертизы необходимо не только для установления точного размера нанесенного урона, но и для отстаивания собственных прав во время судебного разбирательства.</p>
+					<p class="lead">Дело в том, что большинство страховых компаний недобросовестно относятся к выполнению своих обязательств и стремятся всячески занизить сумму выплаты.</p>
+					<p>Чтобы уличить их в обмане и добиться справедливой денежной компенсации, следует обратиться в надежное и проверенное бюро независимой экспертизы в Москве и Санкт-Петербурге, такое как «Хонест».</p>
+				</div>
+				<div class="col-1-2-md"><img src="../../assets/images/img-post--1-min.jpg" alt="Красная стрелка, направленная вниз, и денежные купюры в руках"/></div>
+			</div>
+			<div class="alert">
+				<p>Чаще всего людей обманывают после попадания в ДТП, когда страховщику необходимо выплачивать кругленькую сумму физическому лицу. Здесь и начинается использования мудреных схем и проведение махинаций. Юридически не подкованному человеку сложно разобраться самостоятельно во всех тонкостях и нюансах автоэкспертизы, поэтому он становится жертвой акул страхового бизнеса.</p>
+			</div>
+			<p>Чтобы не быть таким же простофилей, необходимо позвать на помощь независимых экспертов. Они проведут объективную оценку нанесенного урона, зафиксируют все повреждения на листе бумаге и заверят информацию печатью авторитетной фирмы. Экспертное заключение является основанием для пересмотра суммы страховой выплаты. Оно отсылается соответствующей компании по почте, после чего ожидается ответ. В случае непризнания независимой экспертизы авто и отказе в положенной денежной выплате, клиент имеет возможность подать исковое заявление в суд.</p>
+			<p class="lead">Бюро независимой экспертизы и оценки «Хонест» предоставит грамотных юристов, которые сумеют отстоять интересы потерпевшего и выиграть дело. Мы можем практически со 100% уверенностью гарантировать положительный результат судебного разбирательства.</p>
+			<p>Примерно такой же алгоритм действий предстоит пройти в том случае, если вас затопили соседи сверху или стали виновниками пожара. Страховщики также стараются ограничить собственные убытки и хитрым образом занижают сумму денежной компенсации. Пресечь попытки обмана можно проведя независимую экспертизу в доме. Опытные специалисты учтут причину возникновения пожара или потопа, особенности квартиры, стоимость сделанного ремонта и дорогостоящей бытовой техники, которая вышла из строя.</p>
+			<div class="row-md">
+				<div class="col-1-2-md">
+					<p>Почему для проведения независимой экспертизы автомобиля и дома следует обращаться к нам?</p>
+					<p>Экспертно-правовое бюро «Хонест» работает в этой сфере продолжительный период времени, имеет множество полезных деловых связей, квалифицированный персонал и безупречную репутацию. Компания предоставляет очень широкий спектр услуг, всегда учитывает просьбы и пожелания клиентов и заботиться об их удовлетворении. Огромное количество положительных отзывов подтверждает сей факт.</p>
+					<p>Обслуживанием клиентов занимаются настоящие профессионалы, прекрасно знающие свое дело и умеющие решать любые проблемы. Обращайтесь в любое удобное для вас время по одному из контактных телефонов. Мы за плодотворное и взаимовыгодное сотрудничество!</p>
+				</div>
+				<div class="col-1-2-md"><img src="../../assets/images/img-post--2-min.jpg" alt="Сквозь трещины лобового стекла видно человека, фиксирующего на камеру повреждения автомобиля"/></div>
+			</div>
+		</div>
+	</section>
+</main>
 <footer class="page-footer">
 	<div class="container">
 		<div class="page-footer__inner">
 			<div class="page-footer__col">
 				<div class="page-footer__copyright">© 2005—2016, «Honest»<br> Все права защищены</div>
-								<ul class="social-links page-footer__social-links">
-									<li><a class="social-links__link social-links__link--fb" href="https://www.facebook.com/pages/Honest-%D0%BD%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%B0%D1%8F-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D1%82%D0%B8%D0%B7%D0%B0/187781641370532" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-									<li><a class="social-links__link social-links__link--vk" href="http://vk.com/honestexpert" target="_blank" rel="noopener noreferrer">Вконтакте</a></li>
-									<li><a class="social-links__link social-links__link--ok" href="http://ok.ru/honest.expert" target="_blank" rel="noopener noreferrer">Одноклассники</a></li>
-									<li><a class="social-links__link social-links__link--google" href="https://plus.google.com/u/0/102624426359032386043/posts" target="_blank" rel="noopener noreferrer">Google Plus</a></li>
-								</ul>
-				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="dotted dotted--plain-text" href="">Схема проезда</a>
+				<ul class="social-links page-footer__social-links">
+					<li><a class="social-links__link social-links__link--fb" href="https://www.facebook.com/pages/Honest-%D0%BD%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%B0%D1%8F-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D1%82%D0%B8%D0%B7%D0%B0/187781641370532" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+					<li><a class="social-links__link social-links__link--vk" href="http://vk.com/honestexpert" target="_blank" rel="noopener noreferrer">Вконтакте</a></li>
+					<li><a class="social-links__link social-links__link--ok" href="http://ok.ru/honest.expert" target="_blank" rel="noopener noreferrer">Одноклассники</a></li>
+					<li><a class="social-links__link social-links__link--google" href="https://plus.google.com/u/0/102624426359032386043/posts" target="_blank" rel="noopener noreferrer">Google Plus</a></li>
+				</ul>
+				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="btn" href="">Схема проезда</a>
 			</div>
 			<div class="page-footer__col">
 				<div class="page-footer__promo">
 					<address class="page-footer__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>Ваш промо-код: 28925
-				</div><a class="dotted dotted--plain-text" href="">Заказать обратный звонок</a>
+				</div><a class="btn js-fancy-modal" href="#phone-call-order">Заказать обратный звонок</a>
 				<table class="page-footer__working-hours">
 					<tbody>
 						<tr>
@@ -484,16 +445,70 @@
 				</ul>
 			</div>
 			<div class="page-footer__col">
-				<div class="page-footer__author">Разработка сайта — <br/><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
-								<ul class="payment-systems page-footer__payment-systems">
-									<li class="payment-systems__item--visa">Платежная система Visa</li>
-									<li class="payment-systems__item--mastercard">Платежная система MasterCard</li>
-								</ul>
-				<div class="page-footer__our-companies">Другие компании консалтинговой группы <br/>
-					<button class="dotted dotted--with-arrow" type="button"><span class="dotted__text">Wiseadvice</span></button>
+				<div class="page-footer__author">Разработка сайта —<br/><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
+				<ul class="payment-systems page-footer__payment-systems">
+					<li class="payment-systems__item--visa">Платежная система Visa</li>
+					<li class="payment-systems__item--mastercard">Платежная система MasterCard</li>
+				</ul>
+				<div class="page-footer__other-companies js-show-content">Другие компании<br/> консалтинговой группы<br/>
+					<button class="btn btn--has-arrow js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
 				</div>
 			</div>
 		</div>
+		<ul class="page-footer__links row-md" data-target="other-wiseadvice-companies">
+			<li class="col-1-3-cycle-md"><a href="http://arplaw.ru/"><b>Арбитражное адвокатское бюро «АРП»</b></a><br/>арбитраж, споры и конфликты, юридические услуги</li>
+			<li class="col-1-3-cycle-md"><a href="http://1c-wiseadvice.ru/book-keeping/"><b>Бухгалтерские услуги в Москве</b></a></li>
+			<li class="col-1-3-cycle-md"><a href="http://arplaw.ru/"><b>Налоговые адвокаты и юристы</b></a><br/>налоговые проверки ИФНС, ОБЭП, возмещение НДС</li>
+			<li class="col-1-3-cycle-md"><a href="http://www.pravovest-audit.ru"><b>Аудиторская фирма «WiseAdvice»</b></a><br/>аудиторские услуги по РСБУ и МСФО</li>
+			<li class="col-1-3-cycle-md"><a href="http://intelis-it.ru/"><b>Услуги 1С Франчайзи</b></a><br/>внедрение, сопровождение, проекты по 1С</li>
+			<li class="col-1-3-cycle-md"><a href="http://www.damages.ru"><b>Независимая экспертиза №1 «Хонест»</b></a><br/>автоэкспертиза, возмещение ущерба от ДТП, залива и пр.</li>
+			<li class="col-1-3-cycle-md"><a href="http://www.intelis-ocenka.ru/"><b>Услуги по независимой оценке</b></a><br/>оценка недвижимости, оборудования, бизнеса</li>
+			<li class="col-1-3-cycle-md"><a href="http://www.1cashflow.ru/"><b>Программы на 1С - «Финансист»</b></a><br/>автоматизация бюджетирования, казначейства, упр.учета</li>
+			<li class="col-1-3-cycle-md"><a href="http://you-right.ru/"><b>Линейка программ «Юрайт»</b></a><br/>программы для юристов и юридических фирм</li>
+		</ul>
 	</div>
-</footer></body>
+</footer>
+<div class="modal" id="phone-call-order">
+	<h2>Заказать звонок</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="text" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn btn--brand" type="submit" value="Заказать"/>
+		</div>
+	</form>
+</div>
+<div class="modal" id="phone-call-order--full-version">
+	<h2>Заказать звонок</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="text" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn btn--brand" type="submit" value="Заказать"/>
+		</div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+	</form>
+</div>
+<script type="text/javascript" src="../../js/vendor.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script></body>
 </html>

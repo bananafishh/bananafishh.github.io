@@ -1,41 +1,58 @@
 $(document).ready(function() {
-
 	// Управление загрузкой кастомного шрифта
-	if( sessionStorage.foutFontsLoaded ) {
-		document.documentElement.className += " fonts-loaded";
-		return;
+	function fontLoad() {
+		if( sessionStorage.foutFontsLoaded ) {
+			document.documentElement.className += " fonts-loaded";
+			return;
+		}
+
+		var font = new FontFaceObserver('Segoe UI', {
+			weight: 400,
+			style: 'normal'
+		});
+
+		var fontSemiBold = new FontFaceObserver('Segoe UI', {
+			weight: 700,
+			style: 'normal'
+		});
+
+		var fontBold = new FontFaceObserver('Segoe UI', {
+			weight: 800,
+			style: 'normal'
+		});
+
+		var fontItalic = new FontFaceObserver('Segoe UI', {
+			weight: 400,
+			style: 'italic'
+		});
+
+		Promise.all([font.load(), fontSemiBold.load(), fontBold.load()]), fontItalic.load().then(function () {
+			document.documentElement.className += " fonts-loaded";
+
+			sessionStorage.foutFontsLoaded = true;
+		});
 	}
 
-	var font = new FontFaceObserver('Segoe UI', {
-		weight: 400,
-		style: 'normal'
-	});
-
-	var fontSemiBold = new FontFaceObserver('Segoe UI', {
-		weight: 700,
-		style: 'normal'
-	});
-
-	var fontBold = new FontFaceObserver('Segoe UI', {
-		weight: 800,
-		style: 'normal'
-	});
-
-	var fontItalic = new FontFaceObserver('Segoe UI', {
-		weight: 400,
-		style: 'italic'
-	});
-
-	Promise.all([font.load(), fontSemiBold.load(), fontBold.load()]), fontItalic.load().then(function () {
-		document.documentElement.className += " fonts-loaded";
-
-		sessionStorage.foutFontsLoaded = true;
-	});
+	fontLoad();
 
 
+	// Кроссбраузерная поддержка svg спрайтов
 	svg4everybody();
 
-    $(".js-fancybox").fancybox();
+
+	$('.js-fancy-modal').fancybox({
+	    wrapCSS: 'fancy-modal',
+	    margin: ($(window).width() > 937) ? 20 : 5,
+	    fitToView: false,
+	    padding: 0,
+	    helpers : {
+	      overlay : {
+	        css : {
+	          'background' : 'rgba(0, 0, 0, 0.5)'
+	        }
+	      }
+	    }
+	});
 });
 var CitySelection = {
 	el: '.js-city-selection',
@@ -78,7 +95,9 @@ var EqualHeightBlocks = {
 
         var self = this;
 
-        self.setHeight();
+        if($('html').hasClass('fonts-loaded')) {
+            self.setHeight();
+        }
 
         $(window).bind('resize', function () {
             self.setHeight();
@@ -242,16 +261,43 @@ var ShowContent = {
         'click .js-show-content__btn': 'showContent'
     },
 
+    scrollTo: function() {
+		var self = this;
+
+		$('html, body').animate({
+			scrollTop: $('[data-target=' + self.dataTarget + ']').offset().top - 60
+		}, 1500);
+	},
+
 	showContent: function(e) {
 		e.preventDefault();
 
-		$(e.currentTarget).toggleClass('is-open');
-		this.hiddenContent.toggle().toggleClass('is-hide');
+		var needScroll = false;
+		if(!$(e.currentTarget).hasClass('is-open') && $(e.currentTarget).data('scroll-to')) {
+			needScroll = true;
+		}
 
-		if ($(e.currentTarget).hasClass('is-open')) {
-			$(e.currentTarget).text('скрыть');
-		} else {
-			$(e.currentTarget).text('продолжение');
+		$(e.currentTarget).toggleClass('is-open');
+		if(this.hiddenContent.length > 0) {
+			this.hiddenContent.toggle().toggleClass('is-hide');
+		}
+
+		if(this.$el.hasClass('js-show-content--toggle')) {
+			if ($(e.currentTarget).hasClass('is-open')) {
+				$(e.currentTarget).text('скрыть');
+			} else {
+				$(e.currentTarget).text('продолжение');
+			}
+		}
+
+		// Если скрытую информацию и кнопку-триггер невозможно разместить в общем контейнере
+		if(this.$el.filter('[data-attribute]')) {
+			this.dataTarget = $(e.currentTarget).attr('data-attribute');
+			$('[data-target=' + this.dataTarget + ']').slideToggle();
+		}
+
+		if(needScroll) {
+			this.scrollTo();
 		}
 	}
 };
