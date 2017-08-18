@@ -9,6 +9,45 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!-- @todo: add modernizer or shim and other respond.js-->
 	<script type="text/javascript" src="../../js/core.js"></script>
+	<script>
+		// Управление загрузкой кастомного шрифта
+		function fontLoad() {
+		    if( sessionStorage.foutFontsLoaded ) {
+		        document.documentElement.className += " fonts-loaded";
+		        return;
+		    }
+		
+		    var font = new FontFaceObserver('Segoe UI', {
+		        weight: 400,
+		        style: 'normal'
+		    });
+		
+		    var fontSemiBold = new FontFaceObserver('Segoe UI', {
+		        weight: 700,
+		        style: 'normal'
+		    });
+		
+		    var fontBold = new FontFaceObserver('Segoe UI', {
+		        weight: 800,
+		        style: 'normal'
+		    });
+		
+		    var fontItalic = new FontFaceObserver('Segoe UI', {
+		        weight: 400,
+		        style: 'italic'
+		    });
+		
+		    Promise.all([font.load(), fontSemiBold.load(), fontBold.load()]), fontItalic.load().then(function () {
+		        document.documentElement.className += " fonts-loaded";
+		
+		        sessionStorage.foutFontsLoaded = true;
+		    });
+		}
+		
+		fontLoad();
+		
+		
+	</script>
 </head><body>
 <header class="page-header">
 	<div class="container">

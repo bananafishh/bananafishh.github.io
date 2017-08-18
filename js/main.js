@@ -1,41 +1,4 @@
 $(document).ready(function() {
-	// Управление загрузкой кастомного шрифта
-	function fontLoad() {
-		if( sessionStorage.foutFontsLoaded ) {
-			document.documentElement.className += " fonts-loaded";
-			return;
-		}
-
-		var font = new FontFaceObserver('Segoe UI', {
-			weight: 400,
-			style: 'normal'
-		});
-
-		var fontSemiBold = new FontFaceObserver('Segoe UI', {
-			weight: 700,
-			style: 'normal'
-		});
-
-		var fontBold = new FontFaceObserver('Segoe UI', {
-			weight: 800,
-			style: 'normal'
-		});
-
-		var fontItalic = new FontFaceObserver('Segoe UI', {
-			weight: 400,
-			style: 'italic'
-		});
-
-		Promise.all([font.load(), fontSemiBold.load(), fontBold.load()]), fontItalic.load().then(function () {
-			document.documentElement.className += " fonts-loaded";
-
-			sessionStorage.foutFontsLoaded = true;
-		});
-	}
-
-	fontLoad();
-
-
 	// Кроссбраузерная поддержка svg спрайтов
 	svg4everybody();
 
