@@ -2716,6 +2716,14 @@ select,
 textarea {
   font-family: inherit;
 }
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="search"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 .section {
   padding-top: 41px;
   padding-bottom: 37px;
@@ -2757,6 +2765,9 @@ textarea {
 .section__last-text-block {
   margin-bottom: 18px;
 }
+.text-container img {
+  margin-top: 6px;
+}
 .lead {
   margin-top: -6px;
   font-size: 22px;
@@ -2765,9 +2776,6 @@ textarea {
 }
 .asterisk {
   color: #cb1313;
-}
-.text-container img {
-  margin-top: 6px;
 }
 @media (max-width: 479px) {
   .hide-up-to-sm {
