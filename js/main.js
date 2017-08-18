@@ -53,6 +53,20 @@ $(document).ready(function() {
 	      }
 	    }
 	});
+
+	$('.js-fancy-video').fancybox({
+	    wrapCSS: 'fancy-video',
+	    margin: ($(window).width() > 937) ? 20 : 5,
+	    fitToView: false,
+	    padding: 15,
+	    helpers : {
+	      overlay : {
+	        css : {
+	          'background' : 'rgba(0, 0, 0, 0.5)'
+	        }
+	      }
+	    }
+	});
 });
 var CitySelection = {
 	el: '.js-city-selection',

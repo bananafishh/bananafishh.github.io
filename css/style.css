@@ -2810,14 +2810,35 @@ textarea {
     display: none;
   }
 }
-.fancy-modal {
+.fancy-modal,
+.fancy-video {
   width: -webkit-calc(100% - 40px);
   width: calc(100% - 40px) !important;
 }
 @media (min-width: 650px) {
-  .fancy-modal {
+  .fancy-modal,
+  .fancy-video {
     width: 626px !important;
   }
+}
+.fancy-modal .fancybox-skin,
+.fancy-video .fancybox-skin {
+  color: #323232;
+  background-color: #efefef;
+}
+.fancy-modal .fancybox-close,
+.fancy-video .fancybox-close {
+  top: 27px;
+  right: 28px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNC4xMiIgaGVpZ2h0PSIxNC4xMiIgdmlld0JveD0iMCAwIDE0LjEyIDE0LjEyIj48cGF0aCBmaWxsPSIjY2IxMzEzIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjYyLjA2LDEwNTcuOTRsLTIuMTIsMi4xMi00Ljk0LTQuOTQtNC45NCw0Ljk0LTIuMTItMi4xMiw0Ljk0LTQuOTQtNC45NC00Ljk0LDIuMTItMi4xMiw0Ljk0LDQuOTQsNC45NC00Ljk0LDIuMTIsMi4xMi00Ljk0LDQuOTRaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTI0Ny45NCAtMTA0NS45NCkiLz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto;
+  border-bottom: none;
+}
+.fancy-modal.fancybox-opened .fancybox-skin,
+.fancy-video.fancybox-opened .fancybox-skin {
+  box-shadow: 0 5px 30px 0 rgba(0,0,0,0.3);
 }
 .fancy-modal .fancybox-inner {
   width: 100% !important;
@@ -2827,21 +2848,13 @@ textarea {
     width: 626px !important;
   }
 }
-.fancy-modal .fancybox-skin {
-  color: #323232;
-  background-color: #efefef;
+.fancy-video .fancybox-inner {
+  width: 100% !important;
 }
-.fancy-modal .fancybox-close {
-  top: 27px;
-  right: 28px;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNC4xMiIgaGVpZ2h0PSIxNC4xMiIgdmlld0JveD0iMCAwIDE0LjEyIDE0LjEyIj48cGF0aCBmaWxsPSIjY2IxMzEzIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjYyLjA2LDEwNTcuOTRsLTIuMTIsMi4xMi00Ljk0LTQuOTQtNC45NCw0Ljk0LTIuMTItMi4xMiw0Ljk0LTQuOTQtNC45NC00Ljk0LDIuMTItMi4xMiw0Ljk0LDQuOTQsNC45NC00Ljk0LDIuMTIsMi4xMi00Ljk0LDQuOTRaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTI0Ny45NCAtMTA0NS45NCkiLz48L3N2Zz4=");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: auto;
-  border-bottom: none;
-}
-.fancy-modal.fancybox-opened .fancybox-skin {
-  box-shadow: 0 5px 30px 0 rgba(0,0,0,0.3);
+@media (min-width: 650px) {
+  .fancy-video .fancybox-inner {
+    width: 596px !important;
+  }
 }
 .alert {
   position: relative;
