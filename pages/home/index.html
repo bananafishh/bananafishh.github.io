@@ -9,45 +9,6 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!-- @todo: add modernizer or shim and other respond.js-->
 	<script type="text/javascript" src="../../js/core.js"></script>
-	<script>
-		// Управление загрузкой кастомного шрифта
-		function fontLoad() {
-		    if( sessionStorage.foutFontsLoaded ) {
-		        document.documentElement.className += " fonts-loaded";
-		        return;
-		    }
-		
-		    var font = new FontFaceObserver('Segoe UI', {
-		        weight: 400,
-		        style: 'normal'
-		    });
-		
-		    var fontSemiBold = new FontFaceObserver('Segoe UI', {
-		        weight: 700,
-		        style: 'normal'
-		    });
-		
-		    var fontBold = new FontFaceObserver('Segoe UI', {
-		        weight: 800,
-		        style: 'normal'
-		    });
-		
-		    var fontItalic = new FontFaceObserver('Segoe UI', {
-		        weight: 400,
-		        style: 'italic'
-		    });
-		
-		    Promise.all([font.load(), fontSemiBold.load(), fontBold.load()]), fontItalic.load().then(function () {
-		        document.documentElement.className += " fonts-loaded";
-		
-		        sessionStorage.foutFontsLoaded = true;
-		    });
-		}
-		
-		fontLoad();
-		
-		
-	</script>
 </head><body>
 <header class="page-header">
 	<div class="container">
@@ -406,50 +367,6 @@
 							</blockquote>
 						</li>
 					</ul>
-				</div>
-				<div class="col-1-2-lg">
-					<div class="social-tabs social-tabs--only-in-col js-tabs js-tabs--social">
-						<ul class="social-tabs__tabs social-tabs__tabs--vk-is-active js-tabs__tabs">
-							<li class="social-tabs__tab social-tabs__tab--vk is-active js-tabs__tab" data-id="vk"><span class="social-tabs__tab-title">
-									<svg width="27" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-vk"></use></svg>Вконтакте</span></li>
-							<li class="social-tabs__tab social-tabs__tab--fb js-tabs__tab" data-id="fb"><span class="social-tabs__tab-title">
-									<svg width="12.1" height="27"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-fb"></use></svg>Facebook</span></li>
-							<li class="social-tabs__tab social-tabs__tab--ok js-tabs__tab" data-id="ok"><span class="social-tabs__tab-title">
-									<svg width="18.41" height="29.03"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-ok"></use></svg>Одноклассники</span></li>
-						</ul>
-						<div class="social-tabs__container">
-							<div class="social-tabs__content is-active js-tabs__content" id="vk">
-								<script type="text/javascript" src="//vk.com/js/api/openapi.js?146"></script>
-								<div id="vk_groups"></div>
-								<script type="text/javascript">
-									VK.Widgets.Group("vk_groups", {mode: 0, width: "430", height: "290", color1: 'ffffff', color2: '54769D', color3: '54769D'}, 51646324);
-									
-								</script>
-							</div>
-							<div class="social-tabs__content js-tabs__content" id="fb">
-								<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHonest-%25D0%25BD%25D0%25B5%25D0%25B7%25D0%25B0%25D0%25B2%25D0%25B8%25D1%2581%25D0%25B8%25D0%25BC%25D0%25B0%25D1%258F-%25D1%258D%25D0%25BA%25D1%2581%25D0%25BF%25D0%25B5%25D1%2580%25D1%2582%25D0%25B8%25D0%25B7%25D0%25B0-187781641370532%2F&amp;tabs&amp;width=430&amp;height=290&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" width="430" height="290" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-							</div>
-							<div class="social-tabs__content js-tabs__content" id="ok">
-								<div id="ok_group_widget"></div>
-								<script>
-									!function (d, id, did, st) {
-										var js = d.createElement("script");
-										js.src = "https://connect.ok.ru/connect.js";
-										js.onload = js.onreadystatechange = function () {
-										if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-											if (!this.executed) {
-											  this.executed = true;
-											  setTimeout(function () {
-											    OK.CONNECT.insertGroupWidget(id,did,st);
-											  }, 0);
-											}
-										}}
-										d.documentElement.appendChild(js);
-										}(document,"ok_group_widget","54155400314880","{width:430,height:305}");
-								</script>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
