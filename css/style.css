@@ -4251,6 +4251,17 @@ input[type="search"] {
   display: none;
   padding: 35px 51px 45px 45px;
 }
+.modal__title {
+  margin-bottom: 29px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.12;
+}
+@media (min-width: 992px) {
+  .modal__title {
+    font-size: 34px;
+  }
+}
 .news-preview::after {
   content: '';
   display: table;
