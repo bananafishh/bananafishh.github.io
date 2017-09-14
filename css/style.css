@@ -3230,7 +3230,6 @@ input[type="search"] {
 .text-cat {
   color: #0075b8;
   text-decoration: none;
-  border-bottom: 1px solid rgba(0,117,184,0.3);
   cursor: pointer;
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
@@ -3238,6 +3237,12 @@ input[type="search"] {
 .text-popup:hover,
 .text-cat:hover {
   border-bottom-color: #0075b8;
+}
+.text-popup {
+  border-bottom: 1px dotted rgba(0,117,184,0.3);
+}
+.text-cat {
+  border-bottom: 1px solid rgba(0,117,184,0.3);
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-light-customized .tooltipster-box {
   background: #fff;

@@ -937,7 +937,6 @@ var TextCat = {
 		this.$el.bind('click', function(e) {
 			if($(e.currentTarget).parent().next().hasClass('text-cat-content')) {
 				$(e.currentTarget).parent().next().remove();
-				$(e.currentTarget).parent().after('<p class="text-cat-content">' + self.popupContent + '</p>');
 			} else {
 				$(e.currentTarget).parent().after('<p class="text-cat-content">' + self.popupContent + '</p>');
 			}
@@ -959,7 +958,8 @@ App.Control.install({
         this.$el.tooltipster({
             content: self.content,
             theme: ['tooltipster-light', 'tooltipster-light-customized'],
-            maxWidth: 443
+            maxWidth: 443,
+            trigger: 'click'
         });
     }
 });
