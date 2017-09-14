@@ -937,8 +937,12 @@ var TextCat = {
 		this.$el.bind('click', function(e) {
 			if($(e.currentTarget).parent().next().hasClass('text-cat-content')) {
 				$(e.currentTarget).parent().next().remove();
+				self.triggerLink = 'Подробнее';
+				$(e.currentTarget).html(self.triggerLink);
 			} else {
 				$(e.currentTarget).parent().after('<p class="text-cat-content">' + self.popupContent + '</p>');
+				self.triggerLink = 'Скрыть';
+				$(e.currentTarget).html(self.triggerLink);
 			}
 		})
 	}
