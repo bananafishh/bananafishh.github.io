@@ -3227,7 +3227,8 @@ input[type="search"] {
   margin-bottom: 24px;
 }
 .text-popup,
-.text-cat {
+.text-cat,
+.text-cat-hide-btn {
   color: #0075b8;
   text-decoration: none;
   border-bottom: 1px dotted rgba(0,117,184,0.3);
@@ -3236,7 +3237,8 @@ input[type="search"] {
   transition: all 0.25s ease-out;
 }
 .text-popup:hover,
-.text-cat:hover {
+.text-cat:hover,
+.text-cat-hide-btn:hover {
   border-bottom-color: #0075b8;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-light-customized .tooltipster-box {

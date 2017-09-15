@@ -923,6 +923,20 @@ var TabsControl = {
 };
 
 App.Control.install(TabsControl);
+var TextCatHide = {
+	el: '.text-cat-hide-btn',
+	name: 'TextCatHide',
+
+	initialize: function() {
+		this.$el.bind('click', function(e) {
+			$(e.currentTarget).parent().next().remove();
+			$(e.currentTarget).parent().next().next().find('.tet-cat').show();
+			$(e.currentTarget).parent().remove();
+		});
+	}
+};
+
+App.Control.install(TextCatHide);
 var TextCat = {
 	el: '.text-cat',
 	name: 'TextCat',
@@ -935,16 +949,16 @@ var TextCat = {
 		var self = this;
 
 		this.$el.bind('click', function(e) {
-			if($(e.currentTarget).parent().next().hasClass('text-cat-content')) {
-				$(e.currentTarget).parent().next().remove();
-				self.triggerLink = 'Подробнее';
-				$(e.currentTarget).html(self.triggerLink);
-			} else {
-				$(e.currentTarget).parent().after('<p class="text-cat-content">' + self.popupContent + '</p>');
-				self.triggerLink = 'Скрыть';
-				$(e.currentTarget).html(self.triggerLink);
-			}
-		})
+			$(e.currentTarget).hide();
+			$(e.currentTarget).parent().after('<p class="text-cat-content">' + self.popupContent + '</p>');
+			$(e.currentTarget).parent().next().after('<p><span class="text-cat-hide-btn">Скрыть</span></p>');
+		});
+
+		$(document).on('click', '.text-cat-hide-btn', function(){
+		    $('.text-cat').show();
+		    $(this).parent().prev().remove();
+		    $(this).parent().remove();
+		});
 	}
 };
 
