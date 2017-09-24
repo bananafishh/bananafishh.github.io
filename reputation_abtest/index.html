@@ -1,0 +1,269 @@
+<?php include '../assets/php/class.php'; ?><!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title></title>
+	<link rel="shortcut icon" href="/sites/all/themes/gardium/favicon.ico"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,700&amp;amp;subset=cyrillic,latin-ext"/>
+	<link rel="stylesheet" href="../assets/css/vendor.min.css"/>
+	<link rel="stylesheet" href="../assets/css/style.min.css"/><!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script type="text/javascript" src="../assets/js/script.min.js"></script>
+	<script>window.GeoRegion = '<?php echo $Helper->clientRegion; ?>';</script>
+	<script>var client_ip='<?php echo $Helper->clientIp; ?>';</script>
+	<script>var kis_dir='';</script>
+	<script type="text/javascript" src="http://services.wiseadvice.ru/tracker/js/v1/wa.min.js"></script>
+	<script>ga('require', 'GTM-TTCSRCT');</script>
+	<!-- Google Tag Manager-->
+	<noscript>
+		<iframe src="//www.googletagmanager.com/ns.html?id=GTM-KCTRWV" height="0" width="0" style="display:none;visibility:hidden;"></iframe>
+	</noscript>
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(), event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'//www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-KCTRWV');
+	</script>
+	<!-- End Google Tag Manager-->
+</head><body>
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="http://www.legal-support.ru/" target="_blank"><img class="navbar-brand__logo" src="../assets/img/logo@2x.png" alt="Логотип патентного бюро Гардиум"/></a>
+		</div>
+		<div class="bs-navbar-collapse collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-nav--menu navbar-nav--two-items">
+								<li><a href="http://www.legal-support.ru/sale/reputation_abtest?utm_source=landing&amp;utm_medium=email&amp;utm_content=reputation&amp;utm_campaign=pro-bono">Акция pro bono</a></li>
+								<li><a href="http://www.legal-support.ru/sale/reputation_info_abtest/?utm_source=landing&amp;utm_medium=email&amp;utm_content=reputation&amp;utm_campaign=pro-bono">Инструкция по защите репутации</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<p class="navbar-text"><span class="navbar-link navbar-link--phone"><span class="ringo-<?php echo $Helper->getRegion(); ?>"><a href="tel:+74956688258">
+							<nobr>+7 (495) 668-82-58</nobr></a></span></span></p>
+				<button class="btn btn-primary navbar-btn js-callback-order-btn" type="button" data-toggle="modal" data-target="#callback">Заказать звонок</button>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div id="js-stick-navbar-point"></div>
+<div class="container features">
+	<div class="row">
+		<div class="hidden-xs col-sm-4 col-lg-5 features__brand"><img class="features__brand-logo" src="../assets/img/logo-brand@2x.png" alt="Бренд Гардиум"/></div>
+		<div class="col-xs-12 col-sm-8 col-md-7 col-lg-6 features__info-block">
+			<div class="row features__info-block-row">
+				<div class="col-xs-12 features__info-col-h">
+					<h1 class="h1">Столкнулись с распространением неправомерными действиями в отношении вашего бизнеса?</h1>
+				</div>
+			</div>
+			<div class="row features__info-block--small-text">
+				<div class="col-xs-12 col-sm-6 features__info-col features__info-col--first"><i class="icon features-icon--check"></i>
+					<p>Столкнулись с распространением неправомерными действиями в отношении вашего бизнеса?</p>
+					<p>Ложные сведения распространяются в  сети Интернет, по радио и телевидению</p>
+					<p>Порочащие сведения распространяются  в публичных выступлениях  и  заявлениях</p>
+				</div>
+				<div class="col-xs-12 col-sm-6 features__info-col features__info-col--second"><i class="icon features-icon--shield"></i>
+					<p>Своевременное обращение за помощью позволит минимизировать ущерб, а законные методы борьбы с нарушителями не оставят сомнений в вашей правоте.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container service-list-horizontal">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 col-md-4">
+					<div class="service-list-horizontal__item">
+						<div class="col-xs-12 service-icon-horizontal-col"><i class="icon service-icon--person"></i></div>
+						<div class="service-list-horizontal__info-block">
+							<div class="col-xs-12 service-list-horizontal__name">
+								<p>Защита чести, достоинства и деловой репутации гражданина</p>
+							</div>
+						</div>
+						<div class="col-xs-12 service-list-horizontal__price-block">
+							<p class="service-list-horizontal__discount-h">Cкидка:</p>
+							<p class="service-list-horizontal__discount-s">-40 000 &#8381;</p>
+							<p class="service-list-horizontal__price">Cтандартная цена:<span class="service-list-horizontal__price-old"> <nobr>от 230 000 &#8381;</nobr></span></p>
+							<p class="service-list-horizontal__price">Cтоимость со скидкой:<span class="service-list-horizontal__price-new"> <nobr>от 190 000 &#8381;</nobr></span></p>
+						</div><a class="btn btn-primary btn-block service-list-horizontal__order-btn" href="http://www.legal-support.ru/content/zakazat-uslugi-patentnyh-poverennyh-patentnogo-byuro?options=SOFT-mincom-sale">Использовать скидку</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="service-list-horizontal__item">
+						<div class="col-xs-12 service-icon-horizontal-col"><i class="icon service-icon--sheld"></i></div>
+						<div class="service-list-horizontal__info-block">
+							<div class="col-xs-12 service-list-horizontal__name">
+								<p>Анализ перспектив<br/> дела о защите чести, достоинства и деловой репутации.</p>
+							</div>
+							<div class="col-xs-12 service-list-horizontal__short-desc">
+								<p>Акция для постоянных клиентов Гардиума</p>
+							</div>
+						</div>
+						<div class="col-xs-12 service-list-horizontal__price-block service-list-horizontal__price-block--pro-bono">
+							<p class="service-list-horizontal__discount-s">PRO BONO*</p>
+							<p class="service-list-horizontal__price">* PRO BONO бесплатно </p>
+						</div><a class="btn btn-primary btn-block service-list-horizontal__order-btn" href="http://www.legal-support.ru/content/zakazat-uslugi-patentnyh-poverennyh-patentnogo-byuro?options=SOFT-USA-sale">Использовать скидку</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="service-list-horizontal__item">
+						<div class="col-xs-12 service-icon-horizontal-col"><i class="icon service-icon--court"></i></div>
+						<div class="service-list-horizontal__info-block">
+							<div class="col-xs-12 service-list-horizontal__name">
+								<p>Защита чести, достоинства и деловой репутации юридического лица</p>
+							</div>
+							<div class="col-xs-12 service-list-horizontal__short-desc"></div>
+						</div>
+						<div class="col-xs-12 service-list-horizontal__price-block">
+							<p class="service-list-horizontal__discount-h">Cкидка:</p>
+							<p class="service-list-horizontal__discount-s">от -40 000 &#8381;</p>
+							<p class="service-list-horizontal__price">Cтандартная цена:<span class="service-list-horizontal__price-old"> <nobr>230 000 &#8381;</nobr></span></p>
+							<p class="service-list-horizontal__price">Cтоимость со скидкой:<span class="service-list-horizontal__price-new"> <nobr>от 190 000 &#8381;</nobr></span></p>
+						</div><a class="btn btn-primary btn-block service-list-horizontal__order-btn" href="http://www.legal-support.ru/content/zakazat-uslugi-patentnyh-poverennyh-patentnogo-byuro?options=SOFT-lisence-sale">Использовать скидку</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="service-list__special">
+		<div class="row">
+			<div class="col-xs-12 service-list__special-name">
+				<p class="h2">Условия специальной акции «Друзья Гардиума»</p>
+			</div>
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 col-md-4 service-list__special-col">
+						<div class="service-list__special-round-icon"><i class="service-special-icon service-special-icon--check"></i></div>
+						<p>Скидка доступна для клиентов «Гардиума» до 15 октября 2017 г. включительно.</p>
+					</div>
+					<div class="col-xs-12 col-md-4 service-list__special-col">
+						<div class="service-list__special-round-icon"><i class="service-special-icon service-special-icon--check"></i></div>
+						<p>При обращении к персональному менеджеру, пожалуйста, сообщите об участии в акции «PRO BONO».</p>
+					</div>
+					<div class="col-xs-12 col-md-4 service-list__special-col">
+						<div class="service-list__special-round-icon"><i class="service-special-icon service-special-icon--check"></i></div>
+						<p>Цены действительны для резидентов РФ.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="jumbotron j-banners j-banners--with-title">
+	<div class="container">
+		<h2 class="j-banners__title">Статьи по теме</h2>
+		<div class="row">
+			<div class="col-xs-12 col-md-6 j-banners__item"><a class="j-banners__item-link" href="http://www.legal-support.ru/information/blog/zashchita-delovoy-reputacii-chto-govorit-sudebnaya-praktika?utm_source=email&amp;utm_medium=email&amp;utm_content=reputation&amp;utm_campaign=pro-bono"><img class="j-banners__item-img" src="../assets/img/banner-reputation.jpg" target="_blank" alt="Защита деловой репутации: что говорит судебная практика?"/></a></div>
+			<div class="col-xs-12 col-md-6 j-banners__item"><a class="j-banners__item-link" href="http://www.legal-support.ru/information/blog/pri-kakih-obstoyatelstvah-organizaciya-ne-smozhet-otstoyat-svoy-simvol-gudvilla?utm_source=email&amp;utm_medium=email&amp;utm_content=reputation&amp;utm_campaign=pro-bono"><img class="j-banners__item-img" src="../assets/img/banner-reputation2.jpg" target="_blank" alt="3 обстоятельства, при которых компании не удастся защитить деловую репутацию"/></a></div>
+		</div>
+	</div>
+</div>
+<div class="subscribe" role="subscribe">
+	<div class="container text-center">
+		<h2 class="h1 subscribe__title">Будьте в курсе событий</h2>
+		<p class="subscribe__text">Подпишитесь на информационную рассылку, чтобы получать уведомления об изменениях в законодательстве, заранее узнавать о новых правилах ФИПС и ценовых предложениях для наших клиентов.</p>
+		<form class="form-inline subscribe__form js-subscribe-form">
+			<div class="form-group">
+				<div class="input-group">
+					<input class="form-control subscribe__form-input" id="subscribe-email" type="email" placeholder="Ваш email"/>
+					<div class="input-group-addon">
+						<button class="btn-primary subscribe__form-btn js-subscribe-form-submit" type="button">Подписаться</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 footer__col">
+				<p class="text-muted">&copy; 2005–2017, ООО «Гардиум» Все права защищены</p>
+				<ul class="social-links">
+					<li><a class="social-links__link social-links__link--fb" href="https://www.facebook.com/gardiumrussia/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+					<li><a class="social-links__link social-links__link--vk" href="https://vk.com/gardium" target="_blank" rel="noopener noreferrer">Вконтакте</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4 footer__col">
+				<p class="text-muted"><span class="footer__phone"><span class="ringo-<?php echo $Helper->clientRegion; ?>"><a href="tel:+74956688258">
+							<nobr>+7 (495) 668-82-58</nobr></a></span></span> пн-пт c 9 до 19<br/>Москва, Рязанский проспект, д.75, корп.4</p>
+			</div>
+			<div class="col-md-4 footer__col">
+				<div class="footer__rating clearfix"><a href="http://www.legal-support.ru/blog/news/gardium-podnyalsya-na-15-pozicii-v-reitinge-pravo-300.html?utm_source=landing&amp;utm_medium=email&amp;utm_content=trademarks&amp;utm_campaign=sale" target="_blank" rel="noopener noreferrer">
+						<image src="../assets/img/logo-pravo300@2x.jpg" width="50" height="50" alt="Рейтинг юридических компаний Право 300"></image></a>
+					<p class="text-muted">Входим в TOP-15 юридических фирм России по размеру выручки по версии Право-300</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="modal fade js-callback-modal" id="callback" tabindex="-1" role="dialog" aria-labelledby="callbackLabel">
+	<div class="modal-dialog modal-sm callback-modal" role="document">
+		<form class="modal-content js-callback-form">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="h3 modal-title text-center">Мы перезвоним</p>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<input class="form-control" id="callback-name" type="text" placeholder="Ваше имя"/>
+				</div>
+				<div class="form-group">
+					<input class="form-control js-mask-phone" id="callback-phone" type="text" placeholder="Ваше телефон *"/>
+				</div>
+				<div class="form-group">
+					<label for="callback-time">Удобное время звонка</label>
+					<select class="form-control" id="callback-time">
+						<option value="в течение дня" selected="selected">в течение дня</option>
+						<option value="в течение 30 минут">в течение 30 минут</option>
+						<option value="в течение 2 часов">в течение 2 часов</option>
+					</select>
+				</div>
+				<input id="callback-kis_direction" type="hidden"/>
+				<button class="btn btn-default btn-lg btn-block js-callback-form-submit" type="button">Заказать звонок</button>
+			</div>
+			<!--.modal-footer.text-center-->
+			<!--    button.btn.btn-primary.btn-lg.btn-block(type='button') Заказать звонок-->
+		</form>
+	</div>
+</div>
+<div class="modal fade js-modal-success" id="success_modal" tabindex="-1" role="message" aria-labelledby="successLabel">
+	<div class="modal-dialog success-modal" role="alert">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="h3 modal-title">Спасибо!</p>
+			</div>
+			<div class="modal-body">
+				<p>Мы свяжемся с вами в выбранное время.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade js-modal-subscribe-success" id="success_modal" tabindex="-1" role="message" aria-labelledby="successSubscribeLabel">
+	<div class="modal-dialog success-modal" role="alert">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="h3 modal-title">Спасибо!</p>
+			</div>
+			<div class="modal-body">
+				<p>Подписка успешно оформлена.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="btn-call"><span class="ringo-<?php echo $Helper->clientRegion; ?>"><a href="tel:+74956688258">
+			<nobr>+7 (495) 668-82-58</nobr></a></span></div>
+</div></body>
+</html>
