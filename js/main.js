@@ -886,7 +886,6 @@ var SliderPromoPublications = {
     initialize: function() {
         this.$el.bxSlider({
             controls: false,
-            //slideWidth: 706,
             minSlides: 1,
             maxSlides: 1,
             adaptiveHeight: true
