@@ -6124,6 +6124,11 @@ textarea.field-text__input {
 .publication-preview img {
   margin-top: 5px;
 }
+@media (max-width: 479px) {
+  .publication-preview img {
+    display: none;
+  }
+}
 @media (min-width: 480px) {
   .publication-preview img {
     float: left;
