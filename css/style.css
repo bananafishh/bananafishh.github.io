@@ -5252,7 +5252,7 @@ textarea.field-text__input {
 }
 @media (max-width: 767px) {
   .media-logo {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
   }
 }
 .organizations {
@@ -6175,12 +6175,7 @@ textarea.field-text__input {
   }
 }
 .publications-search {
-  margin-bottom: 18px;
-}
-@media (min-width: 480px) {
-  .publications-search {
-    margin-bottom: 38px;
-  }
+  margin-bottom: 38px;
 }
 .publications-search__form {
   position: relative;
