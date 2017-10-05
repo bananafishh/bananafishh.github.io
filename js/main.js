@@ -811,14 +811,18 @@ var ShowMore = {
 		this.pagination = this.$('.js-show-more__pagination');
 		this.item = this.$('.js-show-more__item');
 
-		this.replaceDefaultPagination();
+		if(this.$el.hasClass('js-show-more--on-blue-bg')) {
+			this.replaceDefaultPagination('btn-shadow--blue');
+		} else {
+			this.replaceDefaultPagination('');
+		}
 	},
 
 	events: {
 		'click .js-show-more__btn': 'showMoreItem'
 	},
 
-	replaceDefaultPagination: function() {
+	replaceDefaultPagination: function(className) {
 		this.pagination.remove();
 
 		var brandNewBtn = $(document.createElement('button'))
@@ -827,7 +831,7 @@ var ShowMore = {
 			.text('Показать еще');
 
 		var brandNewBtnContainer = $(document.createElement('div'))
-			.addClass('btn-shadow')
+			.addClass('btn-shadow ' + className)
 			.append(brandNewBtn)
 			.appendTo(this.$el);
 	},
