@@ -5458,6 +5458,7 @@ textarea.field-text__input {
   clear: both;
 }
 .post-header__media-logo img {
+  vertical-align: middle;
   border: 5px solid #e6ebed;
 }
 @media (max-width: 767px) {
