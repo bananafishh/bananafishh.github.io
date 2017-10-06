@@ -3601,6 +3601,9 @@ input[type="search"] {
 .section__h3-like--before-post-previews {
   margin-bottom: 27px;
 }
+.section__h3-like--before-block {
+  margin-bottom: 33px;
+}
 .section__h3-like--centered {
   text-align: center;
 }
@@ -6158,23 +6161,26 @@ textarea.field-text__input {
   background-color: #1b4769;
   box-shadow: none;
 }
-.publication-preview img {
-  margin-top: 5px;
-}
-@media (max-width: 479px) {
-  .publication-preview img {
-    display: none;
-  }
-}
-@media (min-width: 480px) {
-  .publication-preview img {
-    float: left;
-  }
+.promo-publications-slider--before-title {
+  margin-bottom: 44px;
 }
 .publication-preview time {
   margin-right: 16px;
   font-style: italic;
   color: #a5b1bc;
+}
+.publication-preview__img {
+  margin-top: 5px;
+}
+@media (max-width: 479px) {
+  .publication-preview__img {
+    display: none;
+  }
+}
+@media (min-width: 480px) {
+  .publication-preview__img {
+    float: left;
+  }
 }
 @media (min-width: 480px) {
   .publication-preview__text {
@@ -6190,6 +6196,10 @@ textarea.field-text__input {
   font-weight: 700;
   line-height: 1.444;
 }
+.publication-preview__video {
+  margin-top: 11px;
+  margin-bottom: 18px;
+}
 .publications .is-hidden {
   display: none;
 }
@@ -6198,7 +6208,7 @@ textarea.field-text__input {
 }
 .publications + .btn-shadow {
   top: -204px;
-  margin-bottom: -181px;
+  margin-bottom: -180px;
 }
 .publications--with-author-images .publication-preview:not(:last-child) {
   margin-bottom: 37px;
@@ -6206,6 +6216,34 @@ textarea.field-text__input {
 @media (min-width: 768px) {
   .publications--inside-column + .btn-shadow {
     text-align: left;
+  }
+}
+.publications--two-column .publication-preview:not(:last-child) {
+  margin-bottom: 11px;
+}
+@media (min-width: 768px) {
+  .publications--two-column .publication-preview:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 768px) {
+  .publications--two-column .publication-preview {
+    display: inline-block;
+    width: 48.5%;
+    margin-right: 3%;
+    font-size: 1rem;
+    vertical-align: top;
+  }
+}
+@media (min-width: 768px) {
+  .publications--two-column + .btn-shadow {
+    top: -224px;
+    margin-bottom: -200px;
+  }
+}
+@media (min-width: 768px) {
+  .publications--two-column {
+    font-size: 0;
   }
 }
 .publications-search {
@@ -9097,7 +9135,7 @@ html [type="button"],
   top: -182px;
   height: 275px;
   padding-top: 220px;
-  margin-bottom: -159px;
+  margin-bottom: -158px;
   text-align: center;
   background-image: url("../assets/backgrounds/bg-btn-shadow.png");
   background-position: 0 0;
