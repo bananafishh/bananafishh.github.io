@@ -4607,6 +4607,30 @@ textarea.field-text__input {
   line-height: 1.444;
   text-transform: uppercase;
 }
+.field-text__input--lg::-webkit-input-placeholder {
+  color: #a5b1bc;
+  -ms-filter: none;
+  filter: none;
+  opacity: 1;
+}
+.field-text__input--lg:-moz-placeholder {
+  color: #a5b1bc;
+  -ms-filter: none;
+  filter: none;
+  opacity: 1;
+}
+.field-text__input--lg::-moz-placeholder {
+  color: #a5b1bc;
+  -ms-filter: none;
+  filter: none;
+  opacity: 1;
+}
+.field-text__input--lg:-ms-input-placeholder {
+  color: #a5b1bc;
+  -ms-filter: none;
+  filter: none;
+  opacity: 1;
+}
 @media (min-width: 768px) {
   .field-text__input--lg {
     padding-right: 30px;
@@ -4641,6 +4665,14 @@ textarea.field-text__input {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
+}
+.field-text__search-btn svg {
+  fill: #0075b8;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.field-text__search-btn:hover svg {
+  fill: #ffa700;
 }
 .field-text--search {
   position: relative;
@@ -9036,6 +9068,7 @@ html [type="button"],
   font-size: 1.142857142857143em;
 }
 .btn--sm-font {
+  padding: 13px 40px 14px;
   font-size: 1.142857142857143em;
 }
 .btn-round {
