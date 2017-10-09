@@ -4662,6 +4662,8 @@ textarea.field-text__input {
   padding: 14px 14px 12px;
   border: none;
   background: none;
+}
+.field-text__search-btn span {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
