@@ -898,6 +898,58 @@ var SliderPromoPublications = {
 };
 
 App.Control.install(SliderPromoPublications);
+var StickyMediaLogo = {
+	el: '.js-sticky-media-logo',
+	name: 'StickyMediaLogo',
+
+	initialize: function() {
+		this.elHeight = this.$el.outerHeight();
+		this.logo = this.$('.js-sticky-media-logo__logo');
+		this.logoHeight = this.logo.outerHeight();
+		this.publications = this.$('.js-sticky-media-logo__publications');
+
+		if($(window).outerWidth() <= 899) {
+			this.elBottomPadding = 158;
+		} else {
+			this.elBottomPadding = 100;
+		}
+
+		this.pushPoint = this.$el.offset().top;
+		this.stopPoint = this.pushPoint + this.elHeight - this.logoHeight - this.elBottomPadding;
+
+		var self = this;
+
+		$(window).bind('resize', function() {
+			self.elHeight = self.$el.outerHeight();
+			self.logoHeight = self.logo.outerHeight();
+			self.pushPoint = self.$el.offset().top;
+
+			if($(window).outerWidth() <= 899) {
+				self.elBottomPadding = 158;
+			} else {
+				self.elBottomPadding = 100;
+			}
+
+			self.stopPoint = self.pushPoint + self.elHeight - self.logoHeight - self.elBottomPadding;
+		});
+
+		$(window).bind('scroll', function() {
+			self.elHeight = self.$el.outerHeight();
+			self.stopPoint = self.pushPoint + self.elHeight - self.logoHeight - self.elBottomPadding;
+			self.stickyOnScroll();
+		});
+	},
+
+	stickyOnScroll: function() {
+		if($(window).scrollTop() >= this.pushPoint && $(window).scrollTop() < this.stopPoint && $(window).outerWidth() >= 768) {
+			this.logo.addClass('media-logo--fixed');
+		} else {
+			this.logo.removeClass('media-logo--fixed');
+		}
+	}
+};
+
+App.Control.install(StickyMediaLogo);
 var SwitchActiveState = {
     el: '.js-switch-active',
     name: 'SwitchActiveState',

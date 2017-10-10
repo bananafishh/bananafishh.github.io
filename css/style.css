@@ -5292,6 +5292,23 @@ textarea.field-text__input {
     margin-bottom: 35px;
   }
 }
+@media (min-width: 768px) {
+  .media-logo--fixed {
+    position: fixed;
+    top: 30px;
+  }
+}
+@media (max-width: 899px) {
+  .media-logo--fixed {
+    top: 88px;
+  }
+}
+@media (max-width: 1020px) {
+  .media-logo--fixed {
+    left: 76.2%;
+    width: 21.6%;
+  }
+}
 .organizations {
   margin-bottom: -11px;
 }
