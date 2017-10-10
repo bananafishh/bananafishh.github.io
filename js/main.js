@@ -229,6 +229,10 @@ App.Control.install({
 
         if(this.multiSelectInputs)
             this.initMultiSelectControl();
+
+		if(_.isFunction(this.initializeEx)) {
+			this.initializeEx();
+		}
     },
 
     initMultiSelectControl: function () {
@@ -906,7 +910,6 @@ var StickyMediaLogo = {
 		this.elHeight = this.$el.outerHeight();
 		this.logo = this.$('.js-sticky-media-logo__logo');
 		this.logoHeight = this.logo.outerHeight();
-		this.publications = this.$('.js-sticky-media-logo__publications');
 
 		if($(window).outerWidth() <= 899) {
 			this.elBottomPadding = 158;
@@ -1310,33 +1313,39 @@ App.Control.install({
 
 }(window.jQuery);
 App.Control.install({
-    el: '.input-file',
-    name: 'InputFile',
-    initialize: function () {
+	el: '.input-file',
+	name: 'InputFile',
+	initialize: function () {
 
-        this.$inputFile = this.$('input[type=file]')
-            .addClass('file-hidden');
+		this.$inputFile = this.$('input[type=file]')
+			.addClass('file-hidden');
 
-        this.$inputPath = $(document.createElement('input'))
-            .addClass('file-path-input')
-            .attr('type','text')
-            .attr('readonly',true)
-            .prependTo(this.$el);
+		var self = this;
 
-        this.$inputButton = $(document.createElement('div'))
-            .addClass('btn btn-input-file')
-            .html('Обзор...')
-            .prependTo(this.$('label'));
+		this.$inputPath = $(document.createElement('input'))
+			.addClass('file-path-input')
+			.attr('type','text')
+			.attr('required',function () {
+				if(self.$inputFile.attr('required'))
+					return true;
+			})
+			.attr('readonly',true)
+			.prependTo(this.$el);
 
-        this.$el.addClass('input-file2');
+		this.$inputButton = $(document.createElement('div'))
+			.addClass('btn btn-input-file')
+			.html('Обзор...')
+			.prependTo(this.$('label'));
 
-    },
-    events: {
-        'change [type=file]': 'changeValue'
-    },
-    changeValue: function() {
-        this.$inputPath.val(this.$inputFile.val().replace('C:\\fakepath\\',''));
-    }
+		this.$el.addClass('input-file2');
+
+	},
+	events: {
+		'change [type=file]': 'changeValue'
+	},
+	changeValue: function() {
+		this.$inputPath.val(this.$inputFile.val().replace('C:\\fakepath\\',''));
+	}
 });
 App.Control.install({
     el: '.input-multifile',
