@@ -135,21 +135,24 @@ var BackToTop = {
 };
 
 App.Control.install(BackToTop);
-var DottedNavSlider = {
-    el: '.js-dotted-nav-slider',
-    name: 'DottedNavSlider',
-    initialize: function() {
-        this.$el.bxSlider({
-            controls: false,
-            slideWidth: 706,
-            minSlides: 1,
-            maxSlides: 1,
-            adaptiveHeight: true
-        });
-    }
-};
+App.Control.install({
+	el: '.js-dotted-nav-slider',
+	name: 'DottedNavSlider',
+	initialize: function() {
+		var sliderOpts = {
+			controls: false,
+			slideWidth: 706,
+			minSlides: 1,
+			maxSlides: 1,
+			adaptiveHeight: true
+		};
 
-App.Control.install(DottedNavSlider);
+		if(!_.isUndefined(this.$el.data('auto')))
+			sliderOpts.auto = true;
+
+		this.$el.bxSlider(sliderOpts);
+	}
+});
 var EqualHeight = {
     el: '.js-equal-height',
     name: 'EqualHeight',
@@ -696,8 +699,9 @@ App.Control.extend('ScrollBar', {
 App.Control.extend('ScrollBar', {
     el: '.js-scroll-employees-reviews',
     name: 'ScrollBarEmployeesReviews',
-    responsiveMarginPersent: 3,
+    responsiveMarginPersent: 0,
 
+    /*
     initialize: function() {
         this.scrollBarDestroyBreakpoint = 1135;
         this.scrollbarIsInitialized = false;
@@ -719,7 +723,7 @@ App.Control.extend('ScrollBar', {
                 self.scrollbarIsInitialized = true;
             }
         });
-    }
+    }*/
 });
 
 
@@ -851,7 +855,7 @@ var ShowMore = {
 };
 
 App.Control.install(ShowMore);
-var SliderEmployeesReviews = {
+/*var SliderEmployeesReviews = {
     el: '.js-slider-employees-reviews',
     name: 'SliderEmployeesReviews',
 
@@ -887,7 +891,7 @@ var SliderEmployeesReviews = {
     }
 };
 
-App.Control.install(SliderEmployeesReviews);
+App.Control.install(SliderEmployeesReviews);*/
 var SliderPromoPublications = {
     el: '.js-slider-promo-publications',
     name: 'SliderPromoPublications',
@@ -1073,31 +1077,44 @@ App.Control.install({
     }
 });
 var VerticalTabs = {
-    el: '.js-vertical-tabs',
-    name: 'VerticalTabs',
-    initialize: function() {
-        this.tab = this.$('.js-vertical-tabs__tab');
-        this.tabsList = this.$('.js-vertical-tabs__list');
-        this.tabContent = this.$('.js-vertical-tabs__content');
-    },
+	el: '.js-vertical-tabs',
+	name: 'VerticalTabs',
+	cprefix: 'vtabs_',
+	initialize: function() {
+		this.tab = this.$('.js-vertical-tabs__tab');
+		this.tabsList = this.$('.js-vertical-tabs__list');
+		this.tabContent = this.$('.js-vertical-tabs__content');
+		if(this.$el.data('keep')) {
+			this.keepCookieId = this.cprefix + this.$el.data('keep');
+			var tabCookie = Cookies.get(this.keepCookieId);
+			if(tabCookie)
+				this.tab[tabCookie].click();
+		} else
+			this.keepCookieId = false;
+	},
 
-    events: {
-        'click .js-vertical-tabs__tab': 'switchTabOnClick'
+	events: {
+		'click .js-vertical-tabs__tab': 'switchTabOnClick'
 
-    },
+	},
 
-    switchTabOnClick: function(e) {
-        this.tab.removeClass('is-active');
-        $(e.currentTarget).addClass('is-active');
+	switchTabOnClick: function(e) {
+		this.tab.removeClass('is-active');
+		$(e.currentTarget).addClass('is-active');
 
-        this.targetId = $(e.currentTarget).data('id');
+		if(this.keepCookieId)
+			Cookies.set(this.keepCookieId,
+				this.tab.index(e.currentTarget));
 
-        this.tabContent.removeClass('is-active');
-        $('#' + this.targetId).addClass('is-active');
+		this.targetId = $(e.currentTarget).data('id');
+
+		this.tabContent.removeClass('is-active');
+		$('#' + this.targetId).addClass('is-active');
 
 
-        this.tabsList.toggleClass('is-open');
-    }
+		this.tabsList.toggleClass('is-open');
+
+	}
 };
 
 App.Control.install(VerticalTabs);
@@ -1354,7 +1371,9 @@ App.Control.install({
 
         var self = this;
 
-        this.inputName = this.$el.data('name');
+		this.iAr = 1;
+
+		this.inputName = this.$el.data('name');
 
         this.$inputButton = $(document.createElement('div'))
             .addClass('btn btn-input-multifile')
@@ -1412,7 +1431,7 @@ App.Control.install({
 
             var $nextFileInput = $(document.createElement('input'))
                 .attr('type','file')
-                .attr('name',this.inputName)
+				.attr('name',this.inputName + '[' + (this.iAr++) + ']')
                 .addClass('file-hidden')
                 .appendTo(this.$el);
         } else

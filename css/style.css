@@ -4118,6 +4118,16 @@ input[type="search"] {
   font-weight: 700;
   line-height: 1.445;
 }
+.employee-reviews {
+  padding-left: 0;
+  margin-top: 0;
+  list-style: none;
+}
+.employee-reviews::after {
+  content: '';
+  display: table;
+  clear: both;
+}
 .employee-review {
   margin: 0;
 }
