@@ -120,7 +120,11 @@
 	<section class="section">
 		<div class="container">
 			<h2 class="section__title">Четырехколоночные таблицы</h2>
+			<p>Для четырехколоночных таблиц - не всех, но некоторых - применяется класс .table--four-column в сочетании с ещё одним модификатором.</p>
 			<h3>Вариант №1</h3>
+			<P><b>Важно</b>. Эта таблица встречается в единственном экземпляре. Её верстка также является исключением: она больше не повторяется нигде.</P>
+			<p>Для реализации адаптивной раскладки используются классы .table--four-column.table--exeption</p>
+			<p>Требуется дублирование табличных данных на маленьких вьюпортах.</p>
 			<p><a href="http://bx-gardium.1000likes.ru/information/faq/patent/baza-dannyh-patentov-kak-poluchit-dostup/">http://bx-gardium.1000likes.ru/information/faq/patent/baza-dannyh-patentov-kak-poluchit-dostup/</a></p>
 			<table class="table table--four-column table--exeption">
 				<thead class="hide-up-to-lg">
@@ -236,6 +240,9 @@
 				</ul>
 			</div>
 			<h3>Вариант №2</h3>
+			<p>Таблица на ширине до 992px скрывается - класс .hide-up-to-lg. На ширине c 550px до 768px таблица представляется в виде трех двухколоночных таблиц .table--two-column.table--hidden.hide-lg, которые складываются в дублиюрующие блоки .table-data.table-data--from-two-column-table на ширине до 550px.</p>
+			<p>Требуется дублирование табличных данных на маленьких вьюпортах.</p>
+			<p>Способ дублирования: заголовок 2-го столбца каждой получившейся двухколоночной таблицы  в виде h3.table-data__title + список, в каждом пункте которого информация сразу из двух ячеек одного ряда.</p>
 			<p><a href="http://bx-gardium.1000likes.ru/services/trademarks/zashhita-prav-na-tovarnyi-znak/">http://bx-gardium.1000likes.ru/services/trademarks/zashhita-prav-na-tovarnyi-znak/</a><br/>
 				<a href="http://bx-gardium.1000likes.ru/services/registraciya-dogovorov/">http://bx-gardium.1000likes.ru/services/registraciya-dogovorov/</a><br/>
 				<a href="http://bx-gardium.1000likes.ru/information/faq/patent/kakie-byvaut-patenty/">http://bx-gardium.1000likes.ru/information/faq/patent/kakie-byvaut-patenty/</a><br/>
@@ -842,6 +849,9 @@
 				</ul>
 			</div>
 			<h3>Вариант №3</h3>
+			<p>Таблица скрывается на меньшей ширине до 768px c помощью класса .hide-up-to-md.</p>
+			<p>Требуется дублирование табличных данных на маленьких вьюпортах. Блок .table-data.hide-md</p>
+			<p>Способ дублирования: список, в каждом пункте которого информация сразу из четырех ячеек одного ряда. <a href="https://yadi.sk/i/8E0zRhWI3NvEqZ">https://yadi.sk/i/8E0zRhWI3NvEqZ</a></p>
 			<p><a href="http://bx-gardium.1000likes.ru/information/faq/patent/formula-izobreteniya-kak-pravilno-sostavit/">http://bx-gardium.1000likes.ru/information/faq/patent/formula-izobreteniya-kak-pravilno-sostavit/</a></p>
 			<table class="table hide-up-to-md">
 				<thead>
@@ -893,6 +903,9 @@
 				</ul>
 			</div>
 			<h3>Вариант №4</h3>
+			<p>Таблица скрывается на меньшей ширине до 768px c помощью класса .hide-up-to-md.</p>
+			<p>Требуется дублирование табличных данных на маленьких вьюпортах. Блок .table-data.hide-md</p>
+			<p>Способ дублирования: пары - заголовок каждого столбца как h3.table-data__title + список <b>соответствующих</b>документов из первого столбца</p>
 			<p><a href="http://bx-gardium.1000likes.ru/information/faq/patent/zayavka-na-poluchenie-patenta-kak-pravilno-sostavit/">http://bx-gardium.1000likes.ru/information/faq/patent/zayavka-na-poluchenie-patenta-kak-pravilno-sostavit/</a></p>
 			<table class="table hide-up-to-md">
 				<thead>
@@ -920,13 +933,13 @@
 						<td>формула</td>
 						<td class="table__icon-check"></td>
 						<td class="table__icon-check"></td>
-						<td class="table__icon-check"></td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>реферат</td>
 						<td class="table__icon-check"></td>
 						<td class="table__icon-check"></td>
-						<td class="table__icon-check"></td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>чертеж</td>
@@ -936,8 +949,8 @@
 					</tr>
 					<tr>
 						<td>изображение</td>
-						<td class="table__icon-check"></td>
-						<td class="table__icon-check"></td>
+						<td></td>
+						<td></td>
 						<td class="table__icon-check"></td>
 					</tr>
 				</tbody>
@@ -968,6 +981,8 @@
 				</ul>
 			</div>
 			<h3>Вариант №5</h3>
+			<p>Применяется класс .table--transformed-with-images.</p>
+			<p>Таблица-исключение</p>
 			<p><a href="http://bx-gardium.1000likes.ru/information/faq/trademark/kakie-preimushhestva-daet-zaregistrirovannyi-tovarnyi-znak/">http://bx-gardium.1000likes.ru/information/faq/trademark/kakie-preimushhestva-daet-zaregistrirovannyi-tovarnyi-znak/</a></p>
 			<table class="table table--four-column table--transformed-with-images">
 				<thead class="hide-up-to-lg">
@@ -980,10 +995,10 @@
 				</thead>
 				<tbody class="hide-up-to-lg">
 					<tr>
-						<td><img class="table__img" src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_02.png" alt=""/></td>
-						<td><img class="table__img" src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_03.png" alt=""/></td>
-						<td><img class="table__img" src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_07.png" alt=""/></td>
-						<td><img class="table__img" src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_10.png" alt=""/></td>
+						<td><img src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_02.png" alt=""/></td>
+						<td><img src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_03.png" alt=""/></td>
+						<td><img src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_07.png" alt=""/></td>
+						<td><img src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_10.png" alt=""/></td>
 					</tr>
 				</tbody>
 				<thead class="hide-lg">
@@ -994,12 +1009,12 @@
 				</thead>
 				<tbody class="hide-lg">
 					<tr>
-						<td><img class="table__img" src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_02.png" alt=""/></td>
-						<td><img class="table__img" src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_03.png" alt=""/></td>
+						<td><img src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_02.png" alt=""/></td>
+						<td><img src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_03.png" alt=""/></td>
 					</tr>
 					<tr>
-						<td><img class="table__img" src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_07.png" alt=""/></td>
-						<td><img class="table__img" src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_10.png" alt=""/></td>
+						<td><img src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_07.png" alt=""/></td>
+						<td><img src="http://www.legal-support.ru/sites/all/themes/gardium/img/Logo_10.png" alt=""/></td>
 					</tr>
 				</tbody>
 			</table>

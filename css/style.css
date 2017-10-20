@@ -10786,14 +10786,14 @@ border-bottom-color
 .table td *:last-child {
   margin-bottom: 0;
 }
+.table td img {
+  border: 5px solid #e6ebed;
+}
 .table ol,
 .table ul:not(.dash-marker-list) {
   padding-left: 0;
   margin: 0;
   list-style-position: inside;
-}
-.table__img {
-  border: 5px solid #e6ebed;
 }
 .table__icon-check {
   position: relative;
@@ -10846,6 +10846,11 @@ border-bottom-color
   }
 }
 @media (max-width: 549px) {
+  .table--two-column.table--transformed td img {
+    margin-bottom: -18px;
+  }
+}
+@media (max-width: 549px) {
   .table--two-column.table--transformed td {
     display: block;
     padding: 0;
@@ -10854,80 +10859,34 @@ border-bottom-color
     border: none;
   }
 }
-@media (max-width: 549px) {
-  .table--two-column.table--reverse-transformed thead th:first-child {
-    display: block;
-    padding: 0;
-    margin-bottom: 17px;
-    color: #32404d;
-    text-align: left;
-    background: none;
-    border: none;
-  }
-}
-@media (max-width: 549px) {
-  .table--two-column.table--reverse-transformed thead th:last-child {
-    display: none;
-  }
-}
-@media (max-width: 549px) {
-  .table--two-column.table--reverse-transformed tbody {
-    display: block;
-    width: 100%;
-  }
-}
-@media (max-width: 549px) {
-  .table--two-column.table--reverse-transformed tr {
-    display: block;
-  }
-}
-@media (max-width: 549px) {
-  .table--two-column.table--reverse-transformed td:last-child {
-    display: none;
-  }
-}
-@media (max-width: 549px) {
-  .table--two-column.table--reverse-transformed td {
-    display: block;
-    padding: 0;
-    margin-bottom: 18px;
-    background: none;
-    border: none;
-  }
-}
-@media (min-width: 550px) {
-  .table--two-column.table--reverse-transformed .table__hidden {
+@media (max-width: 767px) {
+  .table--two-column.table--no-head-transformed thead {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  .table--two-column.table--no-head thead {
-    display: none;
-  }
-}
-@media (max-width: 767px) {
-  .table--two-column.table--no-head tbody {
+  .table--two-column.table--no-head-transformed tbody {
     display: block;
     width: 100%;
   }
 }
 @media (max-width: 767px) {
-  .table--two-column.table--no-head tr {
+  .table--two-column.table--no-head-transformed tr {
     display: block;
   }
 }
 @media (max-width: 767px) {
-  .table--two-column.table--no-head td {
+  .table--two-column.table--no-head-transformed td img {
+    margin-bottom: -18px;
+  }
+}
+@media (max-width: 767px) {
+  .table--two-column.table--no-head-transformed td {
     display: block;
     padding: 0;
     margin-bottom: 18px;
     background: none;
     border: none;
-  }
-}
-@media (max-width: 767px) {
-  .table--two-column.table--with-image td:first-child {
-    margin-bottom: 0;
   }
 }
 .table--four-column.table--exeption td {
