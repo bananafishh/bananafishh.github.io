@@ -697,37 +697,6 @@ App.Control.extend('ScrollBar', {
 
 
 App.Control.extend('ScrollBar', {
-    el: '.js-scroll-employees-reviews',
-    name: 'ScrollBarEmployeesReviews',
-    responsiveMarginPersent: 0,
-
-    /*
-    initialize: function() {
-        this.scrollBarDestroyBreakpoint = 1135;
-        this.scrollbarIsInitialized = false;
-        var self = this;
-
-        if($(window).outerWidth() <= this.scrollBarDestroyBreakpoint) {
-            this.contentClass = _.isUndefined(this.$el.data("scrollbarContentClass")) ? 'hscroll-wrapper' : this.$el.data("scrollbarContentClass");
-            this.initScrollbar();
-            this.scrollbarIsInitialized = true;
-        }
-
-        $(window).bind('resize', function() {
-            if($(window).outerWidth() > self.scrollBarDestroyBreakpoint && self.scrollbarIsInitialized) {
-                self.destroyScrollbar();
-                self.scrollbarIsInitialized = false;
-            } else if($(window).outerWidth() <= self.scrollBarDestroyBreakpoint  && !self.scrollbarIsInitialized) {
-                self.contentClass = _.isUndefined(self.$el.data("scrollbarContentClass")) ? 'hscroll-wrapper' : self.$el.data("scrollbarContentClass");
-                self.initScrollbar();
-                self.scrollbarIsInitialized = true;
-            }
-        });
-    }*/
-});
-
-
-App.Control.extend('ScrollBar', {
     el: '.js-scroll-clients',
     name: 'ScrollBarClients',
     responsiveMarginPersent: 3,
@@ -855,43 +824,93 @@ var ShowMore = {
 };
 
 App.Control.install(ShowMore);
-/*var SliderEmployeesReviews = {
-    el: '.js-slider-employees-reviews',
+var SliderEmployeesReviews = {
+    el: '.js-employees-reviews',
     name: 'SliderEmployeesReviews',
-
+    breakpoint: 768,
+    slider: null,
+	scroll: null,
+    elementsCount: 0,
     initialize: function() {
-        this.sliderIsInititalized = false;
-        this.sliderDestroyBreakpoint = 1136;
-        var self = this;
 
-        if($(window).outerWidth() >= this.sliderDestroyBreakpoint) {
-            this.initSlider();
-            this.sliderIsInititalized = true;
-        }
+		this.elementsCount = this.$el.find('.employee-reviews__item').length;
 
-        $(window).bind('resize', function() {
-            if($(window).outerWidth() < self.sliderDestroyBreakpoint && self.sliderIsInititalized) {
-                self.$el.destroySlider();
-                self.sliderIsInititalized = false;
-            } else if($(window).outerWidth() >= self.sliderDestroyBreakpoint && !self.sliderIsInititalized) {
-                self.initSlider();
-                self.sliderIsInititalized = true;
-            }
-        });
+		this.renderMode();
+
+		var self = this;
+		$(window).bind('resize', function() {
+			self.renderMode();
+		});
     },
 
+    renderMode: function () {
+		var self = this;
+		if($(window).outerWidth() < self.breakpoint) {
+			self.destroySlider();
+			self.initScroll();
+		} else {
+			self.destroyScroll();
+			self.initSlider();
+		}
+	},
+
     initSlider: function() {
-        this.$el.bxSlider({
-            pager: false,
-            slideWidth: 960,
-            minSlides: 1,
-            maxSlides: 1,
-            adaptiveHeight: true
-        });
-    }
+    	if(!this.slider) {
+			this.slider = this.$el.find('.employee-reviews').bxSlider({
+				pager: false,
+				slideWidth: 960,
+				minSlides: 1,
+				maxSlides: 1,
+				adaptiveHeight: true
+			});
+		}
+    },
+
+	destroySlider: function() {
+		if(this.slider) {
+			this.slider.destroySlider();
+			this.slider = null;
+		}
+	},
+
+	initScroll: function() {
+		if(!this.scroll) {
+			var self = this;
+			this.scroll = this.$el.find('.employee-reviews').mCustomScrollbar({
+				axis:"x",
+				theme:"dark-2",
+				autoExpandScrollbar:true,
+				scrollInertia: 500,
+				mouseWheel: {
+					enable: true,
+					normalizeDelta: true
+				},
+				keyboard:{
+					enable: false
+				},
+				advanced:{
+					autoExpandHorizontalScroll:true,
+					updateOnContentResize: true
+				},
+				callbacks:{
+					onUpdate:function(){
+						self.$el.find('.employee-reviews__item')
+							.width( (self.$el.width()) + 'px');
+					}
+				}
+			});
+		}
+	},
+
+	destroyScroll: function() {
+		if(this.scroll) {
+			this.scroll.mCustomScrollbar('destroy');
+			this.scroll = null;
+		}
+	}
 };
 
-App.Control.install(SliderEmployeesReviews);*/
+App.Control.install(SliderEmployeesReviews);
 var SliderPromoPublications = {
     el: '.js-slider-promo-publications',
     name: 'SliderPromoPublications',

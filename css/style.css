@@ -4118,6 +4118,24 @@ input[type="search"] {
   font-weight: 700;
   line-height: 1.445;
 }
+@media (max-width: 1135px) {
+  .employee-reviews-slider {
+    margin: 0 65px;
+  }
+}
+@media (max-width: 767px) {
+  .employee-reviews-slider {
+    margin: 0 0;
+  }
+}
+@media (max-width: 1135px) {
+  .employee-reviews-slider .bx-controls {
+    display: block;
+  }
+}
+.employee-reviews-slider .mCustomScrollBox {
+  height: auto !important;
+}
 .employee-reviews {
   padding-left: 0;
   margin-top: 0;
@@ -4127,6 +4145,17 @@ input[type="search"] {
   content: '';
   display: table;
   clear: both;
+}
+@media (max-width: 767px) {
+  .employee-reviews__item {
+    float: left;
+    max-width: 712px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .employee-reviews__item + .employee-reviews__item blockquote {
+    padding-left: 20px;
+  }
 }
 .employee-review {
   margin: 0;
@@ -4561,6 +4590,9 @@ input[type="search"] {
   background-color: #fff;
   border: none;
   border-top: 1px solid #ccc;
+}
+.field-text__input._error {
+  outline: #ff1037 auto 5px;
 }
 .field-text__input::-webkit-input-placeholder {
   color: #32404d;
@@ -7367,21 +7399,21 @@ textarea.field-text__input {
 .trademark {
   text-align: center;
 }
-.trademark__img--goros21 {
+.trademark img {
+  position: relative;
+  margin-bottom: 5px;
+}
+.trademark:first-child img {
   left: 2px;
 }
-.trademark__img--adamff {
+.trademark:nth-child(7) img {
   left: 3px;
 }
-.trademark__img--carcam-electronics {
+.trademark:nth-child(8) img {
   left: 8px;
 }
 .trademark__title {
   color: #a5b1bc;
-}
-[class^="trademark__img"] {
-  position: relative;
-  margin-bottom: 5px;
 }
 .useful-links {
   padding: 34px 30px 34px 40px;
@@ -10804,6 +10836,18 @@ border-bottom-color
   padding-left: 0;
   margin: 0;
   list-style-position: inside;
+}
+.table__th-like {
+  padding: 21px 30px 19px;
+  font-size: 1.285714285714286em;
+  font-weight: 700;
+  line-height: 1.444;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  background-color: #1b4769;
+  border: 1px solid rgba(165,177,188,0.5);
 }
 .table__icon-check {
   position: relative;
