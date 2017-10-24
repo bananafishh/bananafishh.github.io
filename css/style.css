@@ -5965,17 +5965,21 @@ textarea.field-text__input {
   width: 100%;
 }
 .promo-post {
+  position: relative;
   height: 255px;
   font-size: 0;
   text-align: right;
   background-repeat: no-repeat;
   background-size: cover;
 }
-@media (max-width: 479px) {
-  .promo-post .promo-post__text {
-    width: 100%;
-    text-align: center;
-    background-color: transparent;
+.promo-post img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 519px) {
+  .promo-post img {
+    display: none;
   }
 }
 .promo-post::after {
@@ -5985,13 +5989,13 @@ textarea.field-text__input {
   height: 100%;
   vertical-align: middle;
 }
-@media (max-width: 479px) {
+@media (max-width: 519px) {
   .promo-post {
-    background-image: none !important;
     background-color: #1b4769;
   }
 }
 .promo-post__text {
+  position: relative;
   display: inline-block;
   width: 45.16129%;
   min-width: 210px;
@@ -6000,6 +6004,13 @@ textarea.field-text__input {
   text-align: left;
   vertical-align: middle;
   background-color: rgba(27,71,105,0.85);
+}
+@media (max-width: 519px) {
+  .promo-post__text {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+  }
 }
 .promo-post__tag {
   display: inline-block;
@@ -6047,18 +6058,28 @@ textarea.field-text__input {
   border-width: 4px 7px;
   border-left-color: #fff;
 }
-@media (min-width: 768px) and (max-width: 925px) {
+.promo-post--inside-col {
+  max-width: 464px;
+}
+@media (min-width: 768px) and (max-width: 1029px) {
+  .promo-post--inside-col img {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1029px) {
   .promo-post--inside-col .promo-post__text {
     width: 100%;
     text-align: center;
     background-color: transparent;
   }
 }
-@media (min-width: 768px) and (max-width: 925px) {
+@media (min-width: 768px) and (max-width: 1029px) {
   .promo-post--inside-col {
-    background-image: none !important;
     background-color: #1b4769;
   }
+}
+.promo-posts-slider .bx-wrapper {
+  max-width: 464px !important;
 }
 .promo-posts-slider .bx-pager {
   padding: 26px 20px;
