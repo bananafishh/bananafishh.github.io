@@ -46,54 +46,30 @@ $(document).ready(function() {
 
 	$('.js-tooltip').tooltipster({
 		theme: ['tooltipster-light', 'tooltipster-light-customized'],
-		maxWidth: 443
+		maxWidth: 443,
+    trigger: 'custom',
+    triggerOpen: {
+      mouseenter: true,
+      tap: true
+    },
+    triggerClose: {
+      mouseleave: true,
+      tap: true
+    }
 	});
 
   $('.js-tooltip-right').tooltipster({
     side: 'right',
     theme: ['tooltipster-light', 'tooltipster-light-customized'],
-    maxWidth: 443
-  });
-
-	$('.js-fancy-media').fancybox({
-    wrapCSS: 'fancy-media',
-    margin: ($(window).width() > 937) ? 20 : 5,
-    fitToView: false,
-    padding: 15,
-    helpers : {
-      overlay : {
-        css : {
-          'background' : 'rgba(27, 71, 105, 0.7)'
-        }
-      }
-    }
-  });
-
-  $('.js-fancy-modal').fancybox({
-    wrapCSS: 'fancy-modal',
-    margin: ($(window).width() > 937) ? 20 : 5,
-    fitToView: false,
-    padding: 0,
-    helpers : {
-      overlay : {
-        css : {
-          'background' : 'rgba(27, 71, 105, 0.7)'
-        }
-      }
-    }
-  });
-
-  $('.js-fancy-big-modal').fancybox({
-    wrapCSS: 'fancy-big-modal',
-    margin: ($(window).width() > 937) ? 20 : 5,
-    fitToView: false,
-    padding: 20,
-    helpers : {
-      overlay : {
-        css : {
-          'background' : 'rgba(27, 71, 105, 0.7)'
-        }
-      }
+    maxWidth: 443,
+    trigger: 'custom',
+    triggerOpen: {
+      mouseenter: true,
+      tap: true
+    },
+    triggerClose: {
+      mouseleave: true,
+      tap: true
     }
   });
 });
@@ -192,6 +168,68 @@ var EqualHeight = {
 };
 
 App.Control.install(EqualHeight);
+App.Control.install({
+    el: '.js-fancy-media',
+    name: 'FancyMedia',
+    initialize: function () {
+        var self = this;
+		this.$el.fancybox({
+			wrapCSS: 'fancy-media',
+			margin: ($(window).width() > 937) ? 20 : 5,
+			fitToView: true,
+			padding: 15,
+			helpers : {
+				overlay : {
+					css : {
+						'background' : 'rgba(27, 71, 105, 0.7)'
+					}
+				}
+			}
+		});
+    }
+});
+
+App.Control.install({
+	el: '.js-fancy-modal',
+	name: 'FancyModal',
+	initialize: function () {
+		var self = this;
+		this.$el.fancybox({
+			wrapCSS: 'fancy-modal',
+			margin: ($(window).width() > 937) ? 20 : 5,
+			fitToView: false,
+			padding: 0,
+			helpers : {
+				overlay : {
+					css : {
+						'background' : 'rgba(27, 71, 105, 0.7)'
+					}
+				}
+			}
+		});
+	}
+});
+
+App.Control.install({
+	el: '.js-big-modal',
+	name: 'FancyBigModal',
+	initialize: function () {
+		var self = this;
+		this.$el.fancybox({
+			wrapCSS: 'fancy-big-modal',
+			margin: ($(window).width() > 937) ? 20 : 5,
+			fitToView: false,
+			padding: 20,
+			helpers : {
+				overlay : {
+					css : {
+						'background' : 'rgba(27, 71, 105, 0.7)'
+					}
+				}
+			}
+		});
+	}
+});
 App.Control.install({
     el: '.js-form',
     name: 'FormFabric',
@@ -618,7 +656,7 @@ App.Control.install({
             autoExpandScrollbar:true,
             scrollInertia: 500,
             mouseWheel: {
-                enable: true,
+                enable: false,
                 normalizeDelta: true
             },
             keyboard:{
