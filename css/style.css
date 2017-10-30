@@ -6078,6 +6078,18 @@ textarea.field-text__input {
     background-color: #1b4769;
   }
 }
+.promo-post--only-image {
+  max-width: 464px;
+  height: auto;
+}
+.promo-post--only-image img {
+  position: static;
+}
+@media (max-width: 519px) {
+  .promo-post--only-image img {
+    display: block;
+  }
+}
 .promo-posts-slider .bx-wrapper {
   max-width: 464px !important;
 }
@@ -9187,11 +9199,13 @@ html [type="button"],
 }
 .btn-round--back-to-top {
   position: fixed;
+  z-index: 15;
   bottom: 30px;
   margin-left: -74px;
 }
 .btn-round--call-us {
   position: fixed;
+  z-index: 15;
   bottom: 30px;
 }
 .btn-round--call-us::before {
@@ -11070,7 +11084,7 @@ border-bottom-color
 }
 .tabs__list {
   padding-left: 0;
-  margin-top: 43px;
+  margin-top: 7px;
   margin-bottom: 0;
   list-style: none;
 }
@@ -11078,9 +11092,9 @@ border-bottom-color
   .tabs__list {
     position: relative;
     max-width: 460px;
+    padding-top: 45px;
     margin-right: auto;
     margin-left: auto;
-    padding-top: 45px;
   }
 }
 @media (min-width: 1020px) {
@@ -11098,13 +11112,16 @@ border-bottom-color
     border-bottom-color: #0075b8;
   }
   .tabs__list.is-open .tabs__tab:not(.is-active) {
-    position: relative;
-    top: auto;
     background-color: #d7dee1;
   }
 }
 .tabs__list--white-text .tabs__tab:hover {
   color: #fff;
+}
+@media (max-width: 1019px) {
+  .tabs__list--white-text .tabs__tab {
+    border-top-color: #1b4769;
+  }
 }
 .tabs__list--white-text .tabs__tab.is-active {
   color: #fff;
@@ -11182,10 +11199,10 @@ border-bottom-color
     position: absolute;
     top: -2px;
     left: 0;
+    width: 100%;
     padding-right: 14px;
     padding-left: 14px;
-    margin-top: 2px;
-    width: 100%;
+    border-top: 2px solid #e6ebed;
   }
 }
 @media (min-width: 1020px) {
@@ -11214,6 +11231,7 @@ border-bottom-color
 }
 @media (max-width: 1019px) {
   .tabs__tab.is-active {
+    top: -2px !important;
     z-index: 10;
     padding-right: 14px;
     padding-left: 14px;
@@ -11224,6 +11242,7 @@ border-bottom-color
 @media (min-width: 1020px) {
   .tabs__tab.is-active {
     position: relative;
+    top: auto !important;
     z-index: 2;
     border-bottom-color: #1b4769;
   }
@@ -11237,6 +11256,11 @@ border-bottom-color
     height: 0;
     border: 7px solid transparent;
     border-top-color: #1b4769;
+  }
+}
+@media (max-width: 1019px) {
+  .tabs__tab.is-hide {
+    top: -2px !important;
   }
 }
 .tabs__container {
@@ -11332,7 +11356,7 @@ span.que::before {
 }
 @media (max-width: 767px) {
   .vertical-tabs__list {
-    padding-top: 71px;
+    padding-top: 74px;
     margin-bottom: 20px;
   }
 }
@@ -11341,12 +11365,6 @@ span.que::before {
     display: block !important;
     float: left;
     width: 260px;
-  }
-}
-@media (max-width: 767px) {
-  .vertical-tabs__list.is-open .vertical-tabs__tab:not(.is-active) {
-    position: relative;
-    top: auto;
   }
 }
 @media (max-width: 767px) {
@@ -11360,9 +11378,8 @@ span.que::before {
   position: relative;
   min-height: 71px;
   padding: 15px 15px 15px 0;
-  background-color: rgba(230,235,237,0.4);
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
+  background-color: #f5f7f8;
+  border-top: 2px solid #fff;
 }
 .vertical-tabs__tab:hover {
   cursor: pointer;
@@ -11378,8 +11395,8 @@ span.que::before {
 }
 .vertical-tabs__tab.is-active {
   background-color: #fff;
-  border-top-color: #e6ebed;
-  border-bottom-color: #e6ebed;
+  border-top: 5px solid #e6ebed;
+  border-bottom: 5px solid #e6ebed;
 }
 .vertical-tabs__tab.is-active::before {
   content: "";
@@ -11409,31 +11426,34 @@ span.que::before {
 }
 @media (max-width: 767px) {
   .vertical-tabs__tab.is-active {
+    top: -3px !important;
     z-index: 10;
     border-right: 5px solid #e6ebed;
   }
 }
 @media (min-width: 768px) {
   .vertical-tabs__tab.is-active {
+    top: auto !important;
     margin-right: -5px;
   }
 }
 @media (max-width: 767px) {
   .vertical-tabs__tab {
-    margin-top: 2px;
-  }
-}
-@media (max-width: 767px) {
-  .vertical-tabs__tab {
     position: absolute;
-    top: -2px;
+    top: -3px;
     left: 0;
     width: 100%;
+    margin-top: 2px;
   }
 }
 @media (min-width: 768px) {
   .vertical-tabs__tab {
-    min-height: 77px;
+    top: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  .vertical-tabs__tab.is-hide {
+    top: -2px !important;
   }
 }
 .vertical-tabs__tab-icon {

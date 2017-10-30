@@ -176,7 +176,7 @@ App.Control.install({
 		this.$el.fancybox({
 			wrapCSS: 'fancy-media',
 			margin: ($(window).width() > 937) ? 20 : 5,
-			fitToView: true,
+			fitToView: false,
 			padding: 15,
 			helpers : {
 				overlay : {
@@ -1037,12 +1037,15 @@ var TabsControl = {
     name: 'Tabs',
     initialize: function() {
         this.tab = this.$('.js-tabs__tab');
+        this.tabsOpened = this.$('.js-tabs__tab.is-open');
         this.tabsList = this.$('.js-tabs__list');
         this.tabContent = this.$('.js-tabs__content');
     },
+
     events: {
         'click .js-tabs__tab': 'switchTabOnClick'
     },
+
     switchTabOnClick: function(e) {
         this.tab.removeClass('is-active');
         $(e.currentTarget).addClass('is-active');
@@ -1052,7 +1055,28 @@ var TabsControl = {
         this.tabContent.removeClass('is-active');
         $('#' + this.targetId).addClass('is-active');
 
-        this.tabsList.toggleClass('is-open');
+
+        if($(window).outerWidth() <= 1019) {
+            this.tabsList.toggleClass('is-open');
+            this.tab.toggleClass('is-hide');
+
+            this.tab.not('.is-active').each(function(index, element) {
+                $(element).css({
+                    'top': $(element).outerHeight() * (index + 1)
+                });
+            });
+        } else if($(window).outerWidth() > 1019) {
+            var tabGap = 2;
+
+            this.tabsList.removeClass('is-open');
+            this.tab.addClass('is-hide');
+
+            this.tab.not('.is-active').each(function(index, element) {
+                $(element).css({
+                    'top': -tabGap
+                });
+            });
+        }
     }
 };
 
@@ -1169,7 +1193,27 @@ var VerticalTabs = {
 		$('#' + this.targetId).addClass('is-active');
 
 
-		this.tabsList.toggleClass('is-open');
+		if($(window).outerWidth() <= 767) {
+			this.tabsList.toggleClass('is-open');
+			this.tab.toggleClass('is-hide');
+
+			this.tab.not('.is-active').each(function(index, element) {
+	            $(element).css({
+	                'top': $(element).outerHeight() * (index + 1)
+	            });
+	        });
+	    } else if($(window).outerWidth() > 767) {
+	    	var tabGap = 3;
+
+	    	this.tabsList.removeClass('is-open');
+            this.tab.addClass('is-hide');
+
+            this.tab.not('.is-active').each(function(index, element) {
+                $(element).css({
+                    'top': -tabGap
+                });
+            });
+        }
 
 	}
 };
