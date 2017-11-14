@@ -5188,6 +5188,9 @@ textarea.field-text__input {
     margin-right: 32px;
   }
 }
+.main-nav__item--active .main-nav__link {
+  border-bottom-color: #ff1037;
+}
 .main-nav__link {
   display: inline-block;
   padding-top: 17px;
@@ -5205,31 +5208,31 @@ textarea.field-text__input {
   position: absolute;
   z-index: 55;
   display: none;
-  padding: 23px 41px 34px;
+  padding: 24px 41px 34px;
   white-space: nowrap;
   background-color: rgba(27,71,105,0.95);
 }
 .main-nav__dropdown-row {
-  margin-right: -26px;
-  margin-left: -26px;
+  margin-right: -27px;
+  margin-left: -27px;
   font-size: 0;
 }
 .main-nav__dropdown-col {
   display: inline-block;
-  padding-right: 26px;
-  padding-left: 26px;
+  padding-right: 27px;
+  padding-left: 27px;
   font-size: 1rem;
   vertical-align: top;
 }
 .main-nav__dropdown-list {
   padding-left: 0;
-  margin-bottom: 27px;
+  margin-bottom: 28px;
 }
 .main-nav__dropdown-list:last-child {
   margin-bottom: 0;
 }
 .main-nav__dropdown-item:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 .main-nav__dropdown-link {
   color: #fff;
@@ -5241,9 +5244,13 @@ textarea.field-text__input {
 .main-nav__dropdown-link--lg {
   font-size: 1.285714285714286em;
   font-weight: bold;
+  line-height: 1.445;
 }
 .main-nav__dropdown-link--lg + .main-nav__dropdown-list {
-  margin-top: 8px;
+  margin-top: 9px;
+}
+.main-nav__dropdown-link--lg + .main-nav__dropdown-list .main-nav__dropdown-item:not(:last-child) {
+  margin-bottom: 10px;
 }
 .main-nav__menu-btn {
   padding-top: 17px;
@@ -5266,6 +5273,21 @@ textarea.field-text__input {
 .main-nav__menu-icon {
   margin-right: 10px;
 }
+.main-nav__full-version-link {
+  display: none;
+  float: right;
+  margin-top: 19px;
+  color: #fff;
+  border-bottom-color: rgba(255,255,255,0.3);
+}
+.main-nav__full-version-link:hover {
+  border-bottom-color: #fff;
+}
+@media (max-width: 899px) {
+  .main-nav--fixed .main-nav__full-version-link {
+    display: inline;
+  }
+}
 @media (max-width: 899px) {
   .main-nav--fixed {
     position: fixed;
@@ -5273,12 +5295,6 @@ textarea.field-text__input {
     left: 0;
     z-index: 2000;
     width: 100%;
-    text-align: left;
-  }
-}
-@media (max-width: 899px) {
-  .main-nav--fixed .main-nav__full-version-link {
-    display: inline;
   }
 }
 .main-slider .bx-wrapper {
