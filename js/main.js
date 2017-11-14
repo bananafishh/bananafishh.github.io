@@ -43,35 +43,6 @@ $(document).ready(function() {
 	$('.js-select').select2({
   		minimumResultsForSearch: Infinity
   	});
-
-	$('.js-tooltip').tooltipster({
-		theme: ['tooltipster-light', 'tooltipster-light-customized'],
-		maxWidth: 443,
-    trigger: 'custom',
-    triggerOpen: {
-      mouseenter: true,
-      tap: true
-    },
-    triggerClose: {
-      mouseleave: true,
-      tap: true
-    }
-	});
-
-  $('.js-tooltip-right').tooltipster({
-    side: 'right',
-    theme: ['tooltipster-light', 'tooltipster-light-customized'],
-    maxWidth: 443,
-    trigger: 'custom',
-    triggerOpen: {
-      mouseenter: true,
-      tap: true
-    },
-    triggerClose: {
-      mouseleave: true,
-      tap: true
-    }
-  });
 });
 
 
@@ -123,8 +94,10 @@ App.Control.install({
 			adaptiveHeight: true
 		};
 
-		if(!_.isUndefined(this.$el.data('auto')))
+		if(!_.isUndefined(this.$el.data('auto'))) {
 			sliderOpts.auto = true;
+			sliderOpts.stopAutoOnClick = true;
+		}
 
 		this.$el.bxSlider(sliderOpts);
 	}
@@ -223,6 +196,27 @@ App.Control.install({
 			margin: ($(window).width() > 937) ? 20 : 5,
 			fitToView: false,
 			padding: 20,
+			helpers : {
+				overlay : {
+					css : {
+						'background' : 'rgba(27, 71, 105, 0.7)'
+					}
+				}
+			}
+		});
+	}
+});
+
+App.Control.install({
+	el: '.js-fancy-text',
+	name: 'FancyTextModal',
+	initialize: function () {
+		var self = this;
+		this.$el.fancybox({
+			wrapCSS: 'fancy-content',
+			margin: ($(window).width() > 937) ? 20 : 5,
+			fitToView: false,
+			padding: 0,
 			helpers : {
 				overlay : {
 					css : {
@@ -764,11 +758,28 @@ var SectionNav = {
         this.item.removeClass('is-active');
         $(e.currentTarget).addClass('is-active');
 
-        this.list.toggleClass('is-open');
-    },
 
-    toggleList: function() {
-        this.list.toggleClass('is-open');
+        if($(window).outerWidth() <= 649) {
+            this.list.toggleClass('is-open');
+            this.item.toggleClass('is-hide');
+
+            this.item.not('.is-active').each(function(index, element) {
+                $(element).css({
+                    'top': $(element).outerHeight() * (index + 1)
+                });
+            });
+        } else if($(window).outerWidth() > 650) {
+            var itemGap = 2;
+
+            this.list.removeClass('is-open');
+            this.item.addClass('is-hide');
+
+            this.item.not('.is-active').each(function(index, element) {
+                $(element).css({
+                    'top': -itemGap
+                });
+            });
+        }
     }
 };
 
@@ -1160,6 +1171,34 @@ App.Control.install({
         });
     }
 });
+App.Control.install({
+    el: '.js-tooltip',
+    name: 'Tooltip',
+    direction: 'top',
+    initialize: function () {
+		this.$el.tooltipster({
+			side: this.direction,
+			theme: ['tooltipster-light', 'tooltipster-light-customized'],
+			maxWidth: 443,
+			trigger: 'custom',
+			triggerOpen: {
+				mouseenter: true,
+				tap: true
+			},
+			triggerClose: {
+				mouseleave: true,
+				tap: true
+			}
+		});
+    }
+});
+
+App.Control.extend('Tooltip',{
+	el: '.js-tooltip-right',
+	name: 'TooltipRight',
+	direction: 'right'
+});
+
 var VerticalTabs = {
 	el: '.js-vertical-tabs',
 	name: 'VerticalTabs',
@@ -1481,7 +1520,7 @@ App.Control.install({
 
         this.$inputButton = $(document.createElement('div'))
             .addClass('btn btn-input-multifile')
-            .html('Выбрать файлы')
+            .html('Выбрать файл')
             .prependTo(this.$el);
 
         this.$fileList = $(document.createElement('div'))
