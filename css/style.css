@@ -5169,8 +5169,10 @@ textarea.field-text__input {
 .main-nav__item {
   position: relative;
 }
-.main-nav__item:hover .main-nav__dropdown {
-  display: block;
+@media (min-width: 900px) {
+  .main-nav__item:hover .main-nav__dropdown {
+    display: block;
+  }
 }
 @media (max-width: 899px) {
   .main-nav__item {
