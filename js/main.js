@@ -381,7 +381,13 @@ App.Control.install({
         }
         else
             return $();
-    }
+    },
+	waitingStateOn: function () {
+		$(document.createElement('div')).addClass('ui-loader').prependTo(this.$el);
+	},
+	waitingStateOff: function () {
+		this.$el.find('.ui-loader').remove();
+	}
 });
 var MainOfficeMap = {
     el: '#main-office',
