@@ -4401,7 +4401,7 @@ input[type="search"] {
   }
 }
 .employees--hscroll {
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 .employee {
   max-width: 216px;
@@ -10829,7 +10829,10 @@ border-bottom-color
   margin-bottom: 18px;
 }
 .mCS-dark-2.mCSB_horizontal.mCSB_inside > .mCSB_container {
-  margin-bottom: 61px;
+  margin-bottom: 31px;
+}
+.mCS-dark-2.mCSB_horizontal.mCSB_inside > .mCSB_container .logos {
+  margin-bottom: 0;
 }
 .mCS-dark-2.mCSB_scrollTools {
   -ms-filter: none;
