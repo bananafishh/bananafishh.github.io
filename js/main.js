@@ -46,6 +46,30 @@ $(document).ready(function() {
 });
 
 
+var Accordeon = {
+	el: '.js-accordeon',
+	name: "Accordeon",
+	initialize: function () {
+		this.answer = this.$(".js-accordeon__answer");
+		this.currentQuestion = this.$(".js-accordeon__question");
+		this.currentQuestion.not(":eq(0)").removeClass('accordeon__question--rotate');
+		this.answer.not(":eq(0)").hide();
+
+	},
+	events: {
+		'click .js-accordeon__question': 'accordeonItemSwitch'
+	},
+	accordeonItemSwitch: function (evt) {
+		this.currentAnswer = $(evt.currentTarget).next();
+		this.answer.not(this.currentAnswer).slideUp();
+		this.currentAnswer.slideToggle(700);
+		$(evt.currentTarget).toggleClass('accordeon__question--rotate');
+		this.currentQuestion.not($(evt.currentTarget)).removeClass('accordeon__question--rotate');
+		
+	}
+};
+App.Control.install(Accordeon);
+
 var BackToTop = {
     el: '.js-back-to-top',
     name: 'BackToTop',
