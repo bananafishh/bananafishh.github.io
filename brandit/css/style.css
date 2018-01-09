@@ -2005,7 +2005,7 @@ address {
 .modal-order-form {
   display: none;
   overflow: hidden;
-  background: url("../../assets/backgrounds/gray-background-big.jpg") no-repeat;
+  background: url("../assets/backgrounds/gray-background-big.jpg") no-repeat;
 }
 .modal-order-form__title {
   color: #fff;
@@ -2081,7 +2081,7 @@ address {
   width: 380px;
   min-height: 240px;
   margin: 0 auto;
-  background: #5a5a5a url("../../assets/backgrounds/gray-background--modal.png") no-repeat;
+  background: #5a5a5a url("../assets/backgrounds/gray-background--modal.png") no-repeat;
   background-size: cover;
   border-radius: 2px;
 }
