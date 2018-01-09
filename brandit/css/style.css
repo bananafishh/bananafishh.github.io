@@ -1781,7 +1781,7 @@ address {
 @media (min-width: 350px) {
   .intro__feature {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
   }
 }
 @media (min-width: 768px) {
@@ -1987,7 +1987,7 @@ address {
     left: 0;
     border-top: 1px solid #6d6d6d;
     border-bottom: 1px solid #6d6d6d;
-    background: url("../../assets/backgrounds/gray-background.jpg") no-repeat;
+    background: url("../assets/backgrounds/gray-background.jpg") no-repeat;
   }
 }
 .main-nav__phone {
