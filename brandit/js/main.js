@@ -255,7 +255,7 @@ var SliderServices = {
     initSlider: function() {
     	if(!this.slider) {
 			this.slider = this.$el.bxSlider({
-				mode: 'fade',
+				//mode: 'fade',
 				adaptiveHeight: true,
 				pagerCustom: '#bx-pager'
 			});

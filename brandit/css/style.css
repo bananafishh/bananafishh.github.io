@@ -2824,9 +2824,6 @@ address {
   .services-slider .service {
     padding-top: 91px;
   }
-  .services-slider .service:not(:first-child) {
-    display: none;
-  }
 }
 .services-slider__pager {
   position: relative;
