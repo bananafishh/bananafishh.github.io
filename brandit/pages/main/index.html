@@ -12,19 +12,22 @@
 </head><body>
 <header class="page-header">
 	<div class="page-header__top container-lg">
-		<div class="page-header__logo"><img src="../../assets/images/logo2.png" alt="BrandIt: brand protection software" width="191" height="60"/></div>
+		<div class="page-header__logo"><img src="../../assets/images/logo.png" alt="BrandIt: brand protection software" width="191" height="56"/></div>
 		<div class="page-header__contacts">
 			<address><a class="page-header__phone" href="tel:+74951351475"><span>+7&nbsp;495</span>&nbsp;135&#8209;14&#8209;75</a></address><a class="btn btn--sm js-fancy-modal" href="#modal-call">Заказать звонок</a>
 		</div>
 		<div class="page-header__nav">
-			<nav class="main-nav">
-				<ul class="main-nav__list">
-					<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#complex-tasks">Задачи</a></li>
-					<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#technologies">Технология</a></li>
-					<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#monitoring-platforms">Площадки</a></li>
-					<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#advantages">Преимущества</a></li>
-					<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#contacts">Контакты</a></li>
-				</ul>
+			<nav class="main-nav js-main-nav">
+				<div class="main-nav__inner">
+					<button class="main-nav__menu-btn js-main-nav__btn" type="button"><span class="main-nav__menu-icon">Меню</span></button><a class="main-nav__phone" href="tel:+74951351475"><span>+7&nbsp;495</span>&nbsp;135&#8209;14&#8209;75</a>
+					<ul class="main-nav__list js-main-nav__list">
+						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#complex-tasks">Задачи</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#technologies">Технология</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#monitoring-platforms">Площадки</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#advantages">Преимущества</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#contacts">Контакты</a></li>
+					</ul>
+				</div>
 			</nav>
 		</div>
 	</div>
@@ -285,15 +288,15 @@
 			<footer class="page-footer">
 				<div class="page-footer__block page-footer__block--tel"><a class="footer-link footer-link--tel page-footer__icon-link" href="tel:+7 495 135-14-75"></a><a class="page-footer__link" href="tel:+7 495 135-14-75">+7 495 135-14-75</a></div>
 				<div class="page-footer__block page-footer__block--email"><a class="footer-link footer-link--email page-footer__icon-link" href="email:info@gbrandit.ru"></a><a class="page-footer__link" href="email:info@gbrandit.ru">info@gbrandit.ru</a></div>
-				<div class="page-footer__block page-footer__block--social"><a class="footer-link footer-link--fb page-footer__icon-link" href="#"></a><a class="footer-link footer-link--vk page-footer__icon-link" href="#"></a></div>
+				<div class="page-footer__block page-footer__block--social"><a class="footer-link footer-link--fb page-footer__icon-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"></a><a class="footer-link footer-link--vk page-footer__icon-link" href="https://vk.com/" target="_blank" rel="noopener noreferrer"></a></div>
 				<div class="page-footer__block page-footer__block--copyright"><a class="page-footer__copyright-link" href="#"> Copyright Гардиум 2017 |</a><a class="page-footer__copyright-link" href="#">Политика конфиденциальности |</a><a class="page-footer__copyright-link" href="#">Пользовательское соглашение</a></div>
 			</footer>
-			<div class="buttons-round js-show-buttons buttons-round--hidden">
+			<div class="buttons-round js-show-buttons buttons-round--hidden js-back-to-top">
 				<div class="buttons-round__left">
 					<button class="btn-round buttons-round--hidden btn-round--call-us js-show-buttons" type="button">Позвонить</button>
 				</div>
 				<div class="buttons-round__right">
-					<button class="btn-round buttons-round--hidden btn-round--back-to-top js-show-buttons" type="button"></button>
+					<button class="btn-round buttons-round--hidden btn-round--back-to-top js-show-buttons js-back-to-top__btn" type="button"></button>
 				</div>
 			</div>
 		</div>
@@ -301,7 +304,6 @@
 </main>
 <div class="modal-order-form" id="modal-form">
 	<section class="contacts modal-order-form__contacts">
-		<h2 class="main-title modal-order-form__title">Контакты</h2>
 		<div class="container">
 			<div class="contacts__form">
 				<form>
@@ -328,7 +330,7 @@
 			<input type="text" placeholder="Представьтесь, пожалуйста"/>
 			<input type="text" placeholder="Ваш номер телефона"/>
 			<div class="modal-order-call__btn">
-				<button class="btn" type="button">Позвоните мне</button>
+				<button class="btn" type="button">Позвонить мне</button>
 			</div>
 		</form>
 	</section>

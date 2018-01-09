@@ -2,6 +2,33 @@ console.log('main script file');
 $(document).ready(function() {
     $(".js-fancybox").fancybox();
 });
+var BackToTop = {
+		el: '.js-back-to-top',
+		name: 'BackToTop',
+		initialize: function() {
+				this.offset = 1000;
+				this.backToTopBtn = this.$('.js-back-to-top__btn');
+
+				var self = this;
+
+		},
+
+		events: {
+				'click .js-back-to-top__btn': 'scrollToTop'
+		},
+
+		scrollToTop: function(ev) {
+				ev.preventDefault();
+
+				$('html, body').animate({
+						scrollTop: 0
+				}, 1800);
+		}
+
+};
+
+App.Control.install(BackToTop);
+
 var Equalizer = {
     el: '.js-equalizer',
     name: 'Equalizer',
@@ -54,7 +81,7 @@ App.Control.install({
 			helpers : {
 				overlay : {
 					css : {
-						'background' : 'rgba(27, 71, 105, 0.7)'
+						'background' : 'rgba(0, 0, 0, 0.95)'
 					}
 				}
 			}
@@ -83,15 +110,15 @@ var ScrollTo = {
 
         this.targetOffsetTop = this.targetObject.offset().top;
 
-        // if($(window).outerWidth() < 900) {
-        //     this.topOffset = 80;
-        // } else {
-        //     this.topOffset = 20;
-        // }
+        if($(window).outerWidth() < 768) {
+            this.topOffset = 65;
+        } else {
+            this.topOffset = 0;
+        }
 
 
         $('html, body').animate({
-            scrollTop: this.targetOffsetTop //- this.topOffset
+            scrollTop: this.targetOffsetTop - this.topOffset
         }, 1000);
     }
 };
@@ -255,3 +282,72 @@ App.Control.install({
 				});
     }
 });
+/*var FixedMenu = {
+		el: '.js-main-nav',
+		name: 'FixedMenu',
+		initialize: function() {
+				this.mainNavBtn = this.$('.js-main-nav__btn');
+				this.mainNavList = this.$('.js-main-nav__list');
+				this.mainNavOffsetTop = this.$el.offset().top;
+				this.mainNavHeight = this.$el.outerHeight();
+
+				var self = this;
+
+				$(window).bind('resize', function () {
+						self.mainNavOffsetTop = self.$el.offset().top;
+				});
+
+				$(window).bind('scroll', function () {
+						self.fixedMenu();
+				});
+		},
+
+		fixedMenu: function() {
+				if ( $(window).scrollTop() > this.mainNavOffsetTop + this.mainNavHeight ) {
+						this.$el.addClass('main-nav--fixed');
+				} else {
+						this.$el.removeClass('main-nav--fixed');
+				}
+		}
+};
+
+App.Control.install(FixedMenu);*/
+
+var MainNavView = {
+		el: '.js-main-nav',
+		name: 'MainNavView',
+		initialize: function() {
+				this.mainNavBtn = this.$('.js-main-nav__btn');
+				this.mainNavList = this.$('.js-main-nav__list');
+				this.mainNavOffsetTop = this.$el.offset().top;
+				this.mainNavHeight = this.$el.outerHeight();
+
+				var self = this;
+
+				$(window).bind('resize', function () {
+						self.mainNavOffsetTop = self.$el.offset().top;
+				});
+
+				$(window).bind('scroll', function () {
+						self.fixedNav();
+				});
+		},
+
+		events: {
+				'click .js-main-nav__btn': 'toggleNav'
+		},
+
+		toggleNav: function() {
+				this.mainNavList.toggleClass('main-nav__list--open')
+		},
+
+		fixedNav: function() {
+				if ( $(window).scrollTop() > this.mainNavOffsetTop + this.mainNavHeight ) {
+						this.$el.addClass('main-nav--fixed');
+				} else {
+						this.$el.removeClass('main-nav--fixed');
+				}
+		}
+};
+
+App.Control.install(MainNavView);

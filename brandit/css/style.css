@@ -984,14 +984,14 @@ address {
   top: -10px;
   right: -50px;
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -484px;
+  background-position: 0px -528px;
   width: 26px;
   height: 68px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .main-title span::after {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .main-title span::before {
@@ -1000,14 +1000,14 @@ address {
   top: -10px;
   left: -50px;
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -414px;
+  background-position: 0px -458px;
   width: 27px;
   height: 68px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .main-title span::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 @media (max-width: 788px) {
@@ -1063,17 +1063,21 @@ address {
     background-repeat: no-repeat, no-repeat, no-repeat;
   }
 }
-.fancybox-close {
+.fancy-modal .fancybox-skin {
+  background-color: #5a5a5a;
+  border-radius: 2px;
+}
+.fancy-modal .fancybox-close {
   background: none;
   width: 60px;
   height: 60px;
   background-color: #ff1037;
   border-radius: 50%;
-  top: -5px;
-  right: -70px;
+  top: -3px;
+  right: -71px;
 }
 @media (max-width: 767px) {
-  .fancybox-close {
+  .fancy-modal .fancybox-close {
     width: 35px;
     height: 35px;
     top: 5px;
@@ -1081,41 +1085,38 @@ address {
   }
 }
 @media (max-width: 479px) {
-  .fancybox-close {
+  .fancy-modal .fancybox-close {
     top: -20px;
     right: -20px;
   }
 }
-.fancybox-close::after,
-.fancybox-close::before {
+.fancy-modal .fancybox-close::after,
+.fancy-modal .fancybox-close::before {
   content: '';
   height: 2px;
-  width: 23px;
+  width: 30px;
   background-color: #fff;
   position: absolute;
-  top: 28px;
-  left: 18px;
+  top: 30px;
+  left: 15px;
 }
 @media (max-width: 767px) {
-  .fancybox-close::after,
-  .fancybox-close::before {
+  .fancy-modal .fancybox-close::after,
+  .fancy-modal .fancybox-close::before {
     top: 16px;
-    left: 5px;
+    width: 20px;
+    left: 7.5px;
   }
 }
-.fancybox-close::after {
+.fancy-modal .fancybox-close::after {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-.fancybox-close::before {
+.fancy-modal .fancybox-close::before {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-.fancybox-outer,
-.fancybox-inner {
-  border-radius: 5px;
 }
 .expert {
   position: relative;
@@ -1290,7 +1291,7 @@ address {
   position: absolute;
   content: '';
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -226px;
+  background-position: 0px -270px;
   width: 19px;
   height: 34px;
   left: 30px;
@@ -1299,7 +1300,7 @@ address {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .features__block::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .features__block:last-child {
@@ -1321,7 +1322,7 @@ address {
 .contacts {
   width: 540px;
   margin: 0 auto;
-  margin-bottom: 35px;
+  margin-bottom: 45px;
 }
 @media (max-width: 991px) {
   .contacts {
@@ -1415,7 +1416,7 @@ address {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .contacts__checkbox input:checked+label::after {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .contacts__form-wrapper {
@@ -1460,38 +1461,38 @@ address {
 }
 .footer-link--email::before {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -57px;
+  background-position: 0px -101px;
   width: 25px;
   height: 25px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .footer-link--email::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .footer-link--tel::before {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -166px;
+  background-position: 0px -210px;
   width: 27px;
   height: 27px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .footer-link--tel::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .footer-link--fb::before {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -32px;
+  background-position: 0px -76px;
   width: 12px;
   height: 23px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .footer-link--fb::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .footer-link--vk::before {
@@ -1503,7 +1504,7 @@ address {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .footer-link--vk::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .footer-link:not(:last-child) {
@@ -1603,13 +1604,14 @@ address {
   font-size: 25px;
   line-height: 0.8;
   color: #fff;
-  font-weight: 700;
   display: inline-block;
   vertical-align: middle;
+  letter-spacing: 1px;
 }
 @media (max-width: 991px) {
   .page-footer__link {
     font-size: 20px;
+    letter-spacing: normal;
   }
 }
 .page-footer__copyright-link {
@@ -1755,7 +1757,7 @@ address {
     top: 20px;
     left: 0;
     background-image: url("../assets/sprites/sprite.png");
-    background-position: 0px -634px;
+    background-position: 0px -678px;
     width: 78px;
     height: 87px;
   }
@@ -1763,7 +1765,7 @@ address {
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) {
   .intro__feature::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 @media (max-width: 349px) {
@@ -1866,11 +1868,54 @@ address {
   margin: 0;
   list-style: none;
 }
+@media (max-width: 767px) {
+  .main-nav__list {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    background-color: #5a5a5a;
+    border-bottom: 1px solid #e6ebed;
+    width: 100%;
+  }
+}
+@media (min-width: 599px) and (max-width: 767px) {
+  .main-nav__list {
+    padding-left: 20px;
+  }
+}
+.main-nav__list--open {
+  display: block;
+  clear: both;
+}
+.main-nav__inner::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+@media (max-width: 767px) {
+  .main-nav__inner {
+    max-width: 1126px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 .main-nav__item {
   display: inline-block;
 }
-.main-nav__item:not(:last-child) {
-  margin-right: 18px;
+@media (min-width: 768px) {
+  .main-nav__item:not(:last-child) {
+    margin-right: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .main-nav__item {
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #6d6d6d;
+  }
 }
 .main-nav__link {
   display: inline-block;
@@ -1888,9 +1933,77 @@ address {
     letter-spacing: 0.025em;
   }
 }
+.main-nav__menu-btn {
+  font-size: 18px;
+  text-transform: uppercase;
+  border: none;
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  vertical-align: middle;
+  position: relative;
+  padding: 25px 5px 15px 5px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.main-nav__menu-btn::before {
+  content: '';
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
+  background-image: url("../assets/sprites/sprite.png");
+  background-position: 0px -51px;
+  width: 32px;
+  height: 23px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .main-nav__menu-btn::before {
+    background-image: url("../assets/sprites/sprite@2x.png");
+    background-size: 167px 3207px;
+  }
+}
+@media (min-width: 768px) {
+  .main-nav__menu-btn {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .main-nav--fixed .main-nav__phone {
+    display: block;
+  }
+}
+.main-nav--fixed .main-nav__menu-btn {
+  float: left;
+}
+.main-nav--fixed .main-nav__list {
+  top: 60px;
+}
+@media (max-width: 767px) {
+  .main-nav--fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    border-top: 1px solid #6d6d6d;
+    border-bottom: 1px solid #6d6d6d;
+    background: url("../../assets/backgrounds/gray-background.jpg") no-repeat;
+  }
+}
+.main-nav__phone {
+  font-size: 20px;
+  color: #fff;
+  float: right;
+  font-weight: 700;
+  display: none;
+  text-decoration: none;
+  margin-top: 16px;
+}
+.main-nav__phone span {
+  color: #ccc;
+}
 .modal-order-form {
   display: none;
-  padding-top: 15px;
   overflow: hidden;
   background: url("../../assets/backgrounds/gray-background-big.jpg") no-repeat;
 }
@@ -1964,8 +2077,9 @@ address {
   width: 380px;
   min-height: 240px;
   margin: 0 auto;
-  background: url("../../assets/backgrounds/gray-background-modal.jpg") no-repeat;
+  background: #5a5a5a url("../../assets/backgrounds/gray-background--modal.png") no-repeat;
   background-size: cover;
+  border-radius: 2px;
 }
 @media (max-width: 767px) {
   .modal-order-call__wrapper {
@@ -1978,11 +2092,13 @@ address {
   min-height: 40px;
   width: 100%;
   margin-bottom: 20px;
+  padding: 5px 10px;
 }
 .modal-order-call__wrapper textarea {
   width: 100%;
   height: 100px;
   max-width: 100%;
+  padding: 5px 10px;
   margin-bottom: 20px;
 }
 .modal-order-call__btn {
@@ -1991,7 +2107,11 @@ address {
 .modal-order-call__btn button {
   min-width: 146px;
   min-height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2px;
   padding: 5px;
+  text-transform: uppercase;
 }
 .monitoring-platforms {
   background: url("../../assets/backgrounds/geo.png") no-repeat right top, url("../../assets/backgrounds/light-background.png") 0 bottom no-repeat;
@@ -2086,266 +2206,266 @@ address {
 }
 .monitoring-platforms__background--search {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2943px;
+  background-position: 0px -2543px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--search {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--search:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2277px;
+  background-position: 0px -2321px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--search:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--social {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -723px;
+  background-position: 0px -2987px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--social {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--social:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2388px;
+  background-position: 0px -2432px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--social:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--mobile-content {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2499px;
+  background-position: 0px -1211px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--mobile-content {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--mobile-content:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2166px;
+  background-position: 0px -2210px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--mobile-content:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--online-base {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2610px;
+  background-position: 0px -2654px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--online-base {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--online-base:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1500px;
+  background-position: 0px -1544px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--online-base:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--advertising {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2832px;
+  background-position: 0px -2876px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--advertising {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--advertising:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1278px;
+  background-position: 0px -1322px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--advertising:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--electronic {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1611px;
+  background-position: 0px -767px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--electronic {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--electronic:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1833px;
+  background-position: 0px -1877px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--electronic:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--arbitration-case:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1722px;
+  background-position: 0px -1766px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--arbitration-case:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--arbitration-case {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -834px;
+  background-position: 0px -989px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--arbitration-case {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--rospatent {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1167px;
+  background-position: 0px -878px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--rospatent {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--rospatent:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2055px;
+  background-position: 0px -2099px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--rospatent:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--online-shop {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1056px;
+  background-position: 0px -1100px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--online-shop {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--online-shop:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -3054px;
+  background-position: 0px -3098px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--online-shop:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--custom-service {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -2721px;
+  background-position: 0px -2765px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--custom-service {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--custom-service:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1389px;
+  background-position: 0px -1433px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--custom-service:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--hosting:hover {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -1944px;
+  background-position: 0px -1988px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--hosting:hover {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--hosting {
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -945px;
+  background-position: 0px -1655px;
   width: 102px;
   height: 109px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--hosting {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .monitoring-platforms__background--has-icon::before {
@@ -2353,7 +2473,7 @@ address {
   content: '';
   top: 0;
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -262px;
+  background-position: 0px -306px;
   width: 36px;
   height: 36px;
   z-index: 10;
@@ -2363,7 +2483,7 @@ address {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .monitoring-platforms__background--has-icon::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .order-analysis {
@@ -2496,7 +2616,7 @@ address {
   .service__intro--has-gears-icon::before {
     margin-left: -73px;
     background-image: url("../assets/sprites/sprite.png");
-    background-position: 0px -84px;
+    background-position: 0px -128px;
     width: 58px;
     height: 25px;
   }
@@ -2504,14 +2624,14 @@ address {
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) {
   .service__intro--has-gears-icon::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 @media (min-width: 768px) {
   .service__intro--has-users-icon::before {
     margin-left: -66px;
     background-image: url("../assets/sprites/sprite.png");
-    background-position: 0px -111px;
+    background-position: 0px -155px;
     width: 53px;
     height: 25px;
   }
@@ -2519,7 +2639,7 @@ address {
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) {
   .service__intro--has-users-icon::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .service__items {
@@ -2629,7 +2749,7 @@ address {
     margin-left: -82px;
     background-repeat: no-repeat;
     background-image: url("../assets/sprites/sprite.png");
-    background-position: 0px -84px;
+    background-position: 0px -128px;
     width: 58px;
     height: 25px;
   }
@@ -2637,7 +2757,7 @@ address {
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) {
   .service__item--has-gears-icon::after {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .service__item-title {
@@ -2772,7 +2892,7 @@ address {
     top: -15px;
     left: -18px;
     background-image: url("../assets/sprites/sprite.png");
-    background-position: 0px -300px;
+    background-position: 0px -344px;
     width: 167px;
     height: 51px;
   }
@@ -2780,7 +2900,7 @@ address {
     bottom: -25px;
     left: -9px;
     background-image: url("../assets/sprites/sprite.png");
-    background-position: 0px -353px;
+    background-position: 0px -397px;
     width: 148px;
     height: 59px;
   }
@@ -2788,13 +2908,13 @@ address {
 @media (min-width: 850px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 850px) and (min-resolution: 192dpi) {
   .services-slider__pager-link.active::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 @media (min-width: 850px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 850px) and (min-resolution: 192dpi) {
   .services-slider__pager-link.active::after {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .services-slider__pager-number {
@@ -2880,7 +3000,7 @@ address {
   position: absolute;
   content: '';
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -554px;
+  background-position: 0px -598px;
   width: 82px;
   height: 78px;
   top: -15px;
@@ -2889,7 +3009,7 @@ address {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .problems__text::after {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .problems__all {
@@ -3036,10 +3156,18 @@ address {
     left: 18px;
   }
 }
-@media (max-width: 767px) {
+@media (min-width: 599px) and (max-width: 767px) {
   .page-header__nav {
-    display: none;
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin-top: 15px;
+    background-color: #5a5a5a;
+    z-index: 10000;
   }
+}
+.page-header__nav .main-nav--fixed {
+  text-align: left;
 }
 @media (min-width: 768px) {
   .page-header__nav {
@@ -3657,17 +3785,18 @@ address {
   color: transparent;
   background-color: rgba(90,90,90,0.7);
   cursor: pointer;
+  border: 2px solid #fff;
 }
 .btn-round--call-us {
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   bottom: 30px;
 }
 .btn-round--call-us::before {
   content: '';
   display: inline-block;
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -195px;
+  background-position: 0px -239px;
   width: 23px;
   height: 29px;
   margin-top: 20px;
@@ -3675,21 +3804,29 @@ address {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .btn-round--call-us::before {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .btn-round--back-to-top {
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   bottom: 30px;
   margin-left: -74px;
 }
 .btn-round--back-to-top::before {
   bottom: 30px;
-  margin-left: -74px;
   content: '';
   display: inline-block;
-  background: url("../../assets/backgrounds/icon-arrow-up.svg") no-repeat;
+  background-image: url("../assets/sprites/sprite.png");
+  background-position: 0px -32px;
+  width: 29px;
+  height: 17px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .btn-round--back-to-top::before {
+    background-image: url("../assets/sprites/sprite@2x.png");
+    background-size: 167px 3207px;
+  }
 }
 .tooltip-templates {
   display: none;
@@ -3711,14 +3848,14 @@ address {
   top: 0;
   right: 0;
   background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -138px;
+  background-position: 0px -182px;
   width: 58px;
   height: 26px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .tooltip-templates__wrapper--icon-ya-google::after {
     background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 167px 3163px;
+    background-size: 167px 3207px;
   }
 }
 .tooltip-templates__title {
