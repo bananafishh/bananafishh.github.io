@@ -1307,11 +1307,11 @@ address {
   margin-bottom: 20px;
 }
 .features {
-  background: url("../../assets/backgrounds/geo.png") no-repeat right top, url("../../assets/backgrounds/light-background.png") 0 bottom no-repeat;
+  background: url("../assets/backgrounds/geo.png") no-repeat right top, url("../assets/backgrounds/light-background.png") 0 bottom no-repeat;
 }
 @media (max-width: 991px) {
   .features {
-    background: url("../../assets/backgrounds/light-background.png") 0 bottom no-repeat;
+    background: url("../assets/backgrounds/light-background.png") 0 bottom no-repeat;
   }
 }
 @media (max-width: 767px) {
@@ -1516,7 +1516,7 @@ address {
   }
 }
 .footer-section {
-  background: #5a5a5a url("../../assets/backgrounds/gray-background-big.jpg") top left no-repeat;
+  background: #5a5a5a url("../assets/backgrounds/gray-background-big.jpg") top left no-repeat;
   padding: 45px 0 5px 0;
   position: relative;
 }
@@ -2114,12 +2114,12 @@ address {
   text-transform: uppercase;
 }
 .monitoring-platforms {
-  background: url("../../assets/backgrounds/geo.png") no-repeat right top, url("../../assets/backgrounds/light-background.png") 0 bottom no-repeat;
+  background: url("../assets/backgrounds/geo.png") no-repeat right top, url("../assets/backgrounds/light-background.png") 0 bottom no-repeat;
   padding: 94px 0 10px 0;
 }
 @media (max-width: 991px) {
   .monitoring-platforms {
-    background: url("../../assets/backgrounds/light-background.png") 0 bottom no-repeat;
+    background: url("../assets/backgrounds/light-background.png") 0 bottom no-repeat;
   }
 }
 @media (max-width: 767px) {
@@ -2487,7 +2487,7 @@ address {
   }
 }
 .order-analysis {
-  background: #5a5a5a url("../../assets/backgrounds/gray-background.jpg") no-repeat;
+  background: #5a5a5a url("../assets/backgrounds/gray-background.jpg") no-repeat;
   text-align: center;
   padding: 32px 0 38px 0;
 }
