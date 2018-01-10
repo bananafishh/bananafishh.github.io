@@ -1597,6 +1597,12 @@ address {
   left: 0;
   top: 10px;
 }
+@media (min-width: 767px) and (max-width: 991px) {
+  .contacts__checkbox label::before {
+    top: 0;
+    left: 10px;
+  }
+}
 @media (max-width: 767px) {
   .contacts__checkbox label {
     font-size: 13px;
@@ -1616,6 +1622,12 @@ address {
   .contacts__checkbox input:checked+label::after {
     background-image: url("../assets/sprites/sprite@2x.png");
     background-size: 167px 3207px;
+  }
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .contacts__checkbox input:checked+label::after {
+    left: 13px;
+    top: 5px;
   }
 }
 .contacts__form-wrapper {
