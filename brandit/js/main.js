@@ -174,7 +174,9 @@ var SliderExperts = {
     slider: null,
 
     initialize: function() {
-    	this.slide = this.$el.find('.js-slider-experts__slide');
+		this.initialActiveSlide = this.$el.find('.js-slider-experts__slide.active');
+		this.initialExpertName = this.initialActiveSlide.data('name');
+		this.initialExpertPosition = this.initialActiveSlide.data('position');
 
 		this.renderMode();
 
@@ -199,28 +201,38 @@ var SliderExperts = {
     	if(!this.slider) {
     		var self = this;
 
-			this.slider = this.$el.bxSlider({
-				mode: 'fade',
-            	pager: false,
-            	onSlideAfter: function() {
-            		self.activeSlide = self.slide.filter('[aria-hidden=false]');
-            		self.expertName = self.activeSlide.data('name');
-            		self.expertPosition = self.activeSlide.data('position');
+			this.slider = this.$el.owlCarousel({
+				items: 1,
+				loop: true,
+				nav: true,
+				dots: false,
+				animateOut: 'fadeOut',
+				mouseDrag: false
+			});
 
-            		$('[data-title-expert-name=true]').text(self.expertName);
-            		$('[data-title-expert-position=true]').text(self.expertPosition);
-            	}
+			this.slider.on('translate.owl.carousel', function(event) {
+				self.slides = self.$el.find('.owl-item');
+				self.activeSlide = self.slides[event.item.index];
+				self.activeSlideImg = $(self.activeSlide).find('.js-slider-experts__slide');
+
+				self.expertName = self.activeSlideImg.data('name');
+				self.expertPosition = self.activeSlideImg.data('position');
+
+				$('[data-title-expert-name]').text(self.expertName);
+				$('[data-title-expert-position]').text(self.expertPosition);
 			});
 		}
     },
 
     destroySlider: function() {
 		if(this.slider) {
-			this.slider.destroySlider();
+			var self = this;
+
+			this.slider.owlCarousel('destroy');
 			this.slider = null;
 
-			$('[data-title-expert-name=true]').text('Алексей Абрамов');
-            $('[data-title-expert-position=true]').text('управляющий партнер');
+			$('[data-title-expert-name]').text(self.initialExpertName);
+            $('[data-title-expert-position]').text(self.initialExpertPosition);
 		}
 	}
 };
@@ -255,7 +267,6 @@ var SliderServices = {
     initSlider: function() {
     	if(!this.slider) {
 			this.slider = this.$el.bxSlider({
-				//mode: 'fade',
 				adaptiveHeight: true,
 				pagerCustom: '#bx-pager'
 			});
@@ -334,7 +345,8 @@ var MainNavView = {
 		},
 
 		events: {
-				'click .js-main-nav__btn': 'toggleNav'
+				'click .js-main-nav__btn': 'toggleNav',
+				'click .js-main-nav__link': 'toggleNav'
 		},
 
 		toggleNav: function() {

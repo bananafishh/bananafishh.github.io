@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../../css/style.css" media="screen"/><!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!-- @todo: add modernizer or shim and other respond.js-->
-	<script type="text/javascript" src="../../js/core.js"></script>
+	<script src="../../js/core.js"></script>
 </head><body>
 <header class="page-header">
 	<div class="page-header__top container-lg">
@@ -21,11 +21,11 @@
 				<div class="main-nav__inner">
 					<button class="main-nav__menu-btn js-main-nav__btn" type="button"><span class="main-nav__menu-icon">Меню</span></button><a class="main-nav__phone" href="tel:+74951351475"><span>+7&nbsp;495</span>&nbsp;135&#8209;14&#8209;75</a>
 					<ul class="main-nav__list js-main-nav__list">
-						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#complex-tasks">Задачи</a></li>
-						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#technologies">Технология</a></li>
-						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#monitoring-platforms">Площадки</a></li>
-						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#advantages">Преимущества</a></li>
-						<li class="main-nav__item"><a class="main-nav__link js-scroll-to" href="#contacts">Контакты</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-main-nav__link js-scroll-to" href="#complex-tasks">Задачи</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-main-nav__link js-scroll-to" href="#technologies">Технология</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-main-nav__link js-scroll-to" href="#monitoring-platforms">Площадки</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-main-nav__link js-scroll-to" href="#advantages">Преимущества</a></li>
+						<li class="main-nav__item"><a class="main-nav__link js-main-nav__link js-scroll-to" href="#contacts">Контакты</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -48,13 +48,7 @@
 				</ul>
 			</div>
 			<div class="intro__experts-slider experts-slider">
-				<div class="js-slider-experts">
-					<div class="experts-slider__slide js-slider-experts__slide" data-name="Алексей Абрамов" data-position="управляющий партнер"><img class="experts-slider__img" src="../../assets/images/img-expert-abramov.png" alt="Алексей Абрамов"/></div>
-					<div class="experts-slider__slide js-slider-experts__slide" data-name="Екатерина Чилимова" data-position="руководитель проектов"><img class="experts-slider__img" src="../../assets/images/img-expert-chilimova.png" alt="Екатерина Чилимова"/></div>
-					<div class="experts-slider__slide js-slider-experts__slide" data-name="Ирина Резникова" data-position="партнер"><img class="experts-slider__img" src="../../assets/images/img-expert-reznikova.png" alt="Ирина Резникова"/></div>
-					<div class="experts-slider__slide js-slider-experts__slide" data-name="Алексей Федоряка" data-position="партнер"><img class="experts-slider__img" src="../../assets/images/img-expert-fedoryaka.png" alt="Алексей Федоряка"/></div>
-					<div class="experts-slider__slide js-slider-experts__slide" data-name="Евгений Гусев" data-position="руководитель проекта"><img class="experts-slider__img" src="../../assets/images/img-expert-gusev.png" alt="Евгений Гусев"/></div>
-				</div>
+				<div class="owl-carousel js-slider-experts"><img class="experts-slider__img js-slider-experts__slide active" src="../../assets/images/img-expert-abramov.png" alt="Алексей Абрамов" data-name="Алексей Абрамов" data-position="управляющий партнер"/><img class="experts-slider__img js-slider-experts__slide" src="../../assets/images/img-expert-chilimova.png" alt="Екатерина Чилимова" data-name="Екатерина Чилимова" data-position="руководитель проектов"/><img class="experts-slider__img js-slider-experts__slide" src="../../assets/images/img-expert-reznikova.png" alt="Ирина Резникова" data-name="Ирина Резникова" data-position="партнер"/><img class="experts-slider__img js-slider-experts__slide" src="../../assets/images/img-expert-fedoryaka.png" alt="Алексей Федоряка" data-name="Алексей Федоряка" data-position="партнер"/><img class="experts-slider__img js-slider-experts__slide" src="../../assets/images/img-expert-gusev.png" alt="Евгений Гусев" data-name="Евгений Гусев" data-position="руководитель проекта"/></div>
 			</div>
 		</div>
 		<div class="intro__experts-slider-title experts-title">
@@ -286,7 +280,7 @@
 				</div>
 			</section>
 			<footer class="page-footer">
-				<div class="page-footer__block page-footer__block--tel"><a class="footer-link footer-link--tel page-footer__icon-link" href="tel:+7 495 135-14-75"></a><a class="page-footer__link" href="tel:+7 495 135-14-75">+7 495 135-14-75</a></div>
+				<div class="page-footer__block page-footer__block--tel"><a class="footer-link footer-link--tel page-footer__icon-link" href="tel:+74951351475"></a><a class="page-footer__link" href="tel:+74951351475">+7 495 135-14-75</a></div>
 				<div class="page-footer__block page-footer__block--email"><a class="footer-link footer-link--email page-footer__icon-link" href="email:info@gbrandit.ru"></a><a class="page-footer__link" href="email:info@gbrandit.ru">info@gbrandit.ru</a></div>
 				<div class="page-footer__block page-footer__block--social"><a class="footer-link footer-link--fb page-footer__icon-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"></a><a class="footer-link footer-link--vk page-footer__icon-link" href="https://vk.com/" target="_blank" rel="noopener noreferrer"></a></div>
 				<div class="page-footer__block page-footer__block--copyright"><a class="page-footer__copyright-link" href="#"> Copyright Гардиум 2017 |</a><a class="page-footer__copyright-link" href="#">Политика конфиденциальности |</a><a class="page-footer__copyright-link" href="#">Пользовательское соглашение</a></div>
@@ -312,8 +306,8 @@
 					<textarea placeholder="Опишите вашу проблему"></textarea>
 					<div class="contacts__form-wrapper modal-order-form__wrapper">
 						<div class="contacts__checkbox modal-order-form__checkbox">
-							<input type="checkbox" id="personal-info" checked="checked"/>
-							<label for="personal-info">Согласен на обработку персональных  данных</label>
+							<input type="checkbox" id="personal-info2" checked="checked"/>
+							<label for="personal-info2">Согласен на обработку персональных  данных</label>
 						</div>
 						<div class="contacts__btn modal-order-form__btn">
 							<button class="btn" type="button">Отправить</button>
@@ -347,7 +341,6 @@
 		</form>
 	</div>
 </div>
-<footer></footer>
-<script type="text/javascript" src="../../js/vendor.js"></script>
-<script type="text/javascript" src="../../js/main.js"></script></body>
+<script src="../../js/vendor.js"></script>
+<script src="../../js/main.js"></script></body>
 </html>
