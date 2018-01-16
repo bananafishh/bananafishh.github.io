@@ -1,4 +1,3 @@
-console.log('main script file');
 $(document).ready(function() {
     $(".js-fancybox").fancybox();
 });
@@ -140,8 +139,8 @@ var ShowHiddenContent = {
 	showHiddenContent: function(e) {
 		e.preventDefault();
 
-		$(e.currentTarget).toggleClass('is-hidden');
-		$(e.currentTarget).next(this.hiddenContent).slideToggle();
+		$(e.currentTarget).toggleClass('is-shown');
+		$(e.currentTarget).next(this.hiddenContent).slideToggle().toggleClass('is-hidden');
 		$(this.$el).toggleClass('is-shown');
 	}
 };
@@ -174,6 +173,7 @@ var SliderExperts = {
     slider: null,
 
     initialize: function() {
+    	this.slide = this.$el.find('.js-slider-experts__slide');
 		this.initialActiveSlide = this.$el.find('.js-slider-experts__slide.active');
 		this.initialExpertName = this.initialActiveSlide.data('name');
 		this.initialExpertPosition = this.initialActiveSlide.data('position');
@@ -201,25 +201,16 @@ var SliderExperts = {
     	if(!this.slider) {
     		var self = this;
 
-			this.slider = this.$el.owlCarousel({
-				items: 1,
-				loop: true,
-				nav: true,
-				dots: false,
-				animateOut: 'fadeOut',
-				mouseDrag: false
-			});
+			this.slider = this.$el.bxSlider({
+            	pager: false,
+            	onSlideAfter: function() {
+            		self.activeSlide = self.slide.filter('[aria-hidden=false]');
+            		self.expertName = self.activeSlide.data('name');
+            		self.expertPosition = self.activeSlide.data('position');
 
-			this.slider.on('translate.owl.carousel', function(event) {
-				self.slides = self.$el.find('.owl-item');
-				self.activeSlide = self.slides[event.item.index];
-				self.activeSlideImg = $(self.activeSlide).find('.js-slider-experts__slide');
-
-				self.expertName = self.activeSlideImg.data('name');
-				self.expertPosition = self.activeSlideImg.data('position');
-
-				$('[data-title-expert-name]').text(self.expertName);
-				$('[data-title-expert-position]').text(self.expertPosition);
+            		$('[data-title-expert-name]').text(self.expertName);
+            		$('[data-title-expert-position]').text(self.expertPosition);
+            	}
 			});
 		}
     },
@@ -228,7 +219,7 @@ var SliderExperts = {
 		if(this.slider) {
 			var self = this;
 
-			this.slider.owlCarousel('destroy');
+			this.slider.destroySlider();
 			this.slider = null;
 
 			$('[data-title-expert-name]').text(self.initialExpertName);
@@ -283,46 +274,66 @@ var SliderServices = {
 
 App.Control.install(SliderServices);
 App.Control.install({
-    el: '.js-tooltip',
-    name: 'Tooltip',
-    initialize: function () {
-        this.$el.tooltipster({
-					content: $('#tooltip-templates__content'),
-					theme:'tooltipster-shadow',
-					contentCloning: true
-				});
-    }
+	el: '.js-tooltip',
+	name: 'Tooltip',
+	initialize: function () {
+		this.$('.js-tooltip-1').tooltipster({
+				content: $('#tooltip-templates__content-1'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-2').tooltipster({
+				content: $('#tooltip-templates__content-2'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-3').tooltipster({
+				content: $('#tooltip-templates__content-3'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-4').tooltipster({
+				content: $('#tooltip-templates__content-4'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-5').tooltipster({
+				content: $('#tooltip-templates__content-5'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-6').tooltipster({
+				content: $('#tooltip-templates__content-6'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-7').tooltipster({
+				content: $('#tooltip-templates__content-7'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-8').tooltipster({
+				content: $('#tooltip-templates__content-8'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-9').tooltipster({
+				content: $('#tooltip-templates__content-9'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-10').tooltipster({
+				content: $('#tooltip-templates__content-10'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			}),
+			this.$('.js-tooltip-11').tooltipster({
+				content: $('#tooltip-templates__content-11'),
+				theme: 'tooltipster-shadow',
+				contentCloning: false
+			});
+	}
 });
-/*var FixedMenu = {
-		el: '.js-main-nav',
-		name: 'FixedMenu',
-		initialize: function() {
-				this.mainNavBtn = this.$('.js-main-nav__btn');
-				this.mainNavList = this.$('.js-main-nav__list');
-				this.mainNavOffsetTop = this.$el.offset().top;
-				this.mainNavHeight = this.$el.outerHeight();
-
-				var self = this;
-
-				$(window).bind('resize', function () {
-						self.mainNavOffsetTop = self.$el.offset().top;
-				});
-
-				$(window).bind('scroll', function () {
-						self.fixedMenu();
-				});
-		},
-
-		fixedMenu: function() {
-				if ( $(window).scrollTop() > this.mainNavOffsetTop + this.mainNavHeight ) {
-						this.$el.addClass('main-nav--fixed');
-				} else {
-						this.$el.removeClass('main-nav--fixed');
-				}
-		}
-};
-
-App.Control.install(FixedMenu);*/
 
 var MainNavView = {
 		el: '.js-main-nav',
