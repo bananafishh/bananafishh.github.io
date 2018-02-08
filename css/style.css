@@ -8208,13 +8208,13 @@ textarea.field-text__input {
 .page-header__callback-link {
   outline: none;
 }
-.page-header__callback-link span {
-  color: #fff;
-}
 @media (min-width: 480px) {
-  .page-header__callback-link span:hover {
+  .page-header__callback-link:hover span:not(.hide-up-to-sm) {
     border-bottom-color: #0075b8;
   }
+}
+.page-header__callback-link span {
+  color: #fff;
 }
 @media (min-width: 480px) {
   .page-header__callback-link span:not(.hide-up-to-sm) {
@@ -8267,12 +8267,13 @@ textarea.field-text__input {
   position: absolute;
   z-index: 65;
   width: 98%;
-  margin-top: -20px;
+  margin-top: -47px;
   text-align: left;
 }
 @media (min-width: 480px) {
   .page-header__callback-popup {
     width: 300px;
+    margin-top: -21px;
   }
 }
 @media (max-width: 767px) {
