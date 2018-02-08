@@ -42,7 +42,8 @@
 	</div>
 	<nav class="main-nav js-main-nav">
 		<div class="main-nav__inner container">
-			<button class="main-nav__menu-btn js-main-nav__btn" type="button"><span class="main-nav__menu-icon"><svg width="15" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-hamburger"></use></svg></span>Меню</button><a class="main-nav__phone" href="tel:+74956658258">+7 (495) 665-82-58</a>
+			<button class="main-nav__menu-btn js-main-nav__btn" type="button"><span class="main-nav__menu-icon"><svg width="15" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-hamburger"></use></svg><span class="main-nav__menu-text-link">Меню</span></span></button>
+			<!--a.main-nav__full-version-link(href="#") Полная версия сайта--><a class="main-nav__phone" href="tel:+74956658258">+7 (495) 665-82-58</a>
 			<ul class="main-nav__list js-main-nav__list">
 				<li class="main-nav__item"><a class="main-nav__link" href="">О нас</a>
 					<div class="main-nav__dropdown">
@@ -529,7 +530,7 @@
 		<div class="row-md">
 			<div class="page-footer__col page-footer__col--push-1-4">
 				<address>
-					<div class="page-footer__phone"><a href="tel:+74956658258">+7 (495) 665-82-58</a></div><a class="page-footer__mail" href="mailto:info@gardium.ru">info@gardium.ru</a>
+					<div class="page-footer__phone"><a href="tel:+74956658258">+7 (495) 665-82-58</a></div><a class="page-footer__link" href="mailto:info@gardium.ru">info@gardium.ru</a>
 					<div class="page-footer__address"><span class="page-footer__address-icon"><svg width="11" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-map"></use></svg></span><span class="page-footer__address-text">Москва, Рязанский проспект, д.75, корп.4</span></div>
 				</address>
 			</div>
@@ -549,6 +550,7 @@
 			</div>
 			<div class="page-footer__col">
 				<div class="page-footer__payment-systems"><svg width="52" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-visa"></use></svg><img src="../../assets/images/logo-master-card.png" width="34" height="20" alt="Логотип MasterCard"/></div>
+				<div><a class="page-footer__link" href="#">Перейти на мобильную версию</a></div>
 			</div>
 		</div>
 	</div>
@@ -687,11 +689,11 @@
 	</form>
 </div>
 <div class="container">
-	<div class="buttons-round buttons-round--hidden js-back-to-top">
+	<div class="buttons-round js-back-to-top">
 		<div class="buttons-round__left">
 			<button class="btn-round btn-round--call-us js-back-to-top" type="button">Позвонить</button>
 		</div>
-		<div class="buttons-round__right">
+		<div class="buttons-round__right buttons-round--hidden">
 			<button class="btn-round btn-round--back-to-top js-back-to-top__btn" type="button">
 				<svg width="36" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-arrow-up"></use></svg>Наверх</button>
 		</div>
