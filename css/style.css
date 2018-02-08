@@ -8099,6 +8099,7 @@ textarea.field-text__input {
 }
 @media (min-width: 768px) {
   .page-header__contacts {
+    margin-top: -6px;
     text-align: right;
   }
 }
@@ -8236,9 +8237,9 @@ textarea.field-text__input {
 }
 .page-header__callback-popup {
   position: absolute;
+  top: 36px;
   z-index: 65;
   width: 98%;
-  margin-top: -47px;
   text-align: left;
 }
 @media (min-width: 480px) {
@@ -10903,7 +10904,7 @@ html [type="button"],
   display: inline;
 }
 .dotted[type="button"] span {
-  border-bottom: 1px dotted rgba(0,117,184,0.5);
+  border-bottom: 3px dotted rgba(0,117,184,0.5);
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
