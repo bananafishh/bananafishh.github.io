@@ -8089,7 +8089,6 @@ textarea.field-text__input {
   vertical-align: middle;
 }
 .page-header__contacts {
-  position: relative;
   margin-top: 22px;
 }
 @media (min-width: 480px) {
@@ -8205,6 +8204,9 @@ textarea.field-text__input {
 .page-header__search-btn:hover svg {
   fill: #fff;
 }
+.page-header__callback-wrapper {
+  position: relative;
+}
 .page-header__callback-link {
   outline: none;
 }
@@ -8265,7 +8267,7 @@ textarea.field-text__input {
 }
 .page-header__callback-popup {
   position: absolute;
-  top: 36px;
+  top: 0;
   z-index: 65;
   width: 98%;
   text-align: left;
