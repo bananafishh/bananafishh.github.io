@@ -320,6 +320,10 @@ App.Control.install({
             self.privacyAgree.find('.js-form-privacy-agree-full').removeClass('hide-up-to-md hide-xs');
             self.privacyAgree.find('.js-form-privacy-agree-short').hide(0);
         });
+        this.privacyAgree.find('.js-form-privacy-agree-close-btn').on('click', function() {
+            self.privacyAgree.find('.js-form-privacy-agree-full').addClass('hide-xs');
+            self.privacyAgree.find('.js-form-privacy-agree-short').show(0);
+        });
     },
 
     initTabsContentControl: function () {

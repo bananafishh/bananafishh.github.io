@@ -8206,56 +8206,27 @@ textarea.field-text__input {
   fill: #fff;
 }
 .page-header__callback-link {
-  outline: none;
-}
-@media (min-width: 480px) {
-  .page-header__callback-link:hover span:not(.hide-up-to-sm) {
-    border-bottom-color: #0075b8;
-  }
-}
-.page-header__callback-link span {
+  display: inline-block;
+  padding: 9px 30px 10px;
+  font-size: 1.142857142857143em;
+  font-weight: 700;
   color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffa700;
+  border: none;
+  box-shadow: 0 -3px rgba(0,0,0,0.2) inset;
+  white-space: normal;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: background-color 0.25s ease-out;
+  transition: background-color 0.25s ease-out;
 }
-@media (min-width: 480px) {
-  .page-header__callback-link span:not(.hide-up-to-sm) {
-    border-bottom: 1px dotted rgba(0,117,184,0.5);
-  }
-}
-@media (min-width: 480px) {
-  .page-header__callback-link span {
-    color: #0075b8;
-  }
-}
-@media (max-width: 479px) {
-  .page-header__callback-link {
-    display: inline-block;
-    padding: 9px 30px 10px;
-    font-size: 1.142857142857143em;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #ffa700;
-    border: none;
-    box-shadow: 0 -3px rgba(0,0,0,0.2) inset;
-    white-space: normal;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-transition: background-color 0.25s ease-out;
-    transition: background-color 0.25s ease-out;
-  }
-  .page-header__callback-link:hover {
-    background-color: #0075b8;
-  }
-}
-@media (min-width: 480px) {
-  .page-header__callback-link {
-    padding: 0;
-    background-color: transparent;
-    border: none;
-  }
+.page-header__callback-link:hover {
+  background-color: #0075b8;
 }
 .page-header__callback-link.is-hidden {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -8273,7 +8244,6 @@ textarea.field-text__input {
 @media (min-width: 480px) {
   .page-header__callback-popup {
     width: 300px;
-    margin-top: -21px;
   }
 }
 @media (max-width: 767px) {
@@ -10364,6 +10334,9 @@ html [type="button"],
 }
 .input-checkbox button {
   text-align: left;
+}
+.input-checkbox__close-btn {
+  margin-top: 10px;
 }
 .input-checkbox--inside-col {
   margin-bottom: 11px;
