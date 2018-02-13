@@ -317,12 +317,8 @@ App.Control.install({
     initPrivacyAgree: function () {
         var self = this;
         this.privacyAgree.find('.js-form-privacy-agree-responsive-btn').on( 'click', function() {
-            self.privacyAgree.find('.js-form-privacy-agree-full').removeClass('hide-up-to-md hide-xs');
+            self.privacyAgree.find('.js-form-privacy-agree-full').removeClass('hide-up-to-md');
             self.privacyAgree.find('.js-form-privacy-agree-short').hide(0);
-        });
-        this.privacyAgree.find('.js-form-privacy-agree-close-btn').on('click', function() {
-            self.privacyAgree.find('.js-form-privacy-agree-full').addClass('hide-xs');
-            self.privacyAgree.find('.js-form-privacy-agree-short').show(0);
         });
     },
 
@@ -818,41 +814,6 @@ var SectionNav = {
 };
 
 App.Control.install(SectionNav);
-var ShowCallbackForm = {
-	el: '.js-show-callback-form',
-	name: 'ShowCallbackForm',
-
-	initialize: function() {
-		this.btn = this.$('.js-show-callback-form__btn');
-		this.closeBtn = this.$('.js-show-callback-form__close-btn');
-		this.callbackForm = this.$('.js-show-callback-form__form');
-
-		var self = this;
-
-		$(document).on('keyup', function(e) {
-			if (e.keyCode == 27) {
-			  	self.hideFormOnClick();
-			}
-		});
-	},
-
-	events: {
-        'click .js-show-callback-form__btn': 'showFormOnClick',
-        'click .js-show-callback-form__close-btn': 'hideFormOnClick'
-    },
-
-	'showFormOnClick': function(e) {
-		$(e.currentTarget).addClass('is-hidden');
-		this.callbackForm.removeClass('is-hidden');
-	},
-
-	'hideFormOnClick': function(e) {
-		this.btn.removeClass('is-hidden');
-		this.callbackForm.addClass('is-hidden');
-	}
-};
-
-App.Control.install(ShowCallbackForm);
 var ShowContent = {
 	el: '.js-show-content',
 	name: 'ShowContent',
