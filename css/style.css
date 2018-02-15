@@ -10881,14 +10881,21 @@ html [type="button"],
 }
 .dotted--has-arrow::after {
   content: "";
-  position: absolute;
-  top: 10px;
-  width: 0;
-  height: 0;
+  display: inline-block;
+  width: 7px;
+  height: 6px;
   margin-left: 6px;
-  border: solid transparent;
-  border-width: 6px 4px;
-  border-top-color: #0075b8;
+  vertical-align: middle;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2Ljk0IiBoZWlnaHQ9IjYuMDk0Ij48cGF0aCBkYXRhLW5hbWU9IlNpbWJvbCBwbGF5IGNvcHkgNCIgZD0iTS4zOC4wMDFoNi4xOGEuMzg0LjM4NCAwIDAgMSAuMzQuNTg3Yy0uMTQuMjM0LTIuODUgNC45MDktMy4wOSA1LjMwOGEuMzg1LjM4NSAwIDAgMS0uNjcgMEMyLjk3IDUuNjA5LjI0LjkxNS4wNS41NzVBLjM4MS4zODEgMCAwIDEgLjM4LjAwMXoiIGZpbGw9IiMwMDc1YjgiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==");
+}
+.dotted--has-equalizer-icon .dotted__icon {
+  position: absolute;
+  left: -20px;
+}
+.dotted--has-equalizer-icon[type="button"] .dotted__icon {
+  border-bottom: none;
 }
 .underlined {
   color: #0075b8;
@@ -10981,6 +10988,9 @@ html [type="button"],
     background-image: url("../assets/sprites/sprite@2x.png");
     background-size: 62px 556px;
   }
+}
+.spoiler-link--font-normal {
+  font-weight: 400;
 }
 .spoiler-link._rolldown::after {
   -webkit-transform: rotate(60deg);
