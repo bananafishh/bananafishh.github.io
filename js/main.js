@@ -251,6 +251,27 @@ App.Control.install({
 		});
 	}
 });
+
+App.Control.install({
+	el: '.js-lg-modal',
+	name: 'FancyBigModal',
+	initialize: function () {
+		var self = this;
+		this.$el.fancybox({
+			wrapCSS: 'fancy-lg-modal',
+			margin: ($(window).width() > 937) ? 20 : 5,
+			fitToView: false,
+			padding: 0,
+			helpers : {
+				overlay : {
+					css : {
+						'background' : 'rgba(27, 71, 105, 0.7)'
+					}
+				}
+			}
+		});
+	}
+});
 App.Control.install({
     el: '.js-form',
     name: 'FormFabric',
@@ -317,8 +338,12 @@ App.Control.install({
     initPrivacyAgree: function () {
         var self = this;
         this.privacyAgree.find('.js-form-privacy-agree-responsive-btn').on( 'click', function() {
-            self.privacyAgree.find('.js-form-privacy-agree-full').removeClass('hide-up-to-md');
+            self.privacyAgree.find('.js-form-privacy-agree-full').removeClass('hide-up-to-md hide-xs');
             self.privacyAgree.find('.js-form-privacy-agree-short').hide(0);
+        });
+        this.privacyAgree.find('.js-form-privacy-agree-close-btn').on('click', function() {
+            self.privacyAgree.find('.js-form-privacy-agree-full').addClass('hide-xs');
+            self.privacyAgree.find('.js-form-privacy-agree-short').show(0);
         });
     },
 
@@ -1548,14 +1573,27 @@ App.Control.install({
 
 		this.inputName = this.$el.data('name');
 
-        this.$inputButton = $(document.createElement('div'))
+        if(this.$el.data('icon')) {
+           this.$inputButton = $(document.createElement('span'))
+            .addClass('dotted dotted--has-clip-icon')
+            .html('Прикрепить файл')
+            .prependTo(this.$el);
+        } else {
+            this.$inputButton = $(document.createElement('div'))
             .addClass('btn btn-input-multifile')
             .html('Выбрать файл')
             .prependTo(this.$el);
+        }
 
-        this.$fileList = $(document.createElement('div'))
-            .addClass('input-multifile__file-list')
-            .prependTo(this.$el);
+        if(this.$el.data('icon')) {
+            this.$fileList = $(document.createElement('div'))
+                .addClass('input-multifile__file-list input-multifile__file-list--no-padding')
+                .prependTo(this.$el);
+        } else {
+            this.$fileList = $(document.createElement('div'))
+                .addClass('input-multifile__file-list')
+                .prependTo(this.$el);
+        }
 
         this.$inputButton.on( 'click', function() {
             self.startChoose($(this));
