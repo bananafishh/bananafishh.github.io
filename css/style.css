@@ -10976,6 +10976,9 @@ html [type="button"],
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+.dotted--has-equalizer-icon {
+  padding-bottom: 2px;
+}
 .dotted--has-equalizer-icon svg {
   vertical-align: middle;
 }
