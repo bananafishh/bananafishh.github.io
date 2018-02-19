@@ -254,7 +254,7 @@ App.Control.install({
 
 App.Control.install({
 	el: '.js-lg-modal',
-	name: 'FancyBigModal',
+	name: 'FancyLgModal',
 	initialize: function () {
 		var self = this;
 		this.$el.fancybox({

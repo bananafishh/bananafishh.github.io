@@ -3345,7 +3345,7 @@ input[type="search"] {
 }
 .fancy-modal {
   width: auto !important;
-  max-width: 850px;
+  max-width: 650px;
 }
 .fancy-modal .fancybox-inner {
   width: auto !important;
@@ -10967,16 +10967,9 @@ html [type="button"],
   height: 6px;
   margin-left: 6px;
   vertical-align: middle;
-  background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px 0px;
-  width: 7px;
-  height: 7px;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .dotted--has-arrow::after {
-    background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 62px 575px;
-  }
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjYiPjxwYXRoIGZpbGw9IiMwMDc1YjgiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTS4zOC4wMDFoNi4xOGEuMzg0LjM4NCAwIDAgMSAuMzQuNTg3Yy0uMTQuMjM0LTIuODUgNC45MDktMy4wOSA1LjMwOGEuMzg1LjM4NSAwIDAgMS0uNjcgMEMyLjk3IDUuNjA5LjI0LjkxNS4wNS41NzVBLjM4MS4zODEgMCAwIDEgLjM4LjAwMXoiLz48L3N2Zz4=");
 }
 .dotted--has-arrow.open::after {
   -webkit-transform: rotate(180deg);
@@ -11009,18 +11002,11 @@ html [type="button"],
   position: absolute;
   top: 0px;
   left: -22px;
-  background-image: url("../assets/sprites/sprite.png");
-  background-position: 0px -38px;
-  width: 14px;
-  height: 17px;
   width: 16px;
   height: 17px;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .dotted--has-clip-icon::before {
-    background-image: url("../assets/sprites/sprite@2x.png");
-    background-size: 62px 575px;
-  }
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE0IDE3Ij48cGF0aCBmaWxsPSIjZmZhNzAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01MTUuNTc4LDU4OS40NTRsLTQuNTktNC44NTNhNS4wNjcsNS4wNjcsMCwwLDAtNy40NDcsMCw1LjgsNS44LDAsMCwwLDAsNy44NzNsNi4wMSw2LjM1NWEzLjYzOSwzLjYzOSwwLDAsMCw1LjMzOS4wMSw0LjEzOCw0LjEzOCwwLDAsMCwuMDItNS42MjJzLTIuMDE1LTIuMTMxLTYuMDM2LTYuMzgxYTIuMTksMi4xOSwwLDAsMC0zLjIxOSwwLDIuNTA2LDIuNTA2LDAsMCwwLDAsMy40bDQuNTksNC44NTMsMS4xMjctMS4xOTItNC41OS00Ljg1M2EwLjc1MywwLjc1MywwLDAsMSwwLTEuMDIxLDAuNjU4LDAuNjU4LDAsMCwxLC45NjUsMGw2LjAyNiw2LjM3MWEyLjM4NywyLjM4NywwLDAsMS0uMDA2LDMuMjQ1LDIuMTA1LDIuMTA1LDAsMCwxLTMuMDg5LS4wMDZsLTYuMDEtNi4zNTVhNC4wNCw0LjA0LDAsMCwxLDAtNS40ODksMy41MzIsMy41MzIsMCwwLDEsNS4xOTIsMGw0LjU5MSw0Ljg1M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01MDIuMDMxIC01ODMpIi8+PC9zdmc+");
 }
 .underlined {
   color: #0075b8;
@@ -11113,9 +11099,6 @@ html [type="button"],
     background-image: url("../assets/sprites/sprite@2x.png");
     background-size: 62px 575px;
   }
-}
-.spoiler-link--font-normal {
-  font-weight: 400;
 }
 .spoiler-link._rolldown::after {
   -webkit-transform: rotate(60deg);
