@@ -93,13 +93,29 @@
 			<button class="main-nav__menu-btn" type="button">Меню</button>
 		</div>
 		<ul class="main-nav__list js-main-nav__list">
-			<li class="main-nav__item"><a class="main-nav__link" href="">О&nbsp;компании</a></li>
-			<li class="main-nav__item"><a class="main-nav__link" href="">Экспертиза после ДТП</a></li>
-			<li class="main-nav__item"><a class="main-nav__link" href="">Залив квартиры</a></li>
-			<li class="main-nav__item"><a class="main-nav__link" href="">Независимая экспертиза</a></li>
-			<li class="main-nav__item"><a class="main-nav__link" href="">Юристы (суд)</a></li>
-			<li class="main-nav__item"><a class="main-nav__link" href="">Цены</a></li>
-			<li class="main-nav__item"><a class="main-nav__link" href="">Контакты</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="#">О&nbsp;компании</a></li>
+			<li class="main-nav__item"><a class="main-nav__link main-nav__link--has-dropdown" href="#">Услуги</a>
+				<ul class="main-nav__dropdown">
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-car" href="#">Экспертиза после ДТП</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-file" href="#">Оценка автомобиля</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-dropdown main-nav__dropdown-link--has-icon-tool" href="#">Оценка качества ремонта</a>
+						<ul class="main-nav__dropdown-second">
+							<li class="main-nav__dropdown-second-item"><a class="main-nav__dropdown-second-link" href="#">Экспертиза неисправностей автомобиля</a></li>
+							<li class="main-nav__dropdown-second-item"><a class="main-nav__dropdown-second-link" href="#">Экспертиза узлов и агрегатов</a></li>
+							<li class="main-nav__dropdown-second-item"><a class="main-nav__dropdown-second-link" href="#">Экспертиза ДВС</a></li>
+							<li class="main-nav__dropdown-second-item"><a class="main-nav__dropdown-second-link" href="#">Экспертиза ЛКП</a></li>
+						</ul>
+					</li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-house" href="#">Оценка ущерба недвижимости</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-dna" href="#">Генетическая экспертиза</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-cart" href="#">Товароведческая экспертиза</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-pen" href="#">Почерковедческая экспертиза</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-court" href="#">Судебная экспертиза</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-camera" href="#">Портретная экспертиза (фото/видео)</a></li>
+				</ul>
+			</li>
+			<li class="main-nav__item"><a class="main-nav__link" href="#">Цены</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
 		</ul>
 	</div>
 </nav>
@@ -444,10 +460,10 @@
 						<p>Если клиент уже пробовал судится самостоятельно и получил отказ в суде первой инстанции, то скорее всего мы уже не сможем помочь.</p><a class="link link--dotted-border link--circle"><span>Ещё совет</span></a>
 					</div>
 					<div class="service-card service-card--gray">
-						<div class="service-card__img service-card__img--align-top service-card__img--flood-apartment"><img src="../../assets/images/img-house.png" alt="Поврежденный автомобиль"/></div>
+						<div class="service-card__img service-card__img--align-top service-card__img--apartment"><img src="../../assets/images/img-house.png" alt="Поврежденный автомобиль"/></div>
 						<div class="service-card__text">
 							<h2 class="service-card__title"><a href="">Оценка ущерба от&nbsp;залива квартиры</a></h2>
-							<p>Оценка ущерба автомобиля за 2 часа</p>
+							<p>Оценка ущерба автомобиля за 2 часа </p>
 						</div>
 					</div>
 				</div>
