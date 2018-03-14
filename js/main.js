@@ -251,27 +251,6 @@ App.Control.install({
 		});
 	}
 });
-
-App.Control.install({
-	el: '.js-lg-modal',
-	name: 'FancyLgModal',
-	initialize: function () {
-		var self = this;
-		this.$el.fancybox({
-			wrapCSS: 'fancy-lg-modal',
-			margin: ($(window).width() > 937) ? 20 : 5,
-			fitToView: false,
-			padding: 0,
-			helpers : {
-				overlay : {
-					css : {
-						'background' : 'rgba(27, 71, 105, 0.7)'
-					}
-				}
-			}
-		});
-	}
-});
 App.Control.install({
     el: '.js-form',
     name: 'FormFabric',
@@ -839,6 +818,41 @@ var SectionNav = {
 };
 
 App.Control.install(SectionNav);
+var ShowCallbackForm = {
+	el: '.js-show-callback-form',
+	name: 'ShowCallbackForm',
+
+	initialize: function() {
+		this.btn = this.$('.js-show-callback-form__btn');
+		this.closeBtn = this.$('.js-show-callback-form__close-btn');
+		this.callbackForm = this.$('.js-show-callback-form__form');
+
+		var self = this;
+
+		$(document).on('keyup', function(e) {
+			if (e.keyCode == 27) {
+			  	self.hideFormOnClick();
+			}
+		});
+	},
+
+	events: {
+        'click .js-show-callback-form__btn': 'showFormOnClick',
+        'click .js-show-callback-form__close-btn': 'hideFormOnClick'
+    },
+
+	'showFormOnClick': function(e) {
+		$(e.currentTarget).addClass('is-hidden');
+		this.callbackForm.removeClass('is-hidden');
+	},
+
+	'hideFormOnClick': function(e) {
+		this.btn.removeClass('is-hidden');
+		this.callbackForm.addClass('is-hidden');
+	}
+};
+
+App.Control.install(ShowCallbackForm);
 var ShowContent = {
 	el: '.js-show-content',
 	name: 'ShowContent',
@@ -1573,27 +1587,14 @@ App.Control.install({
 
 		this.inputName = this.$el.data('name');
 
-        if(this.$el.data('icon')) {
-           this.$inputButton = $(document.createElement('span'))
-            .addClass('dotted dotted--has-clip-icon')
-            .html('Прикрепить файл')
-            .prependTo(this.$el);
-        } else {
-            this.$inputButton = $(document.createElement('div'))
+        this.$inputButton = $(document.createElement('div'))
             .addClass('btn btn-input-multifile')
             .html('Выбрать файл')
             .prependTo(this.$el);
-        }
 
-        if(this.$el.data('icon')) {
-            this.$fileList = $(document.createElement('div'))
-                .addClass('input-multifile__file-list input-multifile__file-list--no-padding')
-                .prependTo(this.$el);
-        } else {
-            this.$fileList = $(document.createElement('div'))
-                .addClass('input-multifile__file-list')
-                .prependTo(this.$el);
-        }
+        this.$fileList = $(document.createElement('div'))
+            .addClass('input-multifile__file-list')
+            .prependTo(this.$el);
 
         this.$inputButton.on( 'click', function() {
             self.startChoose($(this));

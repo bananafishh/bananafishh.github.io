@@ -14193,7 +14193,7 @@ var App = _.create(Object.prototype, {
 			var vOpts = _.extend(_.clone(options), {el: $el});
 			var CAppViewInstance = this.instance.extend(vOpts);
 			var CAppView = new CAppViewInstance;
-			CAppView.initializeEx.apply(this, arguments);
+			CAppView.initializeEx.apply(CAppView, arguments);
 			$el.attr('cid', CAppView.cid);
 			$el.addClass(options.name + 'Control');
 			return CAppView;
@@ -14274,3 +14274,9 @@ Parsley.addMessages('ru', {
 });
 
 Parsley.setLocale('ru');
+
+Parsley.addValidator('phone', {
+	validateString: function (value, option, instance) {
+		return instance.$element.inputmask('isComplete');
+	}
+});
