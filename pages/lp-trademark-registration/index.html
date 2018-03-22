@@ -9,13 +9,13 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<script src="../../js/core.js"></script>
 </head><body>
-<header class="page-header">
+<header class="page-header page-header--lp">
 	<div class="page-header__top">
 		<div class="container-lg">
 			<div class="row-md">
-				<div class="col-lp-1-3-md"><a class="page-header__logo" href="/"><img src="../../assets/images/logo.png" width="213" height="71" alt="Гардиум - патентные поверенные и судебные адвокаты"/></a></div>
-				<div class="col-lp-1-3-md">
-					<div class="page-header__region-select page-header__region-select--lp">
+				<div class="col-lp-1-2-md col-lp-1-3-lg"><a class="page-header__logo" href="/"><img src="../../assets/images/logo.png" width="213" height="71" alt="Гардиум - патентные поверенные и судебные адвокаты"/></a></div>
+				<div class="col-lp-1-3-md hide-up-to-lg">
+					<div class="page-header__region-select-lp">
 						<select class="select js-lp-region-select">
 							<option value="Москва, Рязанский проспект, д.75, корп.4" selected="selected">Москва и область</option>
 							<option value="Санкт-Петербург и обл.">Санкт-Петербург и обл.</option>
@@ -32,9 +32,9 @@
 						<address class="page-header__address"><span class="page-header__address-icon"><svg width="11" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-map--red"></use></svg></span>Москва, Рязанский проспект, д.75, корп.4</address>
 					</div>
 				</div>
-				<div class="col-lp-1-3-md">
-					<div class="page-header__contacts">
-						<address class="page-header__phone-lp"><a href="tel:+74956658258">+7 (495) 665-82-58</a></address><a class="btn-lp btn-lp--sm page-header__callback-btn js-fancy-modal" href="#call-order">Заказать звонок</a>
+				<div class="col-lp-1-2-md col-lp-1-3-lg">
+					<div class="page-header__contacts-lp">
+						<address class="page-header__phone-lp"><a href="tel:+74956658258">+7 (495) 665-82-58</a></address><a class="btn-lp btn-lp--sm page-header__callback-btn-lp js-fancy-modal-lp" href="#callback-order">Заказать звонок</a>
 					</div>
 				</div>
 			</div>
@@ -122,30 +122,87 @@
 		</div>
 	</nav>
 </header>
+<div class="features-slider">
+	<div class="features-slider__item">
+		<div class="features-slider__container container-lg">
+			<div class="features-slider__row">
+				<div class="features-slider__right-col features-slider__right-col--top">
+					<div class="features-slider__title features-slider__title--has-padding"> Регистрация товарного знака без отказов и&nbsp;переплат</div>
+					<div class="features-slider__advantage"><span>Максимально быстро</span></div>
+				</div>
+				<div class="features-slider__left-col">
+					<div class="features-slider__form-wrapper form-card-lp">
+						<form>
+							<h3 class="form-card-lp__title">Бесплатная оценка знака</h3>
+							<p class="form-card-lp__slogan">Оставьте заявку и мы ответим за 30 минут</p>
+							<div class="form-card-lp__section">
+								<div class="form-card-lp__block form-card-lp__block--inline">
+									<input class="form-card-lp__input form-card-lp__input--placeholder" id="form-card-lp-2-1" type="text" name="name" placeholder="Ваше имя"/>
+									<label class="form-card-lp__label" for="form-card-lp-2-1">Ваше имя</label>
+								</div>
+								<div class="form-card-lp__block form-card-lp__block--inline">
+									<input class="form-card-lp__input" id="form-card-lp-2-2" type="text" name="name" required="required"/>
+									<label class="form-card-lp__label" for="form-card-lp-2-2">Ваш телефон <span class="asterisk">*</span></label>
+								</div>
+							</div>
+							<div class="form-card-lp__block js-form-card-block-file">
+								<input class="form-card-lp__input" id="form-card-lp-2-3" type="text" name="fileName" required="required"/>
+								<label class="form-card-lp__label" for="form-card-lp-2-3">Название вашего знака <span class="asterisk">*</span></label>
+								<div class="form-card-lp__block-inner">
+									<label class="form-card-lp__label-wrapper">
+										<div class="form-card-lp__name">Файл с логотипом</div>
+										<input class="form-card-lp__input-file" id="form-card-lp-2-4" type="file" name="file"/>
+									</label>
+								</div>
+							</div>
+							<div class="form-card-lp__section">
+								<div class="form-card-lp__block form-card-lp__block--inline form-card-lp__block--top-position">
+									<button class="btn-lp btn-lp--full btn-full" type="submit">Проверить знак</button>
+								</div>
+								<div class="form-card-lp__block form-card-lp__block--inline form-card-lp__block--bottom-position">
+									<input class="form-card-lp__checkbox" id="form-card-2-5" type="checkbox" name="personal" required="required" checked="checked"/>
+									<label class="form-card-lp__label-checkbox" for="form-card-2-5">Соглашаюсь на обработку персональных данных</label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <main>
 	<div class="section-lp">
 		<div class="container-lg">
 			<h2 class="section-lp__title section-lp__title--sr-only">Наши достижения в цифрах</h2>
-			<div class="features-lp row-lg">
-				<div class="feature-lp col-lp-1-4-lg">
-					<div class="feature-lp__number hide-up-to-lg">60+</div>
-					<div class="feature-lp__title"><span>60+</span> экспертов</div>
-					<p>Патентные поверенные с опытом работы в Роспатенте. Мы знаем систему изнутри.</p>
+			<div class="features-lp features-lp--numbers">
+				<div class="feature-lp js-show-content">
+					<div class="feature-lp__number">60+</div>
+					<h3 class="feature-lp__title js-show-content__btn">
+						<div class="feature-lp__title-inner"><span class="feature-lp__title-number">60+</span><br/> экспертов</div>
+					</h3>
+					<p class="feature-lp__text js-show-content__content">Патентные поверенные с опытом<br/> работы в Роспатенте.<br/> Мы знаем систему изнутри.</p>
 				</div>
-				<div class="feature-lp col-lp-1-4-lg">
-					<div class="feature-lp__number hide-up-to-lg">2004</div>
-					<div class="feature-lp__title">Работаем с <span>2004</span> года</div>
-					<p>13 лет на рынке. 10-12 лет средний опыт патентных поверенных и юристов.</p>
+				<div class="feature-lp js-show-content">
+					<div class="feature-lp__number">2004</div>
+					<h3 class="feature-lp__title js-show-content__btn">
+						<div class="feature-lp__title-inner">Работаем с&nbsp;<span class="feature-lp__title-number feature-lp__title-number">2004</span>&nbsp;года</div>
+					</h3>
+					<p class="feature-lp__text js-show-content__content">13 лет на рынке.<br/> 10-12 лет средний опыт патентных поверенных и юристов.</p>
 				</div>
-				<div class="feature-lp col-lp-1-4-lg">
-					<div class="feature-lp__number hide-up-to-lg">10</div>
-					<div class="feature-lp__title"><span>10</span> офисов в России</div>
-					<p>И онлайн-переговорная для удобного общения из любой точки мира.</p>
+				<div class="feature-lp js-show-content">
+					<div class="feature-lp__number">10</div>
+					<h3 class="feature-lp__title js-show-content__btn">
+						<div class="feature-lp__title-inner"><span class="feature-lp__title-number">10</span> офисов в&nbsp;России</div>
+					</h3>
+					<p class="feature-lp__text js-show-content__content">И онлайн-переговорная для удобного общения из любой точки мира.</p>
 				</div>
-				<div class="feature-lp col-lp-1-4-lg">
-					<div class="feature-lp__number hide-up-to-lg">9</div>
-					<div class="feature-lp__title"><span>9</span> место в рейтинге</div>
-					<p>Входим в 10-ку юридических компаний  России по версии Право-300 (<a href="">диплом</a>).</p>
+				<div class="feature-lp js-show-content">
+					<div class="feature-lp__number">9</div>
+					<h3 class="feature-lp__title js-show-content__btn">
+						<div class="feature-lp__title-inner"><span class="feature-lp__title-number">9</span> место в&nbsp;рейтинге</div>
+					</h3>
+					<p class="feature-lp__text js-show-content__content">Входим в 10-ку юридических компаний  России по версии Право-300 (<a class="link-lp js-fancy-media" href="http://legal-support.ru//local/templates/main/assets/images/img-gardium-is.jpg">диплом</a>).</p>
 				</div>
 			</div>
 		</div>
@@ -154,47 +211,75 @@
 		<div class="container-lg">
 			<h2 class="section-lp__title">Что мы делаем</h2>
 			<p class="section-lp__subtitle">Мы относимся к регистрации вашего товарного знака как к проекту.<br/> Будьте уверены, мы найдем способы максимальной защиты вашего бренда даже в сложных случаях.</p>
-			<ol class="numbered-list row-xl">
-				<li class="col-lp-1-3-xl">
-					<h3 class="section-lp__h3">Проверяем</h3>
-					<ul class="bullet-list">
-						<li>Проводим проверку  по всем возможным базам и закрытым реестрам ФИПС</li>
-						<li>Формируем рабочую группу проекта, которая даёт экспертную оценку и составляет рекомендации по успешной регистрации</li>
-						<li>Предлагаем варианты доработки обозначения. Предложения готовятся силами штатных дизайнеров под руководством юристов</li>
-					</ul>
+			<ol class="numbered-list row-lg">
+				<li class="col-lp-1-3-lg js-show-content">
+					<h3 class="numbered-list__title section-lp__h3 js-show-content__btn" data-numbered-list="true">Проверяем</h3>
+					<div class="numbered-list__item-content js-show-content__content">
+						<ul class="bullet-list">
+							<li>Проводим проверку  по всем возможным базам и закрытым реестрам ФИПС</li>
+							<li>Формируем рабочую группу проекта, которая даёт экспертную оценку и составляет рекомендации по успешной регистрации</li>
+							<li>Предлагаем варианты доработки обозначения. Предложения готовятся силами штатных дизайнеров под руководством юристов</li>
+						</ul>
+					</div>
 				</li>
-				<li class="col-lp-1-3-xl">
-					<h3 class="section-lp__h3">Регистрируем</h3>
-					<ul class="bullet-list">
-						<li>Разрабатываем стратегию защиты в зависимости от выявленных препятствий</li>
-						<li>Проводим переговоры с правообладателей препятствующих знаков, получаем письма-согласия</li>
-						<li>Обжалуем правовую охрану неиспользуемых знаков в Палате по патентным спорам (ППС). При необходимости привлекаем ФАС</li>
-						<li>Ведём делопроизводство, следим за графиком платежей по уплате пошлин</li>
-						<li>Отвечаем на уведомления Роспатента в процессе регистрации</li>
-						<li>Передаём готовое свидетельство о регистрации заказчику</li>
-					</ul>
+				<li class="col-lp-1-3-lg js-show-content">
+					<h3 class="numbered-list__title section-lp__h3 js-show-content__btn" data-numbered-list="true">Регистрируем</h3>
+					<div class="numbered-list__item-content js-show-content__content">
+						<ul class="bullet-list">
+							<li>Разрабатываем стратегию защиты в зависимости от выявленных препятствий</li>
+							<li>Проводим переговоры с правообладателей препятствующих знаков, получаем письма&#8209;согласия</li>
+							<li>Обжалуем правовую охрану неиспользуемых знаков в Палате по патентным спорам (ППС). При необходимости привлекаем ФАС</li>
+							<li>Ведём делопроизводство, следим за графиком платежей по уплате пошлин</li>
+							<li>Отвечаем на уведомления Роспатента в процессе регистрации</li>
+							<li>Передаём готовое свидетельство о регистрации заказчику</li>
+						</ul>
+					</div>
 				</li>
-				<li class="col-lp-1-3-xl">
-					<h3 class="section-lp__h3">Защищаем</h3>
-					<ul class="bullet-list">
-						<li>В случае первичного отказа Роспатента в регистрации товарного знака полностью или частично  обжалуем решение в Палате по патентным спорам, в Суде по интеллектуальным правам и добиваемся положительного решения</li>
-						<li>Доказываем отличие вашего товарного знака от препятствующих путём различных экспертиз и составлений опросов общественного мнения (ВЦИОМ и пр.)</li>
-					</ul>
+				<li class="col-lp-1-3-lg js-show-content">
+					<h3 class="numbered-list__title section-lp__h3 js-show-content__btn" data-numbered-list="true">Защищаем</h3>
+					<div class="numbered-list__item-content js-show-content__content">
+						<ul class="bullet-list">
+							<li>В случае первичного отказа Роспатента в регистрации товарного знака полностью или частично  обжалуем решение в Палате по патентным спорам, в Суде по интеллектуальным правам и добиваемся положительного решения</li>
+							<li>Доказываем отличие вашего товарного знака от препятствующих путём различных экспертиз и составлений опросов общественного мнения (ВЦИОМ и&nbsp;пр.)</li>
+						</ul>
+					</div><a class="link-lp link-lp--lg link-lp--has-arrow numbered-list__go-to-case-link js-scroll-to" href="#our-cases">Перейти к кейсам</a>
 				</li>
 			</ol>
 		</div>
 	</section>
-	<section class="section-lp">
-		<div class="section-lp__achievement container-lg">
+	<section class="section-lp section-lp--map">
+		<div class="container-lg section-lp__last-block-large">
 			<h2 class="section-lp__title">Результат</h2>
-			<div class="row-md">
-				<div class="col-lp-2-3-md">
+			<div class="row-inline">
+				<div class="col-inline-2-3-lg">
 					<div class="feature-lp feature-lp--lg">
 						<div class="feature-lp__number">7585</div>
 						<div class="feature-lp__title">Товарных знаков<br/> мы оформили для клиентов<br/> из 83 регионов</div>
 					</div>
 				</div>
-				<div class="col-lp-1-3-md"></div>
+				<div class="col-inline-1-3-lg section__first-block">
+					<div class="form-card-lp form-card-lp--last-in-section form-card-lp--delete-block">
+						<form>
+							<h3 class="form-card-lp__title">Нужна консультация?</h3>
+							<p class="form-card-lp__slogan">Это бесплатно.</p>
+							<div class="form-card-lp__block">
+								<input class="form-card-lp__input form-card-lp__input--placeholder" id="form-card-1-1" type="text" name="name" placeholder="Ваше имя"/>
+								<label class="form-card-lp__label" for="form-card-1-1">Ваше имя</label>
+							</div>
+							<div class="form-card-lp__block">
+								<input class="form-card-lp__input" id="form-card-1-2" type="tel" name="tel" required="required"/>
+								<label class="form-card-lp__label" for="form-card-1-2">Ваш телефон <span class="asterisk">*</span></label>
+							</div>
+							<div class="form-card-lp__btn-block">
+								<button class="btn-lp btn-lp--full btn-full" type="submit">Отправить</button>
+							</div>
+							<div class="form-card-lp__block">
+								<input class="form-card-lp__checkbox" id="form-card-1-3" type="checkbox" name="personal" required="required"/>
+								<label class="form-card-lp__label-checkbox" for="form-card-1-3">Соглашаюсь на обработку персональных данных</label>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -209,19 +294,51 @@
 					</div>
 				</div>
 				<div class="col-lp-2-3-lg">
-					<div class="clients-lp">
+					<div class="clients-lp section-lp__first-block section__last-block">
 						<div class="js-content-slider-lp">
 							<div class="clients-lp__group">
-									<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client-lp--alrosa.png" width="124" height="114" alt="Логотип Alrosa"/>
+								<div class="client-lp"><a class="js-big-modal" href="#alrosa-review"><img class="client-lp__logo" src="../../assets/images/logo-client-lp--alrosa.png"/>
 										<div class="client-lp__review-wrap">
 											<div class="client-lp__review">Отзыв клиента</div>
-										</div>
-									</div>
-									<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--rzhd.jpg" alt="Логотип компании Российские железные дороги"/>
+										</div></a></div>
+								<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--gazprom-small.jpg"/></div>
+								<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--ship-small.jpg"/></div>
+								<div class="client-lp"><a class="js-fancy-media" href="../../assets/images/img-review-pik.jpg"><img class="client-lp__logo" src="../../assets/images/logo-client--pik-small.jpg"/>
 										<div class="client-lp__review-wrap">
 											<div class="client-lp__review">Отзыв клиента</div>
-										</div>
-									</div>
+										</div></a></div>
+								<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--sbarro-small.jpg"/></div>
+								<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--aushan-small.jpg"/></div>
+								<div class="client-lp"><a class="js-big-modal" href="#svyznoy-review"><img class="client-lp__logo" src="../../assets/images/logo-svyaznoy--small.jpg"/>
+										<div class="client-lp__review-wrap">
+											<div class="client-lp__review">Отзыв клиента</div>
+										</div></a></div>
+								<div class="client-lp"><a class="js-fancy-media" href="../../assets/images/img-review-unistrim.jpg"><img class="client-lp__logo" src="../../assets/images/logo-client--unistream-small.jpg"/>
+										<div class="client-lp__review-wrap">
+											<div class="client-lp__review">Отзыв клиента</div>
+										</div></a></div>
+							</div>
+							<div class="clients-lp__group">
+								<div class="client-lp"><a class="js-big-modal" href="#alrosa-review"><img class="client-lp__logo" src="../../assets/images/logo-client-lp--alrosa.png"/>
+										<div class="client-lp__review-wrap">
+											<div class="client-lp__review">Отзыв клиента</div>
+										</div></a></div>
+								<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--gazprom-small.jpg"/></div>
+								<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--ship-small.jpg"/></div>
+								<div class="client-lp"><a class="js-fancy-media" href="../../assets/images/img-review-pik.jpg"><img class="client-lp__logo" src="../../assets/images/logo-client--pik-small.jpg"/>
+										<div class="client-lp__review-wrap">
+											<div class="client-lp__review">Отзыв клиента</div>
+										</div></a></div>
+								<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--sbarro-small.jpg"/></div>
+								<div class="client-lp"><img class="client-lp__logo" src="../../assets/images/logo-client--aushan-small.jpg"/></div>
+								<div class="client-lp"><a class="js-big-modal" href="#svyznoy-review"><img class="client-lp__logo" src="../../assets/images/logo-svyaznoy--small.jpg"/>
+										<div class="client-lp__review-wrap">
+											<div class="client-lp__review">Отзыв клиента</div>
+										</div></a></div>
+								<div class="client-lp"><a class="js-fancy-media" href="../../assets/images/img-review-unistrim.jpg"><img class="client-lp__logo" src="../../assets/images/logo-client--unistream-small.jpg"/>
+										<div class="client-lp__review-wrap">
+											<div class="client-lp__review">Отзыв клиента</div>
+										</div></a></div>
 							</div>
 						</div>
 					</div>
@@ -232,44 +349,46 @@
 	<section class="section-lp section-lp--light-gray">
 		<div class="container-lg">
 			<h2 class="section-lp__title">Сколько стоит</h2>
-			<p class="section-lp__subtitle">Готовим оптимальное предложение под вашу задачу за 30 минут</p>
-			<div class="section-lp__last-block row-lg js-equal-height">
-				<div class="price-card col-lp-1-3-lg js-equal-height__block">
-					<h3 class="price-card__title">«Дешевле не бывает»</h3>
-					<ul class="bullet-list">
-						<li>Составление и подача заявки в Роспатент</li>
-					</ul>
-					<div class="price-card__price-holder">
-						<div class="price-card__price">Стоимость пакета от <span>27 200 руб.</span></div><a class="btn-lp btn-block" href="#">Заказать</a>
+			<p class="section-lp__subtitle">Готовим оптимальное предложение под вашу задачу за 30 минут.</p>
+			<div class="price-cards js-equal-height">
+				<div class="row-lg js-slider-price-cards">
+					<div class="price-card col-lp-1-3-lg js-slider-price-cards__item js-equal-height__block">
+						<h3 class="price-card__title">«Дешевле не&nbsp;бывает»</h3>
+						<ul class="bullet-list">
+							<li>Составление и подача заявки в Роспатент</li>
+						</ul>
+						<div class="price-card__price-holder">
+							<div class="price-card__price">Стоимость пакета от <span>27 200 руб.</span></div><a class="btn-lp btn-block" href="#">Заказать</a>
+						</div>
 					</div>
-				</div>
-				<div class="price-card price-card--is-active col-lp-1-3-lg js-equal-height__block" data-active="true">
-					<h3 class="price-card__title">«Все включено»</h3>
-					<ul class="bullet-list">
-						<li>Проверка по всем возможным базам и закрытым реестрам ФИПС</li>
-						<li>Доработка до уникальности (2 варианта бесплатно)</li>
-						<li>Подача заявки и ведение делопроизводства</li>
-						<li>Оплата пошлин со скидкой 30%</li>
-						<li>Ответы на уведомления Роспатента</li>
-						<li>Защита от отказов</li>
-					</ul>
-					<div class="price-card__price-holder">
-						<div class="price-card__price">Стоимость пакета от <span>58 350 руб.</span></div><a class="btn-lp btn-block" href="#">Заказать</a>
+					<div class="price-card price-card--is-active col-lp-1-3-lg js-slider-price-cards__item js-equal-height__block" data-active="true">
+						<h3 class="price-card__title">«Все включено»</h3>
+						<ul class="bullet-list">
+							<li>Проверка по всем возможным базам и закрытым реестрам ФИПС</li>
+							<li>Доработка до уникальности (2 варианта бесплатно)</li>
+							<li>Подача заявки и ведение делопроизводства</li>
+							<li>Оплата пошлин со скидкой 30%</li>
+							<li>Ответы на уведомления Роспатента</li>
+							<li>Защита от отказов</li>
+						</ul>
+						<div class="price-card__price-holder">
+							<div class="price-card__price">Стоимость пакета от <span>58 350 руб.</span></div><a class="btn-lp btn-block" href="#">Заказать</a>
+						</div>
 					</div>
-				</div>
-				<div class="price-card col-lp-1-3-lg js-equal-height__block">
-					<h3 class="price-card__title">«Форсаж»</h3>
-					<ul class="bullet-list">
-						<li>Проверка по всем возможным базам и закрытым реестрам ФИПС</li>
-						<li>Доработка до уникальности (2 варианта бесплатно)</li>
-						<li>Подача заявки и ведение делопроизводства</li>
-						<li>Оплата пошлин со скидкой 30%</li>
-						<li>Ответы на уведомления Роспатента</li>
-						<li>Защита от отказов</li>
-						<li><strong>Ускорение регистрации в два раза</strong></li>
-					</ul>
-					<div class="price-card__price-holder">
-						<div class="price-card__price">Стоимость пакета от <span>175 000 руб.</span></div><a class="btn-lp btn-block" href="#">Заказать</a>
+					<div class="price-card col-lp-1-3-lg js-slider-price-cards__item js-equal-height__block">
+						<h3 class="price-card__title">«Форсаж»</h3>
+						<ul class="bullet-list">
+							<li>Проверка по всем возможным базам и закрытым реестрам ФИПС</li>
+							<li>Доработка до уникальности (2 варианта бесплатно)</li>
+							<li>Подача заявки и ведение делопроизводства</li>
+							<li>Оплата пошлин со скидкой 30%</li>
+							<li>Ответы на уведомления Роспатента</li>
+							<li>Защита от отказов</li>
+							<li><strong>Ускорение регистрации в два раза</strong></li>
+						</ul>
+						<div class="price-card__price-holder">
+							<div class="price-card__price">Стоимость пакета от <span>175 000 руб.</span></div><a class="btn-lp btn-block" href="#">Заказать</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -278,67 +397,189 @@
 	<section class="section-lp">
 		<div class="container-lg">
 			<h2 class="section-lp__title">В чем выгода</h2>
-			<div class="features-lp features-lp--after-title row-lg">
-				<div class="feature-lp feature-lp--fixed-payment col-lp-1-4-lg">
-					<div class="feature-lp__title">Фиксированная<br/> сумма договора</div>
-					<p>Вы точно знаете сколько заплатите. Эксперты сразу предупреждают о возможных рисках и рекомендуют решение.</p>
+			<div class="features-lp features-lp--benefits row-lg">
+				<div class="feature-lp feature-lp--has-icon-wallet js-show-content">
+					<h3 class="feature-lp__title js-show-content__btn"><span class="feature-lp__title-inner">Фиксированная сумма договора</span></h3>
+					<p class="feature-lp__text js-show-content__content">Вы точно знаете сколько заплатите. Эксперты сразу предупреждают о&nbsp;возможных рисках и&nbsp;рекомендуют решение.</p>
 				</div>
-				<div class="feature-lp feature-lp--phased-payment col-lp-1-4-lg">
-					<div class="feature-lp__title">Поэтапная<br/> оплата</div>
-					<p>Проверка, регистрация знака и госпошлины оплачиваются поэтапно. Вы распределяете затраты и контролируете результат</p>
+				<div class="feature-lp feature-lp--has-icon-pen js-show-content">
+					<h3 class="feature-lp__title js-show-content__btn"><span class="feature-lp__title-inner">Поэтапная<br/> оплата</span></h3>
+					<p class="feature-lp__text js-show-content__content">Проверка, регистрация знака и&nbsp;госпошлины оплачиваются поэтапно. Вы распределяете затраты и&nbsp;контролируете результат</p>
 				</div>
-				<div class="feature-lp feature-lp--saving col-lp-1-4-lg">
-					<div class="feature-lp__title">30% экономия<br/> на госпошлинах</div>
-					<p>Подача заявки через электронный кабинет «Гардиума» в Роспатенте сокращает размер госпошлин минимум на 10 000 руб.</p>
+				<div class="feature-lp feature-lp--has-icon-pie-chart js-show-content">
+					<h3 class="feature-lp__title js-show-content__btn"><span class="feature-lp__title-inner">30% экономия на&nbsp;госпошлинах</span></h3>
+					<p class="feature-lp__text js-show-content__content">Подача заявки через электронный кабинет «Гардиума» в Роспатенте сокращает размер госпошлин минимум на 10 000 руб.</p>
 				</div>
-				<div class="feature-lp feature-lp--complex-protection col-lp-1-4-lg">
-					<div class="feature-lp__title">Комплексная<br/> защита</div>
-					<p>Регистрацию каждого знака контролирует юрист с опытом работы в сфере защиты интеллектуальной собственности не менее 5 лет.</p>
+				<div class="feature-lp feature-lp--has-icon-shield js-show-content">
+					<h3 class="feature-lp__title js-show-content__btn"><span class="feature-lp__title-inner">Комплексная<br/> защита</span></h3>
+					<p class="feature-lp__text js-show-content__content">Регистрацию каждого знака контролирует юрист с&nbsp;опытом работы в&nbsp;сфере защиты интеллектуальной собственности не&nbsp;менее 5&nbsp;лет.</p>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="section-lp section-lp--gray">
+	<section class="section-lp section-lp--gray section-lp--no-intend">
+		<div class="container-lg">
+			<h2 class="section-lp__title">ТОП экспертов с опытом работы в Роспатенте</h2>
+			<p class="section-lp__subtitle">Каждый знак — это проект, над которым работает патентный поверенный и юрист по интеллектуальному праву. Системный подход и гарантирует успешную регистрацию без отказов, потому что предусматривает все риски.</p>
+			<div class="experts-block-lp">
+				<div class="row-xl">
+					<div class="col-lp-1-2-xl">
+						<div class="experts-block-lp__section">
+							<div class="experts-block-lp__img-wrapper"><img src="../../assets/images/img-employee--irina-reznikova-full-height.png"/></div>
+							<div class="experts-block-lp__info">
+								<div class="experts-block-lp__name">Ирина Резникова</div>
+								<div class="experts-block-lp__position">Руководитель департамента защиты товарных знаков</div><a class="btn-lp js-fancy-modal-lp" href="#question-for-expert">задать вопрос</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lp-1-2-xl">
+						<div class="experts-block-lp__img-section">
+							<div class="js-experts-block-slider">
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--vera-nadеzhina-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--aleksej-abramov-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-post-author--elena-kupcova-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--evgenij-gusev-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--aliya-ishakova-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--elena-beljaeva-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--andrey-harchenko-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert experts-block-lp__img-expert--active"><img src="../../assets/images/img-employee--irina-reznikova-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--aleksej-fedorjaka-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--vitalij-tukmanov-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--marya-korolkova-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--anfisa-ignotenko-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--markova-small.jpg"/></div>
+								<div class="experts-block-lp__img-expert"><img src="../../assets/images/img-employee--ekaterina-chilimova-small.jpg"/></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section-lp section-lp--light-gray" id="our-cases">
+		<div class="container-lg">
+			<h2 class="section-lp__title">Надежная защита в спорах</h2>
+			<p class="section-lp__subtitle">Наши адвокаты защитили активы клиентов на 18 млрд. руб. Добились успеха в 93% споров. <br/> Большая судебная практика помогает нам успешно отстаивать интересы своих клиентов в самых сложных ситуациях.</p>
+			<div class="row-lg">
+				<div class="col-lp-1-3-lg"><img class="hide-up-to-lg" src="../../assets/images/logo-uaz.jpg"/></div>
+				<div class="col-lp-2-3-lg">
+					<div class="insert-text">
+						<div class="insert-text__title">Товарный знак <span class="insert-text__highlighted">УАЗ</span> признан общеизвестным Благодаря юристам «Гардиума»</div>
+					</div>
+					<div class="disputes-slider-lp section__last-block js-show-content">
+						<div class="js-disputes-slider-lp">
+							<div class="disputes-slider-lp__slide">
+								<div class="disputes-slider-lp__title js-show-content__btn"><span>Задача клиента <span class="hide-md">и результат:</span></span></div>
+								<p class="is-hide js-show-content__block">Товарный знак «УАЗ» был зарегистрирован в 1964 году. Его владелец «Ульяновский автомобильный завод» обратился в «Гардиум» для того, чтобы признать его общеизвестным начиная с 1983 года. При успешном прохождении такой процедуры товарный знак получает юридическую защиту по отношению ко всем существующим товарам и услугам, а не только к тем, которые были выбраны при регистрации. Иными словами, его нельзя будет использовать для товара другой катег   ории, отличной от автомобильный промышленности. Также правовая охрана общеизвестного товарного знака будет действовать бессрочно.</p>
+								<div class="disputes-slider-lp__title hide-up-to-md"> Результат</div>
+								<p class="is-hide js-show-content__block">На основании представленных доказательств, свидетельствующих о длительности и интенсивности использования товарного знака «УАЗ», Палата по патентным спорам признала его общеизвестным.</p>
+							</div>
+							<div class="disputes-slider-lp__slide">
+								<div class="disputes-slider-lp__title js-show-content__btn"><span>Задача клиента <span class="hide-md">и результат:</span></span></div>
+								<p class="is-hide js-show-content__block">Товарный знак «УАЗ» был зарегистрирован в 1964 году. Его владелец «Ульяновский автомобильный завод» обратился в «Гардиум» для того, чтобы признать его общеизвестным начиная с 1983 года. При успешном прохождении такой процедуры товарный знак получает юридическую защиту по отношению ко всем существующим товарам и услугам, а не только к тем, которые были выбраны при регистрации. Иными словами, его нельзя будет использовать для товара<br/> другой катег   ории, отличной от автомобильный промышленности. Также правовая охрана общеизвестного товарного знака будет действовать бессрочно.</p>
+								<div class="disputes-slider-lp__title hide-up-to-md"> Результат</div>
+								<p class="is-hide js-show-content__block">На основании представленных доказательств, свидетельствующих о длительности и интенсивности использования товарного знака «УАЗ», Палата по патентным спорам признала его общеизвестным.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section-lp section-lp--dark-blue">
+		<div class="container-lg section-lp__only-big-block">
+			<div class="form-card-lp form-card-lp--center-block">
+				<form>
+					<h2 class="section-lp__title">Бесплатная оценка знака</h2>
+					<p class="section-lp__subtitle">Оставьте заявку и мы ответим за 30 минут</p>
+					<div class="form-card-lp__section">
+						<div class="form-card-lp__block form-card-lp__block--inline">
+							<input class="form-card-lp__input form-card-lp__input--placeholder" id="form-card-lp-3-1" type="text" name="name" placeholder="Ваше имя"/>
+							<label class="form-card-lp__label" for="form-card-lp-3-1">Ваше имя</label>
+						</div>
+						<div class="form-card-lp__block form-card-lp__block--inline">
+							<input class="form-card-lp__input" id="form-card-lp-3-2" type="text" name="name" required="required"/>
+							<label class="form-card-lp__label" for="form-card-lp-3-2">Ваш телефон <span class="asterisk">*</span></label>
+						</div>
+					</div>
+					<div class="form-card-lp__block js-form-card-block-file">
+						<input class="form-card-lp__input" id="form-card-lp-3-3" type="text" name="fileName" required="required"/>
+						<label class="form-card-lp__label" for="form-card-lp-3-3">Название вашего знака <span class="asterisk">*</span></label>
+						<div class="form-card-lp__block-inner">
+							<label class="form-card-lp__label-wrapper">
+								<div class="form-card-lp__name">Файл с логотипом</div>
+								<input class="form-card-lp__input-file" id="form-card-lp-3-4" type="file" name="file"/>
+							</label>
+						</div>
+					</div>
+					<div class="form-card-lp__section">
+						<div class="form-card-lp__block form-card-lp__block--inline form-card-lp__block--top-position">
+							<button class="btn-lp btn-lp--full btn-full" type="submit">Проверить знак</button>
+						</div>
+						<div class="form-card-lp__block form-card-lp__block--inline form-card-lp__block--bottom-position">
+							<input class="form-card-lp__checkbox" id="form-card-3-5" type="checkbox" name="personal" required="required" checked="checked"/>
+							<label class="form-card-lp__label-checkbox" for="form-card-3-5">Соглашаюсь на обработку персональных данных</label>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<section class="section-lp section-lp--additional-services">
 		<div class="container-lg">
 			<h2 class="section-lp__title">Дополнительные услуги</h2>
-			<div class="row-md">
-				<div class="links-list col-lp-1-3-md">
-					<h3 class="links-list__title">Международная регистрация</h3>
-					<ul class="links-list__links">
-						<li class="links-list__item links-list__item--has-icon-wipo"><a class="links-list__link" href="#">Мадридская система</a></li>
-						<li class="links-list__item links-list__item--has-icon-sng"><a class="links-list__link" href="#">СНГ</a></li>
-						<li class="links-list__item links-list__item--has-icon-eu"><a class="links-list__link" href="#">Евросоюз</a></li>
-						<li class="links-list__item links-list__item--has-icon-usa"><a class="links-list__link" href="#">США</a></li>
-						<li class="links-list__item links-list__item--has-icon-china"><a class="links-list__link" href="#">Китай</a></li>
-						<li class="links-list__item links-list__item--has-icon-germany"><a class="links-list__link" href="#">Германия</a></li>
-					</ul>
+			<div class="row-md section-lp__links-list">
+				<div class="col-lp-1-3-md">
+					<div class="links-list">
+						<h3 class="links-list__title"><a class="link-lp" href="#">Международная регистрация</a></h3>
+						<ul class="links-list__links">
+							<li class="links-list__item links-list__item--has-icon-wipo"><a class="links-list__link" href="#">Мадридская система</a></li>
+							<li class="links-list__item links-list__item--has-icon-sng"><a class="links-list__link" href="#">СНГ</a></li>
+							<li class="links-list__item links-list__item--has-icon-eu"><a class="links-list__link" href="#">Евросоюз</a></li>
+							<li class="links-list__item links-list__item--has-icon-usa"><a class="links-list__link" href="#">США</a></li>
+							<li class="links-list__item links-list__item--has-icon-china"><a class="links-list__link" href="#">Китай</a></li>
+							<li class="links-list__item links-list__item--has-icon-germany"><a class="links-list__link" href="#">Германия</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="links-list col-lp-1-3-md">
-					<h3 class="links-list__title">Включение товарного знака<br/> в ТРОИС ФТС</h3>
-					<ul class="links-list__links">
-						<li class="links-list__item"><a class="links-list__link" href="#">Использование товарного знака</a></li>
-						<li class="links-list__item"><a class="links-list__link" href="#">Передача прав на товарный знак</a></li>
-						<li class="links-list__item"><a class="links-list__link" href="#">Аннулирование товарного знака</a></li>
-						<li class="links-list__item"><a class="links-list__link" href="#">Продление товарного знака</a></li>
-					</ul>
+				<div class="col-lp-1-3-md">
+					<div class="links-list">
+						<h3 class="links-list__title"><a class="link-lp" href="#">Включение товарного знака в&nbsp;ТРОИС ФТС</a></h3>
+						<ul class="links-list__links">
+							<li class="links-list__item"><a class="links-list__link" href="#">Использование товарного знака</a></li>
+							<li class="links-list__item"><a class="links-list__link" href="#">Передача прав на товарный знак</a></li>
+							<li class="links-list__item"><a class="links-list__link" href="#">Аннулирование товарного знака</a></li>
+							<li class="links-list__item"><a class="links-list__link" href="#">Продление товарного знака</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="links-list col-lp-1-3-md">
-					<h3 class="links-list__title">Защита от незаконного<br/> использования</h3>
-					<ul class="links-list__links">
-						<li class="links-list__item"><a class="links-list__link" href="#">Возмещение ущерба</a></li>
-						<li class="links-list__item"><a class="links-list__link" href="#">Защита в палате по патентным спорам</a></li>
-						<li class="links-list__item"><a class="links-list__link" href="#">Защита в суде по интеллектуальным правам</a></li>
-						<li class="links-list__item"><a class="links-list__link" href="#">Арбитраж и разрешение споров</a></li>
-					</ul>
+				<div class="col-lp-1-3-md">
+					<div class="links-list">
+						<h3 class="links-list__title"><a class="link-lp" href="#">Защита от незаконного использования</a></h3>
+						<ul class="links-list__links">
+							<li class="links-list__item"><a class="links-list__link" href="#">Возмещение ущерба</a></li>
+							<li class="links-list__item"><a class="links-list__link" href="#">Защита в палате по патентным спорам</a></li>
+							<li class="links-list__item"><a class="links-list__link" href="#">Защита в суде по интеллектуальным правам</a></li>
+							<li class="links-list__item"><a class="links-list__link" href="#">Арбитраж и разрешение споров</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="section-lp__only-block hide-md">
+				<div class="insert">
+					<div class="insert__title">Остались вопросы?</div>
+					<div class="insert__text">позвоните нам</div>
+					<div class="insert__title insert__title--red"><a href="tel:+74956658258">+7&nbsp;495&nbsp;665-82-58</a></div>
+					<div class="insert__text">расскажем все<br/> по телефону</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="section-lp section-lp--light-gray">
+	<section class="section-lp section-lp--light-gray hide-up-to-md">
 		<div class="container-lg">
 			<h2 class="section-lp__title">Популярные вопросы по регистрации товарного знака</h2>
-			<div class="row-md">
-				<div class="col-lp-2-3-md">
+			<div class="row-lg">
+				<div class="col-lp-2-3-lg">
 					<dl class="accordeon accordeon--lp js-accordeon" data-accordeon-flexible="true">
 						<div class="accordeon__item">
 							<dt class="accordeon__question accordeon__question--lp js-accordeon__question">
@@ -368,7 +609,7 @@
 							</dd>
 						</div>
 						<div class="accordeon__item">
-							<dt class="accordeon__question accordeon__question--lp js-accordeon__question accordeon__question--rotate">
+							<dt class="accordeon__question accordeon__question--lp js-accordeon__question">
 								<div class="accordeon__question-inner"><span>4. Срок действия товарного знака</span></div>
 							</dt>
 							<dd class="accordeon__answer js-accordeon__answer">
@@ -396,7 +637,7 @@
 						</div>
 					</dl>
 				</div>
-				<div class="col-lp-1-3-md section-lp__only-block">
+				<div class="col-lp-1-3-lg section-lp__only-block">
 					<div class="insert">
 						<div class="insert__title">Некогда изучать?</div>
 						<div class="insert__text">позвоните нам</div>
@@ -408,180 +649,146 @@
 		</div>
 	</section>
 </main>
-<footer class="page-footer">
-	<div class="page-footer__top container">
-		<div class="row-md">
-			<div class="page-footer__col page-footer__col--push-1-4">
-				<address>
-					<div class="page-footer__phone"><a href="tel:+74956658258">+7 (495) 665-82-58</a></div><a class="page-footer__link" href="mailto:info@gardium.ru">info@gardium.ru</a>
-					<div class="page-footer__address"><span class="page-footer__address-icon"><svg width="11" height="13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-map"></use></svg></span><span class="page-footer__address-text">Москва, Рязанский проспект, д.75, корп.4</span></div>
-				</address>
-			</div>
-			<div class="page-footer__col page-footer__col--pull-1-4">
-				<div class="page-footer__copyright">© 2005–2017, ООО «Гардиум» <br/> Все права защищены</div>
-				<ul class="social-links social-links--inline">
-					<li class="social-links__item"><a class="social-links__link" href="https://www.facebook.com/gardiumrussia" target="_blank" rel="noopener noreferrer"><span><svg width="8" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-fb"></use></svg></span></a></li>
-					<li class="social-links__item"><a class="social-links__link social-links__link--vk" href="https://vk.com/gardium" target="_blank" rel="noopener noreferrer"><span><svg width="15" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-vk"></use></svg></span></a></li>
-					<li class="social-links__item"><a class="social-links__link" href="https://www.youtube.com/channel/UCGRvz9YiNWQ5xLiu6gWNfiw" target="_blank" rel="noopener noreferrer"><span><svg width="16" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-youtube"></use></svg></span></a></li>
-					<li class="social-links__item"><a class="social-links__link social-links__link--google-plus" href="https://plus.google.com/+Legal-supportRu" target="_blank" rel="noopener noreferrer"><span><svg width="17.031" height="15.97"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-google-plus"></use></svg></span></a></li>
-				</ul>
-			</div>
-			<div class="page-footer__col page-footer__col--hidden-on-tablet">
-				<div class="js-show-content">
-					<button class="dotted dotted--white js-show-content__btn" type="button" data-scroll-to="true" data-attribute="other-wiseadvice-companies"><span>Другие компании</span></button> консалтинговой группы <img class="page-footer__logo" src="../../assets/images/logo-wiseadvice.png" alt="Логотип компании WiseAdvice"/>
+<div class="modal" id="alrosa-review">
+	<div class="h3-like">Акционерная Компания АЛРОСА</div>
+	<p>Благодарим Патентное Бюро за глубокий профессиональный подход, высокий уровень ответственности, с которой специалисты подошли к решению нашего вопроса. Поверенные бюро достаточно свободно ориентировались в нашей отрасли. Мы высокой степени удовлетворены полученным результатом!</p>
+	<p class="text-gray">Исполняющий обязанности директора, Серов И.Е.</p>
+</div>
+<div class="modal" id="svyznoy-review">
+	<div class="h3-like">Связной</div>
+	<p>Сотрудников Патентного бюро отличает исключительная компетентность и профессионализм. Мы рекомендуем всем компаниям, заинтересованным в качественной защите интеллектуальной собственности, обращаться к данным специалистам</p>
+	<p class="text-gray-lp">Генеральный директор, Трухин М.Е.</p>
+</div>
+<div class="modal-lp" id="question-for-expert">
+	<div class="form-card-lp form-card-lp--modal">
+		<form action="" method="">
+			<h3 class="form-card-lp__title">Вопрос эксперту</h3>
+			<div class="form-card-lp__section">
+				<div class="form-card-lp__block form-card-lp__block--inline">
+					<input class="form-card-lp__input form-card-lp__input--placeholder" id="form-card-lp-modal-1-1" type="text" name="name" placeholder="Ваше имя"/>
+					<label class="form-card-lp__label" for="form-card-lp-modal-1-1">Ваше имя</label>
+				</div>
+				<div class="form-card-lp__block form-card-lp__block--inline">
+					<input class="form-card-lp__input" id="form-card-lp-modal-1-2" type="text" name="name" required="required"/>
+					<label class="form-card-lp__label" for="form-card-lp-modal-1-2">Ваш телефон <span class="asterisk">*</span></label>
 				</div>
 			</div>
-			<div class="page-footer__col">
-				<div class="page-footer__payment-systems"><svg width="52" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-visa"></use></svg><img src="../../assets/images/logo-master-card.png" width="34" height="20" alt="Логотип MasterCard"/></div>
-				<div><a class="page-footer__link" href="#">Перейти на мобильную версию</a></div>
+			<div class="form-card-lp__block form-card-lp__block--mb20">
+				<input class="form-card-lp__input form-card-lp__input--placeholder" id="form-card-lp-modal-1-3" type="text" name="name" placeholder="Ваш вопрос"/>
+				<label class="form-card-lp__label" for="form-card-lp-modal-1-3">Ваш вопрос</label>
 			</div>
-		</div>
+			<div class="form-card-lp__section">
+				<div class="form-card-lp__block form-card-lp__block--inline form-card-lp__block--top-position">
+					<button class="btn-lp btn-lp--full btn-full js-fancy-modal-lp" type="submit" data-fancybox-type="inline" data-fancybox-href="#expert-question-success">Задать вопрос</button>
+				</div>
+				<div class="form-card-lp__block form-card-lp__block--inline form-card-lp__block--bottom-position">
+					<input class="form-card-lp__checkbox" id="form-card-lp-modal-1-4" type="checkbox" name="personal" required="required" checked="checked"/>
+					<label class="form-card-lp__label-checkbox" for="form-card-lp-modal-1-4">Соглашаюсь на обработку персональных данных</label>
+				</div>
+			</div>
+		</form>
 	</div>
-	<div class="page-footer__bottom">
-		<div class="container">
-			<ul class="page-footer__nav row-lg">
-				<li class="col-1-4-lg"><a class="page-footer__nav-link" href="">Патентное бюро</a>
-					<ul class="page-footer__nav-list">
-						<li><a class="page-footer__nav-link" href="">О нас</a></li>
-						<li><a class="page-footer__nav-link" href="">Услуги и цены</a></li>
-						<li><a class="page-footer__nav-link" href="">Клиенты</a></li>
-						<li><a class="page-footer__nav-link" href="">Инфо</a></li>
-						<li><a class="page-footer__nav-link" href="">Контакты</a></li>
-					</ul>
-				</li>
-				<li class="col-1-4-lg"><a class="page-footer__nav-link" href="">Товарные знаки</a>
-					<ul class="page-footer__nav-list">
-						<li><a class="page-footer__nav-link" href="">Регистрация товарного знака</a></li>
-						<li><a class="page-footer__nav-link" href="">Регистрация торговой марки</a></li>
-						<li><a class="page-footer__nav-link" href="">Регистрация логотипа</a></li>
-						<li><a class="page-footer__nav-link" href="">Международная регистрация</a></li>
-						<li><a class="page-footer__nav-link" href="">Реестр товарных знаков</a></li>
-					</ul>
-				</li>
-				<li class="col-1-4-lg"><a class="page-footer__nav-link" href="">Патентование</a>
-					<ul class="page-footer__nav-list">
-						<li><a class="page-footer__nav-link" href="">Патент на изобретение</a></li>
-						<li><a class="page-footer__nav-link" href="">Патент на полезную модель</a></li>
-						<li><a class="page-footer__nav-link" href="">Патент на промышленный образец</a></li>
-						<li><a class="page-footer__nav-link" href="">Патентный поиск</a></li>
-						<li><a class="page-footer__nav-link" href="">Патентные поверенные</a></li>
-					</ul>
-				</li>
-				<li class="col-1-4-lg"><a class="page-footer__nav-link" href="">Договоры</a>
-					<ul class="page-footer__nav-list">
-						<li><a class="page-footer__nav-link" href="">Лицензионный договор</a></li>
-						<li><a class="page-footer__nav-link" href="">Договор отчуждения</a></li>
-						<li><a class="page-footer__nav-link" href="">Договор коммерческой концессии</a></li>
-						<li><a class="page-footer__nav-link" href="">Договор авторского заказа</a></li>
-						<li><a class="page-footer__nav-link" href="">Залог исключительных прав</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="page-footer__links row-sm" data-target="other-wiseadvice-companies">
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://arplaw.ru/"><b>Арбитражное адвокатское бюро «АРП»</b></a><br/>арбитраж, споры и конфликты, юридические услуги</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://1c-wiseadvice.ru/book-keeping/"><b>Бухгалтерские услуги в Москве</b></a></li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://arplaw.ru/"><b>Налоговые адвокаты и юристы</b></a><br/>налоговые проверки ИФНС, ОБЭП, возмещение НДС</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://www.pravovest-audit.ru"><b>Аудиторская фирма «WiseAdvice»</b></a><br/>аудиторские услуги по РСБУ и МСФО</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://intelis-it.ru/"><b>Услуги 1С Франчайзи</b></a><br/>внедрение, сопровождение, проекты по 1С</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://www.damages.ru"><b>Независимая экспертиза №1 «Хонест»</b></a><br/>автоэкспертиза, возмещение ущерба от ДТП, залива и пр.</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://www.intelis-ocenka.ru/"><b>Услуги по независимой оценке</b></a><br/>оценка недвижимости, оборудования, бизнеса</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://www.1cashflow.ru/"><b>Программы на 1С - «Финансист»</b></a><br/>автоматизация бюджетирования, казначейства, упр.учета</li>
-				<li class="col-1-2-cycle-sm col-1-3-cycle-md"><a class="underlined underlined--white" href="http://you-right.ru/"><b>Линейка программ «Юрайт»</b></a><br/>программы для юристов и юридических фирм</li>
-			</ul>
+</div>
+<div class="modal-lp" id="callback-order">
+	<div class="form-card-lp form-card-lp--modal">
+		<form action="" method="">
+			<h3 class="form-card-lp__title">Заказ обратного звонка</h3>
+			<div class="form-card-lp__section">
+				<div class="form-card-lp__block form-card-lp__block--inline">
+					<input class="form-card-lp__input form-card-lp__input--placeholder" id="form-card-lp-modal-2-1" type="text" name="name" placeholder="Ваше имя"/>
+					<label class="form-card-lp__label" for="form-card-lp-modal-1-1">Ваше имя</label>
+				</div>
+				<div class="form-card-lp__block form-card-lp__block--inline">
+					<input class="form-card-lp__input" id="form-card-lp-modal-1-2" type="text" name="name" required="required"/>
+					<label class="form-card-lp__label" for="form-card-lp-modal-2-2">Ваш телефон <span class="asterisk">*</span></label>
+				</div>
+			</div>
+			<div class="form-card-lp__section">
+				<div class="form-card-lp__block form-card-lp__block--inline form-card-lp__block--top-position">
+					<button class="btn-lp btn-lp--full btn-full js-fancy-modal-lp" type="submit" data-fancybox-type="inline" data-fancybox-href="#callback-success">Заказать звонок</button>
+				</div>
+				<div class="form-card-lp__block form-card-lp__block--inline form-card-lp__block--bottom-position">
+					<input class="form-card-lp__checkbox" id="form-card-lp-modal-2-3" type="checkbox" name="personal" required="required" checked="checked"/>
+					<label class="form-card-lp__label-checkbox" for="form-card-lp-modal-2-3">Соглашаюсь на обработку персональных данных</label>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="modal-lp modal-lp--success" id="callback-success">
+	<div class="modal-lp__title">Спасибо! Ваша заявка отправлена.</div>
+</div>
+<div class="modal-lp modal-lp--success" id="expert-question-success">
+	<div class="modal-lp__title">Спасибо! Ваш вопрос отправлен.</div>
+</div>
+<footer class="page-footer-lp">
+	<div class="container-lg">
+		<div class="row-lg">
+			<div class="page-footer-lp__left-col col-lp-1-2-lg"><a class="page-footer-lp__logo" href="#"><img src="../../assets/images/logo.png" alt="Гардиум - патентные поверенные и судебные адвокаты" width="170" height="58"/></a>
+				<div class="page-footer-lp__main-info"><span>ФПБ Гардиум, ООО</span><span>109456, Россия, Москва, Рязанский проспект, 75К4</span></div>
+				<ul class="page-footer-lp__features">
+					<li class="page-footer-lp__features-item"><img src="../../assets/images/img-iso.png" alt="Сертификат ISO"/></li>
+					<li class="page-footer-lp__features-item page-footer-lp__features-item--small"><img src="../../assets/images/img-300.png" alt="Право 300"/></li>
+					<li class="page-footer-lp__features-item"><img src="../../assets/images/img-raex.png" alt="Раекс"/></li>
+				</ul>
+				<address>
+					<div class="page-footer-lp__phone"><a href="tel:+74956658258">+7 (495) 665-82-58</a></div><a class="page-footer-lp__link link-lp" href="mailto:info@legal-support.ru">info@legal-support.ru</a>
+					<div class="page-footer-lp__opening-hours">Часы работы: пн-пт, 09:00—19:00</div>
+				</address>
+				<ul class="social-links social-links--inline social-links--lp">
+					<li class="social-links__item"><a class="social-links__link social-links__link--vk" href="https://vk.com/gardium" target="_blank" rel="noopener noreferrer"></a></li>
+					<li class="social-links__item"><a class="social-links__link social-links__link--fb" href="https://www.facebook.com/gardiumrussia" target="_blank" rel="noopener noreferrer"></a></li>
+					<li class="social-links__item"><a class="social-links__link social-links__link--you" href="https://www.youtube.com/channel/UCGRvz9YiNWQ5xLiu6gWNfiw" target="_blank" rel="noopener noreferrer"></a></li>
+					<li class="social-links__item"><a class="social-links__link social-links__link--tw" href="https://twitter.com/gardium_russia" target="_blank" rel="noopener noreferrer"></a></li>
+				</ul>
+				<div class="page-footer-lp__copyright"><span>© 2004–2018, ООО «Гардиум». Все права защищены.</span><span>В составе <a class="link-lp" href="http://legal-support.ru/">группы компаний WiseAdvice</a></span></div>
+			</div>
+			<div class="col-lp-1-2-lg page-footer-lp__right-col">
+				<ul class="page-footer-lp__nav-list">
+					<li class="page-footer-lp__nav-item"><a href="#">О бюро</a></li>
+					<li class="page-footer-lp__nav-item"><a href="#">Услуги</a></li>
+					<li class="page-footer-lp__nav-item"><a href="#">Пресс-центр</a></li>
+					<li class="page-footer-lp__nav-item"><a href="#">Мероприятия</a></li>
+					<li class="page-footer-lp__nav-item"><a href="#">Контакты</a></li>
+				</ul>
+				<div class="page-footer-lp__services">
+					<div class="page-footer-lp__services-item"><a class="page-footer-lp__services-title" href="#">Товарные знаки</a>
+						<ul class="page-footer-lp__services-list">
+							<li><a href="#">Торговые марки</a></li>
+							<li><a href="#">Логотипы</a></li>
+							<li><a href="#">Бренды</a></li>
+							<li></li><a href="#">Фирменные наименования</a>
+						</ul>
+					</div>
+					<div class="page-footer-lp__services-item"><a class="page-footer-lp__services-title" href="#">Споры</a>
+						<ul class="page-footer-lp__services-list">
+							<li><a href="#">Арбитражный суд</a></li>
+							<li><a href="#">Суд по интеллектуальным правам (СИП)</a></li>
+							<li><a href="#">Палата по патентным спорам (ППС)</a></li>
+							<li></li><a href="#">Федеральная антимонопольная службу (ФАС)</a>
+						</ul>
+					</div>
+					<div class="page-footer-lp__services-item"><a class="page-footer-lp__services-title" href="#">Договоры</a>
+						<ul class="page-footer-lp__services-list">
+							<li><a href="#">Лицензионные</a></li>
+							<li><a href="#">Франчайзинга</a></li>
+							<li><a href="#">Авторского заказа</a></li>
+						</ul>
+					</div>
+					<div class="page-footer-lp__services-item"><a class="page-footer-lp__services-title" href="#">Патентование</a>
+						<ul class="page-footer-lp__services-list">
+							<li><a href="#">Изобретения</a></li>
+							<li><a href="#">Полезные модели</a></li>
+							<li><a href="#">Промышленные образцы</a></li>
+							<li></li><a href="#">Международное патентование</a>
+						</ul>
+					</div>
+				</div>
+				<button class="page-footer-lp__link page-footer-lp__link--go-to-top js-back-to-top-lp" type="button">Наверх</button>
+			</div>
 		</div>
 	</div>
 </footer>
-<div class="modal" id="call-order">
-	<form class="form form--mt0 form--call-order js-form">
-		<div class="form-header">Заказ обратного звонка</div>
-		<div class="form-row">
-			<div class="form-col form-col-1-2 form-col--pb0">
-				<div class="form-input form-input--text">
-					<label for="form-input-10-1">Ваше имя<span class="asterisk">*</span></label>
-					<input id="form-input-10-1" type="text" placeholder="Сергей Заказчиков"/>
-				</div>
-			</div>
-			<div class="form-col form-col-1-2">
-				<div class="form-input form-input--text">
-					<label for="form-input-10-2">Телефон<span class="asterisk">*</span></label>
-					<input id="form-input-10-2" type="text" placeholder="+7 (925) 490-22-10"/>
-				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="form-row">
-			<div class="form-col form-col--pb0">
-				<div class="form-input-title form-input-title--radio">Что вас интересует?</div>
-			</div>
-			<div class="form-col form-col-1-2 form-col--pt0 form-col--pb0">
-				<div class="form-input form-input--radio js-form-radio-choise">
-					<div class="form-radio-wrapper">
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3" checked="checked"/> Товарные знаки
-						</label>
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3"/> Патенты (изобретения, полезные модели, пром. образцы)
-						</label>
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3"/> Программы ЭВМ
-						</label>
-					</div>
-				</div>
-			</div>
-			<div class="form-col form-col-1-2 form-col--pt0 form-col--pb0">
-				<div class="form-input form-input--radio js-form-radio-choise">
-					<div class="form-radio-wrapper">
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3"/> Патентные споры
-						</label>
-						<label class="input-radio">
-							<input type="radio" name="form-input-10-3"/> Другое
-						</label>
-					</div>
-				</div>
-			</div>
-		</div>
-		<hr/>
-		<div class="form-row">
-			<div class="form-col form-col-1-2">
-				<div class="form-input form-input--select">
-					<label for="form-input-1-9">Удобное время связи:</label>
-					<div class="form-select-wrapper">
-						<select class="js-form-select-in-modal" id="form-input-1-9">
-							<option value="0" selected="selected">В течение дня</option>
-							<option value="0">В течение дня2</option>
-							<option value="0">В течение дня3</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			<div class="form-col form-col-1-2">
-				<div class="form-input form-input--button">
-					<button class="btn btn-full" type="button">Заказать услугу</button>
-				</div>
-			</div>
-			<div class="form-col">
-				<div class="form-input form-input--check-footer js-form-privacy-agree">
-					<label class="input-checkbox">
-						<input id="form-input-1-17" type="checkbox" checked="checked"/><span class="hide-md js-form-privacy-agree-short">Соглашаюсь на
-							<button class="dotted js-form-privacy-agree-responsive-btn" type="button" target="_blank"><span>обработку персональных данных</span></button></span><span class="hide-up-to-md js-form-privacy-agree-full">Нажимая кнопку «Заказать услугу», я принимаю условия <a href="#" target="_blank">Пользовательского соглашения</a> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных <a href="#" target="_blank">Политикой конфиденциальности</a></span>
-					</label>
-				</div>
-			</div>
-		</div>
-	</form>
-</div>
-<div class="container">
-	<div class="buttons-round js-back-to-top">
-		<div class="buttons-round__left">
-			<button class="btn-round btn-round--call-us js-back-to-top" type="button">Позвонить</button>
-		</div>
-		<div class="buttons-round__right buttons-round--hidden">
-			<button class="btn-round btn-round--back-to-top js-back-to-top__btn" type="button">
-				<svg width="36" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprites/sprites-svg.svg#icon-arrow-up"></use></svg>Наверх</button>
-		</div>
-	</div>
-</div>
 <script type="text/javascript" src="../../js/vendor.js"></script>
 <script type="text/javascript" src="../../js/main.js"></script></body>
 </html>
