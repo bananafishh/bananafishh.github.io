@@ -9830,10 +9830,12 @@ textarea.field-text__input {
   color: #a5b1bc;
 }
 .page-footer-lp {
-  position: relative;
   padding-top: 50px;
   padding-bottom: 65px;
   background-color: #ebedf3;
+}
+.page-footer-lp .container-lg {
+  position: relative;
 }
 .page-footer-lp__logo {
   border-bottom: none;
@@ -9906,7 +9908,7 @@ textarea.field-text__input {
 .page-footer-lp__link--go-to-top {
   position: absolute;
   right: 20px;
-  bottom: 67px;
+  bottom: 0px;
   min-height: 35px;
   padding: 0;
   font-size: 0.928571428571429em;
