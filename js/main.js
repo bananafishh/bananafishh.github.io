@@ -373,14 +373,69 @@ App.Control.install({
 	name: 'FancyModalLp',
 	initialize: function () {
 		var self = this;
-		this.$el.fancybox({
+
+		this.fancyPopup = this.$el.fancybox({
 			wrapCSS: 'fancy-modal-lp',
+			padding: 0,
 			margin: ($(window).width() > 937) ? 20 : 5,
+			width: '100%',
+			maxWidth: 610,
+			height: 'auto',
+			autoSize: false,
 			fitToView: false,
-			padding: 0
+			autoCenter: true,
+
+			beforeLoad: function() {
+				if(self.$el.data('keep-with-parent')) {
+					this.autoCenter = false;
+					this.maxWidth = 400;
+					var position = this.element.offset();
+					position.left -= 40;
+
+			        $.fancybox._getPosition = function() {
+			            return position;
+			        }
+			        console.log('yea, baby')
+			        console.log(this.maxWidth);
+
+				} else {
+					console.log('no, baby')
+					 console.log(this.maxWidth);
+				}
+			}
 		});
+
+		// Когда попап нужно вывести на экране рядом с элементом,
+		// событие на котором его вызвало
+		// if(this.$el.data('keep-with-parent')) {
+		// 	console.log('l');
+		// 	self.fancyPopup = {
+		// 		autoCenter: false
+		// 	}
+		// }
 	}
 });
+
+
+// App.Control.install({
+// 	el: '.js-fancy-modal-lp-sm',
+// 	name: 'FancyModalLpSm',
+// 	initialize: function () {
+// 		var self = this;
+
+// 		this.fancyPopup = this.$el.fancybox({
+// 			wrapCSS: 'fancy-modal-lp-sm',
+// 			padding: 0,
+// 			margin: ($(window).width() > 937) ? 20 : 5,
+// 			width: '100%',
+// 			maxWidth: 400,
+// 			height: 'auto',
+// 			autoSize: false,
+// 			fitToView: false,
+// 			autoCenter: false
+// 		});
+// 	}
+// });
 
 
 App.Control.install({
