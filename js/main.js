@@ -1906,7 +1906,7 @@ var MainNavView = {
     },
 
     fixedNav: function() {
-        if ( $(window).scrollTop() > this.mainNavOffsetTop + this.mainNavHeight ) {
+        if ( $(window).scrollTop() > this.mainNavOffsetTop) {
             this.$el.addClass('main-nav--fixed');
         } else {
             this.$el.removeClass('main-nav--fixed');
