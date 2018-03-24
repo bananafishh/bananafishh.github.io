@@ -2989,7 +2989,7 @@ html {
   background-color: #fff;
   box-sizing: border-box;
 }
-@media (max-width: 479px) {
+@media (max-width: 767px) {
   html.lp {
     font-size: 70%;
   }
@@ -7007,8 +7007,7 @@ textarea.field-text__input {
   margin-bottom: 10px;
 }
 .main-nav__menu-btn {
-  padding-top: 17px;
-  padding-bottom: 13px;
+  padding: 17px 0 13px;
   font-size: 1.285714285714286em;
   font-weight: 700;
   color: #fff;
@@ -7025,12 +7024,9 @@ textarea.field-text__input {
     display: none;
   }
 }
-.main-nav__menu-icon {
-  margin-right: 10px;
-}
 .main-nav__menu-text-link {
   display: inline-block;
-  margin-left: 14px;
+  margin-left: 10px;
 }
 .main-nav__full-version-link {
   display: none;
@@ -7054,6 +7050,17 @@ textarea.field-text__input {
 .main-nav__phone[href^="tel:"] {
   color: #fff;
 }
+.main-nav__logo-icon {
+  position: relative;
+  top: -2px;
+  margin-right: 17px;
+  vertical-align: middle;
+}
+@media (min-width: 900px) {
+  .main-nav__logo-icon {
+    display: none;
+  }
+}
 .main-nav--fixed {
   position: fixed;
   top: 0;
@@ -7065,6 +7072,9 @@ textarea.field-text__input {
   .main-nav--fixed .main-nav__menu-btn {
     float: left;
   }
+}
+.main-nav--fixed .main-nav__logo-icon {
+  display: none;
 }
 .main-nav--fixed .main-nav__phone {
   display: block;
@@ -7096,6 +7106,12 @@ textarea.field-text__input {
 .main-nav--lp .main-nav__menu-btn {
   font-family: "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
 }
+@media (max-width: 767px) {
+  .main-nav--lp .main-nav__menu-btn {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
 @media (min-width: 900px) {
   .main-nav--lp .main-nav__list {
     float: left;
@@ -7120,6 +7136,11 @@ textarea.field-text__input {
 }
 .main-nav--lp .main-nav__phone:hover {
   border-bottom-color: #fff;
+}
+@media (max-width: 767px) {
+  .main-nav--lp .main-nav__phone {
+    margin-top: 15px;
+  }
 }
 @media (max-width: 899px) {
   .main-nav--lp .main-nav__phone {
@@ -10369,7 +10390,7 @@ textarea.field-text__input {
 }
 @media (min-width: 480px) {
   .page-header__phone-lp {
-    font-size: 1.571428571428571em;
+    font-size: 2em;
   }
 }
 @media (min-width: 768px) {
