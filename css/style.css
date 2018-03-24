@@ -7024,6 +7024,17 @@ textarea.field-text__input {
     display: none;
   }
 }
+.main-nav__menu-icon svg {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  vertical-align: middle;
+}
+@media (min-width: 768px) {
+  .main-nav__menu-icon svg {
+    top: -2px;
+  }
+}
 .main-nav__menu-text-link {
   display: inline-block;
   margin-left: 10px;
