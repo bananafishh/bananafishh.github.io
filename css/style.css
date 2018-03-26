@@ -5059,6 +5059,7 @@ input[type="search"] {
   position: absolute;
   left: -142px;
   bottom: 0;
+  z-index: 1;
 }
 @media (max-width: 1199px) {
   .experts-block-lp__img-wrapper {
@@ -5084,6 +5085,8 @@ input[type="search"] {
   width: 100%;
 }
 .experts-block-lp__info {
+  position: relative;
+  z-index: 10;
   width: 45%;
   height: 100%;
   margin-left: 315px;
@@ -14095,7 +14098,7 @@ html [type="button"],
   width: 40px;
   height: 40px;
   font-family: "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
-  font-size: 2.181818181818182em;
+  font-size: 24px;
   font-weight: 700;
   line-height: 41px;
   color: #ff1037;
@@ -14109,7 +14112,7 @@ html [type="button"],
     top: -8px;
     width: 60px;
     height: 60px;
-    font-size: 2.5em;
+    font-size: 35px;
     line-height: 61px;
   }
 }
@@ -14118,7 +14121,7 @@ html [type="button"],
     top: -20px;
     width: 85px;
     height: 85px;
-    font-size: 3em;
+    font-size: 42px;
     line-height: 87px;
   }
 }
