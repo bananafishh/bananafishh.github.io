@@ -5151,6 +5151,11 @@ input[type="search"] {
     padding-top: 15px;
   }
 }
+@media (min-width: 1200px) {
+  .experts-block-lp__img-section {
+    margin-left: -5px;
+  }
+}
 .experts-block-lp__img-expert {
   width: 106px;
   height: 106px;
