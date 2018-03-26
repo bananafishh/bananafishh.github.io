@@ -182,7 +182,9 @@ var ClientsSlider = {
 		this.sliderMd = this.$el.bxSlider({
 			slideMargin: 20,
 			adaptiveHeight: true,
-			infiniteLoop: true
+			infiniteLoop: true,
+			slideWidth: 150,
+
 		});
 	},
 	/*resizeSlider: function(){
