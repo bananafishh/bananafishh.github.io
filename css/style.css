@@ -10482,7 +10482,7 @@ textarea.field-text__input {
     margin-top: 16px;
   }
 }
-@media (min-width: 340px) {
+@media (min-width: 768px) {
   .page-header__contacts {
     text-align: right;
   }
