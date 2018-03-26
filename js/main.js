@@ -270,7 +270,7 @@ var EqualHeight = {
 };
 
 App.Control.install(EqualHeight);
-var ExpertsSlider = {
+/*var ExpertsSlider = {
 	el: '.js-experts-block-slider',
 	name: 'ExpertsSlider',
 	slider:null,
@@ -319,7 +319,30 @@ var ExpertsSlider = {
 
 };
 
-App.Control.install(ExpertsSlider);
+App.Control.install(ExpertsSlider);*/
+
+var ExpertsBlock = {
+	el: '.js-experts-block',
+	name: 'ExpertsBlock',
+	initialize: function () {
+		this.activeExpert = this.$('.js-experts-active');
+		this.btn = this.$('.js-experts-block__btn');
+		this.activeExpertIndex = this.activeExpert.index();
+		this.expertSections = this.$('.js-experts-block__section');
+		this.expertSections.eq(this.activeExpertIndex).addClass('is-active');
+	},
+	events: {
+		'click .js-experts-block__btn': 'activeExperts'
+	},
+	activeExperts: function(evt){
+		var target = $(evt.currentTarget);
+		this.btn.removeClass('experts-block-lp__img-expert--active js-experts-active');
+		target.addClass('experts-block-lp__img-expert--active js-experts-active');
+		this.expertSections.removeClass('is-active').eq(target.index()).addClass('is-active');
+	}
+};
+
+App.Control.install(ExpertsBlock);
 
 App.Control.install({
 		el: '.js-fancy-media',
@@ -374,7 +397,7 @@ App.Control.install({
 	initialize: function () {
 		var self = this;
 
-		this.fancyPopup = this.$el.fancybox({
+		this.$el.fancybox({
 			wrapCSS: 'fancy-modal-lp',
 			padding: 0,
 			margin: ($(window).width() > 937) ? 20 : 5,
@@ -383,59 +406,45 @@ App.Control.install({
 			height: 'auto',
 			autoSize: false,
 			fitToView: false,
-			autoCenter: true,
-
-			beforeLoad: function() {
-				if(self.$el.data('keep-with-parent')) {
-					this.autoCenter = false;
-					this.maxWidth = 400;
-					var position = this.element.offset();
-					position.left -= 40;
-
-			        $.fancybox._getPosition = function() {
-			            return position;
-			        }
-			        console.log('yea, baby')
-			        console.log(this.maxWidth);
-
-				} else {
-					console.log('no, baby')
-					 console.log(this.maxWidth);
+			helpers : {
+				overlay : {
+					css : {
+						'background' : 'rgba(34, 44, 72, 0.5)'
+					}
 				}
 			}
 		});
-
-		// Когда попап нужно вывести на экране рядом с элементом,
-		// событие на котором его вызвало
-		// if(this.$el.data('keep-with-parent')) {
-		// 	console.log('l');
-		// 	self.fancyPopup = {
-		// 		autoCenter: false
-		// 	}
-		// }
 	}
 });
 
 
-// App.Control.install({
-// 	el: '.js-fancy-modal-lp-sm',
-// 	name: 'FancyModalLpSm',
-// 	initialize: function () {
-// 		var self = this;
 
-// 		this.fancyPopup = this.$el.fancybox({
-// 			wrapCSS: 'fancy-modal-lp-sm',
-// 			padding: 0,
-// 			margin: ($(window).width() > 937) ? 20 : 5,
-// 			width: '100%',
-// 			maxWidth: 400,
-// 			height: 'auto',
-// 			autoSize: false,
-// 			fitToView: false,
-// 			autoCenter: false
-// 		});
-// 	}
-// });
+App.Control.install({
+	el: '.js-fancy-modal-lp-sm',
+	name: 'FancyModalLpSmall',
+	initialize: function () {
+		var self = this;
+
+		this.fancyPopup = this.$el.fancybox({
+			wrapCSS: 'fancy-modal-lp-sm',
+			padding: 0,
+			margin: ($(window).width() > 937) ? 20 : 5,
+			width: '100%',
+			maxWidth: 400,
+			height: 'auto',
+			autoSize: false,
+			fitToView: false,
+			helpers : {
+				overlay : {
+					css : {
+						'background' : 'rgba(34, 44, 72, 0.5)'
+					}
+				}
+			}
+		});
+	}
+});
+
 
 
 App.Control.install({
@@ -1361,8 +1370,7 @@ var ShowContent = {
 			$(e.currentTarget).next('.js-show-content__content').slideToggle();
 
 			if ($(window).outerWidth() <= 767) {
-				this.$el.find('.js-show-content__block').fadeToggle();
-				this.$el.toggleClass('disputes-slider-lp--open-block');
+				this.$el.find('.js-show-content__block').slideToggle();
 			}
 		}
 
@@ -1380,6 +1388,7 @@ var ShowContent = {
 };
 
 App.Control.install(ShowContent);
+
 var ShowMore = {
 	el: '.js-show-more',
 	name: 'ShowMore',
@@ -1544,7 +1553,6 @@ var SliderPriceCards = {
 		if(!this.slider) {
 			this.slider = this.$el.bxSlider({
 				pager: false,
-				controls: false,
 				slideWidth: 400,
 				slideMargin: 20,
 				minSlides: 1,
@@ -1865,14 +1873,26 @@ App.Control.install(VerticalTabs);
 var DisputesSlider = {
 	el: '.js-disputes-slider-lp',
 	name: 'DisputesSlider',
+	slider: null,
 	initialize: function () {
-		this.$el.bxSlider({
+		//this.btn = this.$('.js-show-content__btn');
+		//this.block = this.$('.js-show-content__block');
+		this.slider=this.$el.bxSlider({
 			slideMargin: 20,
 			adaptiveHeight: true,
-			infiniteLoop: true,
-			touchEnabled: false
+			infiniteLoop: true
 		});
-	}
+	}/*,
+	events:{
+		'click .js-show-content__btn': 'reloadSlider'
+	},
+	reloadSlider:function(evt){
+		this.slider.redrawSlider();
+		console.log(this.slider);
+		$(evt.currentTarget).siblings('.js-show-content__block').removeClass('is-hide');
+	}*/
+
+
 };
 
 App.Control.install(DisputesSlider);
