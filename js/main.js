@@ -272,57 +272,6 @@ var EqualHeight = {
 };
 
 App.Control.install(EqualHeight);
-/*var ExpertsSlider = {
-	el: '.js-experts-block-slider',
-	name: 'ExpertsSlider',
-	slider:null,
-	initialize: function () {
-		this.renderMode();
-		var self = this;
-		$(window).bind('resize', function () {
-			self.resizeSlider();
-		});
-	},
-	renderMode: function () {
-		var self = this;
-		if ($(window).outerWidth() < 768) {
-			self.initSlider();
-		} else {
-			self.initSlider();
-			self.slider.destroySlider();
-		}
-	},
-	resizeSlider: function(){
-		var self = this;
-		if ($(window).outerWidth() < 768) {
-			self.initSlider();
-		} else {
-			self.destroySlider();
-		}
-	},
-
-	initSlider: function () {
-		if(!this.slider) {
-		this.slider = this.$el.bxSlider({
-			adaptiveHeight: true,
-			infiniteLoop: true,
-			pager: false,
-			slideWidth: 106,
-			maxSlides: 2
-		});
-		}
-	},
-	destroySlider: function(){
-		if(this.slider) {
-			this.slider.destroySlider();
-			this.slider=null;
-		}
-	}
-
-};
-
-App.Control.install(ExpertsSlider);*/
-
 var ExpertsBlock = {
 	el: '.js-experts-block',
 	name: 'ExpertsBlock',

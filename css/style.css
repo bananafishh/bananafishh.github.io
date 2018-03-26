@@ -7129,13 +7129,13 @@ textarea.field-text__input {
 }
 .main-nav__logo-icon {
   display: none;
-  margin-top: 15px;
+  margin-top: 14px;
   margin-right: 17px;
   vertical-align: middle;
 }
 @media (min-width: 768px) {
   .main-nav__logo-icon {
-    margin-top: 19px;
+    margin-top: 18px;
   }
 }
 .main-nav--fixed {
