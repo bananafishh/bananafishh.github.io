@@ -6126,6 +6126,7 @@ textarea.field-text__input {
 .form-card-lp__input--placeholder::-webkit-input-placeholder {
   font-weight: 700;
   color: #32404d;
+  padding-left: 9px;
   -ms-filter: none;
   filter: none;
   opacity: 1;
@@ -6133,6 +6134,7 @@ textarea.field-text__input {
 .form-card-lp__input--placeholder:-moz-placeholder {
   font-weight: 700;
   color: #32404d;
+  padding-left: 9px;
   -ms-filter: none;
   filter: none;
   opacity: 1;
@@ -6140,6 +6142,7 @@ textarea.field-text__input {
 .form-card-lp__input--placeholder::-moz-placeholder {
   font-weight: 700;
   color: #32404d;
+  padding-left: 9px;
   -ms-filter: none;
   filter: none;
   opacity: 1;
@@ -6147,6 +6150,7 @@ textarea.field-text__input {
 .form-card-lp__input--placeholder:-ms-input-placeholder {
   font-weight: 700;
   color: #32404d;
+  padding-left: 9px;
   -ms-filter: none;
   filter: none;
   opacity: 1;
