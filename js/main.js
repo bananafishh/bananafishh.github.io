@@ -1630,7 +1630,8 @@ var SliderPriceCards = {
 				minSlides: 1,
 				maxSlides: 1,
 				infiniteLoop: false,
-				startSlide: 1
+				startSlide: 1,
+				preventDefaultSwipeX: false
 			});
 		}
 	},
