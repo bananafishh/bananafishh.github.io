@@ -359,7 +359,7 @@ App.Control.install({
 		this.$el.fancybox({
 			wrapCSS: 'fancy-modal-lp',
 			padding: 0,
-			margin: ($(window).width() > 937) ? 20 : 5,
+			margin: ($(window).width() > 937) ? 20 : 10,
 			width: '100%',
 			maxWidth: 610,
 			height: 'auto',
@@ -396,7 +396,7 @@ App.Control.install({
 		this.fancyPopup = this.$el.fancybox({
 			wrapCSS: 'fancy-modal-lp-sm',
 			padding: 0,
-			margin: ($(window).width() > 937) ? 20 : 5,
+			margin: ($(window).width() > 937) ? 20 : 10,
 			width: '100%',
 			maxWidth: 400,
 			height: 'auto',
