@@ -3414,11 +3414,14 @@ input[type="search"] {
 .fancy-modal-lp-sm .fancybox-inner {
   overflow-y: hidden !important;
 }
-@media (max-width: 767px) {
-  .fancy-modal-lp,
-  .fancy-modal-lp-sm {
-    position: fixed !important;
-    top: 70px !important;
+@media (max-width: 650px) {
+  .fancy-modal-lp .fancybox-inner {
+    width: auto !important;
+  }
+}
+@media (max-width: 430px) {
+  .fancy-modal-lp-sm .fancybox-inner {
+    width: auto !important;
   }
 }
 .news .news-preview {

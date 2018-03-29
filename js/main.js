@@ -345,8 +345,16 @@ App.Control.install({
 App.Control.install({
 	el: '.js-fancy-modal-lp',
 	name: 'FancyModalLp',
+	breakpoint: 768,
 	initialize: function () {
+		this.ratio;
 		var self = this;
+
+		if ($(window).width() >= this.breakpoint) {
+			this.ratio = 0.5;
+		} else {
+			this.ratio = 0.15;
+		}
 
 		this.$el.fancybox({
 			wrapCSS: 'fancy-modal-lp',
@@ -357,6 +365,7 @@ App.Control.install({
 			height: 'auto',
 			autoSize: false,
 			fitToView: false,
+			topRatio: self.ratio,
 			helpers : {
 				overlay : {
 					css : {
@@ -373,8 +382,16 @@ App.Control.install({
 App.Control.install({
 	el: '.js-fancy-modal-lp-sm',
 	name: 'FancyModalLpSmall',
+	breakpoint: 768,
 	initialize: function () {
+		this.ratio;
 		var self = this;
+
+		if ($(window).width() >= this.breakpoint) {
+			this.ratio = 0.5;
+		} else {
+			this.ratio = 0.15;
+		}
 
 		this.fancyPopup = this.$el.fancybox({
 			wrapCSS: 'fancy-modal-lp-sm',
@@ -385,6 +402,7 @@ App.Control.install({
 			height: 'auto',
 			autoSize: false,
 			fitToView: false,
+			topRatio: self.ratio,
 			helpers : {
 				overlay : {
 					css : {
@@ -1630,8 +1648,7 @@ var SliderPriceCards = {
 				minSlides: 1,
 				maxSlides: 1,
 				infiniteLoop: false,
-				startSlide: 1,
-				preventDefaultSwipeX: false
+				startSlide: 1
 			});
 		}
 	},
