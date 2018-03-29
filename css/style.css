@@ -6279,11 +6279,6 @@ textarea.field-text__input {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-device-width: 1024px) {
-  .form-card-lp__label {
-    font-size: 16px;
-  }
-}
 .form-card-lp__input:focus+label,
 .form-card-lp__input._hide-label+label {
   display: none;
