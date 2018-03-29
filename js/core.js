@@ -14166,11 +14166,23 @@ var i=[];return this._findRelated().filter(":checked").each(function(){i.push(e(
 
 var App = _.create(Object.prototype, {
 	Views: {},
-	Plugins: {},
+	Plugins: new Proxy({}, {
+		set: function (target, prop, value, receiver) {
+			target[prop] = value;
+			if (!_.isEmpty(App.Control.Delayed[prop])) {
+				_.each(App.Control.Delayed[prop], function (options, index) {
+					App.Control.extend(prop, options);
+					App.Control.Delayed[prop].splice(index, 1);
+				});
+			}
+			return true;
+		}
+	}),
 	Control: {
 		instance: function (options) {
 			Backbone.View.call(this, options);
 		},
+		Delayed: {},
 		install: function (options) {
 			Backbone.$(function () {
 				if (!_.isEmpty(App.Plugins[options.name])) {
@@ -14201,8 +14213,16 @@ var App = _.create(Object.prototype, {
 		extend: function (pluginName, options) {
 			Backbone.$(function () {
 				if (_.isEmpty(App.Plugins[pluginName])) {
-					console.error('Application error: can not install "' + options.name + '" plugin. Extendable "' + pluginName + '" plugin is not define.');
-					return false;
+					App.Control.Delayed[pluginName] = App.Control.Delayed[pluginName] || [];
+					App.Control.Delayed[pluginName].push(options);
+					setTimeout(function () {
+						if (!_.isEmpty(App.Control.Delayed[pluginName])) {
+							_.each(App.Control.Delayed[pluginName], function (options) {
+								console.error('Application error: can not install "' + options.name + '" plugin. Extendable "' + pluginName + '" plugin is not define.');
+							});
+						}
+					}, 3300);
+					return;
 				}
 				App.Control.install(_.extend(_.clone(App.Plugins[pluginName]), options));
 			});

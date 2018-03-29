@@ -6212,6 +6212,14 @@ textarea.field-text__input {
 .form-card-lp__input--placeholder:focus:-ms-input-placeholder {
   font-size: 0;
 }
+.form-card-lp__input._error {
+  outline: #ff1037 auto 5px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-device-width: 1024px) {
+  .form-card-lp__input {
+    font-size: 16px;
+  }
+}
 .form-card-lp__block {
   position: relative;
 }
@@ -6271,8 +6279,13 @@ textarea.field-text__input {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-device-width: 1024px) {
+  .form-card-lp__label {
+    font-size: 16px;
+  }
+}
 .form-card-lp__input:focus+label,
-.form-card-lp__input:valid+label {
+.form-card-lp__input._hide-label+label {
   display: none;
 }
 .form-card-lp__checkbox {
@@ -6366,6 +6379,9 @@ textarea.field-text__input {
   .form-card-lp__name {
     display: none;
   }
+}
+.form-lp-input--checkbox._error label {
+  color: #ff1037;
 }
 .form-feedback {
   padding-top: 10px;
@@ -11726,6 +11742,15 @@ main > .container > .row-md:first-child > [class*=col-] > .h2-like:first-child {
     position: relative;
     left: -25.75%;
   }
+  .col-inline-1-2-md {
+    display: inline-block;
+    width: 48.9%;
+    vertical-align: middle;
+    margin-left: 0%;
+  }
+  .col-inline-1-2-md:not(:last-child) {
+    margin-right: 1.6%;
+  }
 }
 @media (min-width: 992px) {
   .row-lg:before {
@@ -12638,6 +12663,16 @@ html [type="button"],
 .btn-lp--sm {
   padding: 13px 19px 10px;
   font-size: 0.928571428571429em;
+}
+.btn-lp[disabled="disabled"],
+.btn-lp._disabled {
+  background-color: #b9c0c5;
+  color: #e6ebed;
+}
+.btn-lp[disabled="disabled"]:hover,
+.btn-lp._disabled:hover {
+  background-color: #b9c0c5;
+  color: #e6ebed;
 }
 .btn-block {
   display: block;

@@ -722,7 +722,8 @@ App.Control.install({
 		$formInputs = $tmpInputs.filter(':visible')
 			.add(this.$el.find('.input-file').filter(':visible').find(':file'))
 			.add(this.$el.find('.input-multifile').filter(':visible').find(':file'))
-			.add($tmpInputs.filter('input[type=hidden]'));
+			.add($tmpInputs.filter('input[type=hidden]'))
+			.add($tmpInputs.filter('[data-mustvalidate]'));
 
 		return $formInputs;
 	},
@@ -878,6 +879,89 @@ App.Control.install({
 		}
 		else
 			return $();
+	}
+});
+
+App.Control.extend('FormFabric', {
+	el: '.js-form-lp',
+	name: 'FormFabricLP',
+
+	/**
+	 * Get control of form
+	 */
+	initialize: function () {
+
+		/**
+		 * Check and find UI interactive fields
+		 */
+
+		this.textInputs = this.$el.find('.form-lp-input--text');
+		this.fileInputs = this.$el.find('.form-lp-input--file');
+
+		/**
+		 * More UI elements initialization...
+		 */
+
+		if (this.textInputs)
+			this.initTextInputControl();
+
+		if (this.fileInputs)
+			this.initFileInputControl();
+
+		/**
+		 * Add masks and validation rules for phone fields
+		 */
+
+		this.$el.find('input[type=\'tel\']').inputmask({alias: 'phone'});
+		this.$el.find('input[type=\'tel\']').parsley({phone: ''});
+
+		/**
+		 * Submit by button click event handler
+		 */
+
+		if (_.isElement(this.$el.find(this.submitButton)[0]))
+			this.$el.find(this.submitButton).on('click', this.$el, _.bind(this.submitProcess, this));
+
+		/**
+		 * Get URL to send
+		 */
+		this.gateway = this.buildGatewayPath();
+
+		this.$validateFalseFields = $([]);
+	},
+
+	/**
+	 * UI controls initialises...
+	 */
+
+	initTextInputControl: function () {
+		var self = this;
+		_.each(this.textInputs, function (textInput) {
+
+			$(textInput).find('input').mouseenter( function () {
+				$(this).addClass('_hide-label');
+			} ).mouseleave( function () {
+				if(_.isEmpty($(this).val()))
+					$(this).removeClass('_hide-label');
+			} ).focusout( function () {
+				if(!$(this).val())
+					$(this).removeClass('_hide-label');
+			} );
+
+		});
+	},
+
+	initFileInputControl: function () {
+		var self = this;
+		_.each(this.fileInputs, function (fileInput) {
+
+			var $textInput = $(fileInput).find('input[type="text"]');
+
+			$(fileInput).find('input[type="file"]').change(function () {
+				$textInput.val($(this).val().replace(/.*\\/, "")).trigger('mouseenter');
+			});
+
+		});
 	}
 });
 var MainOfficeMap = {
