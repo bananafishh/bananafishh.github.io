@@ -6212,7 +6212,7 @@ textarea.field-text__input {
 .form-card-lp__input._error {
   outline: #ff1037 auto 5px;
 }
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-device-width: 768px) {
+@media screen and (max-device-width: 768px) {
   .form-card-lp__input {
     font-size: 16px;
   }
