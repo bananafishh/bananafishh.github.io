@@ -1,8 +1,3 @@
-(function(c){function l(a){return a?"object"==typeof a||"function"==typeof a:!1}if(!c.Proxy){var m=null;c.a=function(a,b){function c(){}if(!l(a)||!l(b))throw new TypeError("Cannot create proxy with a non-object as target or handler");m=function(){c=function(a){throw new TypeError("Cannot perform '"+a+"' on a proxy that has been revoked");}};var e=b;b={get:null,set:null,apply:null,construct:null};for(var h in e){if(!(h in b))throw new TypeError("Proxy polyfill does not support trap '"+h+"'");b[h]=
-e[h]}"function"==typeof e&&(b.apply=e.apply.bind(e));var d=this,n=!1,p="function"==typeof a;if(b.apply||b.construct||p)d=function(){var g=this&&this.constructor===d,f=Array.prototype.slice.call(arguments);c(g?"construct":"apply");if(g&&b.construct)return b.construct.call(this,a,f);if(!g&&b.apply)return b.apply(a,this,f);if(p)return g?(f.unshift(a),new (a.bind.apply(a,f))):a.apply(this,f);throw new TypeError(g?"not a constructor":"not a function");},n=!0;var q=b.get?function(a){c("get");return b.get(this,
-a,d)}:function(a){c("get");return this[a]},t=b.set?function(a,f){c("set");b.set(this,a,f,d)}:function(a,b){c("set");this[a]=b},r={};Object.getOwnPropertyNames(a).forEach(function(b){n&&b in d||(Object.defineProperty(d,b,{enumerable:!!Object.getOwnPropertyDescriptor(a,b).enumerable,get:q.bind(a,b),set:t.bind(a,b)}),r[b]=!0)});e=!0;Object.setPrototypeOf?Object.setPrototypeOf(d,Object.getPrototypeOf(a)):d.__proto__?d.__proto__=a.__proto__:e=!1;if(b.get||!e)for(var k in a)r[k]||Object.defineProperty(d,
-k,{get:q.bind(a,k)});Object.seal(a);Object.seal(d);return d};c.a.b=function(a,b){return{proxy:new c.a(a,b),revoke:m}};c.a.revocable=c.a.b;c.Proxy=c.a}})("undefined"!==typeof process&&"[object process]"=={}.toString.call(process)?global:self);
-
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -14170,19 +14165,8 @@ var i=[];return this._findRelated().filter(":checked").each(function(){i.push(e(
 });
 
 var App = _.create(Object.prototype, {
-  Views: {},
-  Plugins: new Proxy({}, {
-    set: function (target, prop, value, receiver) {
-      target[prop] = value;
-      if (!_.isEmpty(App.Control.Delayed[prop])) {
-        _.each(App.Control.Delayed[prop], function (options, index) {
-          App.Control.extend(prop, options);
-          App.Control.Delayed[prop].splice(index, 1);
-        });
-      }
-      return true;
-    }
-  }),
+  Views: _.create(Object.prototype, {}),
+  Plugins: _.create(Object.prototype, {}),
   Control: {
     instance: function (options) {
       Backbone.View.call(this, options);
@@ -14190,20 +14174,27 @@ var App = _.create(Object.prototype, {
     Delayed: {},
     install: function (options) {
       Backbone.$(function () {
-        if (!_.isEmpty(App.Plugins[options.name])) {
-          console.error('Application error: "' + options.name + '" plugin is already define.');
+        var pluginName = options.name;
+        if (!_.isEmpty(App.Plugins[pluginName])) {
+          console.error('Application error: "' + pluginName + '" plugin is already define.');
         }
-        App.Plugins[options.name] = options;
+        App.Plugins[pluginName] = options;
+        if (!_.isEmpty(App.Control.Delayed[pluginName])) {
+          _.each(App.Control.Delayed[pluginName], function (options, index) {
+            App.Control.extend(pluginName, options);
+            App.Control.Delayed[pluginName].splice(index, 1);
+          });
+        }
         if (!Backbone.$(options.el).length) {
           return false;
         }
-        App.Views[options.name] = [];
+        App.Views[pluginName] = [];
         var objArr = [];
         Backbone.$(options.el).each(function () {
           objArr.push(App.Control.construct(Backbone.$(this), options));
         });
-        App.Views[options.name] = objArr;
-        return App.Views[options.name];
+        App.Views[pluginName] = objArr;
+        return App.Views[pluginName];
       });
     },
     construct: function ($el, options) {
