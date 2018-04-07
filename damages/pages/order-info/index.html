@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>MyProject</title>
+	<link rel="stylesheet" href="../../css/style.css" media="screen"/><!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!-- @todo: add modernizer or shim and other respond.js-->
+	<script type="text/javascript" src="../../js/core.js"></script>
+	<script>
+		// Управление загрузкой кастомного шрифта
+		(function() {
+		    if( sessionStorage.foutFontsLoaded ) {
+		        document.documentElement.className += " fonts-loaded";
+		        return;
+		    }
+		
+		    //Font Face Observer v2.0.13
+		    (function(){'use strict';var f,g=[];function l(a){g.push(a);1==g.length&&f()}function m(){for(;g.length;)g[0](),g.shift()}f=function(){setTimeout(m)};function n(a){this.a=p;this.b=void 0;this.f=[];var b=this;try{a(function(a){q(b,a)},function(a){r(b,a)})}catch(c){r(b,c)}}var p=2;function t(a){return new n(function(b,c){c(a)})}function u(a){return new n(function(b){b(a)})}function q(a,b){if(a.a==p){if(b==a)throw new TypeError;var c=!1;try{var d=b&&b.then;if(null!=b&&"object"==typeof b&&"function"==typeof d){d.call(b,function(b){c||q(a,b);c=!0},function(b){c||r(a,b);c=!0});return}}catch(e){c||r(a,e);return}a.a=0;a.b=b;v(a)}}
+		    function r(a,b){if(a.a==p){if(b==a)throw new TypeError;a.a=1;a.b=b;v(a)}}function v(a){l(function(){if(a.a!=p)for(;a.f.length;){var b=a.f.shift(),c=b[0],d=b[1],e=b[2],b=b[3];try{0==a.a?"function"==typeof c?e(c.call(void 0,a.b)):e(a.b):1==a.a&&("function"==typeof d?e(d.call(void 0,a.b)):b(a.b))}catch(h){b(h)}}})}n.prototype.g=function(a){return this.c(void 0,a)};n.prototype.c=function(a,b){var c=this;return new n(function(d,e){c.f.push([a,b,d,e]);v(c)})};
+		    function w(a){return new n(function(b,c){function d(c){return function(d){h[c]=d;e+=1;e==a.length&&b(h)}}var e=0,h=[];0==a.length&&b(h);for(var k=0;k<a.length;k+=1)u(a[k]).c(d(k),c)})}function x(a){return new n(function(b,c){for(var d=0;d<a.length;d+=1)u(a[d]).c(b,c)})};window.Promise||(window.Promise=n,window.Promise.resolve=u,window.Promise.reject=t,window.Promise.race=x,window.Promise.all=w,window.Promise.prototype.then=n.prototype.c,window.Promise.prototype["catch"]=n.prototype.g);}());
+		
+		    (function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+		    this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
+		    function t(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function y(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;y(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);y(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,E=null,F=null;function G(){if(null===C)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);C=!!a&&603>parseInt(a[1],10)}else C=!1;return C}function J(){null===F&&(F=!!document.fonts);return F}
+		    function K(){if(null===E){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}E=""!==a.style.font}return E}function L(a,b){return[a.style,a.weight,K()?a.stretch:"","100px",b].join(" ")}
+		    A.prototype.load=function(a,b){var c=this,k=a||"BESbswy",q=0,D=b||3E3,H=(new Date).getTime();return new Promise(function(a,b){if(J()&&!G()){var M=new Promise(function(a,b){function e(){(new Date).getTime()-H>=D?b():document.fonts.load(L(c,'"'+c.family+'"'),k).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),N=new Promise(function(a,c){q=setTimeout(c,D)});Promise.race([N,M]).then(function(){clearTimeout(q);a(c)},function(){b(c)})}else m(function(){function u(){var b;if(b=-1!=
+		    f&&-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),B=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=B&&(f==v&&g==v&&h==v||f==w&&g==w&&h==w||f==x&&g==x&&h==x)),b=!b;b&&(d.parentNode&&d.parentNode.removeChild(d),clearTimeout(q),a(c))}function I(){if((new Date).getTime()-H>=D)d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,
+		    g=n.a.offsetWidth,h=p.a.offsetWidth,u();q=setTimeout(I,50)}}var e=new r(k),n=new r(k),p=new r(k),f=-1,g=-1,h=-1,v=-1,w=-1,x=-1,d=document.createElement("div");d.dir="ltr";t(e,L(c,"sans-serif"));t(n,L(c,"serif"));t(p,L(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);v=e.a.offsetWidth;w=n.a.offsetWidth;x=p.a.offsetWidth;I();z(e,function(a){f=a;u()});t(e,L(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;u()});t(n,L(c,'"'+c.family+'",serif'));
+		    z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
+		
+		
+		    var font = new FontFaceObserver('Segoe UI', {
+		        weight: 400,
+		        style: 'normal'
+		    });
+		
+		    var fontSemiLight = new FontFaceObserver('Segoe UI', {
+		        weight: 300,
+		        style: 'normal'
+		    });
+		
+		    var fontSemiBold = new FontFaceObserver('Segoe UI', {
+		        weight: 700,
+		        style: 'normal'
+		    });
+		
+		    var fontBold = new FontFaceObserver('Segoe UI', {
+		        weight: 800,
+		        style: 'normal'
+		    });
+		
+		    var fontItalic = new FontFaceObserver('Segoe UI', {
+		        weight: 400,
+		        style: 'italic'
+		    });
+		
+		    Promise.all([font.load(), fontSemiLight.load(), fontSemiBold.load(), fontBold.load()]), fontItalic.load().then(function () {
+		        document.documentElement.className += " fonts-loaded";
+		
+		        sessionStorage.foutFontsLoaded = true;
+		    });
+		})();
+		
+		
+	</script>
+</head><body>
+<header class="page-header">
+	<div class="container">
+		<div class="page-header__inner">
+			<div class="page-header__logo"><a href="#"><img src="../../assets/images/logo-min.png" alt="Honest - экспертные и юридические услуги"/></a></div>
+			<div class="page-header__slogan">
+				<div class="page-header__slogan-title">Независимая экспертиза №1</div>
+				<div class="page-header__slogan-text">в Московском регионе</div><a href="#">Подробнее</a>
+			</div>
+			<div class="page-header__contacts">
+				<select class="js-city-selection">
+					<option value="Москва" selected="selected">Москва</option>
+					<option value="Санкт-Петербург">Санкт-Петербург</option>
+					<option value="Нальчик">Нальчик</option>
+				</select>
+				<address class="page-header__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>
+				<div class="page-header__call-order"><a class="link link--dotted-border link--icon-phone-before js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div><a class="link link--icon-metro" href="#">Рязанский проспект</a>
+			</div>
+		</div>
+	</div>
+</header>
+<nav class="main-nav js-main-nav">
+	<div class="main-nav__inner">
+		<div class="main-nav__menu-btn-wrap js-main-nav__btn">
+			<button class="main-nav__menu-btn" type="button">Меню</button>
+		</div>
+		<ul class="main-nav__list js-main-nav__list">
+			<li class="main-nav__item"><a class="main-nav__link" href="#">О&nbsp;компании</a></li>
+			<li class="main-nav__item"><a class="main-nav__link main-nav__link--has-dropdown" href="#">Услуги</a>
+				<ul class="main-nav__dropdown">
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-car" href="#">Экспертиза после ДТП</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-file" href="#">Оценка автомобиля</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-dropdown main-nav__dropdown-link--has-icon-tool" href="#">Оценка качества ремонта</a>
+						<ul class="main-nav__dropdown-second">
+							<li class="main-nav__dropdown-second-item"><a class="main-nav__dropdown-second-link" href="#">Экспертиза неисправностей автомобиля</a></li>
+							<li class="main-nav__dropdown-second-item"><a class="main-nav__dropdown-second-link" href="#">Экспертиза узлов и агрегатов</a></li>
+							<li class="main-nav__dropdown-second-item"><a class="main-nav__dropdown-second-link" href="#">Экспертиза ДВС</a></li>
+							<li class="main-nav__dropdown-second-item"><a class="main-nav__dropdown-second-link" href="#">Экспертиза ЛКП</a></li>
+						</ul>
+					</li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-house" href="#">Оценка ущерба недвижимости</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-dna" href="#">Генетическая экспертиза</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-cart" href="#">Товароведческая экспертиза</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-pen" href="#">Почерковедческая экспертиза</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-court" href="#">Судебная экспертиза</a></li>
+					<li class="main-nav__dropdown-item"><a class="main-nav__dropdown-link main-nav__dropdown-link--has-icon-camera" href="#">Портретная экспертиза (фото/видео)</a></li>
+				</ul>
+			</li>
+			<li class="main-nav__item"><a class="main-nav__link" href="#">Цены</a></li>
+			<li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="breadcrumbs">
+	<ul class="breadcrumbs__list container">
+		<li><a class="breadcrumbs__link" href="/">Главная</a></li>
+	</ul>
+</div>
+<main>
+	<section class="section">
+		<div class="container">
+			<h1>Сергей, спасибо, что оставили заявку!</h1>
+			<p>К сожалению, сейчас мы закрыты, но наш менеджер свяжется с вами <b>утром следующего рабочего дня.</b></p>
+			<div class="opening-hours section__last-block">
+				<h3>Наш график работы:</h3>
+				<table>
+					<tbody>
+						<tr>
+							<td>пн-пт</td>
+							<td>9:00-20:00</td>
+						</tr>
+						<tr>
+							<td>сб</td>
+							<td>10:00-14:00</td>
+						</tr>
+						<tr>
+							<td>вс</td>
+							<td>выходной</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<section class="section section--gray">
+		<div class="container">
+			<h2>Параметры заявки:</h2>
+			<div class="order-details section__last-block">
+				<table>
+					<tbody>
+						<tr>
+							<td><b>Тема:</b></td>
+							<td> Автоэкспертиза</td>
+						</tr>
+						<tr>
+							<td><b>Имя: </b></td>
+							<td>Сергей</td>
+						</tr>
+						<tr>
+							<td><b>Телефон: </b></td>
+							<td>+7 (903) 444-44-52</td>
+						</tr>
+						<tr>
+							<td><b>E-mail: </b></td>
+							<td>zakazchikov@gmail.com</td>
+						</tr>
+						<tr>
+							<td><b>Сумма:  </b></td>
+							<td>5 000 &#8381;</td>
+						</tr>
+						<tr>
+							<td><b>Комментарий:  </b></td>
+							<td>Ехал я ехал, а тут как жираф на дорогу выскочит, я в него и врезался. Теперь страховая отказывается компенсировать убыток, так как форс-мажор</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="mobile-wrapper">
+					<div class="h3-like"><b>Тема: </b></div>
+					<p>Автоэкспертиза</p>
+					<div class="h3-like"><b>Имя:</b></div>
+					<p>Сергей</p>
+					<div class="h3-like"><b>Телефон:</b></div>
+					<p>+7 (903) 444-44-52</p>
+					<div class="h3-like"><b>E-mail:</b></div>
+					<p>zakazchikov@gmail.com</p>
+					<div class="h3-like"><b>Сумма:</b></div>
+					<p>5 000 &#8381;</p>
+					<div class="h3-like"> <b>Комментарий:</b></div>
+					<p>Ехал я ехал, а тут как жираф на дорогу выскочит, я в него и врезался. Теперь страховая отказывается компенсировать убыток, так как форс-мажор</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<h2><a href="">Новости и статьи</a></h2>
+			<div class="slider-news section__last-block">
+				<div class="js-slider-news">
+					<div class="slider-news__slide">
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="">Новости Honest</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Послезавтра. Тарифы на ОСАГО</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="">Новости Honest</a> <a class="news-preview__tag" href="">Наши расследования</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-news__slide">
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-news__slide">
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+<div class="modal" id="order-info">
+	<h2 class="modal__title">Оформление заявки</h2>
+	<form class="form form--two-col" action="" method="">
+		<p>Заяка на услугу <b>портретной экспертизы</b> стоимостью от <b>5 000 &#8381;</b></p>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="tel" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="email">E-mail</label>
+			<input class="field-text__input" id="email" type="email"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment">Ехал я ехал, а тут как жираф на дорогу выскочит, я в него и врезался. Теперь страховая отказывается компенсировать убыток, так как форс-мажор</textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn" type="submit" value="Заказать"/>
+		</div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+	</form>
+</div>
+<footer class="page-footer">
+	<div class="container">
+		<div class="page-footer__inner">
+			<div class="page-footer__col">
+				<div class="page-footer__copyright">© 2005—2016, «Honest»<br> Все права защищены</div>
+				<ul class="social-links page-footer__social-links">
+					<li><a class="social-links__link social-links__link--fb" href="https://www.facebook.com/pages/Honest-%D0%BD%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%B0%D1%8F-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D1%82%D0%B8%D0%B7%D0%B0/187781641370532" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+					<li><a class="social-links__link social-links__link--vk" href="http://vk.com/honestexpert" target="_blank" rel="noopener noreferrer">Вконтакте</a></li>
+					<li><a class="social-links__link social-links__link--ok" href="http://ok.ru/honest.expert" target="_blank" rel="noopener noreferrer">Одноклассники</a></li>
+					<li><a class="social-links__link social-links__link--google" href="https://plus.google.com/u/0/102624426359032386043/posts" target="_blank" rel="noopener noreferrer">Google Plus</a></li>
+				</ul>
+				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link link--dotted-border" href="">Схема проезда</a>
+			</div>
+			<div class="page-footer__col">
+				<div class="page-footer__promo">
+					<address class="page-footer__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>Ваш промо-код: 28925
+				</div><a class="link link--dotted-border js-fancy-modal" href="#phone-call-order">Заказать обратный звонок</a>
+				<table class="page-footer__working-hours">
+					<tbody>
+						<tr>
+							<td>пн-пт</td>
+							<td>9:00-20:00</td>
+						</tr>
+						<tr>
+							<td>сб</td>
+							<td>10:00-14:00</td>
+						</tr>
+						<tr>
+							<td>вс</td>
+							<td>выходной</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="page-footer__col">
+				<ul class="page-footer__nav">
+					<li><a href="">Независимая автоэкспертиза</a></li>
+					<li><a href="">Оценка ущерба: залив</a></li>
+					<li><a href="">20+ видов экспертиз</a></li>
+					<li><a href="">Юристы (суд)</a></li>
+					<li><a href="">Судебная экспертиза</a></li>
+					<li><a href="">Выкуп долга ОСАГО за 1 день</a></li>
+					<li><a href="">Бесплатный ремонт по ОСАГО</a></li>
+					<li><a href="">Партнерская программа</a></li>
+					<li><a href="">Корпоративным клиентам</a></li>
+				</ul>
+			</div>
+			<div class="page-footer__col">
+				<div class="page-footer__author">Разработка сайта —<br/><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
+				<ul class="payment-systems page-footer__payment-systems">
+					<li class="payment-systems__item--visa">Платежная система Visa</li>
+					<li class="payment-systems__item--mastercard">Платежная система MasterCard</li>
+				</ul>
+				<div class="page-footer__other-companies js-show-content">Другие компании<br/> консалтинговой группы<br/>
+					<button class="link link--dotted-border link--has-arrow js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
+				</div>
+			</div>
+		</div>
+		<ul class="page-footer__links row-md" data-target="other-wiseadvice-companies">
+			<li class="col-1-3-cycle-md"><a href="http://arplaw.ru/"><b>Арбитражное адвокатское бюро «АРП»</b></a><br/>арбитраж, споры и конфликты, юридические услуги</li>
+			<li class="col-1-3-cycle-md"><a href="http://1c-wiseadvice.ru/book-keeping/"><b>Бухгалтерские услуги в Москве</b></a></li>
+			<li class="col-1-3-cycle-md"><a href="http://arplaw.ru/"><b>Налоговые адвокаты и юристы</b></a><br/>налоговые проверки ИФНС, ОБЭП, возмещение НДС</li>
+			<li class="col-1-3-cycle-md"><a href="http://www.pravovest-audit.ru"><b>Аудиторская фирма «WiseAdvice»</b></a><br/>аудиторские услуги по РСБУ и МСФО</li>
+			<li class="col-1-3-cycle-md"><a href="http://intelis-it.ru/"><b>Услуги 1С Франчайзи</b></a><br/>внедрение, сопровождение, проекты по 1С</li>
+			<li class="col-1-3-cycle-md"><a href="http://www.damages.ru"><b>Независимая экспертиза №1 «Хонест»</b></a><br/>автоэкспертиза, возмещение ущерба от ДТП, залива и пр.</li>
+			<li class="col-1-3-cycle-md"><a href="http://www.intelis-ocenka.ru/"><b>Услуги по независимой оценке</b></a><br/>оценка недвижимости, оборудования, бизнеса</li>
+			<li class="col-1-3-cycle-md"><a href="http://www.1cashflow.ru/"><b>Программы на 1С - «Финансист»</b></a><br/>автоматизация бюджетирования, казначейства, упр.учета</li>
+			<li class="col-1-3-cycle-md"><a href="http://you-right.ru/"><b>Линейка программ «Юрайт»</b></a><br/>программы для юристов и юридических фирм</li>
+		</ul>
+	</div>
+</footer>
+<div class="modal" id="phone-call-order">
+	<h2 class="modal__title">Заказать звонок</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="tel" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn" type="submit" value="Заказать"/>
+		</div>
+	</form>
+</div>
+<div class="modal" id="phone-call-order--full-version">
+	<h2 class="modal__title">Заказать звонок</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="tel" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn" type="submit" value="Заказать"/>
+		</div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+	</form>
+</div>
+<script type="text/javascript" src="../../js/vendor.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script></body>
+</html>

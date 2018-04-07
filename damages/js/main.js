@@ -16,7 +16,19 @@ $(document).ready(function () {
 			}
 		}
 	});
-
+	$('.js-fancy-modal-lg').fancybox({
+		wrapCSS: 'fancy-modal-lg',
+		margin: ($(window).width() > 937) ? 20 : 5,
+		fitToView: false,
+		padding: 0,
+		helpers: {
+			overlay: {
+				css: {
+					'background': 'rgba(0, 0, 0, 0.5)'
+				}
+			}
+		}
+	});
 	$('.js-fancy-video').fancybox({
 		wrapCSS: 'fancy-video',
 		margin: ($(window).width() > 937) ? 20 : 5,
@@ -644,66 +656,127 @@ var EqualHeightSections = {
 		this.items = this.$('.js-equal-height-section__item');
 		this.innerBlock = this.$('.js-equal-height-section__inner-block');
 		this.itemsImg = this.$('.js-equal-height-section__item[data-target="img"]');
+		this.itemsImgBtn = this.$('.js-equal-height-section__item[data-target="img-btn"]');
 		this.itemsText = this.$('.js-equal-height-section__item[data-target="text"]');
-
+		this.itemsTextSection = this.$('.js-equal-height-section__item[data-target="text-section"]');
 		this.innerBlockPrice = this.$('.js-equal-height-section__inner-block[data-target="inner-block-price"]');
-
 		this.innerBlockLinks = this.$('.js-equal-height-section__inner-block[data-target="inner-block-links"]');
+		this.innerBtn = this.$('.js-equal-height-section__inner-btn');
+		this.headerWrapper = this.$('.js-equal-height-section__header-wrapper');
+		this.textWrapper = this.$('.js-equal-height-section__text-wrapper');
+		this.btn = this.$('.js-equal-height-section__img-btn');
+		this.sectionHederHeight = 128;
+		this.checkElementHeight = false;
+		this.changedHeight = 0;
 
 		this.images = this.$('img');
 		var self = this;
 
 		this.height = 0;
-		console.log(1)
 
 		if ($('html').hasClass('fonts-loaded')) {
 			self.setSectionHeight();
+			self.setInnerBlockHeight();
 		}
 
 		$(window).bind('resize', function () {
 			self.setSectionHeight();
+			self.setInnerBlockHeight();
 		});
 
 		this.images.bind('load', function () {
 			self.setSectionHeight();
-		});
-
-		if ($('html').hasClass('fonts-loaded')) {
-			self.setInnerBlockHeight();
-		}
-
-		$(window).bind('resize', function () {
 			self.setInnerBlockHeight();
 		});
 
-		this.images.bind('load', function () {
-			self.setInnerBlockHeight();
-		});
 	},
+	events: {
+		'click .js-equal-height-section__img-btn': 'setHeight'
+	},
+	setHeight: function (evt) {
+		var self = this;
+		var finalHeight = 0;
+		var sectionHederHeight = 128;
+		var target = $(evt.currentTarget);
+		target.toggleClass('is-open');
+		var parent = target.parent().parent();
+		var textHeaderWrapper = parent.find('.js-equal-height-section__hidden-contant-wrapper');
+		var hiddenContent = textHeaderWrapper.find('.service-option__hidden-content');
+		if (target.hasClass('is-open')) {
+			hiddenContent.removeClass('is-hide');
+			textHeaderWrapper.css('height', 'auto');
+		} else {
+			hiddenContent.addClass('is-hide');
+			this.items.each(function () {
+				var itemHeight = parseInt($(this).outerHeight());
+				if (self.checkElementHeight) {
+					textHeaderWrapper.css('height', self.changedHeight);
+				}
 
+			})
+
+		}
+	},
 	setSectionHeight: function () {
 		var sectionImgMaxHeight = 0;
+		var sectionImgBtnMaxHeight = 0;
 		var sectionTextMaxHeight = 0;
+		var sectionTextSectionMaxHeight = 0;
+		var sectionHeight = 298;
+		var sectionHederHeight = 129;
+		var minusInnerBtn = 0;
+		var innerPadding = 20;
+		var minusBtnImg = 0;
 		this.items.css('height', 'auto');
 		var self = this;
 
-		this.items.each(function (index) {
+		this.items.each(function () {
 			var itemHeight = parseInt($(this).outerHeight());
 
 			if ($(this).is('[data-target="img"]')) {
 				if (itemHeight > sectionImgMaxHeight) {
 					sectionImgMaxHeight = itemHeight;
 				}
+			} else if ($(this).is('[data-target="img-btn"]')) {
+				var btnImg = $(this).find('.js-equal-height-section__img-btn');
+				var btnImgHeight = parseInt($(this).find('.js-equal-height-section__img-btn').outerHeight());
+				var imgHeight = parseInt($(this).find('.js-equal-height-section__img').outerHeight());
+				var sectionWithoutImg = itemHeight - imgHeight - innerPadding;
+				if (sectionWithoutImg > sectionImgBtnMaxHeight) {
+					if (sectionWithoutImg > sectionHederHeight) {
+						sectionImgBtnMaxHeight = sectionWithoutImg;
+						minusBtnImg = sectionWithoutImg - btnImgHeight;
+						self.checkElementHeight = true;
+						self.changedHeight = minusBtnImg;
+					} else {
+						minusBtnImg = sectionWithoutImg - btnImgHeight;
+					}
+
+				}
 			} else if ($(this).is('[data-target="text"]')) {
 				if (itemHeight > sectionTextMaxHeight) {
 					sectionTextMaxHeight = itemHeight;
 					self.height = sectionTextMaxHeight;
+				}
+			} else if ($(this).is('[data-target="text-section"]')) {
+				var innerBtn = $(this).find('.js-equal-height-section__inner-btn');
+
+				var innerBtnHeight = parseInt($(this).find('.js-equal-height-section__inner-btn').outerHeight(true));
+				if (itemHeight > sectionTextSectionMaxHeight) {
+					if (itemHeight > sectionHeight) {
+						sectionTextSectionMaxHeight = itemHeight;
+						minusInnerBtn = itemHeight - innerBtnHeight - innerPadding;
+					} else {
+						minusInnerBtn = itemHeight - innerBtnHeight - innerPadding;
+					}
 				}
 			}
 		});
 		if ($(window).outerWidth() >= 650) {
 			self.itemsImg.css('height', sectionImgMaxHeight);
 			self.itemsText.css('height', sectionTextMaxHeight);
+			self.textWrapper.css('height', minusInnerBtn);
+			self.headerWrapper.css('height', minusBtnImg);
 		}
 
 	},
@@ -712,7 +785,7 @@ var EqualHeightSections = {
 		var innerPriceBlockHeight = 0;
 		var minusPriceBlockHeight = 0;
 		var sectionThirdTextMaxHeight = 0;
-		var defaultBlocksHeight = 304;
+		var defaultBlocksHeight = 306;
 		var checkBlocks = false;
 		var self = this;
 		console.log(self.height);
@@ -726,9 +799,9 @@ var EqualHeightSections = {
 
 
 			if (itemInnerHeight > maxHeight) {
-				if ($(this).is('[data-target="inner-block-links"]') && innerPriceBlockHeight > 0 ) {
+				if ($(this).is('[data-target="inner-block-links"]') && innerPriceBlockHeight > 0) {
 					minusPriceBlockHeight = itemInnerHeight - innerPriceBlockHeight;
-					checkBlocks=true;
+					checkBlocks = true;
 				} else if ($(this).is('[data-target="inner-block-price"]')) {
 					if (itemInnerHeight > defaultBlocksHeight) {
 						sectionThirdTextMaxHeight = itemInnerHeight;
@@ -756,6 +829,25 @@ var EqualHeightSections = {
 };
 App.Control.install(EqualHeightSections);
 
+var factsSlider = {
+	el: '.js-facts-slider',
+	name: 'interestingFactsSlider',
+
+	initialize: function () {
+		this.$el.bxSlider({
+			pager: false,
+			minSlides: 1,
+			maxSlides: 1,
+			moveSlides: 1,
+			auto: false,
+			adaptiveHeight: true
+		})
+
+	},
+};
+
+App.Control.install(factsSlider);
+
 var fadeInsideForm = {
 	el: '.js-form',
 	name: 'fadeInnerForm',
@@ -782,47 +874,191 @@ var fadeInsideForm = {
 };
 App.Control.install(fadeInsideForm);
 
-var NewsSlider = {
-	el: '.js-news-slider',
-	name: 'NewsSlider',
+var MainOfficeMapMoscow = {
+	el: '#main-office-moscow',
+	name: 'MainOfficeMapMoscow',
+	initialize: function () {
+		if (!_.isUndefined(window.ymaps)) {
+			ymaps.ready(init);
+			var myMap;
 
-	initialize: function() {
-		this.sliderInitPoint = 1120;
-				this.sliderIsInitialized = false;
-
-				var self = this;
-
-				if($(window).outerWidth() >= this.sliderInitPoint) {
-						this.initSlider();
-						this.sliderIsInitialized = true;
-				}
-
-				$(window).bind('resize', function() {
-						if($(window).outerWidth() < self.sliderInitPoint && self.sliderIsInitialized) {
-								self.$el.destroySlider();
-								self.sliderIsInitialized = false;
-						} else if($(window).outerWidth() >= self.sliderInitPoint && !self.sliderIsInitialized) {
-								self.initSlider();
-								self.sliderIsInitialized = true;
-						}
+			function init() {
+				myMap = new ymaps.Map("main-office-moscow", {
+					center: [55.718324068999664, 37.79198949999998],
+					zoom: 15,
+					controls: ['zoomControl']
 				});
-	},
 
-		initSlider: function() {
-				this.$el.bxSlider({
-						pager: false,
-						slideWidth: 465,
-						minSlides: 1,
-						maxSlides: 2,
-						moveSlides: 1,
-						slideMargin: 30,
-						adaptiveHeight: true
+				myPlacemark = new ymaps.Placemark([55.718324068999664, 37.79198949999998], {
+					iconContent: 'A'
+				}, {
+					preset: 'islands#redStretchyIcon'
 				});
+
+				myMap.geoObjects.add(myPlacemark);
+			}
 		}
+	}
 };
 
-App.Control.install(NewsSlider);
+App.Control.install(MainOfficeMapMoscow);
 
+
+var MainOfficeMapSpb = {
+	el: '#main-office-spb',
+	name: 'MainOfficeMapSpb',
+	initialize: function () {
+		if (!_.isUndefined(window.ymaps)) {
+			ymaps.ready(init);
+			var myMap;
+
+			function init() {
+				myMap = new ymaps.Map("main-office-spb", {
+					center: [59.958787, 30.291892],
+					zoom: 15,
+					controls: ['zoomControl']
+				});
+
+				myPlacemark = new ymaps.Placemark([59.958787, 30.291892], {
+					iconContent: 'A'
+				}, {
+					preset: 'islands#redStretchyIcon'
+				});
+
+				myMap.geoObjects.add(myPlacemark);
+			}
+		}
+	}
+};
+
+App.Control.install(MainOfficeMapSpb);
+
+
+var MainOfficeMapNalchik = {
+	el: '#main-office-nalchik',
+	name: 'MainOfficeMapNalchik',
+	initialize: function () {
+		if (!_.isUndefined(window.ymaps)) {
+			ymaps.ready(init);
+			var myMap;
+
+			function init() {
+				myMap = new ymaps.Map("main-office-nalchik", {
+					center: [43.474747, 43.614402],
+					zoom: 15,
+					controls: ['zoomControl']
+				});
+
+				myPlacemark = new ymaps.Placemark([43.474747, 43.614402], {
+					iconContent: 'A'
+				}, {
+					preset: 'islands#redStretchyIcon'
+				});
+
+				myMap.geoObjects.add(myPlacemark);
+			}
+		}
+	}
+};
+
+App.Control.install(MainOfficeMapNalchik);
+
+var MainOfficeMapMytischi = {
+	el: '#main-office-mytischi',
+	name: 'MainOfficeMapMytischi',
+	initialize: function () {
+		if (!_.isUndefined(window.ymaps)) {
+			ymaps.ready(init);
+			var myMap;
+
+			function init() {
+				myMap = new ymaps.Map("main-office-mytischi", {
+					center: [55.921003,37.702923],
+					zoom: 15,
+					controls: ['zoomControl']
+				});
+
+				myPlacemark = new ymaps.Placemark([55.921003,37.702923], {
+					iconContent: 'A'
+				}, {
+					preset: 'islands#redStretchyIcon'
+				});
+
+				myMap.geoObjects.add(myPlacemark);
+			}
+		}
+	}
+};
+
+App.Control.install(MainOfficeMapMytischi);
+var News = {
+	el: '.js-news',
+	name: 'News',
+
+	initialize: function() {
+		//this.sliderMonths = this.$el.find('.js-slider-months');
+		this.sliderMonthsItem = this.$el.find('.js-slider-months__item');
+		this.newsBlock = this.$el.find('.js-news__block');
+		this.newsControls = this.$el.find('.js-news__controls');
+		this.newsControlsPosition = this.newsControls.offset().top;
+		this.ifClicked;
+
+		var self = this;
+
+		$(window).bind('scroll', function () {
+            self.goToActiveMonth();
+            //self.stickyOnScroll();
+        });
+
+		this.sliderMonths = this.$el.find('.js-slider-months').bxSlider({
+            mode: 'vertical',
+            minSlides: 3,
+            maxSlides: 3,
+            moveSlides: 1,
+            pager: false,
+            infiniteLoop: false,
+            touchEnabled: false
+        });
+
+        $('.bx-controls-direction').on('click', function() {
+			self.activeMonth = $(self.sliderMonthsItem).filter('[aria-hidden~="false"]').eq(1);
+			self.monthValue = self.activeMonth.data('month-target');
+			self.currentNews = $('[data-month=' + self.monthValue + ']')
+			self.currentPosition = self.currentNews.offset().top;
+
+			$('html, body').animate({
+				scrollTop: self.currentPosition
+			}, 1500);
+		});
+	},
+
+	goToActiveMonth: function() {
+		var self = this;
+		this.currentSlideIndex = 0;
+
+		this.newsBlock.each(function(index, element) {
+			self.currentNewsBlockPosition = $(element).offset().top - 50;
+			self.nextNewsBlockPosition = $(element).next().offset().top - 50;
+
+			if($(window).scrollTop() >= self.currentNewsBlockPosition && $(window).scrollTop() < self.nextNewsBlockPosition) {
+				self.currentSlideIndex = self.sliderMonths.getCurrentSlide() - 1;
+				self.currentNewsBlockIndex = index - 1;
+
+				if(self.currentNewsBlockIndex !== self.currentSlideIndex) {
+					self.sliderMonths.goToSlide(parseInt(self.currentNewsBlockIndex));
+				}
+			}
+		});
+	},
+
+	stickyOnScroll: function() {
+		if($(window).scrollTop() >= this.newsControlsPosition) {
+			this.newsControls.addClass('is-fixed');
+		}
+	}
+};
+
+App.Control.install(News);
 var PartiallyHidden = {
 	el: '.js-partially-hidden',
 	name: 'PartiallyHidden',
@@ -844,6 +1080,7 @@ var PartiallyHidden = {
 };
 
 App.Control.install(PartiallyHidden);
+
 var rangeControl = {
 	el: '.js-range',
 	name: 'rangeControl',
@@ -1032,47 +1269,130 @@ var ShowContent = {
 
 App.Control.install(ShowContent);
 
+var SliderBanners = {
+	el: '.js-slider-banners',
+	name: 'SliderBanners',
+
+	initialize: function() {
+		this.$el.bxSlider({
+            mode: 'fade',
+            slideWidth: 300,
+            controls: false,
+            adaptiveHeight: true,
+            auto: true,
+            pause: 3000,
+            speed: 1000
+        });
+	}
+};
+
+App.Control.install(SliderBanners);
+var SliderNews = {
+	el: '.js-slider-news',
+	name: 'SliderNews',
+	breakpoint: 1120,
+    slider: null,
+
+	initialize: function() {
+		var self = this;
+
+		this.renderMode();
+
+		$(window).bind('resize', function() {
+			self.renderMode();
+		});
+	},
+
+	renderMode: function () {
+		var self = this;
+
+		if($(window).outerWidth() < self.breakpoint) {
+			self.destroySlider();
+		} else {
+			self.initSlider();
+		}
+	},
+
+	initSlider: function() {
+		if(!this.slider) {
+			this.slider = this.$el.bxSlider({
+				pager: false,
+				slideWidth: 465,
+				minSlides: 1,
+				maxSlides: 2,
+				moveSlides: 1,
+				slideMargin: 30,
+				adaptiveHeight: true
+			});
+		}
+	},
+
+	destroySlider: function() {
+		if(this.slider) {
+			this.slider.destroySlider();
+			this.slider = null;
+		}
+	}
+};
+
+App.Control.install(SliderNews);
+
 var Tabs = {
-    el: '.js-tabs',
-    name: 'Tabs',
+	el: '.js-tabs',
+	name: 'Tabs',
 
-    initialize: function() {
-        this.tab = this.$('.js-tabs__tab');
-        this.tabs = this.$('.js-tabs__tabs');
-        this.tabContent = this.$('.js-tabs__content');
-    },
+	initialize: function () {
+		this.tab = this.$('.js-tabs__tab');
+		this.tabs = this.$('.js-tabs__tabs');
+		this.tabContent = this.$('.js-tabs__content');
+		this.tabContentId = this.$('.js-tabs__content[id]');
+		console.log(this.tabContentId);
+	},
 
-    events: {
-        'click .js-tabs__tab': 'switchTabOnClick'
-    },
+	events: {
+		'click .js-tabs__tab': 'switchTabOnClick'
+	},
 
-    switchTabOnClick: function(e) {
-        var self = this;
+	switchTabOnClick: function (e) {
+		var dataIdContent;
+		var tabContentGrayBlock;
+		var self = this;
+		this.tab.removeClass('is-active');
+		$(e.currentTarget).addClass('is-active');
 
-        this.tab.removeClass('is-active');
-        $(e.currentTarget).addClass('is-active');
+		this.targetId = $(e.currentTarget).data('id');
 
-        this.targetId = $(e.currentTarget).data('id');
+		this.tabContent.removeClass('is-active');
+		$('#' + this.targetId).addClass('is-active');
 
-        this.tabContent.removeClass('is-active');
-        $('#' + this.targetId).addClass('is-active');
+		this.tabContent.each(function () {
+			if ($(this).is('[data-id]')) {
+				dataIdContent = $(this).data('id');
+				tabContentGrayBlock = $(this);
 
+			}
+		});
 
-        if(this.$el.hasClass('js-tabs--social')) {
-            var dataIdArray = [];
+		if (this.targetId === dataIdContent) {
+			tabContentGrayBlock.addClass('is-active');
+		}
 
-            _.each(this.tab, function(element, index, list) {
-                dataIdArray.push($(element).data('id'));
-            });
+		if (this.$el.hasClass('js-tabs--social')) {
+			var dataIdArray = [];
 
-            _.each(dataIdArray, function(element, index, list) {
-                self.tabs.removeClass('social-tabs__tabs--' + element + '-is-active').addClass('social-tabs__tabs--' + self.targetId + '-is-active');
-            });
-        }
-    }
+			_.each(this.tab, function (element, index, list) {
+				dataIdArray.push($(element).data('id'));
+			});
+
+			_.each(dataIdArray, function (element, index, list) {
+				self.tabs.removeClass('social-tabs__tabs--' + element + '-is-active').addClass('social-tabs__tabs--' + self.targetId + '-is-active');
+			});
+		}
+	}
 };
 
 App.Control.install(Tabs);
+
 App.Control.install({
 	el: '.js-tooltip',
 	name: 'Tooltip',
@@ -1356,3 +1676,22 @@ var MainNav = {
 };
 
 App.Control.install(MainNav)
+var OurClientsSlider = {
+	el: '.js-clients-slider',
+	name: 'OurClientsSlider',
+
+	initialize: function () {
+		this.$el.bxSlider({
+			pager: false,
+			slideWidth: 216,
+			minSlides: 1,
+			maxSlides: 4,
+			moveSlides: 1,
+			auto: false,
+			adaptiveHeight: true
+		});
+	}
+};
+
+
+App.Control.install(OurClientsSlider);
