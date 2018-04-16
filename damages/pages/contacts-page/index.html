@@ -126,7 +126,7 @@
 </div>
 <main>
 	<div class="contacts-block js-tabs">
-		<div class="container contacts-block__wrapper">
+		<div class="container">
 			<h1>Контакты бюро судебных экспертиз Хонест</h1>
 			<div class="row-lg">
 				<div class="col-1-2-lg">
@@ -134,13 +134,15 @@
 				</div>
 				<div class="col-1-2-lg contacts-block__map-print"><a class="link link--print contacts-block__print-link" href="#"><span>Распечатать</span></a><a class="link link--pdf contacts-block__print-link" href="#"><span>PDF, 3.2Mb </span></a></div>
 			</div>
-			<div class="contacts-block__tabs">
-				<ul class="contacts-block__tabs-list js-tabs__tabs">
-					<li class="contacts-block__tab contacts-block__tab--moscow js-tabs__tab is-active is-hide" data-id="Moscow"> <span>Москва</span></li>
-					<li class="contacts-block__tab contacts-block__tab--spb js-tabs__tab is-hide" data-id="Saint-Petersburg"><span>Санкт-Петербург </span></li>
-					<li class="contacts-block__tab contacts-block__tab--nalchik js-tabs__tab is-hide" data-id="Nalchik"><span>Нальчик</span></li>
-				</ul>
-				<div class="contacts-block__tab-content js-tabs__content is-active" id="Moscow">
+		</div>
+		<div class="contacts-block__tabs">
+			<ul class="contacts-block__tabs-list js-tabs__tabs container">
+				<li class="contacts-block__tab contacts-block__tab--moscow js-tabs__tab is-active is-hide" data-id="Moscow"> <span>Москва</span></li>
+				<li class="contacts-block__tab contacts-block__tab--spb js-tabs__tab is-hide" data-id="Saint-Petersburg"><span>Санкт-Петербург </span></li>
+				<li class="contacts-block__tab contacts-block__tab--nalchik js-tabs__tab is-hide" data-id="Nalchik"><span>Нальчик</span></li>
+			</ul>
+			<div class="contacts-block__tab-content js-tabs__content is-active" id="Moscow">
+				<div class="container contacts-block__wrapper">
 					<div class="contacts-info contacts-block__table">
 						<div class="row-md">
 							<div class="col-1-2-md">
@@ -205,16 +207,16 @@
 							</div>
 						</div>
 					</div>
-					<div class="row-lg">
+					<div class="row-xl">
 						<h3>Расположение на карте</h3>
-						<div class="col-1-2-lg">
-							<div class="contacts-block__map" id="main-office-moscow"></div>
+						<div class="col-1-2-xl">
+							<div class="contacts-block__map contacts-block__map--before-text" id="main-office-moscow"></div>
 						</div>
-						<div class="col-1-2-lg">
+						<div class="col-1-2-xl">
 							<div class="contacts-block__maps-wrapper"><a class="contacts-block__map-link js-fancy-media" href="../../assets/images/img-map--big.jpg"><img src="../../assets/images/img-map--small.jpg"/></a><a class="contacts-block__map-link js-fancy-media" href="../../assets/images/img-map--big-2.jpg"><img src="../../assets/images/img-map--small-2.jpg"/></a><a class="contacts-block__map-link js-fancy-media" href="../../assets/images/img-map--big-3.jpg"><img src="../../assets/images/img-map--small-3.jpg"/></a><a class="contacts-block__map-link js-fancy-media" href="../../assets/images/img-map--big-4.jpg"><img src="../../assets/images/img-map--small-4.jpg"/></a></div>
 						</div>
 					</div>
-					<div class="row-lg">
+					<div class="row-lg contacts-block__direction">
 						<div class="col-1-2-lg">
 							<h3>Как добраться на метро</h3>
 							<p>м. Рязанский проспект (1-й вагон из центра). После выхода из метро поверните направо и идите вдоль Рязанского проспекта. После супермаркета "Billa" поверните направо к двум высоким башням. Перед башнями поверните еще раз направо и пройдите до второй башни. Заходите в подъезд и на 1-м этаже вы сразу же увидите наш офис. Дорога от метро занимает не больше 2-х минут.</p>
@@ -225,7 +227,49 @@
 						</div>
 					</div>
 				</div>
-				<div class="contacts-block__tab-content js-tabs__content" id="Saint-Petersburg">
+				<section class="section section--gray">
+					<div class="container">
+						<h3>Лаборатория кузовного ремонта «РИХточка»</h3>
+						<div class="contacts-info contacts-block__table">
+							<div class="row-md">
+								<div class="col-1-2-md">
+									<table>
+										<tbody>
+											<tr>
+												<td>Фактический адрес:</td>
+												<td>
+													<div>Мытищинский район, г. Мытищи,<br/> Волковское шоссе.</div>
+													<div>GPS координаты: широта 37.702923, <br/> долгота 55.921003</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-1-2-md">
+									<table>
+										<tbody>
+											<tr>
+												<td>Телефон/факс: </td>
+												<td> +7 (495) 228-06-65</td>
+											</tr>
+											<tr> 
+												<td>Время работы: </td>
+												<td>Ежедневно с 9:00 до 21:00</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="row-lg">
+							<h3>Расположение на карте</h3>
+							<div class="contacts-block__map" id="main-office-mytischi"></div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="contacts-block__tab-content js-tabs__content" id="Saint-Petersburg">
+				<div class="container contacts-block__wrapper">
 					<div class="contacts-info contacts-block__table">
 						<div class="row-md">
 							<div class="col-1-2-md">
@@ -295,7 +339,9 @@
 						<div class="contacts-block__map" id="main-office-spb"></div>
 					</div>
 				</div>
-				<div class="contacts-block__tab-content js-tabs__content" id="Nalchik">
+			</div>
+			<div class="contacts-block__tab-content js-tabs__content" id="Nalchik">
+				<div class="container contacts-block__wrapper">
 					<div class="contacts-info contacts-block__table">
 						<div class="row-md">
 							<div class="col-1-2-md">
@@ -359,46 +405,6 @@
 						<h3>Расположение на карте</h3>
 						<div class="contacts-block__map" id="main-office-nalchik"></div>
 					</div>
-				</div>
-			</div>
-		</div>
-		<div class="contacts-block__tab-content contacts-block__tab-content--gray js-tabs__content is-active" data-id="Moscow">
-			<div class="container">
-				<h3>Лаборатория кузовного ремонта «РИХточка»</h3>
-				<div class="contacts-info contacts-block__table">
-					<div class="row-md">
-						<div class="col-1-2-md">
-							<table>
-								<tbody>
-									<tr>
-										<td>Фактический адрес:</td>
-										<td>
-											<div>Мытищинский район, г. Мытищи,<br/> Волковское шоссе.</div>
-											<div>GPS координаты: широта 37.702923, <br/> долгота 55.921003</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="col-1-2-md">
-							<table>
-								<tbody>
-									<tr>
-										<td>Телефон/факс: </td>
-										<td> +7 (495) 228-06-65</td>
-									</tr>
-									<tr> 
-										<td>Время работы: </td>
-										<td>Ежедневно с 9:00 до 21:00</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="row-lg">
-					<h3>Расположение на карте</h3>
-					<div class="contacts-block__map" id="main-office-mytischi"></div>
 				</div>
 			</div>
 		</div>

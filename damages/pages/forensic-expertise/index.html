@@ -169,7 +169,7 @@
 						<div class="service-card__text">
 							<h2 class="service-card__title"><a href="">Оценка ущерба от&nbsp;залива квартиры</a></h2>
 							<p>Независимая оценка ущерба недвижимости</p>
-							<div class="service-card__price"><span>от 5 000  до 10 000 &#8381;  </span></div><a class="btn service-card__btn">Оформить заявку</a>
+							<div class="service-card__price"><span>от 5 000  до 10 000 &#8381;</span></div><a class="btn service-card__btn js-fancy-modal" href="#expertise-request">Оформить заявку</a>
 						</div>
 					</div>
 				</div>
@@ -179,7 +179,7 @@
 						<div class="service-card__text">
 							<h2 class="service-card__title"><a href="">Оценка ущерба от&nbsp;пожара</a></h2>
 							<p>Независимая оценка ущерба недвижимости</p>
-							<div class="service-card__price"><span>от 5 000  до 10 000 &#8381;</span></div><a class="btn service-card__btn">Оформить заявку </a>
+							<div class="service-card__price"><span>от 5 000  до 10 000 &#8381;</span></div><a class="btn service-card__btn js-fancy-modal" href="#expertise-request">Оформить заявку</a>
 						</div>
 					</div>
 				</div>
@@ -203,7 +203,7 @@
 					<p>Стоимость услуг по оценке ущерба недвижимости от залива и пожара не зависит от стоимости ремонта или цены самой квартиры.</p>
 					<p>Мы определяем ее на основании планируемых трудозатрат на качественное выполнение работы, исходя из нашего опыта выполнения аналогичных проектов.</p>
 				</div>
-				<div class="col-1-2-md">
+				<div class="col-1-2-md section__first-block">
 					<div class="form-block">
 						<h3>Расчет стоимости услуг</h3>
 						<form>
@@ -224,7 +224,7 @@
 								<div class="form-block__inner">
 									<div class="form-block__options">
 										<input class="form-block__checkbox" name="bathroom" type="checkbox" id="form-input-1-21"/>
-										<label class="form-block__checkbox-label" for="form-input-1-22">Ванная комната</label>
+										<label class="form-block__checkbox-label" for="form-input-1-21">Ванная комната</label>
 									</div>
 								</div>
 								<div class="form-block__inner">
@@ -281,7 +281,7 @@
 											</div>
 										</label>
 									</div>
-									<div class="form-block__price js-check-form__calc-price"><span>500 &#8381; </span></div>
+									<div class="form-block__price js-check-form__calc-price"><span>500 &#8381;</span></div>
 								</div>
 							</div>
 							<div class="form-block__wrapper">
@@ -289,7 +289,7 @@
 									<div class="form-block__options form-block__options--sum"><span>Стоимость услуг</span></div>
 									<div class="form-block__price form-block__price--sum"><span>0 &#8381;</span></div>
 								</div>
-								<button class="form-block__btn btn btn--full-width">Заказать оценку ущерба</button>
+								<button class="form-block__btn btn btn--full-width js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#expertise-request">Заказать оценку ущерба</button>
 								<p class="form-block__details"><small>Данный расчет стоимости носит информационный характер и не является публичной офертой (ст. 437 ГК РФ).</small></p>
 							</div>
 						</form>
@@ -498,6 +498,31 @@
 		</div>
 	</section>
 </main>
+<div class="modal" id="expertise-request">
+	<h2 class="modal__title">Оформление заявки</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="tel" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="email">E-mail</label>
+			<input class="field-text__input" id="email" type="email"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn" type="submit" value="Оформить заявку"/>
+		</div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+	</form>
+</div>
 <footer class="page-footer">
 	<div class="container">
 		<div class="page-footer__inner">

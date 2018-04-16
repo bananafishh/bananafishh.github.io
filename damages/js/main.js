@@ -1,64 +1,6 @@
 $(document).ready(function () {
 	// Кроссбраузерная поддержка svg спрайтов
 	svg4everybody();
-
-
-	$('.js-fancy-modal').fancybox({
-		wrapCSS: 'fancy-modal',
-		margin: ($(window).width() > 937) ? 20 : 5,
-		fitToView: false,
-		padding: 0,
-		helpers: {
-			overlay: {
-				css: {
-					'background': 'rgba(0, 0, 0, 0.5)'
-				}
-			}
-		}
-	});
-	$('.js-fancy-modal-lg').fancybox({
-		wrapCSS: 'fancy-modal-lg',
-		margin: ($(window).width() > 937) ? 20 : 5,
-		fitToView: false,
-		padding: 0,
-		helpers: {
-			overlay: {
-				css: {
-					'background': 'rgba(0, 0, 0, 0.5)'
-				}
-			}
-		}
-	});
-	$('.js-fancy-video').fancybox({
-		wrapCSS: 'fancy-video',
-		margin: ($(window).width() > 937) ? 20 : 5,
-		fitToView: false,
-		padding: 15,
-		helpers: {
-			overlay: {
-				css: {
-					'background': 'rgba(0, 0, 0, 0.5)'
-				}
-			}
-		}
-	});
-	$('.js-fancy-media').fancybox({
-		wrapCSS: 'fancy-media',
-		margin: ($(window).width() > 937) ? 20 : 5,
-		padding: 0,
-		autoResize: true,
-		maxWidth: '100%',
-		helpers: {
-			overlay: {
-				css: {
-					'background': 'rgba(27, 71, 105, 0.7)'
-				}
-			}
-		}
-	});
-
-
-
 });
 
 var calcCheckboxForm = {
@@ -586,24 +528,105 @@ var CitySelection = {
 };
 
 App.Control.install(CitySelection)
-var ContentSlider = {
-	el: '.js-content-slider',
-	name: 'ContentSlider',
+var EqualHeightSections = {
+	el: '.js-equal-height-sections',
+	name: 'EqualHeightSections',
 
 	initialize: function() {
-		this.$el.bxSlider({
-            pager: false,
-            slideWidth: 168,
-            minSlides: 1,
-            maxSlides: 5,
-            moveSlides: 1,
-            slideMargin: 30,
-            adaptiveHeight: true
-        });
+		this.cards = this.$('.js-equal-height-sections__card');
+		this.items = this.$('.js-equal-height-sections__item');
+		this.images = this.$('img');
+		this.showMoreBtn = this.$('.js-equal-height-sections__show-more-btn');
+		this.sortedItemsParentArray = [];
+
+		var self = this;
+
+		this.getSortedItemsParentArray();
+
+		$(window).bind('load', function() {
+			if($('html').hasClass('fonts-loaded')) {
+				self.setHeight();
+			}
+		});
+
+		$(window).bind('resize', function() {
+			self.setHeight();
+		});
+
+		this.images.bind('load', function() {
+			self.setHeight();
+		});
+	},
+
+	events: {
+		'click .js-equal-height-sections__show-more-btn': 'showHiddenContent'
+	},
+
+	setHeight: function() {
+		for (var i = 0; i < this.sortedItemsParentArray.length; i++) {
+			var maxHeight = 0;
+
+			$.each(this.sortedItemsParentArray[i], function(index, value) {
+				$(this).css('height', 'auto');
+			});
+
+			for (var y = 0; y < this.sortedItemsParentArray[i].length; y++) {
+				var itemHeight = parseInt($(this.sortedItemsParentArray[i][y]).outerHeight());
+
+				if (itemHeight > maxHeight) {
+					maxHeight = itemHeight;
+				}
+			}
+
+			$.each(this.sortedItemsParentArray[i], function(index, value) {
+				$(this).css('height', maxHeight);
+			});
+		}
+
+		// Карточка имеет один общий раздел, равный по высоте двум разделам соседней карточки
+		if(this.cards) {
+			this.cardHeight = this.cards.filter('[data-sections=discrete]').outerHeight();
+			this.cards.filter('[data-sections=combined]').outerHeight(this.cardHeight);
+		}
+	},
+
+	getSortedItemsParentArray: function() {
+		this.items.sort(this.sortByValue);
+		this.sortedItems = Array.prototype.slice.call(this.items);
+
+		for (var i = 0; i < this.sortedItems.length; i++) {
+			if($(this.sortedItems[i]).data('section') !== $(this.sortedItems[i + 1]).data('section')) {
+				var separator = this.sortedItems.indexOf(this.sortedItems[i]);
+				this.sortedItemsParentArray.push(this.sortedItems.splice(0, separator + 1));
+				i = 0;
+			}
+		}
+
+		return this.sortedItemsParentArray;
+	},
+
+	sortByValue: function(a, b) {
+		return ($(a).data('section') > $(b).data('section')) ? 1 : -1;
+	},
+
+	showHiddenContent: function(e) {
+		if(!$(e.currentTarget).hasClass('is-open')) {
+			this.maxHeight = $(e.currentTarget).parent().outerHeight();
+		}
+		this.hiddenContent = $(e.currentTarget).parent().find('.is-hide');
+
+		$(e.currentTarget).toggleClass('is-open');
+		this.hiddenContent.toggle();
+
+		if($(e.currentTarget).hasClass('is-open')) {
+			$(e.currentTarget).parent().css('height', 'auto');
+		} else {
+			$(e.currentTarget).parent().css('height', this.maxHeight);
+		}
 	}
 };
 
-App.Control.install(ContentSlider);
+App.Control.install(EqualHeightSections);
 var EqualHeightBlocks = {
 	el: '.js-equal-height-blocks',
 	name: 'EqualHeightBlocks',
@@ -614,9 +637,11 @@ var EqualHeightBlocks = {
 
 		var self = this;
 
-		if ($('html').hasClass('fonts-loaded')) {
-			self.setHeight();
-		}
+		$(window).bind('load', function() {
+			if($('html').hasClass('fonts-loaded')) {
+				self.setHeight();
+			}
+		});
 
 		$(window).bind('resize', function () {
 			self.setHeight();
@@ -648,9 +673,9 @@ var EqualHeightBlocks = {
 
 App.Control.install(EqualHeightBlocks);
 
-var EqualHeightSections = {
-	el: '.js-equal-height-sections',
-	name: 'EqualHeightSections',
+var EqualHeightSection = {
+	el: '.js-equal-height-section',
+	name: 'EqualHeightSection',
 
 	initialize: function () {
 		this.items = this.$('.js-equal-height-section__item');
@@ -827,7 +852,7 @@ var EqualHeightSections = {
 
 
 };
-App.Control.install(EqualHeightSections);
+App.Control.install(EqualHeightSection);
 
 var factsSlider = {
 	el: '.js-facts-slider',
@@ -874,6 +899,90 @@ var fadeInsideForm = {
 };
 App.Control.install(fadeInsideForm);
 
+App.Control.install({
+	el: '.js-fancy-modal',
+	name: 'FancyModal',
+
+	initialize: function() {
+		this.$el.fancybox({
+			wrapCSS: 'fancy-modal',
+			fitToView: false,
+			padding: 0,
+			helpers: {
+				overlay: {
+					css: {
+						'background': 'rgba(0, 0, 0, 0.5)'
+					}
+				}
+			}
+		});
+	}
+});
+
+
+App.Control.install({
+	el: '.js-fancy-video',
+	name: 'FancyVideo',
+
+	initialize: function() {
+		this.$el.fancybox({
+			wrapCSS: 'fancy-video',
+			fitToView: false,
+			padding: 15,
+			helpers: {
+				overlay: {
+					css: {
+						'background': 'rgba(0, 0, 0, 0.5)'
+					}
+				}
+			}
+		});
+	}
+});
+
+
+App.Control.install({
+	el: '.js-fancy-modal-lg',
+	name: 'FancyModalLg',
+
+	initialize: function() {
+		this.$el.fancybox({
+			wrapCSS: 'fancy-modal-lg',
+			fitToView: false,
+			padding: 0,
+			helpers: {
+				overlay: {
+					css: {
+						'background': 'rgba(0, 0, 0, 0.5)'
+					}
+				}
+			}
+		});
+	}
+});
+
+
+App.Control.install({
+	el: '.js-fancy-media',
+	name: 'FancyMedia',
+
+	initialize: function() {
+		this.$el.fancybox({
+			wrapCSS: 'fancy-media',
+			margin: ($(window).width() > 937) ? 20 : 5,
+			padding: 0,
+			autoResize: true,
+			maxWidth: '100%',
+			helpers: {
+				overlay: {
+					css: {
+						'background': 'rgba(27, 71, 105, 0.7)'
+					}
+				}
+			}
+		});
+	}
+});
 var MainOfficeMapMoscow = {
 	el: '#main-office-moscow',
 	name: 'MainOfficeMapMoscow',
@@ -1192,27 +1301,6 @@ var selectForm = {
 };
 App.Control.install(selectForm);
 
-var OurServicesSlider = {
-	el: '.js-our-services-slider',
-	name: 'OurServicesSlider',
-
-	initialize: function () {
-		this.$el.bxSlider({
-			pager: false,
-			slideWidth: 217,
-			minSlides: 1,
-			maxSlides: 4,
-			moveSlides: 1,
-			auto: false,
-			slideMargin: 30,
-			adaptiveHeight: true
-		});
-	}
-};
-
-
-App.Control.install(OurServicesSlider);
-
 var ShowContent = {
 	el: '.js-show-content',
 	name: 'ShowContent',
@@ -1287,6 +1375,43 @@ var SliderBanners = {
 };
 
 App.Control.install(SliderBanners);
+App.Control.install({
+	el: '.js-slider-images',
+	name: 'SliderImages',
+
+	initialize: function() {
+		this.$el.bxSlider({
+			pager: false,
+			slideWidth: 217,
+			minSlides: 1,
+			maxSlides: 4,
+			moveSlides: 1,
+			auto: false,
+			slideMargin: 30,
+			adaptiveHeight: true
+		});
+	}
+});
+
+
+
+App.Control.install({
+	el: '.js-slider-images-slides-5',
+	name: 'SliderImagesSlides5',
+
+	initialize: function() {
+		this.$el.bxSlider({
+            pager: false,
+            slideWidth: 168,
+            minSlides: 1,
+            maxSlides: 5,
+            moveSlides: 1,
+            slideMargin: 30,
+            adaptiveHeight: true
+        });
+	}
+});
+
 var SliderNews = {
 	el: '.js-slider-news',
 	name: 'SliderNews',
@@ -1345,8 +1470,6 @@ var Tabs = {
 		this.tab = this.$('.js-tabs__tab');
 		this.tabs = this.$('.js-tabs__tabs');
 		this.tabContent = this.$('.js-tabs__content');
-		this.tabContentId = this.$('.js-tabs__content[id]');
-		console.log(this.tabContentId);
 	},
 
 	events: {
@@ -1364,18 +1487,6 @@ var Tabs = {
 
 		this.tabContent.removeClass('is-active');
 		$('#' + this.targetId).addClass('is-active');
-
-		this.tabContent.each(function () {
-			if ($(this).is('[data-id]')) {
-				dataIdContent = $(this).data('id');
-				tabContentGrayBlock = $(this);
-
-			}
-		});
-
-		if (this.targetId === dataIdContent) {
-			tabContentGrayBlock.addClass('is-active');
-		}
 
 		if (this.$el.hasClass('js-tabs--social')) {
 			var dataIdArray = [];
@@ -1695,3 +1806,68 @@ var OurClientsSlider = {
 
 
 App.Control.install(OurClientsSlider);
+
+var VerticalTabs = {
+	el: '.js-vertical-tabs',
+	name: 'VerticalTabs',
+	cprefix: 'vtabs_',
+	initialize: function () {
+		this.tab = this.$('.js-vertical-tabs__tab');
+		this.tabsList = this.$('.js-vertical-tabs__list');
+		this.tabContent = this.$('.js-vertical-tabs__content');
+		if (this.$el.data('keep')) {
+			this.keepCookieId = this.cprefix + this.$el.data('keep');
+			var tabCookie = Cookies.get(this.keepCookieId);
+			if (tabCookie)
+				this.tab[tabCookie].click();
+		} else
+			this.keepCookieId = false;
+	},
+
+	events: {
+		'click .js-vertical-tabs__tab': 'switchTabOnClick'
+
+	},
+
+	switchTabOnClick: function (e) {
+		console.log(1);
+		e.preventDefault();
+		this.tab.removeClass('is-active');
+		$(e.currentTarget).addClass('is-active');
+
+		if (this.keepCookieId)
+			Cookies.set(this.keepCookieId,
+				this.tab.index(e.currentTarget));
+
+		this.targetId = $(e.currentTarget).data('id');
+
+		this.tabContent.removeClass('is-active');
+		$('#' + this.targetId).addClass('is-active');
+
+
+		if($(window).outerWidth() <= 767) {
+			this.tabsList.toggleClass('is-open');
+			this.tab.toggleClass('is-hide');
+
+			this.tab.not('.is-active').each(function(index, element) {
+	            $(element).css({
+	                'top': $(element).outerHeight() * (index + 1)
+	            });
+	        });
+	    } else if($(window).outerWidth() > 767) {
+	    	var tabGap = 2;
+
+	    	this.tabsList.removeClass('is-open');
+            this.tab.addClass('is-hide');
+
+            this.tab.not('.is-active').each(function(index, element) {
+                $(element).css({
+                    'top': -tabGap
+                });
+            });
+        }
+
+	}
+};
+
+App.Control.install(VerticalTabs);

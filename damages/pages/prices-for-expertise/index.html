@@ -128,7 +128,373 @@
 	<section class="section section--gray">
 		<div class="container">
 			<h1>Цены на экспертизы, оценки и услуги</h1>
-			<div class="row-lg">
+			<div class="vertical-tabs js-vertical-tabs">
+				<ul class="vertical-tabs__list js-vertical-tabs__list is-open">
+					<li class="vertical-tabs__tab js-vertical-tabs__tab is-hide is-active" data-id="avtoexpertise">
+						<article class="service-card">
+							<div class="service-card__img"><img src="../../assets/images/img-expertise-car-look.png" alt="Поврежденный автомобиль"/></div>
+							<div class="service-card__text">
+								<h2 class="service-card__title"><a href="#">Независимая автоэкспертиза</a></h2>
+								<p>Оценка ущерба автомобиля <br/> за 2 часа</p>
+								<ul class="service-card__price-block">
+									<li><span class="service-card__price">от 3 000 &#8381;</span></li>
+									<li><a href="#">Подробнее об услуге</a></li>
+								</ul>
+							</div>
+						</article>
+						<li class="vertical-tabs__tab js-vertical-tabs__tab is-hide" data-id="apartment-expertise">
+							<article class="service-card">
+								<div class="service-card__img"><img src="../../assets/images/img-expertise--apartment-damage-transparent-sm.png" alt="Экспертиза ущерба квартиры"/></div>
+								<div class="service-card__text">
+									<h2 class="service-card__title"><a href="#">Экспертиза <br/> ущерба квартиры</a></h2>
+									<p>Независимая оценка ущерба недвижимости</p>
+									<ul class="service-card__price-block">
+										<li><span class="service-card__price">от 5 000 &#8381;</span></li>
+										<li><a href="#">Подробнее об услуге</a></li>
+									</ul>
+								</div>
+							</article>
+						</li>
+						<li class="vertical-tabs__tab js-vertical-tabs__tab is-hide" data-id="services">
+							<article class="service-card">
+								<div class="service-card__img"><img src="../../assets/images/img-service--court-without-magnifier.png" alt="Судейский молоток"/></div>
+								<div class="service-card__text">
+									<h2 class="service-card__title"><a href="#">Юридические <br/> услуги</a></h2>
+									<p>Выигрываем 99% дел и даём финансовые гарантии</p>
+									<ul class="service-card__price-block">
+										<li><span class="service-card__price">от 6 000 &#8381;</span></li>
+										<li><a href="#">Подробнее об услуге</a></li>
+									</ul>
+								</div>
+							</article>
+						</li>
+					</li>
+				</ul>
+				<div class="vertical-tabs__container">
+					<div class="vertical-tabs__content vertical-tabs__content js-vertical-tabs__content is-active" id="avtoexpertise">
+						<div class="form-block">
+							<h3>Расчет стоимости услуг</h3>
+							<form class="js-form">
+								<fieldset class="form-block__wrapper js-check-form form-block__wrapper--inner-blocks">
+									<div class="form-block__inner js-check-form__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox js-check-form__checkbox" id="form-input-2-1" type="checkbox" name="documents"/>
+											<label class="form-block__checkbox-label" for="form-input-2-1">Подача документов в страховую компанию или РСА <span class="que js-tooltip"> Подсказка</span></label>
+										</div>
+										<div class="form-block__price js-check-form__calc-price js-check-form__calc-active"><span data-price="5000">5 000 &#8381;</span></div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox js-check-form__checkbox js-check-form__checkbox--default" id="form-input-2-2" type="checkbox" name="court" checked="checked"/>
+											<label class="form-block__checkbox-label" for="form-input-2-2">Представление интересов в суде</label>
+										</div>
+										<div class="js-check-form__appear">
+											<div class="form-block__tabs tabs js-tabs js-check-form__appear">
+												<ul class="js-tabs__tabs">
+													<li class="js-tabs__tab is-active" data-id="1">г. Москвы</li>
+													<li class="js-tabs__tab" data-id="2">Московской области</li>
+												</ul>
+												<div class="tabs__content">
+													<div class="tabs__content-tab tabs__content-tab--1 js-tabs__content is-active js-check-form__inside" id="1">
+														<div class="form-block__inner">
+															<div class="form-block__options">
+																<input class="form-block__radio js-check-form__radio" id="form-input-2-3" type="radio" name="radio"/>
+																<label class="form-block__radio-label" for="form-input-2-3">В одном судебном заседании <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content"> Подсказка</span></label>
+															</div>
+															<div class="form-block__price js-check-form__calc-price"><span data-price="6000">6 000 &#8381;</span></div>
+														</div>
+														<div class="form-block__inner">
+															<div class="form-block__options">
+																<input class="form-block__radio js-check-form__radio" id="form-input-2-4" type="radio" name="radio"/>
+																<label class="form-block__radio-label" for="form-input-2-4">От заявления до заседания <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-2"> Подсказка</span></label>
+															</div>
+															<div class="form-block__price js-check-form__calc-price"><span data-price="15000">15 000 &#8381;</span></div>
+														</div>
+														<div class="form-block__inner">
+															<div class="form-block__options">
+																<input class="form-block__radio js-check-form__radio js-check-form__radio-for-range" id="form-input-2-5" type="radio" name="radio"/>
+																<label class="form-block__radio-label" for="form-input-2-5">Ведение дела «под ключ», при цене&nbsp;иска: 70—100 тыс. руб. <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-3"> Подсказка</span></label>
+															</div>
+															<div class="form-block__price js-check-form__calc-price"><span data-price="25000">25 000 &#8381;</span></div>
+														</div>
+														<div class="js-range form-block__range">
+															<div class="js-range__slider"></div>
+															<div class="form-block__range-price"><span>50</span><span>70 &#8212; 100</span><span>150</span><span>350</span></div>
+														</div>
+													</div>
+													<div class="tabs__content-tab tabs__content-tab--2 js-tabs__content" id="2">
+														<p>Вы забираете решение суда и консультацию по дальнейшим действиям в нашем офисе в удобное для вас время.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<fieldset class="form-block__wrapper form-block__wrapper--has-border js-check-form form-block__wrapper--inner-blocks">
+									<legend class="form-block__section-title"><span>Дополнительные опции</span></legend>
+									<div class="form-block__inner js-check-form__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox js-check-form__checkbox" id="form-input-2-6" type="checkbox" name="documents"/>
+											<label class="form-block__checkbox-label js-check-form__checkbox-label" for="form-input-2-6">Отправка телеграммы <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-4"> Подсказка</span></label>
+										</div>
+										<div class="form-block__price js-check-form__calc-price"><span data-price="600">600 &#8381;</span></div>
+									</div>
+									<div class="form-block__inner js-check-form__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox js-check-form__checkbox js-check-form__checkbox--default" id="form-input-2-7" type="checkbox" name="documents" checked="checked"/>
+											<label class="form-block__checkbox-label js-check-form__checkbox-label" for="form-input-2-7">Получение исполнительного листа и&nbsp;предъявление его в</label>
+										</div>
+										<div class="js-check-form__appear">
+											<div class="form-block__inside">
+												<div class="form-block__inner">
+													<div class="form-block__options">
+														<input class="form-block__radio js-check-form__radio" id="form-input-2-8" type="radio" name="radio"/>
+														<label class="form-block__radio-label" for="form-input-2-8">Банк</label>
+													</div>
+													<div class="form-block__price js-check-form__calc-price"><span data-price="3000">3 000 &#8381;</span></div>
+												</div>
+												<div class="form-block__inner">
+													<div class="form-block__options">
+														<input class="form-block__radio js-check-form__radio" id="form-input-2-9" type="radio" name="radio"/>
+														<label class="form-block__radio-label" for="form-input-2-9">Службу судебных приставов</label>
+													</div>
+													<div class="form-block__price js-check-form__calc-price"><span data-price="3000">3 000 &#8381;</span></div>
+												</div>
+												<div class="form-block__inner">
+													<div class="form-block__options">
+														<input class="form-block__radio js-check-form__radio" id="form-input-2-10" type="radio" name="radio"/>
+														<label class="form-block__radio-label" for="form-input-2-10">Обе инстанции</label>
+													</div>
+													<div class="form-block__price js-check-form__calc-price"><span data-price="5000">5 000 &#8381;</span></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<div class="form-block__add-options form-block__add-options--no-text"></div>
+								<div class="form-block__wrapper js-check-form">
+									<div class="form-block__inner">
+										<div class="form-block__options form-block__options--sum"><span>Стоимость услуг</span></div>
+										<div class="form-block__price form-block__price--sum"><span class="js-check-form__price-sum" data-price="0">0 &#8381;</span></div>
+									</div>
+									<button class="form-block__btn btn btn--full-width" type="button">Оформить заявку</button>
+									<p class="form-block__details"><small>Данный расчет стоимости носит информационный характер и&nbsp;не является публичной офертой (ст. 437 ГК РФ).</small></p>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="vertical-tabs__content vertical-tabs__content js-vertical-tabs__content" id="apartment-expertise">
+						<div class="form-block">
+							<h3>Расчет стоимости услуг</h3>
+							<form>
+								<fieldset class="form-block__wrapper form-block__wrapper--has-border js-show-content">
+									<p>Выберите поврежденные элементы</p>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox" name="hallway" type="checkbox" id="form-input-3-1"/>
+											<label class="form-block__checkbox-label" for="form-input-3-1">Прихожая</label>
+										</div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox" name="corridor" type="checkbox" id="form-input-3-2"/>
+											<label class="form-block__checkbox-label" for="form-input-3-3">Коридор</label>
+										</div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox" name="bathroom" type="checkbox" id="form-input-3-3"/>
+											<label class="form-block__checkbox-label" for="form-input-3-3">Ванная комната</label>
+										</div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox" name="toilet" type="checkbox" id="form-input-3-4"/>
+											<label class="form-block__checkbox-label" for="form-input-3-4">Туалет</label>
+										</div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox" name="kitchen" type="checkbox" id="form-input-3-5"/>
+											<label class="form-block__checkbox-label" for="form-input-3-5">Кухня</label>
+										</div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox" name="room1" type="checkbox" id="form-input-3-6"/>
+											<label class="form-block__checkbox-label" for="form-input-3-6">Комната 1</label>
+										</div>
+									</div>
+									<div class="form-block__inner is-hide">
+										<div class="form-block__options">
+											<input class="form-block__checkbox" name="kitchen" type="checkbox" id="form-input-3-7"/>
+											<label class="form-block__checkbox-label" for="form-input-3-7">Кухня</label>
+										</div>
+									</div>
+									<div class="form-block__inner is-hide">
+										<div class="form-block__options">
+											<input class="form-block__checkbox" name="room1" type="checkbox" id="form-input-3-8"/>
+											<label class="form-block__checkbox-label" for="form-input-3-8">Комната 1</label>
+										</div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<div class="form-block__add-elements form-block__add-elements--plus-icon"><a class="link link--dotted-border js-show-content__btn">Добавить комнату</a></div>
+										</div>
+									</div>
+								</fieldset>
+								<div class="form-block__wrapper form-block__wrapper--has-border js-check-form">
+									<p>Где вы находитесь?</p>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__radio js-check-form__radio" type="radio" name="location" id="form-input-3-9"/>
+											<label class="form-block__radio-label" for="form-input-3-9">Москва, в пределах МКАД</label>
+										</div>
+										<div class="form-block__price js-check-form__calc-price"><span>Бесплатно</span></div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__radio js-check-form__radio" type="radio" name="location" id="form-input-3-10"/>
+											<label class="form-block__radio-label form-block__radio-label--inside-label" for="form-input-3-10">За пределами МКАД
+												<div class="form-block__inside-block">
+													<input class="form-block__input" type="text" id="form-input-3-11"/><span>км</span>
+												</div>
+											</label>
+										</div>
+										<div class="form-block__price js-check-form__calc-price"><span>500 &#8381; </span></div>
+									</div>
+								</div>
+								<div class="form-block__wrapper">
+									<div class="form-block__inner">
+										<div class="form-block__options form-block__options--sum"><span>Стоимость услуг</span></div>
+										<div class="form-block__price form-block__price--sum"><span>0 &#8381;</span></div>
+									</div>
+									<button class="form-block__btn btn btn--full-width">Заказать оценку ущерба</button>
+									<p class="form-block__details"><small>Данный расчет стоимости носит информационный характер и не является публичной офертой (ст. 437 ГК РФ).</small></p>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="vertical-tabs__content vertical-tabs__content js-vertical-tabs__content" id="services">
+						<div class="form-block">
+							<h3>Расчет стоимости услуг</h3>
+							<form class="js-form">
+								<fieldset class="form-block__wrapper js-check-form form-block__wrapper--inner-blocks">
+									<div class="form-block__inner js-check-form__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox js-check-form__checkbox" id="form-input-4-1" type="checkbox" name="documents"/>
+											<label class="form-block__checkbox-label" for="form-input-4-1">Подача документов в страховую компанию или РСА <span class="que js-tooltip"> Подсказка</span></label>
+										</div>
+										<div class="form-block__price js-check-form__calc-price js-check-form__calc-active"><span data-price="5000">5 000 &#8381;</span></div>
+									</div>
+									<div class="form-block__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox js-check-form__checkbox js-check-form__checkbox--default" id="form-input-4-2" type="checkbox" name="court" checked="checked"/>
+											<label class="form-block__checkbox-label" for="form-input-4-2">Представление интересов в суде</label>
+										</div>
+										<div class="js-check-form__appear">
+											<div class="form-block__tabs tabs js-tabs js-check-form__appear">
+												<ul class="js-tabs__tabs">
+													<li class="js-tabs__tab is-active" data-id="1">г. Москвы</li>
+													<li class="js-tabs__tab" data-id="2">Московской области</li>
+												</ul>
+												<div class="tabs__content">
+													<div class="tabs__content-tab tabs__content-tab--1 js-tabs__content is-active js-check-form__inside" id="1">
+														<div class="form-block__inner">
+															<div class="form-block__options">
+																<input class="form-block__radio js-check-form__radio" id="form-input-4-3" type="radio" name="radio"/>
+																<label class="form-block__radio-label" for="form-input-4-3">В одном судебном заседании <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content"> Подсказка</span></label>
+															</div>
+															<div class="form-block__price js-check-form__calc-price"><span data-price="6000">6 000 &#8381;</span></div>
+														</div>
+														<div class="form-block__inner">
+															<div class="form-block__options">
+																<input class="form-block__radio js-check-form__radio" id="form-input-4-4" type="radio" name="radio"/>
+																<label class="form-block__radio-label" for="form-input-4-4">От заявления до заседания <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-2"> Подсказка</span></label>
+															</div>
+															<div class="form-block__price js-check-form__calc-price"><span data-price="15000">15 000 &#8381;</span></div>
+														</div>
+														<div class="form-block__inner">
+															<div class="form-block__options">
+																<input class="form-block__radio js-check-form__radio js-check-form__radio-for-range" id="form-input-4-5" type="radio" name="radio"/>
+																<label class="form-block__radio-label" for="form-input-4-5">Ведение дела «под ключ», при цене&nbsp;иска: 70—100 тыс. руб. <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-3"> Подсказка</span></label>
+															</div>
+															<div class="form-block__price js-check-form__calc-price"><span data-price="25000">25 000 &#8381;</span></div>
+														</div>
+														<div class="js-range form-block__range">
+															<div class="js-range__slider"></div>
+															<div class="form-block__range-price"><span>50</span><span>70 &#8212; 100</span><span>150</span><span>350</span></div>
+														</div>
+													</div>
+													<div class="tabs__content-tab tabs__content-tab--2 js-tabs__content" id="2">
+														<p>Вы забираете решение суда и консультацию по дальнейшим действиям в нашем офисе в удобное для вас время.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<fieldset class="form-block__wrapper form-block__wrapper--has-border js-check-form form-block__wrapper--inner-blocks">
+									<legend class="form-block__section-title"><span>Дополнительные опции</span></legend>
+									<div class="form-block__inner js-check-form__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox js-check-form__checkbox" id="form-input-4-6" type="checkbox" name="documents"/>
+											<label class="form-block__checkbox-label js-check-form__checkbox-label" for="form-input-4-6">Отправка телеграммы <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-4"> Подсказка</span></label>
+										</div>
+										<div class="form-block__price js-check-form__calc-price"><span data-price="600">600 &#8381;</span></div>
+									</div>
+									<div class="form-block__inner js-check-form__inner">
+										<div class="form-block__options">
+											<input class="form-block__checkbox js-check-form__checkbox js-check-form__checkbox--default" id="form-input-4-7" type="checkbox" name="documents" checked="checked"/>
+											<label class="form-block__checkbox-label js-check-form__checkbox-label" for="form-input-4-7">Получение исполнительного листа и&nbsp;предъявление его в</label>
+										</div>
+										<div class="js-check-form__appear">
+											<div class="form-block__inside">
+												<div class="form-block__inner">
+													<div class="form-block__options">
+														<input class="form-block__radio js-check-form__radio" id="form-input-4-8" type="radio" name="radio"/>
+														<label class="form-block__radio-label" for="form-input-4-8">Банк</label>
+													</div>
+													<div class="form-block__price js-check-form__calc-price"><span data-price="3000">3 000 &#8381;</span></div>
+												</div>
+												<div class="form-block__inner">
+													<div class="form-block__options">
+														<input class="form-block__radio js-check-form__radio" id="form-input-4-9" type="radio" name="radio"/>
+														<label class="form-block__radio-label" for="form-input-4-9">Службу судебных приставов</label>
+													</div>
+													<div class="form-block__price js-check-form__calc-price"><span data-price="3000">3 000 &#8381;</span></div>
+												</div>
+												<div class="form-block__inner">
+													<div class="form-block__options">
+														<input class="form-block__radio js-check-form__radio" id="form-input-4-10" type="radio" name="radio"/>
+														<label class="form-block__radio-label" for="form-input-4-10">Обе инстанции</label>
+													</div>
+													<div class="form-block__price js-check-form__calc-price"><span data-price="5000">5 000 &#8381;</span></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<div class="form-block__add-options form-block__add-options--no-text"></div>
+								<div class="form-block__wrapper js-check-form">
+									<div class="form-block__inner">
+										<div class="form-block__options form-block__options--sum"><span>Стоимость услуг</span></div>
+										<div class="form-block__price form-block__price--sum"><span class="js-check-form__price-sum" data-price="0">0 &#8381;</span></div>
+									</div>
+									<button class="form-block__btn btn btn--full-width" type="button">Оформить заявку</button>
+									<p class="form-block__details"><small>Данный расчет стоимости носит информационный характер и&nbsp;не является публичной офертой (ст. 437 ГК РФ).</small></p>
+								</div>
+							</form>
+						</div>
+						<div class="tooltip-templates">
+							<div class="tooltip-templates__wrapper" id="tooltip-templates__content">
+								<p class="tooltip-templates__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat?</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-lg price-items">
 				<div class="col-2-3-lg section__last-block">
 					<div class="price-item">
 						<div class="price-item__left-col">

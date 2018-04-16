@@ -136,7 +136,7 @@
 					<p>Как правило, тест ДНК проводится по слюне (буккальному мазку). Но также необходимые образцы можно выделить из нестандартных материалов: ушной серы, луковице волоса, ногтям, сигаретным окуркам и т.п.</p>
 					<p>Анализ на родство проводится по 19 маркерам и его точность составляет 99,999%.</p>
 				</div>
-				<div class="col-1-2-md">
+				<div class="col-1-2-md section__first-block">
 					<div class="service-order service-order--gray">
 						<div class="service-order__header service-order__header--first-header">
 							<div class="service-order__col-left">Срок проведения</div>
@@ -145,11 +145,11 @@
 						<div class="service-order__header">
 							<div class="service-order__col-left">Стоимость экспертизы</div>
 							<div class="service-order__col-right">от 12 000 &#8381;</div>
-						</div><a class="btn btn--full-width btn--sm-padding service-order__btn">Оформить заявку</a>
+						</div><a class="btn btn--full-width btn--sm-padding service-order__btn js-fancy-modal" href="#expertise-request">Оформить заявку</a>
 						<p><small>Точная стоимость зависит от конкретного случая. <br/> Оставьте заявку или уточняйте по телефону: +7 (495) 995-82-92</small></p>
 					</div>
 					<ul class="links-list links-list--md-links links-list--after-block">
-						<li> <a href="#">Подробнее о стоимости днк-теста на родство</a></li>
+						<li><a href="#">Подробнее о стоимости днк-теста на родство</a></li>
 					</ul>
 				</div>
 			</div>
@@ -160,7 +160,7 @@
 			<h2>Какое родство можно установить?</h2>
 			<div class="row-md">
 				<div class="col-1-2-md">
-					<div class="info-importamt-blocks-col info-importamt-blocks-col--left-in-col">
+					<div class="info-important-blocks-col info-important-blocks-col--left-in-col">
 						<div class="info-important info-important--blocks">
 							<h3>Полные сиблинги<span>(родные братья и сестры)</span></h3>
 							<ul class="list">
@@ -185,7 +185,7 @@
 					</div>
 				</div>
 				<div class="col-1-2-md">
-					<div class="info-importamt-blocks-col info-importamt-blocks-col--last-in-section">
+					<div class="info-important-blocks-col info-important-blocks-col--last-in-section">
 						<div class="info-important info-important--blocks">
 							<h3> Неполные сиблинги<span>(только по отцу или матери)</span></h3>
 							<ul class="list">
@@ -507,6 +507,31 @@
 		</div>
 	</section>
 </main>
+<div class="modal" id="expertise-request">
+	<h2 class="modal__title">Оформление заявки</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="tel" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="email">E-mail</label>
+			<input class="field-text__input" id="email" type="email"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn" type="submit" value="Оформить заявку"/>
+		</div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+	</form>
+</div>
 <footer class="page-footer">
 	<div class="container">
 		<div class="page-footer__inner">

@@ -141,7 +141,7 @@
 						<li>изготовленной по индивидуальному заказу.</li>
 					</ul>
 				</div>
-				<div class="col-1-2-md">
+				<div class="col-1-2-md section__only-block">
 					<div class="service-order service-order--gray">
 						<div class="service-order__header">
 							<div class="service-order__col-left">Срок проведения</div>
@@ -150,7 +150,7 @@
 						<div class="service-order__header">
 							<div class="service-order__col-left">Стоимость экспертизы</div>
 							<div class="service-order__col-right">от 6 000 &#8381;</div>
-						</div><a class="btn btn--full-width btn--sm-padding service-order__btn">Оформить заявку</a>
+						</div><a class="btn btn--full-width btn--sm-padding service-order__btn js-fancy-modal" href="#expertise-request">Оформить заявку</a>
 						<p><small>Точная стоимость зависит от конкретного случая. <br/> Оставьте заявку или уточняйте по телефону: +7 (495) 995-82-92</small></p>
 					</div>
 				</div>
@@ -164,7 +164,7 @@
 			<h2>Самые распространенные дефекты мебели</h2>
 			<div class="row-md">
 				<div class="col-1-2-md">
-					<div class="info-importamt-blocks-col info-importamt-blocks-col--left-in-col">
+					<div class="info-important-blocks-col info-important-blocks-col--left-in-col">
 						<div class="info-important info-important--blocks">
 							<h3>Мягкая мебель</h3>
 							<ul class="list">
@@ -182,7 +182,7 @@
 					</div>
 				</div>
 				<div class="col-1-2-md">
-					<div class="info-importamt-blocks-col info-importamt-blocks-col--last-in-section">
+					<div class="info-important-blocks-col info-important-blocks-col--last-in-section">
 						<div class="info-important info-important--blocks">
 							<h3>Корпусная мебель</h3>
 							<ul class="list">
@@ -231,9 +231,9 @@
 				<div class="col-1-2-md">
 					<h2>Несущественный дефект?</h2>
 					<p>Запомните, термин «несущественный дефект» применяется только по отношению к технически сложным товарам, а также к товарам, изготовленным на заказ.</p>
-					<p>Если вашего изделия нет в <a>списке</a>, то вопрос о существенности не ставится в принципе. Для расторжения договора достаточно доказательства наличия дефекта.</p>
+					<p>Если вашего изделия нет в <a href="#">списке</a>, то вопрос о существенности не ставится в принципе. Для расторжения договора достаточно доказательства наличия дефекта.</p>
 				</div>
-				<div class="col-1-2-md section__first-block">
+				<div class="col-1-2-md section__only-block">
 					<div class="service-order">
 						<div class="service-order__header service-order__header--before-text">Перечень технически сложных товаров</div>
 						<p><small>Утвержден Постановлением Правительства №924 от 10.11.11.</small></p><a class="btn btn--full-width btn--sm-padding service-order__btn">Перейти к документу</a>
@@ -245,7 +245,7 @@
 	<section class="section">
 		<div class="container">
 			<h2>Что делать, если вы обнаружили дефект</h2>
-			<div class="info-importamt-blocks-col">
+			<div class="info-important-blocks-col">
 				<div class="info-important info-important--blocks info-important--gray row-md">
 					<h3>1. Письменная претензия</h3>
 					<ul class="list list--ordered list--align-padding col-1-2-md">
@@ -305,7 +305,7 @@
 				<li><a href="#">Скачать образец претензии к магазину</a></li>
 				<li><a href="#">Скачать образец досудебной претензии</a></li>
 			</ul>
-			<p>Согласно <a>п. 6, ст. 13 ЗоПП</a>, продавец или производитель обязан выплатить 50% штраф от назначеннйо судом суммы в пользу потребителя за отказ решить вопрос в досудебном порядке.</p>
+			<p>Согласно <a href="#">п. 6, ст. 13 ЗоПП</a>, продавец или производитель обязан выплатить 50% штраф от назначеннйо судом суммы в пользу потребителя за отказ решить вопрос в досудебном порядке.</p>
 		</div>
 	</section>
 	<div class="call-us">
@@ -398,6 +398,31 @@
 		</div>
 	</section>
 </main>
+<div class="modal" id="expertise-request">
+	<h2 class="modal__title">Оформление заявки</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="tel" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="email">E-mail</label>
+			<input class="field-text__input" id="email" type="email"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn" type="submit" value="Оформить заявку"/>
+		</div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+	</form>
+</div>
 <footer class="page-footer">
 	<div class="container">
 		<div class="page-footer__inner">
