@@ -544,6 +544,8 @@ var EqualHeightSections = {
 		this.getSortedItemsParentArray();
 
 		$(window).bind('load', function() {
+			self.setHeight();
+
 			if($('html').hasClass('fonts-loaded')) {
 				self.setHeight();
 			}
