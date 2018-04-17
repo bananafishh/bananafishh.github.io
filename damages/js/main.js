@@ -533,30 +533,37 @@ var EqualHeightSections = {
 	name: 'EqualHeightSections',
 
 	initialize: function() {
-		this.cards = this.$('.js-equal-height-sections__card');
-		this.items = this.$('.js-equal-height-sections__item');
+		this.sections = this.$('.js-equal-height-sections__item');
 		this.images = this.$('img');
 		this.showMoreBtn = this.$('.js-equal-height-sections__show-more-btn');
-		this.sortedItemsParentArray = [];
+		this.sortedParentArray = [];
+
+		this.jointSections = this.$('.js-equal-height-sections__combined-item');
+		this.jointSectionsMains = this.$('.js-equal-height-sections__combined-item-main');
+		this.jointSectionsFooters = this.$('.js-equal-height-sections__combined-item-footer');
 
 		var self = this;
 
-		this.getSortedItemsParentArray();
+		this.getSortedParentArray();
 
 		$(window).bind('load', function() {
 			self.setHeight();
+			self.setJointSectionsHeight();
 
 			if($('html').hasClass('fonts-loaded')) {
 				self.setHeight();
+				self.setJointSectionsHeight();
 			}
 		});
 
 		$(window).bind('resize', function() {
 			self.setHeight();
+			self.setJointSectionsHeight();
 		});
 
 		this.images.bind('load', function() {
 			self.setHeight();
+			self.setJointSectionsHeight();
 		});
 	},
 
@@ -565,46 +572,78 @@ var EqualHeightSections = {
 	},
 
 	setHeight: function() {
-		for (var i = 0; i < this.sortedItemsParentArray.length; i++) {
-			var maxHeight = 0;
+		for (var i = 0; i < this.sortedParentArray.length; i++) {
+			this.sectionMaxHeight = 0;
+			var self = this;
 
-			$.each(this.sortedItemsParentArray[i], function(index, value) {
+			$.each(this.sortedParentArray[i], function(index, value) {
 				$(this).css('height', 'auto');
 			});
 
-			for (var y = 0; y < this.sortedItemsParentArray[i].length; y++) {
-				var itemHeight = parseInt($(this.sortedItemsParentArray[i][y]).outerHeight());
+			for (var y = 0; y < this.sortedParentArray[i].length; y++) {
+				this.sectionHeight = parseInt($(this.sortedParentArray[i][y]).outerHeight());
 
-				if (itemHeight > maxHeight) {
-					maxHeight = itemHeight;
+				if (this.sectionHeight > this.sectionMaxHeight) {
+					this.sectionMaxHeight = this.sectionHeight;
 				}
 			}
 
-			$.each(this.sortedItemsParentArray[i], function(index, value) {
-				$(this).css('height', maxHeight);
+			$.each(this.sortedParentArray[i], function(index, value) {
+				$(this).css('height', self.sectionMaxHeight);
 			});
-		}
-
-		// Карточка имеет один общий раздел, равный по высоте двум разделам соседней карточки
-		if(this.cards) {
-			this.cardHeight = this.cards.filter('[data-sections=discrete]').outerHeight();
-			this.cards.filter('[data-sections=combined]').outerHeight(this.cardHeight);
 		}
 	},
 
-	getSortedItemsParentArray: function() {
-		this.items.sort(this.sortByValue);
-		this.sortedItems = Array.prototype.slice.call(this.items);
+	setJointSectionsHeight: function() {
+		this.jointSectionMaxHeight = 0;
+		this.jointSectionsMainsHeight;
+		var self = this;
 
-		for (var i = 0; i < this.sortedItems.length; i++) {
-			if($(this.sortedItems[i]).data('section') !== $(this.sortedItems[i + 1]).data('section')) {
-				var separator = this.sortedItems.indexOf(this.sortedItems[i]);
-				this.sortedItemsParentArray.push(this.sortedItems.splice(0, separator + 1));
+		this.jointSections.filter('[data-section=solitary]').css('height', 'auto');
+		this.jointSectionsMains.css('height', 'auto');
+
+		this.jointSections.each(function(index, value) {
+			self.jointSectionHeight = parseInt($(this).outerHeight());
+
+			if (self.jointSectionHeight > self.jointSectionMaxHeight) {
+				self.jointSectionMaxHeight = self.jointSectionHeight;
+			}
+		});
+
+		if(this.jointSections.filter('[data-section=solitary]').outerHeight() == this.jointSectionMaxHeight) {
+			this.jointSectionsMainsHeight = this.jointSectionMaxHeight - this.jointSectionsFooters.outerHeight();
+			this.jointSectionsMains.css('height', this.jointSectionsMainsHeight);
+		} else {
+			this.jointSections.filter('[data-section=solitary]').css('height', this.jointSectionMaxHeight);
+
+			this.jointSectionsMainsMaxHeight = 0;
+			this.jointSectionsMains.css('height', 'auto');
+
+			this.jointSectionsMains.each(function(index, value) {
+				self.jointSectionsMainsHeight = parseInt($(this).outerHeight());
+
+				if (self.jointSectionsMainsHeight > self.jointSectionsMainsMaxHeight) {
+					self.jointSectionsMainsMaxHeight = self.jointSectionsMainsHeight;
+				}
+			});
+
+			this.jointSectionsMains.css('height', this.jointSectionsMainsMaxHeight);
+		}
+	},
+
+	getSortedParentArray: function() {
+		this.sections.sort(this.sortByValue);
+		this.sortedSections = Array.prototype.slice.call(this.sections);
+
+		for (var i = 0; i < this.sortedSections.length; i++) {
+			if($(this.sortedSections[i]).data('section') !== $(this.sortedSections[i + 1]).data('section')) {
+				var separator = this.sortedSections.indexOf(this.sortedSections[i]);
+				this.sortedParentArray.push(this.sortedSections.splice(0, separator + 1));
 				i = 0;
 			}
 		}
 
-		return this.sortedItemsParentArray;
+		return this.sortedParentArray;
 	},
 
 	sortByValue: function(a, b) {
