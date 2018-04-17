@@ -528,6 +528,54 @@ var CitySelection = {
 };
 
 App.Control.install(CitySelection)
+var EqualHeightBlocks = {
+	el: '.js-equal-height-blocks',
+	name: 'EqualHeightBlocks',
+
+	initialize: function () {
+		this.items = this.$('.js-equal-height-blocks__item');
+		this.images = this.$('img');
+
+		var self = this;
+
+		$(window).bind('load', function() {
+			self.setHeight();
+
+			if($('html').hasClass('fonts-loaded')) {
+				self.setHeight();
+			}
+		});
+
+		$(window).bind('resize', function () {
+			self.setHeight();
+		});
+
+		this.images.bind('load', function () {
+			self.setHeight();
+		});
+	},
+
+
+	setHeight: function () {
+		var maxHeight = 0;
+		this.items.css('height', 'auto');
+
+		this.items.each(function (index, items) {
+
+			var itemHeight = parseInt($(this).outerHeight());
+
+
+			if (itemHeight > maxHeight) {
+				maxHeight = itemHeight;
+			}
+		});
+
+		this.items.css('height', maxHeight);
+	}
+};
+
+App.Control.install(EqualHeightBlocks);
+
 var EqualHeightSections = {
 	el: '.js-equal-height-sections',
 	name: 'EqualHeightSections',
@@ -1423,12 +1471,12 @@ App.Control.install({
 	initialize: function() {
 		this.$el.bxSlider({
 			pager: false,
-			slideWidth: 217,
+			slideWidth: 216,
 			minSlides: 1,
 			maxSlides: 4,
 			moveSlides: 1,
 			auto: false,
-			slideMargin: 30,
+			slideMargin: 32,
 			adaptiveHeight: true
 		});
 	}
@@ -1847,6 +1895,24 @@ var OurClientsSlider = {
 
 
 App.Control.install(OurClientsSlider);
+
+var SliderContent = {
+	el: '.js-slider-content',
+	name: 'SliderContent',
+
+	initialize: function () {
+		this.$el.bxSlider({
+			pager: false,
+			minSlides: 1,
+			maxSlides: 1,
+			moveSlides: 1,
+			auto: false,
+			adaptiveHeight: true
+		})
+	},
+};
+
+App.Control.install(SliderContent);
 
 var VerticalTabs = {
 	el: '.js-vertical-tabs',
