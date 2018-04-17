@@ -716,52 +716,6 @@ var EqualHeightSections = {
 };
 
 App.Control.install(EqualHeightSections);
-var EqualHeightBlocks = {
-	el: '.js-equal-height-blocks',
-	name: 'EqualHeightBlocks',
-
-	initialize: function () {
-		this.items = this.$('.js-equal-height-blocks__item');
-		this.images = this.$('img');
-
-		var self = this;
-
-		$(window).bind('load', function() {
-			if($('html').hasClass('fonts-loaded')) {
-				self.setHeight();
-			}
-		});
-
-		$(window).bind('resize', function () {
-			self.setHeight();
-		});
-
-		this.images.bind('load', function () {
-			self.setHeight();
-		});
-	},
-
-
-	setHeight: function () {
-		var maxHeight = 0;
-		this.items.css('height', 'auto');
-
-		this.items.each(function (index, items) {
-
-			var itemHeight = parseInt($(this).outerHeight());
-
-
-			if (itemHeight > maxHeight) {
-				maxHeight = itemHeight;
-			}
-		});
-
-		this.items.css('height', maxHeight);
-	}
-};
-
-App.Control.install(EqualHeightBlocks);
-
 var EqualHeightSection = {
 	el: '.js-equal-height-section',
 	name: 'EqualHeightSection',
@@ -942,25 +896,6 @@ var EqualHeightSection = {
 
 };
 App.Control.install(EqualHeightSection);
-
-var factsSlider = {
-	el: '.js-facts-slider',
-	name: 'interestingFactsSlider',
-
-	initialize: function () {
-		this.$el.bxSlider({
-			pager: false,
-			minSlides: 1,
-			maxSlides: 1,
-			moveSlides: 1,
-			auto: false,
-			adaptiveHeight: true
-		})
-
-	},
-};
-
-App.Control.install(factsSlider);
 
 var fadeInsideForm = {
 	el: '.js-form',
@@ -1283,14 +1218,14 @@ var rangeControl = {
 	el: '.js-range',
 	name: 'rangeControl',
 
-	initialize: function() {
+	initialize: function () {
 		this.rangeSlider = this.$('.js-range__slider');
-		this.input=this.$('input');
+		this.input = this.$('input');
 		this.span = this.$('span');
 		this.rangeSlider.slider({
-			min:50,
-			max:350,
-			value:150,
+			min: 50,
+			max: 350,
+			value: 150,
 			//step:80,
 
 		});
@@ -1299,13 +1234,48 @@ var rangeControl = {
 	events: {
 		'click .js-range__slider': 'clickSlider'
 	},
-	clickSlider: function(evt) {
+	clickSlider: function (evt) {
 		var rangeValue = '';
 		var rangeValue = this.rangeSlider.slider('value');
 	}
 };
 
 App.Control.install(rangeControl);
+
+var rangeDamageControl = {
+	el: '.js-range-damage',
+	name: 'rangeDamageControl',
+
+	initialize: function () {
+		this.rangeDamageSlider = this.$('.js-range-damage__slider');
+		var self = this;
+		this.rangeDamageSlider.slider({
+			min: 0,
+			max: 300,
+			value: 0,
+			step: 100,
+			change: function (event, ui) {
+				var rangeSlider = ui.value;
+				var rangeDamageSlider = self.$('.js-range-damage__slider');
+				var activeRange = self.$('.is-active');
+				activeRange.removeClass();
+				if (rangeSlider === 100) {
+					activeRange.addClass('is-active is-active-min-mid');
+				} else if (rangeSlider === 200) {
+					activeRange.addClass('is-active is-active-min-max');
+				} else if (rangeSlider === 300) {
+					activeRange.addClass('is-active is-active-max');
+				} else if (rangeSlider === 0) {
+					activeRange.addClass('is-active is-active-min');
+				}
+			}
+
+		});
+
+	}
+};
+
+App.Control.install(rangeDamageControl);
 
 var reviewsTabs = {
 	el: '.js-reviews-tabs',
@@ -1876,26 +1846,6 @@ var MainNav = {
 };
 
 App.Control.install(MainNav)
-var OurClientsSlider = {
-	el: '.js-clients-slider',
-	name: 'OurClientsSlider',
-
-	initialize: function () {
-		this.$el.bxSlider({
-			pager: false,
-			slideWidth: 216,
-			minSlides: 1,
-			maxSlides: 4,
-			moveSlides: 1,
-			auto: false,
-			adaptiveHeight: true
-		});
-	}
-};
-
-
-App.Control.install(OurClientsSlider);
-
 var SliderContent = {
 	el: '.js-slider-content',
 	name: 'SliderContent',

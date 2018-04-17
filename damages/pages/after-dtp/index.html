@@ -197,118 +197,88 @@
 						<h3>Расчет стоимости услуг</h3>
 						<form class="js-form">
 							<fieldset class="form-block__wrapper js-check-form form-block__wrapper--inner-blocks">
-								<div class="form-block__inner js-check-form__inner">
-									<div class="form-block__options">
-										<input class="form-block__checkbox js-check-form__checkbox" id="form-input-1-1" type="checkbox" name="documents"/>
-										<label class="form-block__checkbox-label" for="form-input-1-1">Подача документов в страховую компанию или РСА <span class="que js-tooltip"> Подсказка</span></label>
+								<div class="form-block__inner js-check-form__inner js-range-damage">
+									<p>Степень повреждения <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-5"> Подсказка</span></p>
+									<div class="form-block__range-slider">
+										<div class="is-active-min is-active">
+											<div class="js-range-damage__slider"></div>
+										</div>
 									</div>
-									<div class="form-block__price js-check-form__calc-price js-check-form__calc-active"><span data-price="5000">5 000 &#8381;</span></div>
+									<div class="form-block__range-damages"><span>Малая</span><span>Средняя</span><span>Большая</span><span>Тотальная</span></div>
 								</div>
 								<div class="form-block__inner">
 									<div class="form-block__options">
-										<input class="form-block__checkbox js-check-form__checkbox js-check-form__checkbox--default" id="form-input-1-2" type="checkbox" name="court" checked="checked"/>
-										<label class="form-block__checkbox-label" for="form-input-1-2">Представление интересов в суде</label>
-									</div>
-									<div class="js-check-form__appear">
-										<div class="form-block__tabs tabs js-tabs js-check-form__appear">
-											<ul class="js-tabs__tabs">
-												<li class="js-tabs__tab is-active" data-id="1">г. Москвы</li>
-												<li class="js-tabs__tab" data-id="2">Московской области</li>
-											</ul>
-											<div class="tabs__content">
-												<div class="tabs__content-tab tabs__content-tab--1 js-tabs__content is-active js-check-form__inside" id="1">
-													<div class="form-block__inner">
-														<div class="form-block__options">
-															<input class="form-block__radio js-check-form__radio" id="form-input-1-3" type="radio" name="radio"/>
-															<label class="form-block__radio-label" for="form-input-1-3">В одном судебном заседании <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content"> Подсказка</span></label>
-														</div>
-														<div class="form-block__price js-check-form__calc-price"><span data-price="6000">6 000 &#8381;</span></div>
-													</div>
-													<div class="form-block__inner">
-														<div class="form-block__options">
-															<input class="form-block__radio js-check-form__radio" id="form-input-1-4" type="radio" name="radio"/>
-															<label class="form-block__radio-label" for="form-input-1-4">От заявления до заседания <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-2"> Подсказка</span></label>
-														</div>
-														<div class="form-block__price js-check-form__calc-price"><span data-price="15000">15 000 &#8381;</span></div>
-													</div>
-													<div class="form-block__inner">
-														<div class="form-block__options">
-															<input class="form-block__radio js-check-form__radio js-check-form__radio-for-range" id="form-input-1-5" type="radio" name="radio"/>
-															<label class="form-block__radio-label" for="form-input-1-5">Ведение дела «под ключ», при цене&nbsp;иска: 70—100 тыс. руб. <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-3"> Подсказка</span></label>
-														</div>
-														<div class="form-block__price js-check-form__calc-price"><span data-price="25000">25 000 &#8381;</span></div>
-													</div>
-													<div class="js-range form-block__range">
-														<div class="js-range__slider"></div>
-														<div class="form-block__range-price"><span>50</span><span>70 &#8212; 100</span><span>150</span><span>350</span></div>
-													</div>
-												</div>
-												<div class="tabs__content-tab tabs__content-tab--2 js-tabs__content" id="2">
-													<p>Вы забираете решение суда и консультацию по дальнейшим действиям в нашем офисе в удобное для вас время.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</fieldset>
-							<fieldset class="form-block__wrapper form-block__wrapper--has-border js-check-form form-block__wrapper--inner-blocks">
-								<legend class="form-block__section-title"><span>Дополнительные опции</span></legend>
-								<div class="form-block__inner js-check-form__inner">
-									<div class="form-block__options">
-										<input class="form-block__checkbox js-check-form__checkbox" id="form-input-1-6" type="checkbox" name="documents"/>
-										<label class="form-block__checkbox-label js-check-form__checkbox-label" for="form-input-1-6">Отправка телеграммы <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-4"> Подсказка</span></label>
-									</div>
-									<div class="form-block__price js-check-form__calc-price"><span data-price="600">600 &#8381;</span></div>
-								</div>
-								<div class="form-block__inner js-check-form__inner">
-									<div class="form-block__options">
-										<input class="form-block__checkbox js-check-form__checkbox js-check-form__checkbox--default" id="form-input-1-7" type="checkbox" name="documents" checked="checked"/>
-										<label class="form-block__checkbox-label js-check-form__checkbox-label" for="form-input-1-7">Получение исполнительного листа и&nbsp;предъявление его в</label>
+										<input class="form-block__checkbox" type="checkbox" checked="checked" id="form-input-5-1"/>
+										<label class="form-block__checkbox-label" for="form-input-5-1">Осмотр и составление акта <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-6">Подсказка</span></label>
 									</div>
 									<div class="js-check-form__appear">
 										<div class="form-block__inside">
 											<div class="form-block__inner">
 												<div class="form-block__options">
-													<input class="form-block__radio js-check-form__radio" id="form-input-1-8" type="radio" name="radio"/>
-													<label class="form-block__radio-label" for="form-input-1-8">Банк</label>
+													<input class="form-block__radio js-check-form__radio" type="radio" id="form-input-5-2"/>
+													<label class="form-block__radio-label" for="form-input-5-2">На тех. станции «Рихточка»
+														<div> <a href="#">г. Мытищи</a></div>
+													</label>
 												</div>
-												<div class="form-block__price js-check-form__calc-price"><span data-price="3000">3 000 &#8381;</span></div>
+												<div class="form-block__price js-check-form__calc-price"><span>500 &#8381;</span></div>
 											</div>
-											<div class="form-block__inner">
-												<div class="form-block__options">
-													<input class="form-block__radio js-check-form__radio" id="form-input-1-9" type="radio" name="radio"/>
-													<label class="form-block__radio-label" for="form-input-1-9">Службу судебных приставов</label>
-												</div>
-												<div class="form-block__price js-check-form__calc-price"><span data-price="3000">3 000 &#8381;</span></div>
-											</div>
-											<div class="form-block__inner">
-												<div class="form-block__options">
-													<input class="form-block__radio js-check-form__radio" id="form-input-1-10" type="radio" name="radio"/>
-													<label class="form-block__radio-label" for="form-input-1-10">Обе инстанции</label>
-												</div>
-												<div class="form-block__price js-check-form__calc-price"><span data-price="5000">5 000 &#8381;</span></div>
-											</div>
+											<div class="form-block__inner"></div>
+											<div class="form-block__inner"></div>
+											<div class="form-block__inner"></div>
 										</div>
 									</div>
 								</div>
 							</fieldset>
-							<div class="form-block__add-options form-block__add-options--no-text"></div>
-							<div class="form-block__wrapper js-check-form">
-								<div class="form-block__inner">
-									<div class="form-block__options form-block__options--sum"><span>Стоимость услуг</span></div>
-									<div class="form-block__price form-block__price--sum"><span class="js-check-form__price-sum" data-price="0">0 &#8381;</span></div>
-								</div>
-								<button class="form-block__btn btn btn--full-width" type="button">Оформить заявку</button>
-								<p class="form-block__details"><small>Данный расчет стоимости носит информационный характер и&nbsp;не является публичной офертой (ст. 437 ГК РФ).</small></p>
-							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="tooltip-templates">
-			<div class="tooltip-templates__wrapper" id="tooltip-templates__content">
-				<p class="tooltip-templates__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat?</p>
+			<div class="tooltip-templates">
+				<div class="tooltip-templates__wrapper" id="tooltip-templates__content">
+					<div class="tooltip-templates__text">При заказе вы получаете:</div>
+					<div class="tooltip-templates__text">- подготовку правовой позиции</div>
+					<div class="tooltip-templates__text">- участие в одном судебном заседании</div>
+				</div>
+			</div>
+			<div class="tooltip-templates">
+				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-2">
+					<div class="tooltip-templates__text">Данная услуга предоставляется только для исков стоимостью от 50 000 до 120 000 рублей.</div>
+					<div class="tooltip-templates__text">При заказе вы получаете:</div>
+					<div class="tooltip-templates__text">- подготовку искового заявления,</div>
+					<div class="tooltip-templates__text">- подача в суд,</div>
+					<div class="tooltip-templates__text">- участие в предварительном и одном судебном заседании</div>
+				</div>
+			</div>
+			<div class="tooltip-templates">
+				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-3">
+					<div class="tooltip-templates__text">При заказе вы получаете:</div>
+					<div class="tooltip-templates__text">- Подготовку искового заявления,</div>
+					<div class="tooltip-templates__text">- Подача иска в суд</div>
+					<div class="tooltip-templates__text">- Участие во всех судебных заседаниях в суде первой инстанции</div>
+					<div class="tooltip-templates__text">- Получение решения и исполнительного листа.</div>
+				</div>
+			</div>
+			<div class="tooltip-templates">
+				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-4">
+					<div class="tooltip-templates__text">Вам понадобится эта услуга, только если ответчиком выступает физическое лицо!</div>
+					<div class="tooltip-templates__text">Как правило, при рассмотрении гражданских дел мы отправляем 1-2 телеграммы.</div>
+				</div>
+			</div>
+			<div class="tooltip-templates">
+				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-5">
+					<div class="tooltip-templates__text">
+						<div>Лёгкая - до 5 элементов</div>
+						<div>Средняя - до 10 элементов</div>
+						<div>Большая - до 30 элементов</div>
+						<div>Тотальная - свыше 30 элементов</div>
+						<div>*Повышающий коэффициент для грузового, спец. техники, эксклюзивного, раритетного  транспорта от 1 до 2. Детали уточняйте у менеджера.</div>
+					</div>
+				</div>
+			</div>
+			<div class="tooltip-templates">
+				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-6">
+					<div class="tooltip-templates__text">Акт осмотра - это документ, который составляется при осмотре автомобиля, в присутствии заинтересованных лиц. В акте осмотра фиксируются все повреждения автомобиля, также там указываются способы их устранения (замена, или ремонт).</div>
+				</div>
 			</div>
 		</div>
 	</section>
