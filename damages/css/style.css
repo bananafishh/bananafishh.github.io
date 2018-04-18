@@ -5747,7 +5747,10 @@ input[type="search"] {
 .btn--has-arrow {
   padding-right: 17px;
   padding-bottom: 12px;
+  vertical-align: middle;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .btn--has-arrow::after {
   content: "";

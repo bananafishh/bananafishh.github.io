@@ -132,10 +132,10 @@
 			<div class="row-md">
 				<div class="col-1-2-lg push-1-2-lg hide-up-to-sm">
 					<div class="video video--after-breadcrumbs video--mb7">
-						<div class="video__player" style="background-image: url(../../assets/backgrounds/bg-video2.png);">
+						<div class="video__player" style="background-image: url(../../assets/backgrounds/bg-video3.png);">
 							<div class="video__player-screen">
 								<div class="video__player-title">
-									<div class="video__player-text"><span>5 шагов</span> после залива квартиры</div><a class="btn btn--full-width btn--sm-padding btn--has-arrow js-fancy-video" href="http://www.youtube.com/embed/v8DX_17w2cA?autoplay=1&amp;origin=https://www.youtube.com/watch?v=v8DX_17w2cA" data-fancybox-type="iframe">Смотреть видео</a>
+									<div class="video__player-text"><span>5 шагов</span> после залива квартиры</div><a class="btn btn--full-width btn--sm-padding btn--has-arrow js-fancy-video" href="https://www.youtube.com/embed/F_lVIy0yuNo?autoplay=1&amp;origin=https://www.youtube.com/watch?time_continue=6&amp;v=F_lVIy0yuNo" data-fancybox-type="iframe">Смотреть видео</a>
 								</div>
 							</div>
 						</div>
@@ -301,7 +301,7 @@
 									<div class="form-block__options form-block__options--sum"><span>Стоимость услуг</span></div>
 									<div class="form-block__price form-block__price--sum"><span>0 &#8381;</span></div>
 								</div>
-								<button class="form-block__btn btn btn--full-width">Заказать оценку ущерба</button>
+								<button class="form-block__btn btn btn--full-width js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#expertise-request">Заказать оценку ущерба</button>
 								<p class="form-block__details"><small>Данный расчет стоимости носит информационный характер и не является публичной офертой (ст. 437 ГК РФ).</small></p>
 							</div>
 						</form>
@@ -551,6 +551,31 @@
 		</div>
 	</section>
 </main>
+<div class="modal" id="expertise-request">
+	<h2 class="modal__title">Оформление заявки</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="tel" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="email">E-mail</label>
+			<input class="field-text__input" id="email" type="email"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn" type="submit" value="Оформить заявку"/>
+		</div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+	</form>
+</div>
 <footer class="page-footer">
 	<div class="container">
 		<div class="page-footer__inner">
