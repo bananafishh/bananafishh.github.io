@@ -77,12 +77,14 @@
 			</div>
 			<div class="page-header__contacts">
 				<select class="js-city-selection">
-					<option value="Москва" selected="selected">Москва</option>
-					<option value="Санкт-Петербург">Санкт-Петербург</option>
-					<option value="Нальчик">Нальчик</option>
+					<option value="Москва" data-value="msc" selected="selected">Москва</option>
+					<option value="Санкт-Петербург" data-value="spb">Санкт-Петербург</option>
+					<option value="Нальчик" data-value="nlc">Нальчик</option>
 				</select>
 				<address class="page-header__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>
-				<div class="page-header__call-order"><a class="link link--dotted-border link--icon-phone-before js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div><a class="link link--icon-metro" href="#">Рязанский проспект</a>
+				<div class="page-header__call-order">
+					<button class="icon-link icon-link--phone-before icon-link--inside-header js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+				</div><a class="icon-link icon-link--metro-msc icon-link--underlined icon-link--inside-header" href="#"><span>Рязанский проспект</span></a>
 			</div>
 		</div>
 	</div>
@@ -204,7 +206,9 @@
 			<div class="call-us__right-col">
 				<div class="call-us__col-inner">
 					<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
-					<div class="call-us__text">Ваш промо-код: 29755<br/><a class="link link--dotted-border link--icon-phone-after js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div>
+					<div class="call-us__text">Ваш промо-код: 29755<br/>
+						<button class="icon-link icon-link--phone-after icon-link--centered-up-to-lg js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -274,53 +278,53 @@
 	</section>
 	<section class="section">
 		<div class="container">
-			<h2><a href="">Новости и статьи</a></h2>
+			<h2><a href="#">Новости и статьи</a></h2>
 			<div class="slider-news section__last-block">
 				<div class="js-slider-news">
 					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="">Новости Honest</a>
+									<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="#">Новости Honest</a>
 								</div>
 							</div>
 						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Послезавтра. Тарифы на ОСАГО</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Послезавтра. Тарифы на ОСАГО</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="">Новости Honest</a> <a class="news-preview__tag" href="">Наши расследования</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
-								<div class="news-preview__meta">
-									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
-								</div>
-							</div>
-						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
-								<div class="news-preview__meta">
-									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="#">Новости Honest</a> <a class="news-preview__tag" href="#">Наши расследования</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Какие бывают юристы и адвокаты</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
 								</div>
 							</div>
 						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Самый интересный суд в мире</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-news__slide">
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Какие бывают юристы и адвокаты</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Самый интересный суд в мире</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
 								</div>
 							</div>
 						</div>
@@ -333,7 +337,7 @@
 		<div class="container">
 			<div class="row-lg">
 				<div class="col-1-2-lg">
-					<h2><a href="">Отзывы клиентов</a></h2>
+					<h2><a href="#">Отзывы клиентов</a></h2>
 					<ul class="reviews">
 						<li class="reviews__item">
 							<blockquote class="review js-show-content js-show-content--toggle">
@@ -341,7 +345,7 @@
 									<cite>Игорь</cite><span class="review__service review__service--car-damage">Opel Astra</span>
 								</footer>
 								<p>«Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить... <span class="is-hide">Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить»</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -351,7 +355,7 @@
 									<cite>Владимир</cite><span class="review__service review__service--realty-damage">Залив</span>
 								</footer>
 								<p>«Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы... <span class="is-hide">Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы»</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -361,7 +365,7 @@
 									<cite>Елена</cite><span class="review__service review__service--legal">Юридические услуги</span>
 								</footer>
 								<p>«Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest... <span class="is-hide">Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -437,7 +441,7 @@
 		<div class="form__group">
 			<input class="btn" type="submit" value="Оформить заявку"/>
 		</div>
-		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--underlined link--black" href="#">обработку своих персональных данных</a></small></div>
 	</form>
 </div>
 <footer class="page-footer">
@@ -451,12 +455,13 @@
 					<li><a class="social-links__link social-links__link--ok" href="http://ok.ru/honest.expert" target="_blank" rel="noopener noreferrer">Одноклассники</a></li>
 					<li><a class="social-links__link social-links__link--google" href="https://plus.google.com/u/0/102624426359032386043/posts" target="_blank" rel="noopener noreferrer">Google Plus</a></li>
 				</ul>
-				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link link--dotted-border" href="">Схема проезда</a>
+				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link" href="#">Схема проезда</a>
 			</div>
 			<div class="page-footer__col">
 				<div class="page-footer__promo">
 					<address class="page-footer__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>Ваш промо-код: 28925
-				</div><a class="link link--dotted-border js-fancy-modal" href="#phone-call-order">Заказать обратный звонок</a>
+				</div>
+				<button class="link link--centered-up-to-md js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order"><span>Заказать обратный звонок</span></button>
 				<table class="page-footer__working-hours">
 					<tbody>
 						<tr>
@@ -476,25 +481,25 @@
 			</div>
 			<div class="page-footer__col">
 				<ul class="page-footer__nav">
-					<li><a href="">Независимая автоэкспертиза</a></li>
-					<li><a href="">Оценка ущерба: залив</a></li>
-					<li><a href="">20+ видов экспертиз</a></li>
-					<li><a href="">Юристы (суд)</a></li>
-					<li><a href="">Судебная экспертиза</a></li>
-					<li><a href="">Выкуп долга ОСАГО за 1 день</a></li>
-					<li><a href="">Бесплатный ремонт по ОСАГО</a></li>
-					<li><a href="">Партнерская программа</a></li>
-					<li><a href="">Корпоративным клиентам</a></li>
+					<li><a href="#">Независимая автоэкспертиза</a></li>
+					<li><a href="#">Оценка ущерба: залив</a></li>
+					<li><a href="#">20+ видов экспертиз</a></li>
+					<li><a href="#">Юристы (суд)</a></li>
+					<li><a href="#">Судебная экспертиза</a></li>
+					<li><a href="#">Выкуп долга ОСАГО за 1 день</a></li>
+					<li><a href="#">Бесплатный ремонт по ОСАГО</a></li>
+					<li><a href="#">Партнерская программа</a></li>
+					<li><a href="#">Корпоративным клиентам</a></li>
 				</ul>
 			</div>
 			<div class="page-footer__col">
-				<div class="page-footer__author">Разработка сайта —<br/><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
+				<div class="page-footer__author">Разработка сайта —<br/><a class="page-footer__author-link" href="http://efffe.ru/"><img src="../../assets/images/logo-efectum-min.png" width="136" height="36" alt="ЭФЕКТУМ - создание и продвижение сайтов"/></a></div>
 				<ul class="payment-systems page-footer__payment-systems">
 					<li class="payment-systems__item--visa">Платежная система Visa</li>
 					<li class="payment-systems__item--mastercard">Платежная система MasterCard</li>
 				</ul>
 				<div class="page-footer__other-companies js-show-content">Другие компании<br/> консалтинговой группы<br/>
-					<button class="link link--dotted-border link--has-arrow js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
+					<button class="icon-link icon-link--arrow icon-link--aligned-right js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
 				</div>
 			</div>
 		</div>
@@ -549,7 +554,7 @@
 		<div class="form__group">
 			<input class="btn" type="submit" value="Заказать"/>
 		</div>
-		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--underlined link--black" href="#">обработку своих персональных данных</a></small></div>
 	</form>
 </div>
 <script type="text/javascript" src="../../js/vendor.js"></script>

@@ -77,12 +77,14 @@
 			</div>
 			<div class="page-header__contacts">
 				<select class="js-city-selection">
-					<option value="Москва" selected="selected">Москва</option>
-					<option value="Санкт-Петербург">Санкт-Петербург</option>
-					<option value="Нальчик">Нальчик</option>
+					<option value="Москва" data-value="msc" selected="selected">Москва</option>
+					<option value="Санкт-Петербург" data-value="spb">Санкт-Петербург</option>
+					<option value="Нальчик" data-value="nlc">Нальчик</option>
 				</select>
 				<address class="page-header__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>
-				<div class="page-header__call-order"><a class="link link--dotted-border link--icon-phone-before js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div><a class="link link--icon-metro" href="#">Рязанский проспект</a>
+				<div class="page-header__call-order">
+					<button class="icon-link icon-link--phone-before icon-link--inside-header js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+				</div><a class="icon-link icon-link--metro-msc icon-link--underlined icon-link--inside-header" href="#"><span>Рязанский проспект</span></a>
 			</div>
 		</div>
 	</div>
@@ -172,8 +174,8 @@
 	<section class="section section--gray">
 		<div class="container">
 			<h2>Как проходит оценка ущерба авто?</h2>
-			<div class="row-md">
-				<div class="col-1-2-md">
+			<div class="row-lg">
+				<div class="col-1-2-lg">
 					<div class="text-blocks-list text-blocks-list--in-left-col">
 						<div class="text-blocks-list__item text-blocks-list__item--car-magnifier">
 							<div class="text-blocks-list__title">1. Осмотр</div>
@@ -192,92 +194,141 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-1-2-md section__first-block">
-					<div class="form-block">
+				<div class="col-1-2-lg section__first-block">
+					<div class="form-calc">
 						<h3>Расчет стоимости услуг</h3>
 						<form class="js-form">
-							<fieldset class="form-block__wrapper js-check-form form-block__wrapper--inner-blocks">
-								<div class="form-block__inner js-check-form__inner js-range-damage">
+							<fieldset class="form-calc__block form-calc__block--before-title js-check-form">
+								<div class="form-calc__section js-check-form__inner js-range-damage">
 									<p>Степень повреждения <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-5"> Подсказка</span></p>
-									<div class="form-block__range-slider">
-										<div class="is-active-min is-active">
+									<div class="form-calc__range-slider hide-up-to-md">
+										<div class="is-active--min is-active">
 											<div class="js-range-damage__slider"></div>
 										</div>
 									</div>
-									<div class="form-block__range-damages"><span>Малая</span><span>Средняя</span><span>Большая</span><span>Тотальная</span></div>
-								</div>
-								<div class="form-block__inner">
-									<div class="form-block__options">
-										<input class="form-block__checkbox" type="checkbox" checked="checked" id="form-input-5-1"/>
-										<label class="form-block__checkbox-label" for="form-input-5-1">Осмотр и составление акта <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-6">Подсказка</span></label>
+									<div class="form-calc__range-damages js-range-damage__level">
+										<input id="form-input-3-14" type="radio" name="damages"/>
+										<label class="active" data-range="min" for="form-input-3-14">Малая</label>
+										<input id="form-input-3-15" type="radio" name="damages"/>
+										<label data-range="min-mid" for="form-input-3-15">Средняя</label>
+										<input id="form-input-3-16" type="radio" name="damages"/>
+										<label for="form-input-3-16" data-range="min-max">Большая</label>
+										<input id="form-input-3-17" type="radio" name="damages"/>
+										<label for="form-input-3-17" data-range="max">Тотальная</label>
 									</div>
-									<div class="js-check-form__appear">
-										<div class="form-block__inside">
-											<div class="form-block__inner">
-												<div class="form-block__options">
-													<input class="form-block__radio js-check-form__radio" type="radio" id="form-input-5-2"/>
-													<label class="form-block__radio-label" for="form-input-5-2">На тех. станции «Рихточка»
-														<div> <a href="#">г. Мытищи</a></div>
+								</div>
+								<div class="form-calc__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--more-options" type="checkbox" checked="checked" id="form-input-3-1"/>
+										<label class="form-calc__checkbox-label" for="form-input-3-1">Осмотр и составление акта <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-6">Подсказка</span></label>
+									</div>
+									<div class="js-form__more-options">
+										<div class="form-calc__inside">
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" type="radio" name="radio" id="form-input-3-2"/>
+													<label class="form-calc__radio-label" for="form-input-3-2">На тех. станции «Рихточка»
+														<div><a href="#">г. Мытищи</a></div>
 													</label>
 												</div>
-												<div class="form-block__price js-check-form__calc-price"><span>500 &#8381;</span></div>
+												<div class="form-calc__price js-form__radio-price" data-price="500">500 &#8381;</div>
 											</div>
-											<div class="form-block__inner"></div>
-											<div class="form-block__inner"></div>
-											<div class="form-block__inner"></div>
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" type="radio" name="radio" id="form-input-3-3"/>
+													<label class="form-calc__radio-label" for="form-input-3-3">У нашего офиса
+														<div><a class="link link--icon-metro" href="#">Рязанский проспект</a></div>
+													</label>
+												</div>
+												<div class="form-calc__price js-form__radio-price" data-price="500"> 500 &#8381;</div>
+											</div>
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" type="radio" name="radio" id="form-input-3-4"/>
+													<label class="form-calc__radio-label" for="form-input-3-4">Выезд специалиста в пределах МКАД</label>
+												</div>
+												<div class="form-calc__price js-form__radio-price" data-price="1500">1 500 &#8381;</div>
+											</div>
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" type="radio" name="radio" id="form-input-3-5"/>
+													<label class="form-calc__radio-label form-calc__radio-label--inside-block" for="form-input-3-5">Выезд за МКАД
+														<div class="form-calc__inside-block">
+															<input class="form-calc__input" type="text" name="radio" id="form-input-3-6"/><span>км</span>
+														</div>
+													</label>
+												</div>
+												<div class="form-calc__price js-form__radio-price" data-price="1500">1 500 &#8381;</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-calc__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--more-options" type="checkbox" checked="checked" id="form-input-3-7"/>
+										<label class="form-calc__checkbox-label" for="form-input-3-7">Расчёт и оформление <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-7">Подсказка</span></label>
+									</div>
+									<div class="js-form__more-options">
+										<div class="form-calc__inside">
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" type="radio" name="radio" id="form-input-3-8"/>
+													<label class="form-calc__radio-label" for="form-input-3-8">Калькуляция</label>
+												</div>
+												<div class="form-calc__price js-form__radio-price" data-price="2500">2 500 &#8381;</div>
+											</div>
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" type="radio" name="radio" id="form-input-3-9"/>
+													<label class="form-calc__radio-label" for="form-input-3-9">Заключение эксперта техника <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-8">Подсказка</span></label>
+												</div>
+												<div class="form-calc__price js-form__radio-price" data-price="4000">4 000 &#8381;</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</fieldset>
+							<div class="form-calc__section-title"><span>Дополнительные опции</span></div>
+							<fieldset class="form-calc__block form-calc__block--has-border">
+								<div class="form-calc__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--calc" type="checkbox" id="form-input-3-10"/>
+										<label class="form-calc__checkbox-label" for="form-input-3-10">Расчет утраты товарной стоимости <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-9">Подсказка</span></label>
+									</div>
+									<div class="form-calc__price js-form__checkbox-price" data-price="1500">1 500 &#8381;</div>
+								</div>
+								<div class="form-calc__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--calc" type="checkbox" id="form-input-3-11"/>
+										<label class="form-calc__checkbox-label" for="form-input-3-11">Расчет стоимости годных остатков  <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-10">Подсказка</span></label>
+									</div>
+									<div class="form-calc__price js-form__checkbox-price" data-price="1500">1 500 &#8381;</div>
+								</div>
+								<div class="form-calc__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--calc" type="checkbox" id="form-input-3-12"/>
+										<label class="form-calc__checkbox-label" for="form-input-3-12">Определение рыночной стоимости</label>
+									</div>
+									<div class="form-calc__price js-form__checkbox-price" data-price="1000">1 000 &#8381;</div>
+								</div>
+								<div class="form-calc__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--calc" type="checkbox" id="form-input-3-13"/>
+										<label class="form-calc__checkbox-label" for="form-input-3-13">Отправка телеграммы <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-11">Подсказка</span></label>
+									</div>
+									<div class="form-calc__price js-form__checkbox-price" data-price="600">600 &#8381;</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-calc__block">
+								<div class="form-calc__section">
+									<div class="form-calc__options form-calc__options--sum">Стоимость услуг</div>
+									<div class="form-calc__price form-calc__price--sum js-form__price-sum" data-price="0">0 &#8381;</div>
+									<button class="form-calc__btn btn btn--full-width js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#expertise-request">Оформить заявку</button>
+									<p class="form-calc__details"><small>Данный расчет стоимости носит информационный характер и не является публичной офертой (ст. 437 ГК РФ).</small></p>
+								</div>
+							</fieldset>
 						</form>
 					</div>
-				</div>
-			</div>
-			<div class="tooltip-templates">
-				<div class="tooltip-templates__wrapper" id="tooltip-templates__content">
-					<div class="tooltip-templates__text">При заказе вы получаете:</div>
-					<div class="tooltip-templates__text">- подготовку правовой позиции</div>
-					<div class="tooltip-templates__text">- участие в одном судебном заседании</div>
-				</div>
-			</div>
-			<div class="tooltip-templates">
-				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-2">
-					<div class="tooltip-templates__text">Данная услуга предоставляется только для исков стоимостью от 50 000 до 120 000 рублей.</div>
-					<div class="tooltip-templates__text">При заказе вы получаете:</div>
-					<div class="tooltip-templates__text">- подготовку искового заявления,</div>
-					<div class="tooltip-templates__text">- подача в суд,</div>
-					<div class="tooltip-templates__text">- участие в предварительном и одном судебном заседании</div>
-				</div>
-			</div>
-			<div class="tooltip-templates">
-				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-3">
-					<div class="tooltip-templates__text">При заказе вы получаете:</div>
-					<div class="tooltip-templates__text">- Подготовку искового заявления,</div>
-					<div class="tooltip-templates__text">- Подача иска в суд</div>
-					<div class="tooltip-templates__text">- Участие во всех судебных заседаниях в суде первой инстанции</div>
-					<div class="tooltip-templates__text">- Получение решения и исполнительного листа.</div>
-				</div>
-			</div>
-			<div class="tooltip-templates">
-				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-4">
-					<div class="tooltip-templates__text">Вам понадобится эта услуга, только если ответчиком выступает физическое лицо!</div>
-					<div class="tooltip-templates__text">Как правило, при рассмотрении гражданских дел мы отправляем 1-2 телеграммы.</div>
-				</div>
-			</div>
-			<div class="tooltip-templates">
-				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-5">
-					<div class="tooltip-templates__text">
-						<div>Лёгкая - до 5 элементов</div>
-						<div>Средняя - до 10 элементов</div>
-						<div>Большая - до 30 элементов</div>
-						<div>Тотальная - свыше 30 элементов</div>
-						<div>*Повышающий коэффициент для грузового, спец. техники, эксклюзивного, раритетного  транспорта от 1 до 2. Детали уточняйте у менеджера.</div>
-					</div>
-				</div>
-			</div>
-			<div class="tooltip-templates">
-				<div class="tooltip-templates__wrapper" id="tooltip-templates__content-6">
-					<div class="tooltip-templates__text">Акт осмотра - это документ, который составляется при осмотре автомобиля, в присутствии заинтересованных лиц. В акте осмотра фиксируются все повреждения автомобиля, также там указываются способы их устранения (замена, или ремонт).</div>
 				</div>
 			</div>
 		</div>
@@ -332,7 +383,9 @@
 			<div class="call-us__right-col">
 				<div class="call-us__col-inner">
 					<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
-					<div class="call-us__text">Ваш промо-код: 29755<br/><a class="link link--dotted-border link--icon-phone-after js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div>
+					<div class="call-us__text">Ваш промо-код: 29755<br/>
+						<button class="icon-link icon-link--phone-after icon-link--centered-up-to-lg js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -414,12 +467,12 @@
 			<h2>Представительство в суде</h2>
 			<div class="row-md">
 				<div class="col-2-3-md">
-					<p>Во время страховых споров часто приходится обращаться в суд, поэтому мы проводим как досудебные, так и <a href="">судебные экспертизы</a>.</p>
+					<p>Во время страховых споров часто приходится обращаться в суд, поэтому мы проводим как досудебные, так и <a href="#">судебные экспертизы</a>.</p>
 					<p>Конечно, мы не можем знать заранее, какое решение будет принято судьей. Но опыт работы позволяет дать нашим клиентам финансовые гарантии: <strong>мы возмещаем до 80% затраченных средств</strong>, в случае проигрыша процесса. С 2006 года такое произошло всего один раз.</p>
 				</div>
 				<div class="col-1-3-md section__only-block">
 					<div class="insert insert--with-link-lg insert--gray">
-						<div class="insert__link"><a href="">Судебная экспертиза</a></div>
+						<div class="insert__link"><a href="#">Судебная экспертиза</a></div>
 					</div>
 				</div>
 			</div>
@@ -436,60 +489,62 @@
 			<div class="call-us__right-col">
 				<div class="call-us__col-inner">
 					<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
-					<div class="call-us__text">Ваш промо-код: 29755<br/><a class="link link--dotted-border link--icon-phone-after js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div>
+					<div class="call-us__text">Ваш промо-код: 29755<br/>
+						<button class="icon-link icon-link--phone-after icon-link--centered-up-to-lg js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<section class="section">
 		<div class="container">
-			<h2><a href="">Новости и статьи</a></h2>
+			<h2><a href="#">Новости и статьи</a></h2>
 			<div class="slider-news section__last-block">
 				<div class="js-slider-news">
 					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="">Новости Honest</a>
+									<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="#">Новости Honest</a>
 								</div>
 							</div>
 						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Послезавтра. Тарифы на ОСАГО</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Послезавтра. Тарифы на ОСАГО</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="">Новости Honest</a> <a class="news-preview__tag" href="">Наши расследования</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
-								<div class="news-preview__meta">
-									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
-								</div>
-							</div>
-						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
-								<div class="news-preview__meta">
-									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="#">Новости Honest</a> <a class="news-preview__tag" href="#">Наши расследования</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Какие бывают юристы и адвокаты</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
 								</div>
 							</div>
 						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Самый интересный суд в мире</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-news__slide">
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Какие бывают юристы и адвокаты</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Самый интересный суд в мире</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
 								</div>
 							</div>
 						</div>
@@ -502,7 +557,7 @@
 		<div class="container">
 			<div class="row-lg">
 				<div class="col-1-2-lg">
-					<h2><a href="">Отзывы клиентов</a></h2>
+					<h2><a href="#">Отзывы клиентов</a></h2>
 					<ul class="reviews">
 						<li class="reviews__item">
 							<blockquote class="review js-show-content js-show-content--toggle">
@@ -510,7 +565,7 @@
 									<cite>Игорь</cite><span class="review__service review__service--car-damage">Opel Astra</span>
 								</footer>
 								<p>«Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить... <span class="is-hide">Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить»</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -520,7 +575,7 @@
 									<cite>Владимир</cite><span class="review__service review__service--realty-damage">Залив</span>
 								</footer>
 								<p>«Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы... <span class="is-hide">Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы»</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -530,7 +585,7 @@
 									<cite>Елена</cite><span class="review__service review__service--legal">Юридические услуги</span>
 								</footer>
 								<p>«Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest... <span class="is-hide">Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -584,6 +639,103 @@
 		</div>
 	</section>
 </main>
+<div class="modal" id="expertise-request">
+	<h2 class="modal__title">Оформление заявки</h2>
+	<form class="form form--two-col" action="" method="">
+		<div class="field-text form__group">
+			<label class="field-text__name" for="name">Имя</label>
+			<input class="field-text__input" id="name" type="text" placeholder="Сергей Заказчиков"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="phone-number">Телефон<span class="asterisk">*</span></label>
+			<input class="field-text__input" id="phone-number" type="tel" placeholder="+7 (925) 995-82-92" required="required"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="email">E-mail</label>
+			<input class="field-text__input" id="email" type="email"/>
+		</div>
+		<div class="field-text form__group">
+			<label class="field-text__name" for="comment">Комментарий</label>
+			<textarea class="field-text__input field-text__input--textarea" id="comment"></textarea>
+		</div>
+		<div class="form__group">
+			<input class="btn" type="submit" value="Оформить заявку"/>
+		</div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--underlined link--black" href="#">обработку своих персональных данных</a></small></div>
+	</form>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content">
+		<div class="tooltip-templates__text">При заказе вы получаете:</div>
+		<div class="tooltip-templates__text">- подготовку правовой позиции</div>
+		<div class="tooltip-templates__text">- участие в одном судебном заседании</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-2">
+		<div class="tooltip-templates__text">Данная услуга предоставляется только для исков стоимостью от 50 000 до 120 000 рублей.</div>
+		<div class="tooltip-templates__text">При заказе вы получаете:</div>
+		<div class="tooltip-templates__text">- подготовку искового заявления,</div>
+		<div class="tooltip-templates__text">- подача в суд,</div>
+		<div class="tooltip-templates__text">- участие в предварительном и одном судебном заседании</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-3">
+		<div class="tooltip-templates__text">При заказе вы получаете:</div>
+		<div class="tooltip-templates__text">- Подготовку искового заявления,</div>
+		<div class="tooltip-templates__text">- Подача иска в суд</div>
+		<div class="tooltip-templates__text">- Участие во всех судебных заседаниях в суде первой инстанции</div>
+		<div class="tooltip-templates__text">- Получение решения и исполнительного листа.</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-4">
+		<div class="tooltip-templates__text">Вам понадобится эта услуга, только если ответчиком выступает физическое лицо!</div>
+		<div class="tooltip-templates__text">Как правило, при рассмотрении гражданских дел мы отправляем 1-2 телеграммы.</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-5">
+		<div class="tooltip-templates__text">
+			<div>Лёгкая - до 5 элементов</div>
+			<div>Средняя - до 10 элементов</div>
+			<div>Большая - до 30 элементов</div>
+			<div>Тотальная - свыше 30 элементов</div>
+			<div>*Повышающий коэффициент для грузового, спец. техники, эксклюзивного, раритетного  транспорта от 1 до 2. Детали уточняйте у менеджера.</div>
+		</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-6">
+		<div class="tooltip-templates__text">Акт осмотра - это документ, который составляется при осмотре автомобиля, в присутствии заинтересованных лиц. В акте осмотра фиксируются все повреждения автомобиля, также там указываются способы их устранения (замена, или ремонт).</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-7">
+		<div class="tooltip-templates__text">Если в дальнейшем вы планируете обращаться в страховую компанию с претензией, или же в суд с иском о взыскании со страховой компании полной величины ущерба, то вам необходимо заключение эксперта-техника.</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-8">
+		<div class="tooltip-templates__text">Письменное сообщение эксперта о результатах проведенного исследования по поставленным вопросам и обоснование представленных выводов.</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-9">
+		<div class="tooltip-templates__text">Расчет Утраты Товарной Стоимости (УТС). Восстановленный автомобиль после ДТП стоит дешевле такого же, но не поврежденного. Разница в их стоимости и есть УТС автомобиля.</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-10">
+		<div class="tooltip-templates__text">Годные остатки автомобиля после ДТП – это неповрежденные узлы и детали, годные к дальнейшей эксплуатации и которые можно демонтировать с поврежденного автомобиля и продать.</div>
+	</div>
+</div>
+<div class="tooltip-templates">
+	<div class="tooltip-templates__wrapper" id="tooltip-templates__content-11">
+		<div class="tooltip-templates__text">Для ведения дела вам может понадобится отправка 1-2 телеграмм.</div>
+	</div>
+</div>
 <footer class="page-footer">
 	<div class="container">
 		<div class="page-footer__inner">
@@ -595,12 +747,13 @@
 					<li><a class="social-links__link social-links__link--ok" href="http://ok.ru/honest.expert" target="_blank" rel="noopener noreferrer">Одноклассники</a></li>
 					<li><a class="social-links__link social-links__link--google" href="https://plus.google.com/u/0/102624426359032386043/posts" target="_blank" rel="noopener noreferrer">Google Plus</a></li>
 				</ul>
-				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link link--dotted-border" href="">Схема проезда</a>
+				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link" href="#">Схема проезда</a>
 			</div>
 			<div class="page-footer__col">
 				<div class="page-footer__promo">
 					<address class="page-footer__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>Ваш промо-код: 28925
-				</div><a class="link link--dotted-border js-fancy-modal" href="#phone-call-order">Заказать обратный звонок</a>
+				</div>
+				<button class="link link--centered-up-to-md js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order"><span>Заказать обратный звонок</span></button>
 				<table class="page-footer__working-hours">
 					<tbody>
 						<tr>
@@ -620,25 +773,25 @@
 			</div>
 			<div class="page-footer__col">
 				<ul class="page-footer__nav">
-					<li><a href="">Независимая автоэкспертиза</a></li>
-					<li><a href="">Оценка ущерба: залив</a></li>
-					<li><a href="">20+ видов экспертиз</a></li>
-					<li><a href="">Юристы (суд)</a></li>
-					<li><a href="">Судебная экспертиза</a></li>
-					<li><a href="">Выкуп долга ОСАГО за 1 день</a></li>
-					<li><a href="">Бесплатный ремонт по ОСАГО</a></li>
-					<li><a href="">Партнерская программа</a></li>
-					<li><a href="">Корпоративным клиентам</a></li>
+					<li><a href="#">Независимая автоэкспертиза</a></li>
+					<li><a href="#">Оценка ущерба: залив</a></li>
+					<li><a href="#">20+ видов экспертиз</a></li>
+					<li><a href="#">Юристы (суд)</a></li>
+					<li><a href="#">Судебная экспертиза</a></li>
+					<li><a href="#">Выкуп долга ОСАГО за 1 день</a></li>
+					<li><a href="#">Бесплатный ремонт по ОСАГО</a></li>
+					<li><a href="#">Партнерская программа</a></li>
+					<li><a href="#">Корпоративным клиентам</a></li>
 				</ul>
 			</div>
 			<div class="page-footer__col">
-				<div class="page-footer__author">Разработка сайта —<br/><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
+				<div class="page-footer__author">Разработка сайта —<br/><a class="page-footer__author-link" href="http://efffe.ru/"><img src="../../assets/images/logo-efectum-min.png" width="136" height="36" alt="ЭФЕКТУМ - создание и продвижение сайтов"/></a></div>
 				<ul class="payment-systems page-footer__payment-systems">
 					<li class="payment-systems__item--visa">Платежная система Visa</li>
 					<li class="payment-systems__item--mastercard">Платежная система MasterCard</li>
 				</ul>
 				<div class="page-footer__other-companies js-show-content">Другие компании<br/> консалтинговой группы<br/>
-					<button class="link link--dotted-border link--has-arrow js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
+					<button class="icon-link icon-link--arrow icon-link--aligned-right js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
 				</div>
 			</div>
 		</div>
@@ -693,7 +846,7 @@
 		<div class="form__group">
 			<input class="btn" type="submit" value="Заказать"/>
 		</div>
-		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--underlined link--black" href="#">обработку своих персональных данных</a></small></div>
 	</form>
 </div>
 <script type="text/javascript" src="../../js/vendor.js"></script>

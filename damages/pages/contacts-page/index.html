@@ -77,12 +77,14 @@
 			</div>
 			<div class="page-header__contacts">
 				<select class="js-city-selection">
-					<option value="Москва" selected="selected">Москва</option>
-					<option value="Санкт-Петербург">Санкт-Петербург</option>
-					<option value="Нальчик">Нальчик</option>
+					<option value="Москва" data-value="msc" selected="selected">Москва</option>
+					<option value="Санкт-Петербург" data-value="spb">Санкт-Петербург</option>
+					<option value="Нальчик" data-value="nlc">Нальчик</option>
 				</select>
 				<address class="page-header__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>
-				<div class="page-header__call-order"><a class="link link--dotted-border link--icon-phone-before js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div><a class="link link--icon-metro" href="#">Рязанский проспект</a>
+				<div class="page-header__call-order">
+					<button class="icon-link icon-link--phone-before icon-link--inside-header js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+				</div><a class="icon-link icon-link--metro-msc icon-link--underlined icon-link--inside-header" href="#"><span>Рязанский проспект</span></a>
 			</div>
 		</div>
 	</div>
@@ -132,13 +134,13 @@
 				<div class="col-1-2-lg">
 					<h3>ООО «Хонест»</h3>
 				</div>
-				<div class="col-1-2-lg contacts-block__map-print"><a class="link link--print contacts-block__print-link" href="#"><span>Распечатать</span></a><a class="link link--pdf contacts-block__print-link" href="#"><span>PDF, 3.2Mb </span></a></div>
+				<div class="col-1-2-lg contacts-block__map-print"><a class="link link--print contacts-block__print-link" href="http://www.damages.ru/sites/all/themes/honest/contacts_print.html" target="_blank"><span>Распечатать</span></a><a class="link link--pdf contacts-block__print-link" href="http://www.damages.ru/sites/all/themes/honest/files/TheWayToHonest.pdf" target="_blank"><span>PDF, 3.2Mb</span></a></div>
 			</div>
 		</div>
 		<div class="contacts-block__tabs">
 			<ul class="contacts-block__tabs-list js-tabs__tabs container">
-				<li class="contacts-block__tab contacts-block__tab--moscow js-tabs__tab is-active is-hide" data-id="Moscow"> <span>Москва</span></li>
-				<li class="contacts-block__tab contacts-block__tab--spb js-tabs__tab is-hide" data-id="Saint-Petersburg"><span>Санкт-Петербург </span></li>
+				<li class="contacts-block__tab contacts-block__tab--moscow js-tabs__tab is-active is-hide" data-id="Moscow"><span>Москва</span></li>
+				<li class="contacts-block__tab contacts-block__tab--spb js-tabs__tab is-hide" data-id="Saint-Petersburg"><span>Санкт-Петербург</span></li>
 				<li class="contacts-block__tab contacts-block__tab--nalchik js-tabs__tab is-hide" data-id="Nalchik"><span>Нальчик</span></li>
 			</ul>
 			<div class="contacts-block__tab-content js-tabs__content is-active" id="Moscow">
@@ -150,7 +152,7 @@
 									<tbody>
 										<tr>
 											<td>Фактический адрес:</td>
-											<td> 
+											<td>
 												<div class="contacts-info__location">Рязанский проспект</div>
 												<div>109456, г. Москва, Рязанский проспект, <br/> д. 75, корп. 4, 2-я башня, 1-й этаж</div>
 											</td>
@@ -161,11 +163,11 @@
 										</tr>
 										<tr>
 											<td>E-mail:</td>
-											<td> <a class="link" href="#">info@damages.ru</a></td>
+											<td><a class="link" href="mailto:info@damages.ru">info@damages.ru</a></td>
 										</tr>
 										<tr>
 											<td>Время работы</td>
-											<td> 
+											<td>
 												<table class="contacts-info__inner">
 													<tbody>
 														<tr>
@@ -176,7 +178,7 @@
 															<td>сб</td>
 															<td>10:00-14:00</td>
 														</tr>
-														<tr> 
+														<tr>
 															<td>вс</td>
 															<td>выходной</td>
 														</tr>
@@ -191,8 +193,8 @@
 								<table>
 									<tbody>
 										<tr>
-											<td>Реквизиты: </td>
-											<td> 
+											<td>Реквизиты:</td>
+											<td>
 												<div>ОГРН 1125029006893</div>
 												<div>ИНН 5029164882</div>
 												<div>КПП 502901001</div>
@@ -249,11 +251,11 @@
 									<table>
 										<tbody>
 											<tr>
-												<td>Телефон/факс: </td>
+												<td>Телефон/факс:</td>
 												<td> +7 (495) 228-06-65</td>
 											</tr>
-											<tr> 
-												<td>Время работы: </td>
+											<tr>
+												<td>Время работы:</td>
 												<td>Ежедневно с 9:00 до 21:00</td>
 											</tr>
 										</tbody>
@@ -277,7 +279,7 @@
 									<tbody>
 										<tr>
 											<td>Фактический адрес:</td>
-											<td> 
+											<td>
 												<div class="contacts-info__location">Чкаловская</div>
 												<div>197110, г. Санкт-Петербург, ул. <br/> Большая Разночинная, д. 14, офис 304</div>
 											</td>
@@ -288,11 +290,11 @@
 										</tr>
 										<tr>
 											<td>E-mail:</td>
-											<td> <a class="link" href="#">info@damages.ru</a></td>
+											<td><a class="link" href="mailto:info@damages.ru">info@damages.ru</a></td>
 										</tr>
 										<tr>
 											<td>Время работы</td>
-											<td> 
+											<td>
 												<table class="contacts-info__inner">
 													<tbody>
 														<tr>
@@ -318,15 +320,15 @@
 								<table>
 									<tbody>
 										<tr>
-											<td>Реквизиты: </td>
-											<td> 
+											<td>Реквизиты:</td>
+											<td>
 												<div>ОГРН 1125029006893</div>
 												<div>ИНН 5029164882</div>
 												<div>КПП 502901001</div>
 												<div>Расчетный счет № 40702810700000027504</div>
 												<div>в ОАО АКБ «АВАНГАРД» г. Москва</div>
 												<div>БИК 044525201</div>
-												<div>К/С 30101810000000000201 </div>
+												<div>К/С 30101810000000000201</div>
 											</td>
 										</tr>
 									</tbody>
@@ -359,11 +361,11 @@
 										</tr>
 										<tr>
 											<td>E-mail:</td>
-											<td><a class="link" href="#">info@damages.ru</a></td>
+											<td><a class="link" href="mailto:info@damages.ru">info@damages.ru</a></td>
 										</tr>
 										<tr>
 											<td>Время работы</td>
-											<td> 
+											<td>
 												<table class="contacts-info__inner">
 													<tbody>
 														<tr>
@@ -422,12 +424,13 @@
 					<li><a class="social-links__link social-links__link--ok" href="http://ok.ru/honest.expert" target="_blank" rel="noopener noreferrer">Одноклассники</a></li>
 					<li><a class="social-links__link social-links__link--google" href="https://plus.google.com/u/0/102624426359032386043/posts" target="_blank" rel="noopener noreferrer">Google Plus</a></li>
 				</ul>
-				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link link--dotted-border" href="">Схема проезда</a>
+				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link" href="#">Схема проезда</a>
 			</div>
 			<div class="page-footer__col">
 				<div class="page-footer__promo">
 					<address class="page-footer__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>Ваш промо-код: 28925
-				</div><a class="link link--dotted-border js-fancy-modal" href="#phone-call-order">Заказать обратный звонок</a>
+				</div>
+				<button class="link link--centered-up-to-md js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order"><span>Заказать обратный звонок</span></button>
 				<table class="page-footer__working-hours">
 					<tbody>
 						<tr>
@@ -447,25 +450,25 @@
 			</div>
 			<div class="page-footer__col">
 				<ul class="page-footer__nav">
-					<li><a href="">Независимая автоэкспертиза</a></li>
-					<li><a href="">Оценка ущерба: залив</a></li>
-					<li><a href="">20+ видов экспертиз</a></li>
-					<li><a href="">Юристы (суд)</a></li>
-					<li><a href="">Судебная экспертиза</a></li>
-					<li><a href="">Выкуп долга ОСАГО за 1 день</a></li>
-					<li><a href="">Бесплатный ремонт по ОСАГО</a></li>
-					<li><a href="">Партнерская программа</a></li>
-					<li><a href="">Корпоративным клиентам</a></li>
+					<li><a href="#">Независимая автоэкспертиза</a></li>
+					<li><a href="#">Оценка ущерба: залив</a></li>
+					<li><a href="#">20+ видов экспертиз</a></li>
+					<li><a href="#">Юристы (суд)</a></li>
+					<li><a href="#">Судебная экспертиза</a></li>
+					<li><a href="#">Выкуп долга ОСАГО за 1 день</a></li>
+					<li><a href="#">Бесплатный ремонт по ОСАГО</a></li>
+					<li><a href="#">Партнерская программа</a></li>
+					<li><a href="#">Корпоративным клиентам</a></li>
 				</ul>
 			</div>
 			<div class="page-footer__col">
-				<div class="page-footer__author">Разработка сайта —<br/><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
+				<div class="page-footer__author">Разработка сайта —<br/><a class="page-footer__author-link" href="http://efffe.ru/"><img src="../../assets/images/logo-efectum-min.png" width="136" height="36" alt="ЭФЕКТУМ - создание и продвижение сайтов"/></a></div>
 				<ul class="payment-systems page-footer__payment-systems">
 					<li class="payment-systems__item--visa">Платежная система Visa</li>
 					<li class="payment-systems__item--mastercard">Платежная система MasterCard</li>
 				</ul>
 				<div class="page-footer__other-companies js-show-content">Другие компании<br/> консалтинговой группы<br/>
-					<button class="link link--dotted-border link--has-arrow js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
+					<button class="icon-link icon-link--arrow icon-link--aligned-right js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
 				</div>
 			</div>
 		</div>
@@ -520,7 +523,7 @@
 		<div class="form__group">
 			<input class="btn" type="submit" value="Заказать"/>
 		</div>
-		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--underlined link--black" href="#">обработку своих персональных данных</a></small></div>
 	</form>
 </div>
 <script type="text/javascript" src="../../js/vendor.js"></script>

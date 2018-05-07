@@ -8,7 +8,7 @@ var calcCheckboxForm = {
 	name: 'calcCheckboxForm',
 	initialize: function () {
 		this.formWrapper = this.$('.js-check-form');
-		this.formInner = this.$('.js-check-form__inner');
+		//this.formInner = this.$('.js-check-form__inner');
 		this.insideRadio = this.$('.js-check-form__inside');
 		this.resultPrice = this.$('.js-check-form__price-sum');
 		this.defaultCheckbox = this.$('.js-check-form__checkbox--default');
@@ -32,7 +32,7 @@ var calcCheckboxForm = {
 		this.target = $(evt.currentTarget);
 		this.checkTarget = this.target.prop('checked');
 		this.radioPriceSiblings = this.target.parent().siblings('.js-check-form__calc-price');
-		this.dataRadioPrice = this.radioPriceSiblings.find('span').attr('data-price');
+		this.dataRadioPrice = this.radioPriceSiblings.attr('data-price');
 		this.checkRadioPrice = this.dataRadioPrice;
 
 		if (this.checkBoxDefaultPrice === 0) {
@@ -83,7 +83,7 @@ var calcCheckboxForm = {
 		this.checkTarget = this.target.prop('checked');
 		this.checkBoxPriceSiblings = this.target.parent().siblings('.js-check-form__calc-price');
 		this.radioAppearBlock = this.target.parent().siblings('.js-check-form__appear');
-		this.dataPrice = this.checkBoxPriceSiblings.find('span').attr('data-price');
+		this.dataPrice = this.checkBoxPriceSiblings.attr('data-price');
 
 		if (this.radioDefaultPrice === 0) {
 			if (this.checkBoxDefaultPrice === 0) {
@@ -192,287 +192,6 @@ var calcCheckboxForm = {
 };
 App.Control.install(calcCheckboxForm);
 
-/*var calcCheckboxForm = {
-	el: '.js-form',
-	name: 'calcCheckboxForm',
-	initialize: function () {
-		this.formWrapper = this.$('.js-check-form');
-		this.formInner = this.$('.js-check-form__inner');
-		this.insideRadio = this.$('.js-check-form__inside');
-		this.defaultCheckbox = this.$('.js-check-form__checkbox--default');
-		this.checkClick = false;
-
-		this.resultPrice = this.$('.js-check-form__price-sum'); // Тот элемент, в котором отобржается цена
-
-		this.sumPrice = 0; //результирующая цена
-
-		this.checkBoxDefaultPrice = 0; //в этой переменной хранится цена, которая соответствует нажатому чекбоксу
-
-		this.radioDefaultPrice = 0; //в этой переменной хранится цена, которая соотвествует нажатому радиобаттон
-
-		this.zeroPrice = 0; // изначальная цена, которая отображается при загрузке страницы, то есть всегда 0.
-		this.attrTarget = null; // сюда будет присваиваться значение аттрибута name у радиобаттонов
-
-
-
-	},
-	events: {
-		'click .js-check-form__checkbox': 'checkBoxSum', //клик по любому чекбоксу
-		'click .js-check-form__radio': 'radioSum' //клик по любому радиобаттону
-	},
-
-	//radio
-	radioSum: function (evt) {
-		this.target = $(evt.currentTarget);
-
-		this.checkTarget = this.target.prop('checked');
-
-		this.radioPriceSiblings = this.target.parent().siblings('.js-check-form__calc-price');
-
-		this.dataRadioPrice = this.radioPriceSiblings.find('span').attr('data-price'); // Находим элемент span с ценой, у которого есть аттрибут data-price
-
-		this.checkRadioPrice = this.dataRadioPrice; //сохраняю в переменную this.checkRadioPrice значение из переменной this.dataRadioPrice
-
-		if (this.checkBoxDefaultPrice === 0) { //если переменная this.checkBoxDefaultPrice === 0, то есть если НИ один из чекбоксов нажат не был
-
-			this.checkRadioPrice = parseInt(this.checkRadioPrice); // приводим к числу то значение, которое хранится в переменной  this.checkRadioPrice
-
-			if (this.radioDefaultPrice === 0) { //если переменная this.radioDefaultPrice === 0, то есть если НИ один из радиобаттонов до этого нажат не был
-
-
-				this.radioSumPrice = parseInt(this.zeroPrice + this.checkRadioPrice); // Объявляем новую переменную this.radioSumPrice в которую присваиваем сумму 0+this.checkRadioPrice (0 потому что несколько радиобаттонов в одном блоке нажать нельзя, соотвественно при каждом клике цена перезаписывается)
-
-
-				this.resultPrice.html(this.radioSumPrice + ' &#8381;'); //Вставляем полученную сумму в поле this.radioSumPrice(объявлена глобально, строка 11)
-
-				this.radioDefaultPrice = this.checkRadioPrice; // В переменную this.radioDefaultPrice записываем полученную цену.
-
-				this.attrTarget = this.target.attr('name'); // Узнаем значение атрибута name у объекта события, так как в двух блоках с радиобаттанами разные аттрибуты name
-
-			} else if (this.radioDefaultPrice > 0) {
-				//если переменная this.radioDefaultPrice > 0, то есть один из радиобаттонов был до этого нажат
-
-				this.checkRadioPrice = parseInt(this.checkRadioPrice); //повторение, см.пояснение выше
-
-				if (this.target.attr('name') != this.attrTarget) { // если значение аттрибута name объекта события НЕ равно тому значению, которое было занесено на строке 56, то есть  кликнули на радиобаттон из ДРУГОГО блока, то
-
-					this.priceBefore = this.radioDefaultPrice; // сохраняем в сторонюю переменую значение this.radioDefaultPrice, которое ещё не было перезаписано, оно перезапишется в строке 69
-
-					this.radioSumPrice = parseInt(this.radioDefaultPrice + this.checkRadioPrice); // Объявляем новую переменную this.radioSumPrice в которую присваиваем сумму цены this.radioDefaultPrice (см. строку 54) и this.checkRadioPrice
-
-					this.radioDefaultPrice += this.checkRadioPrice; // в переменную this.radioDefaultPrice += this.checkRadioPrice
-
-					this.resultPrice.html(this.radioSumPrice + ' &#8381;'); //повторение, см.пояснение выше
-
-					this.attrTarget = this.target.attr('name'); //повторение, см.пояснение выше
-
-				} else if (this.target.attr('name') == this.attrTarget) { // если значение аттрибута name объекта события  РАВНО тому значению, которое было занесено ранее, то
-					if (this.priceBefore != undefined) { //сторонняя переменная, обявленная на 65 строке и в которой хранится значение
-
-						this.radioMinusPrice = parseInt(this.priceBefore + this.checkRadioPrice);
-
-						this.resultPrice.html(this.radioMinusPrice + ' &#8381;');
-
-						this.radioDefaultPrice = this.checkRadioPrice;
-
-					} else {
-
-						this.radioSumPrice = parseInt(this.zeroPrice + this.checkRadioPrice);
-
-						this.resultPrice.html(this.radioSumPrice + ' &#8381;');
-
-						this.radioDefaultPrice = this.checkRadioPrice;
-
-					}
-				}
-
-
-			}
-		} else {
-			if (this.radioDefaultPrice === 0) {
-
-				this.checkRadioPrice = parseInt(this.checkRadioPrice);
-
-				this.radioSumPrice = parseInt(this.checkBoxDefaultPrice + this.checkRadioPrice);
-
-
-				this.resultPrice.html(this.radioSumPrice + ' &#8381;');
-
-				this.radioDefaultPrice = this.checkRadioPrice;
-
-				this.sumPrice = this.radioSumPrice;
-
-				this.attrTarget = this.target.attr('name');
-
-			} else if (this.radioDefaultPrice > 0) {
-
-				this.checkRadioPrice = parseInt(this.checkRadioPrice);
-
-				if (this.target.attr('name') != this.attrTarget) {
-					this.priceBefore = this.radioDefaultPrice;
-					this.radioSumPrice = parseInt(this.checkBoxDefaultPrice + this.checkRadioPrice + this.radioDefaultPrice);
-
-					this.radioDefaultPrice += this.checkRadioPrice;
-
-					this.resultPrice.html(this.radioSumPrice + ' &#8381;');
-
-					this.attrTarget = this.target.attr('name');
-				} else if (this.target.attr('name') == this.attrTarget) {}
-
-			}
-		}
-
-
-	},
-
-	//checkbox
-	checkBoxSum: function (evt) {
-
-		this.target = $(evt.currentTarget);
-		this.checkTarget = this.target.prop('checked');
-		this.checkBoxPriceSiblings = this.target.parent().siblings('.js-check-form__calc-price');
-		this.radioAppearBlock = this.target.parent().siblings('.js-check-form__appear');
-		this.dataPrice = this.checkBoxPriceSiblings.find('span').attr('data-price');
-		console.log(1);
-
-		if (this.radioDefaultPrice === 0) {
-			if (this.checkBoxDefaultPrice === 0) {
-				if ($(evt.currentTarget).is(':checked') && this.checkBoxPriceSiblings.length > 0) {
-
-					this.checkPrice = this.dataPrice;
-
-					this.checkPrice = parseInt(this.checkPrice);
-
-					this.summaryPrice = parseInt(this.zeroPrice + this.checkPrice);
-
-
-					this.resultPrice.html(this.summaryPrice + ' &#8381;');
-
-					this.checkBoxDefaultPrice = this.checkPrice;
-				}
-
-			} else if (this.checkBoxDefaultPrice > 0) {
-				if ($(evt.currentTarget).is(':checked') && this.checkBoxPriceSiblings.length > 0) {
-					this.checkPrice = this.dataPrice;
-
-					this.checkPrice = parseInt(this.checkPrice);
-
-					this.summaryPrice = parseInt(this.checkBoxDefaultPrice + this.checkPrice);
-
-					this.checkBoxDefaultPrice += this.checkPrice;
-
-					this.resultPrice.html(this.summaryPrice + ' &#8381;');
-				} else if ($(evt.currentTarget).not(':checked') && this.checkBoxPriceSiblings.length > 0) {
-
-					this.unCheckPrice = this.dataPrice;
-
-					this.unCheckPrice = parseInt(this.unCheckPrice);
-
-					this.minusPrice = parseInt(this.checkBoxDefaultPrice - this.unCheckPrice);
-
-					this.checkBoxDefaultPrice -= this.unCheckPrice;
-
-
-					this.resultPrice.html(this.minusPrice + ' &#8381;');
-
-
-				}
-			}
-		} else {
-			if (this.checkBoxDefaultPrice === 0) {
-				if ($(evt.currentTarget).is(':checked') && this.checkBoxPriceSiblings.length > 0) {
-
-					this.checkPrice = this.dataPrice;
-
-					this.checkPrice = parseInt(this.checkPrice);
-
-					this.summaryPrice = parseInt(this.radioDefaultPrice + this.checkPrice);
-
-					this.checkBoxDefaultPrice = this.checkPrice;
-
-					this.sumPrice = this.summaryPrice;
-					console.log(this.summaryPrice);
-
-					this.resultPrice.html(this.summaryPrice + ' &#8381;');
-
-
-				} else if (this.target.hasClass('js-check-form__checkbox--default') && $(evt.currentTarget).not(':checked')) {
-
-					this.resultPrice.html(this.zeroPrice + ' &#8381;');
-					this.sumPrice = this.checkBoxDefaultPrice;
-				}
-
-			} else if (this.checkBoxDefaultPrice > 0) {
-				if ($(evt.currentTarget).is(':checked') && this.checkBoxPriceSiblings.length > 0) {
-					this.checkPrice = this.dataPrice;
-
-					this.checkPrice = parseInt(this.checkPrice);
-
-					this.summaryPrice = parseInt(this.checkBoxDefaultPrice + this.checkPrice);
-
-					this.checkBoxDefaultPrice += this.checkPrice;
-
-					this.resultPrice.html(this.summaryPrice + ' &#8381;');
-				} else if ($(evt.currentTarget).not(':checked') && this.checkBoxPriceSiblings.length > 0) {
-
-					this.unCheckPrice = this.dataPrice;
-
-					this.unCheckPrice = parseInt(this.unCheckPrice);
-
-					this.minusPrice = parseInt(this.sumPrice - this.unCheckPrice);
-
-					this.checkBoxDefaultPrice -= this.unCheckPrice;
-
-
-					this.resultPrice.html(this.minusPrice + ' &#8381;');
-
-				} else if (this.target.hasClass('js-check-form__checkbox--default') && $(evt.currentTarget).not(':checked')) {
-
-					this.minusPrice = parseInt(this.sumPrice - this.radioDefaultPrice);
-					this.resultPrice.html(this.minusPrice + ' &#8381;');
-					this.sumPrice = this.minusPrice;
-					this.radioDefaultPrice = this.zeroPrice;
-				}
-			}
-
-		}
-
-	}
-
-};
-App.Control.install(calcCheckboxForm);*/
-
-var checkCheckboxForm = {
-	el: '.js-check-form',
-	name: 'checkCheckboxForm',
-
-	initialize: function () {
-		this.formCheckbox = this.$(".js-check-form__checkbox");
-		if(this.formCheckbox.is('checked')) {
-			this.priseSiblings = this.formCheckbox.parent().siblings();
-			this.priseSiblings.addClass('form-block__price--active');
-
-		}
-	},
-	events: {
-		'click .js-check-form__checkbox': 'checkForm'
-	},
-	checkForm: function (evt) {
-		this.parent = $(evt.currentTarget).parent().parent();
-		this.children = this.parent.find(".form-block__price");
-		if (this.children.length > 0 && $(evt.currentTarget).is(':checked')){
-			this.children.addClass('form-block__price--active');
-		} else {
-			this.children.removeClass('form-block__price--active');
-		}
-
-
-	}
-
-};
-
-App.Control.install(checkCheckboxForm);
-
 var checkRadioForm = {
 	el: '.js-check-form',
 	name: 'checkRadioForm',
@@ -522,8 +241,27 @@ var CitySelection = {
 	initialize: function() {
 		this.$el.select2({
 			minimumResultsForSearch: Infinity,
-			theme: 'city-selection'
+			theme: 'city-selection',
+			templateResult: this.addClassToResult,
+			templateSelection: this.addClassToSelection
 		});
+	},
+
+	addClassToResult: function(data, container) {
+		if (data.element) {
+			$(container).addClass($(data.element).data('value'));
+		}
+
+		this.resultText = $('<span>' + data.text + '</span>');
+		return this.resultText;
+	},
+
+	addClassToSelection: function(data, container) {
+		if (data.element) {
+			$(container).removeClass();
+			$(container).addClass("select2-selection__rendered " + $(data.element).data('value'));
+		}
+		return data.text;
 	}
 };
 
@@ -580,7 +318,7 @@ var EqualHeightSections = {
 	el: '.js-equal-height-sections',
 	name: 'EqualHeightSections',
 
-	initialize: function() {
+	initialize: function () {
 		this.sections = this.$('.js-equal-height-sections__item');
 		this.images = this.$('img');
 		this.showMoreBtn = this.$('.js-equal-height-sections__show-more-btn');
@@ -594,22 +332,22 @@ var EqualHeightSections = {
 
 		this.getSortedParentArray();
 
-		$(window).bind('load', function() {
+		$(window).bind('load', function () {
 			self.setHeight();
 			self.setJointSectionsHeight();
 
-			if($('html').hasClass('fonts-loaded')) {
+			if ($('html').hasClass('fonts-loaded')) {
 				self.setHeight();
 				self.setJointSectionsHeight();
 			}
 		});
 
-		$(window).bind('resize', function() {
+		$(window).bind('resize', function () {
 			self.setHeight();
 			self.setJointSectionsHeight();
 		});
 
-		this.images.bind('load', function() {
+		this.images.bind('load', function () {
 			self.setHeight();
 			self.setJointSectionsHeight();
 		});
@@ -619,12 +357,12 @@ var EqualHeightSections = {
 		'click .js-equal-height-sections__show-more-btn': 'showHiddenContent'
 	},
 
-	setHeight: function() {
+	setHeight: function () {
 		for (var i = 0; i < this.sortedParentArray.length; i++) {
 			this.sectionMaxHeight = 0;
 			var self = this;
 
-			$.each(this.sortedParentArray[i], function(index, value) {
+			$.each(this.sortedParentArray[i], function (index, value) {
 				$(this).css('height', 'auto');
 			});
 
@@ -636,13 +374,14 @@ var EqualHeightSections = {
 				}
 			}
 
-			$.each(this.sortedParentArray[i], function(index, value) {
+			$.each(this.sortedParentArray[i], function (index, value) {
 				$(this).css('height', self.sectionMaxHeight);
 			});
 		}
 	},
 
-	setJointSectionsHeight: function() {
+	setJointSectionsHeight: function () {
+				console.log(2);
 		this.jointSectionMaxHeight = 0;
 		this.jointSectionsMainsHeight;
 		var self = this;
@@ -650,7 +389,7 @@ var EqualHeightSections = {
 		this.jointSections.filter('[data-section=solitary]').css('height', 'auto');
 		this.jointSectionsMains.css('height', 'auto');
 
-		this.jointSections.each(function(index, value) {
+		this.jointSections.each(function (index, value) {
 			self.jointSectionHeight = parseInt($(this).outerHeight());
 
 			if (self.jointSectionHeight > self.jointSectionMaxHeight) {
@@ -658,7 +397,7 @@ var EqualHeightSections = {
 			}
 		});
 
-		if(this.jointSections.filter('[data-section=solitary]').outerHeight() == this.jointSectionMaxHeight) {
+		if (this.jointSections.filter('[data-section=solitary]').outerHeight() == this.jointSectionMaxHeight) {
 			this.jointSectionsMainsHeight = this.jointSectionMaxHeight - this.jointSectionsFooters.outerHeight();
 			this.jointSectionsMains.css('height', this.jointSectionsMainsHeight);
 		} else {
@@ -667,7 +406,7 @@ var EqualHeightSections = {
 			this.jointSectionsMainsMaxHeight = 0;
 			this.jointSectionsMains.css('height', 'auto');
 
-			this.jointSectionsMains.each(function(index, value) {
+			this.jointSectionsMains.each(function (index, value) {
 				self.jointSectionsMainsHeight = parseInt($(this).outerHeight());
 
 				if (self.jointSectionsMainsHeight > self.jointSectionsMainsMaxHeight) {
@@ -679,27 +418,27 @@ var EqualHeightSections = {
 		}
 	},
 
-	getSortedParentArray: function() {
+	getSortedParentArray: function () {
 		this.sections.sort(this.sortByValue);
 		this.sortedSections = Array.prototype.slice.call(this.sections);
 
 		for (var i = 0; i < this.sortedSections.length; i++) {
-			if($(this.sortedSections[i]).data('section') !== $(this.sortedSections[i + 1]).data('section')) {
+			if ($(this.sortedSections[i]).data('section') !== $(this.sortedSections[i + 1]).data('section')) {
+
 				var separator = this.sortedSections.indexOf(this.sortedSections[i]);
 				this.sortedParentArray.push(this.sortedSections.splice(0, separator + 1));
 				i = 0;
 			}
 		}
-
 		return this.sortedParentArray;
 	},
 
-	sortByValue: function(a, b) {
+	sortByValue: function (a, b) {
 		return ($(a).data('section') > $(b).data('section')) ? 1 : -1;
 	},
 
-	showHiddenContent: function(e) {
-		if(!$(e.currentTarget).hasClass('is-open')) {
+	showHiddenContent: function (e) {
+		if (!$(e.currentTarget).hasClass('is-open')) {
 			this.maxHeight = $(e.currentTarget).parent().outerHeight();
 		}
 		this.hiddenContent = $(e.currentTarget).parent().find('.is-hide');
@@ -707,7 +446,7 @@ var EqualHeightSections = {
 		$(e.currentTarget).toggleClass('is-open');
 		this.hiddenContent.toggle();
 
-		if($(e.currentTarget).hasClass('is-open')) {
+		if ($(e.currentTarget).hasClass('is-open')) {
 			$(e.currentTarget).parent().css('height', 'auto');
 		} else {
 			$(e.currentTarget).parent().css('height', this.maxHeight);
@@ -716,6 +455,7 @@ var EqualHeightSections = {
 };
 
 App.Control.install(EqualHeightSections);
+
 var EqualHeightSection = {
 	el: '.js-equal-height-section',
 	name: 'EqualHeightSection',
@@ -897,7 +637,7 @@ var EqualHeightSection = {
 };
 App.Control.install(EqualHeightSection);
 
-var fadeInsideForm = {
+/*var fadeInsideForm = {
 	el: '.js-form',
 	name: 'fadeInnerForm',
 	initialize: function () {
@@ -921,7 +661,7 @@ var fadeInsideForm = {
 		}
 	}
 };
-App.Control.install(fadeInsideForm);
+App.Control.install(fadeInsideForm);*/
 
 App.Control.install({
 	el: '.js-fancy-modal',
@@ -1007,6 +747,249 @@ App.Control.install({
 		});
 	}
 });
+App.Control.install({
+	el: '.js-form',
+	name: 'FormFabric',
+	initialize: function () {
+
+		this.formBlock = this.$el.find('.form-calc__block');
+
+		//Чекбоксы
+		this.formCheckBox = this.$el.find('.js-form__checkbox');
+		this.formLabelCheckbox = this.$el.find('.js-form__checkbox-label');
+
+		//Радио 
+		this.formRadio = this.$el.find('.js-form__radio');
+		this.radioPrice = this.$el.find('.js-form__radio-price');
+
+		//Ссылка 
+		this.formAddElementLink = this.$el.find('.js-form__link');
+
+		//Калькулятор
+		this.radioCheckboxSum = 0;
+		this.formSumPrice = this.$el.find('.js-form__price-sum');
+		this.radioDefaultPrice = 0;
+		this.radioDefaultPrice = 0;
+		this.checkBoxDefaultPrice = 0;
+		this.zeroPrice = 0;
+
+		var self = this;
+
+		this.idCounter = this.formCheckBox
+			.last()
+			.attr('id')
+			.substr(-1);
+		
+		this.labelNumber = this.formLabelCheckbox
+			.last()
+			.attr('for')
+			.substr(-1);
+		
+
+		self.checkDefaultCheckboxChecked();
+
+
+	},
+	events: {
+		'click .js-form__checkbox': 'checkCheckBoxOption',
+		'click .js-form__radio': 'checkRadioOption',
+		'click .js-form__link': 'addElements',
+		'click .js-form__checkbox--more-options': 'blockMoreOptions'
+			//'click .js-form__checkbox--calc': 'getCheckBoxSum',
+			//'click .js-form__radio': 'getRadioSum'
+	},
+
+	//Калькулятор
+	/*getRadioSum: function (evt) {
+		this.target = $(evt.currentTarget);
+		this.optionPrice = this.target
+			.parent()
+			.siblings('.js-form__radio-price');
+		this.dataRadioPrice = this.optionPrice.attr('data-price');
+		this.checkRadioPrice = this.dataRadioPrice;
+
+		if (this.checkBoxDefaultPrice === 0) {
+			if (this.radioDefaultPrice === 0) {
+				this.checkRadioPrice = parseInt(this.checkRadioPrice);
+				this.radioSumPrice = parseInt(this.zeroPrice + this.checkRadioPrice);
+				this.formSumPrice.html(this.radioSumPrice + ' &#8381;');
+				this.radioDefaultPrice = this.checkRadioPrice;
+			} else if (this.radioDefaultPrice > 0) {
+				this.checkRadioPrice = parseInt(this.checkRadioPrice);
+				this.radioSumPrice = parseInt(this.zeroPrice + this.checkRadioPrice);
+				this.formSumPrice.html(this.radioSumPrice + ' &#8381;');
+				this.radioDefaultPrice = this.checkRadioPrice;
+
+			}
+		} else {
+			if (this.radioDefaultPrice === 0) {
+				this.checkRadioPrice = parseInt(this.checkRadioPrice);
+				this.radioSumPrice = parseInt(this.checkBoxDefaultPrice + this.checkRadioPrice);
+				this.formSumPrice.html(this.radioSumPrice + ' &#8381;');
+				this.sumPrice = this.radioSumPrice;
+			}
+		}
+
+	},
+
+	getCheckBoxSum: function (evt) {
+		this.target = $(evt.currentTarget);
+		this.optionPrice = this.target
+			.parent()
+			.siblings('.js-form__checkbox-price');
+		this.dataPrice = this.optionPrice.attr('data-price');
+		if (this.radioDefaultPrice === 0) {
+			if (this.checkBoxDefaultPrice === 0) {
+				if ($(evt.currentTarget).is(':checked') && this.optionPrice.length > 0) {
+					this.checkPrice = this.dataPrice;
+					this.checkPrice = parseInt(this.checkPrice);
+					this.sumPrice = parseInt(this.zeroPrice + this.checkPrice);
+					this.formSumPrice.html(this.sumPrice + ' &#8381;');
+					this.checkBoxDefaultPrice = this.checkPrice;
+				}
+			} else if (this.checkBoxDefaultPrice > 0) {
+				if ($(evt.currentTarget).is(':checked') && this.optionPrice.length > 0) {
+					this.checkPrice = this.dataPrice;
+					this.checkPrice = parseInt(this.checkPrice);
+					this.sumPrice = parseInt(this.checkBoxDefaultPrice + this.checkPrice);
+					this.checkBoxDefaultPrice += this.checkPrice;
+					this.formSumPrice.html(this.sumPrice + ' &#8381;');
+				} else if ($(evt.currentTarget).is(':not(:checked)') && this.optionPrice.length > 0) {
+					this.unCheckPrice = this.dataPrice;
+					this.unCheckPrice = parseInt(this.unCheckPrice);
+					this.minusPrice = parseInt(this.checkBoxDefaultPrice - this.unCheckPrice);
+					this.checkBoxDefaultPrice -= this.unCheckPrice;
+					this.formSumPrice.html(this.minusPrice + ' &#8381;');
+				}
+			}
+		} else {
+			if (this.checkBoxDefaultPrice === 0) {
+				if ($(evt.currentTarget).is(':checked') && this.optionPrice.length > 0) {
+					this.checkPrice = this.dataPrice;
+					this.checkPrice = parseInt(this.checkPrice);
+					this.sumPrice = parseInt(this.radioDefaultPrice + this.checkPrice);
+					this.checkBoxDefaultPrice = this.checkPrice;
+					this.radioCheckboxSum = this.sumPrice;
+					this.formSumPrice.html(this.sumPrice + ' &#8381;');
+				}
+			} else if (this.checkBoxDefaultPrice > 0) {
+				if ($(evt.currentTarget).is(':checked') && this.optionPrice.length > 0) {
+					this.checkPrice = this.dataPrice;
+					this.checkPrice = parseInt(this.checkPrice);
+					this.sumPrice = parseInt(this.checkBoxDefaultPrice + this.checkPrice);
+					this.checkBoxDefaultPrice += this.checkPrice;
+					this.formSumPrice.html(this.sumPrice + ' &#8381;');
+				} else if ($(evt.currentTarget).not(':checked') && this.optionPrice.length > 0) {
+					this.unCheckPrice = this.dataPrice;
+					this.unCheckPrice = parseInt(this.unCheckPrice);
+					this.minusPrice = parseInt(this.radioCheckboxSum - this.unCheckPrice);
+					this.checkBoxDefaultPrice -= this.unCheckPrice;
+					this.formSumPrice.html(this.minusPrice + ' &#8381;');
+				}
+
+			}
+		}
+	},*/
+
+
+	blockMoreOptions: function (evt) {
+		this.target = $(evt.currentTarget);
+		this.parentSection = this.target
+			.parent()
+			.parent();
+		this.moreOptionBlock = this.parentSection
+			.find('.js-form__more-options');
+		if (this.target.is(':checked')) {
+			this.moreOptionBlock.find('input').each(function () {
+				$(this).prop('disabled', false);
+			});
+		} else {
+			this.moreOptionBlock.find('input').each(function () {
+				$(this).prop('disabled', true);
+			});
+		}
+
+	},
+	//Подсвечивается активная цена при нажатии на чекбокс
+	checkCheckBoxOption: function (evt) {
+		this.checkBoxPrice = $(evt.currentTarget)
+			.parent()
+			.siblings('.js-form__checkbox-price');
+
+		if (this.checkBoxPrice.length > 0 && $(evt.currentTarget).is(':checked')) {
+			this.checkBoxPrice.addClass('form-calc__price--active');
+		} else if (this.checkBoxPrice.length > 0 && $(evt.currentTarget).is(':not(:checked)')) {
+			this.checkBoxPrice.removeClass('form-calc__price--active');
+		}
+	},
+
+	//Подсвечивается активная цена при перезагрузке страницы
+	checkDefaultCheckboxChecked: function () {
+		this.formCheckBox.each(function (index, items) {
+			this.checkBoxPrice = $(this)
+				.parent()
+				.siblings('.js-form__checkbox-price');
+
+			if ($(this).is(':checked') && this.checkBoxPrice.length > 0) {
+				this.checkBoxPrice.addClass('form-calc__price--active');
+			}
+		});
+	},
+
+	//Подсвечивается активная цена при нажатии на радиобаттон
+	checkRadioOption: function (evt) {
+		this.radioPrice.removeClass('form-calc__price--active');
+		this.targetRadioPrice = $(evt.currentTarget)
+			.parent()
+			.siblings('.js-form__radio-price');
+
+		this.targetRadioPrice.removeClass('form-calc__price--active');
+		this.targetRadioPrice.addClass('form-calc__price--active');
+	},
+
+	//Добавление новых элементов формы
+	addElements: function (evt) {
+		var self = this;
+
+		this.newFormInput = $(document.createElement('input'))
+			.attr('type', 'checkbox')
+			.attr('id', function () {
+				var index = self.getIdNumber(self.idCounter);
+				return 'form-input-2-' + index;
+			})
+			.addClass('form-calc__checkbox js-form__checkbox');
+
+		this.newFormLabel = $(document.createElement('label'))
+			.addClass('form-calc__checkbox-label js-form__checkbox-label ')
+			.attr('for', function () {
+				var index = self.getLabelNumber(self.labelNumber);
+				return 'form-input-2-' + index;
+			})
+			.text('Комната');
+
+		this.newFormSection = $(document.createElement('div'))
+			.addClass('form-calc__section js-form__section')
+			.append(this.newFormInput)
+			.append(this.newFormLabel);
+
+		this.newFormSection.insertBefore(this.formAddElementLink);
+
+	},
+	getIdNumber: function (number) {
+		var self = this;
+		number++;
+		self.idCounter = number;
+		return number;
+	},
+	getLabelNumber: function (number) {
+		var self = this;
+		number++;
+		self.labelNumber = number;
+		return number;
+	},
+	
+});
+
 var MainOfficeMapMoscow = {
 	el: '#main-office-moscow',
 	name: 'MainOfficeMapMoscow',
@@ -1220,23 +1203,65 @@ var rangeControl = {
 
 	initialize: function () {
 		this.rangeSlider = this.$('.js-range__slider');
-		this.input = this.$('input');
-		this.span = this.$('span');
+		var self = this;
 		this.rangeSlider.slider({
 			min: 50,
 			max: 350,
-			value: 150,
-			//step:80,
+			value: 0,
+			step: 58,
+			change: function (event, ui) {
+				var rangeSlider = ui.value;
+				var hundler = self.$('.ui-slider-handle');
+				var activeRange = self.$('.is-active');
+				var rangePrice = self.$('.js-range__price span');
+				activeRange.removeClass();
+				rangePrice.removeClass('active');
+				rangePrice.each(function () {
+					var data = $(this).data('price');
+					if (rangeSlider === 108 && data == 'min') {
+						activeRange.addClass('is-active is-active--min');
+						$(this)
+							.addClass('active')
+							.next('.is-hidden')
+							.addClass('active')
+							.next()
+							.addClass('active');
+					} else if (rangeSlider === 166 && data == 'min-mid') {
+						activeRange.addClass('is-active is-active--min-mid');
+						$(this)
+							.addClass('active')
+							.next('.is-hidden')
+							.addClass('active')
+							.next()
+							.addClass('active');
+					} else if (rangeSlider === 224 && data == 'min-max') {
+						activeRange.addClass('is-active is-active--min-max');
+						$(this)
+							.addClass('active')
+							.next('.is-hidden')
+							.addClass('active')
+							.next()
+							.addClass('active');
+					} else if (rangeSlider === 282 && data == 'max') {
+						activeRange.addClass('is-active is-active--max');
+						$(this)
+							.addClass('active')
+							.next('.is-hidden')
+							.addClass('active')
+							.next()
+							.addClass('active');
+					} else if (rangeSlider === 340 && data == 'max-max') {
+						activeRange.addClass('is-active is-active--max-max');
+						$(this).addClass('active');
+					} else if (rangeSlider === 50 && data == 'min') {
+						activeRange.addClass('is-active is-active--min-min');
+						$(this).addClass('active');
+					}
+				});
+			}
 
 		});
 
-	},
-	events: {
-		'click .js-range__slider': 'clickSlider'
-	},
-	clickSlider: function (evt) {
-		var rangeValue = '';
-		var rangeValue = this.rangeSlider.slider('value');
 	}
 };
 
@@ -1256,18 +1281,31 @@ var rangeDamageControl = {
 			step: 100,
 			change: function (event, ui) {
 				var rangeSlider = ui.value;
+
 				var rangeDamageSlider = self.$('.js-range-damage__slider');
+
+				var damageLevel = self.$('.js-range-damage__level label');
+
 				var activeRange = self.$('.is-active');
 				activeRange.removeClass();
-				if (rangeSlider === 100) {
-					activeRange.addClass('is-active is-active-min-mid');
-				} else if (rangeSlider === 200) {
-					activeRange.addClass('is-active is-active-min-max');
-				} else if (rangeSlider === 300) {
-					activeRange.addClass('is-active is-active-max');
-				} else if (rangeSlider === 0) {
-					activeRange.addClass('is-active is-active-min');
-				}
+				damageLevel.removeClass();
+				damageLevel.each(function () {
+
+					var data = $(this).data('range');
+					if (rangeSlider === 100 && data == 'min-mid') {
+						activeRange.addClass('is-active is-active--min-mid');
+						$(this).addClass('active');
+					} else if (rangeSlider === 200 && data == 'min-max') {
+						activeRange.addClass('is-active is-active--min-max');
+						$(this).addClass('active');
+					} else if (rangeSlider === 300 && data == 'max') {
+						activeRange.addClass('is-active is-active--max');
+						$(this).addClass('active');
+					} else if (rangeSlider === 0 && data == 'min') {
+						activeRange.addClass('is-active is-active--min');
+						$(this).addClass('active');
+					}
+				});
 			}
 
 		});
@@ -1349,7 +1387,7 @@ var selectForm = {
 	el: '.js-form',
 	name: 'selectForm',
 	initialize: function () {
-		this.select = this.$('.form-block__select');
+		this.select = this.$('.form-calc__select');
 		this.select.select2({
 			width: '100%',
 			containerCssClass: "error",
@@ -1902,7 +1940,7 @@ var VerticalTabs = {
 		$('#' + this.targetId).addClass('is-active');
 
 
-		if($(window).outerWidth() <= 767) {
+		if($(window).outerWidth() <= 950) {
 			this.tabsList.toggleClass('is-open');
 			this.tab.toggleClass('is-hide');
 
@@ -1911,7 +1949,7 @@ var VerticalTabs = {
 	                'top': $(element).outerHeight() * (index + 1)
 	            });
 	        });
-	    } else if($(window).outerWidth() > 767) {
+	    } else if($(window).outerWidth() > 950) {
 	    	var tabGap = 2;
 
 	    	this.tabsList.removeClass('is-open');

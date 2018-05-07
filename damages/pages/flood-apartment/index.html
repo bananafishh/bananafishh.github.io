@@ -77,12 +77,14 @@
 			</div>
 			<div class="page-header__contacts">
 				<select class="js-city-selection">
-					<option value="Москва" selected="selected">Москва</option>
-					<option value="Санкт-Петербург">Санкт-Петербург</option>
-					<option value="Нальчик">Нальчик</option>
+					<option value="Москва" data-value="msc" selected="selected">Москва</option>
+					<option value="Санкт-Петербург" data-value="spb">Санкт-Петербург</option>
+					<option value="Нальчик" data-value="nlc">Нальчик</option>
 				</select>
 				<address class="page-header__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>
-				<div class="page-header__call-order"><a class="link link--dotted-border link--icon-phone-before js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div><a class="link link--icon-metro" href="#">Рязанский проспект</a>
+				<div class="page-header__call-order">
+					<button class="icon-link icon-link--phone-before icon-link--inside-header js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+				</div><a class="icon-link icon-link--metro-msc icon-link--underlined icon-link--inside-header" href="#"><span>Рязанский проспект</span></a>
 			</div>
 		</div>
 	</div>
@@ -188,54 +190,56 @@
 					</div>
 				</div>
 				<div class="col-1-2-md section__first-block">
-					<div class="form-block">
+					<div class="form-calc">
 						<h3>Расчет стоимости услуг</h3>
 						<form class="js-form">
-							<fieldset class="form-block__wrapper js-check-form form-block__wrapper--inner-blocks">
-								<div class="form-block__inner js-check-form__inner">
-									<div class="form-block__options">
-										<input class="form-block__checkbox js-check-form__checkbox" id="form-input-1-1" type="checkbox" name="documents"/>
-										<label class="form-block__checkbox-label" for="form-input-1-1">Подача документов в страховую компанию или РСА <span class="que js-tooltip"> Подсказка</span></label>
+							<fieldset class="form-calc__block form-calc__block--before-title">
+								<div class="form-calc__section js-form__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--calc" id="form-input-1-1" type="checkbox" name="documents"/>
+										<label class="form-calc__checkbox-label" for="form-input-1-1">Подача документов в страховую компанию или РСА <span class="que js-tooltip"> Подсказка</span></label>
 									</div>
-									<div class="form-block__price js-check-form__calc-price js-check-form__calc-active"><span data-price="5000">5 000 &#8381;</span></div>
+									<div class="form-calc__price js-form__checkbox-price" data-price="5000">5 000 &#8381;</div>
 								</div>
-								<div class="form-block__inner">
-									<div class="form-block__options">
-										<input class="form-block__checkbox js-check-form__checkbox js-check-form__checkbox--default" id="form-input-1-2" type="checkbox" name="court" checked="checked"/>
-										<label class="form-block__checkbox-label" for="form-input-1-2">Представление интересов в суде</label>
+								<div class="form-calc__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--more-options" id="form-input-1-2" type="checkbox" name="court" checked="checked"/>
+										<label class="form-calc__checkbox-label" for="form-input-1-2">Представление интересов в суде</label>
 									</div>
-									<div class="js-check-form__appear">
-										<div class="form-block__tabs tabs js-tabs js-check-form__appear">
+									<div class="js-form__more-options">
+										<div class="form-calc__tabs tabs js-tabs">
 											<ul class="js-tabs__tabs">
 												<li class="js-tabs__tab is-active" data-id="1">г. Москвы</li>
 												<li class="js-tabs__tab" data-id="2">Московской области</li>
 											</ul>
 											<div class="tabs__content">
-												<div class="tabs__content-tab tabs__content-tab--1 js-tabs__content is-active js-check-form__inside" id="1">
-													<div class="form-block__inner">
-														<div class="form-block__options">
-															<input class="form-block__radio js-check-form__radio" id="form-input-1-3" type="radio" name="radio"/>
-															<label class="form-block__radio-label" for="form-input-1-3">В одном судебном заседании <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content"> Подсказка</span></label>
+												<div class="tabs__content-tab tabs__content-tab--1 js-tabs__content is-active" id="1">
+													<div class="form-calc__section">
+														<div class="form-calc__options">
+															<input class="form-calc__radio js-form__radio" id="form-input-1-3" type="radio" name="radio"/>
+															<label class="form-calc__radio-label" for="form-input-1-3">В одном судебном заседании <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content"> Подсказка</span></label>
 														</div>
-														<div class="form-block__price js-check-form__calc-price"><span data-price="6000">6 000 &#8381;</span></div>
+														<div class="form-calc__price js-form__radio-price" data-price="6000">6 000 &#8381;</div>
 													</div>
-													<div class="form-block__inner">
-														<div class="form-block__options">
-															<input class="form-block__radio js-check-form__radio" id="form-input-1-4" type="radio" name="radio"/>
-															<label class="form-block__radio-label" for="form-input-1-4">От заявления до заседания <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-2"> Подсказка</span></label>
+													<div class="form-calc__section">
+														<div class="form-calc__options">
+															<input class="form-calc__radio js-form__radio" id="form-input-1-4" type="radio" name="radio"/>
+															<label class="form-calc__radio-label" for="form-input-1-4">От заявления до заседания <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-2"> Подсказка</span></label>
 														</div>
-														<div class="form-block__price js-check-form__calc-price"><span data-price="15000">15 000 &#8381;</span></div>
+														<div class="form-calc__price js-form__radio-price" data-price="15000">15 000 &#8381;</div>
 													</div>
-													<div class="form-block__inner">
-														<div class="form-block__options">
-															<input class="form-block__radio js-check-form__radio js-check-form__radio-for-range" id="form-input-1-5" type="radio" name="radio"/>
-															<label class="form-block__radio-label" for="form-input-1-5">Ведение дела «под ключ», при цене&nbsp;иска: 70—100 тыс. руб. <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-3"> Подсказка</span></label>
+													<div class="form-calc__section">
+														<div class="form-calc__options">
+															<input class="form-calc__radio js-form__radio" id="form-input-1-5" type="radio" name="radio"/>
+															<label class="form-calc__radio-label" for="form-input-1-5">Ведение дела «под ключ», при цене&nbsp;иска: 70—100 тыс. руб. <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-3"> Подсказка</span></label>
 														</div>
-														<div class="form-block__price js-check-form__calc-price"><span data-price="25000">25 000 &#8381;</span></div>
+														<div class="form-calc__price js-form__radio-price" data-price="25000">25 000 &#8381;</div>
 													</div>
-													<div class="js-range form-block__range">
-														<div class="js-range__slider"></div>
-														<div class="form-block__range-price"><span>50</span><span>70 &#8212; 100</span><span>150</span><span>350</span></div>
+													<div class="js-range form-calc__range">
+														<div class="is-active is-active--min-min">
+															<div class="js-range__slider"></div>
+															<div class="form-calc__range-price js-range__price"><span data-price="min">50</span><span class="is-hidden">&#8212;</span><span data-price="min-mid">70</span><span class="is-hidden">&#8212;</span><span data-price="min-max">100</span><span class="is-hidden">&#8212;</span><span data-price="max">150</span><span class="is-hidden">&#8212;</span><span data-price="max-max">350</span></div>
+														</div>
 													</div>
 												</div>
 												<div class="tabs__content-tab tabs__content-tab--2 js-tabs__content" id="2">
@@ -246,64 +250,58 @@
 									</div>
 								</div>
 							</fieldset>
-							<fieldset class="form-block__wrapper form-block__wrapper--has-border js-check-form form-block__wrapper--inner-blocks">
-								<legend class="form-block__section-title"><span>Дополнительные опции</span></legend>
-								<div class="form-block__inner js-check-form__inner">
-									<div class="form-block__options">
-										<input class="form-block__checkbox js-check-form__checkbox" id="form-input-1-6" type="checkbox" name="documents"/>
-										<label class="form-block__checkbox-label js-check-form__checkbox-label" for="form-input-1-6">Отправка телеграммы <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-4"> Подсказка</span></label>
+							<div class="form-calc__section-title"><span>Дополнительные опции</span></div>
+							<fieldset class="form-calc__block form-calc__block--has-border js-check-form">
+								<div class="form-calc__section js-form__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--calc" id="form-input-1-6" type="checkbox" name="documents"/>
+										<label class="form-calc__checkbox-label" for="form-input-1-6">Отправка телеграммы <span class="que js-tooltip" data-tooltip-content="#tooltip-templates__content-4"> Подсказка</span></label>
 									</div>
-									<div class="form-block__price js-check-form__calc-price"><span data-price="600">600 &#8381;</span></div>
+									<div class="form-calc__price js-form__checkbox-price" data-price="600">600 &#8381;</div>
 								</div>
-								<div class="form-block__inner js-check-form__inner">
-									<div class="form-block__options">
-										<input class="form-block__checkbox js-check-form__checkbox js-check-form__checkbox--default" id="form-input-1-7" type="checkbox" name="documents" checked="checked"/>
-										<label class="form-block__checkbox-label js-check-form__checkbox-label" for="form-input-1-7">Получение исполнительного листа и&nbsp;предъявление его в</label>
+								<div class="form-calc__section js-form__section">
+									<div class="form-calc__options">
+										<input class="form-calc__checkbox js-form__checkbox js-form__checkbox--more-options" id="form-input-1-7" type="checkbox" name="documents" checked="checked"/>
+										<label class="form-calc__checkbox-label" for="form-input-1-7">Получение исполнительного листа и&nbsp;предъявление его в</label>
 									</div>
-									<div class="js-check-form__appear">
-										<div class="form-block__inside">
-											<div class="form-block__inner">
-												<div class="form-block__options">
-													<input class="form-block__radio js-check-form__radio" id="form-input-1-8" type="radio" name="radio"/>
-													<label class="form-block__radio-label" for="form-input-1-8">Банк</label>
+									<div class="js-form__more-options">
+										<div class="form-calc__inside">
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" id="form-input-1-8" type="radio" name="radio"/>
+													<label class="form-calc__radio-label" for="form-input-1-8">Банк</label>
 												</div>
-												<div class="form-block__price js-check-form__calc-price"><span data-price="3000">3 000 &#8381;</span></div>
+												<div class="form-calc__price js-form__radio-price" data-price="3000">3 000 &#8381;</div>
 											</div>
-											<div class="form-block__inner">
-												<div class="form-block__options">
-													<input class="form-block__radio js-check-form__radio" id="form-input-1-9" type="radio" name="radio"/>
-													<label class="form-block__radio-label" for="form-input-1-9">Службу судебных приставов</label>
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" id="form-input-1-9" type="radio" name="radio"/>
+													<label class="form-calc__radio-label" for="form-input-1-9">Службу судебных приставов</label>
 												</div>
-												<div class="form-block__price js-check-form__calc-price"><span data-price="3000">3 000 &#8381;</span></div>
+												<div class="form-calc__price js-form__radio-price" data-price="3000">3 000 &#8381;</div>
 											</div>
-											<div class="form-block__inner">
-												<div class="form-block__options">
-													<input class="form-block__radio js-check-form__radio" id="form-input-1-10" type="radio" name="radio"/>
-													<label class="form-block__radio-label" for="form-input-1-10">Обе инстанции</label>
+											<div class="form-calc__section">
+												<div class="form-calc__options">
+													<input class="form-calc__radio js-form__radio" id="form-input-1-10" type="radio" name="radio"/>
+													<label class="form-calc__radio-label" for="form-input-1-10">Обе инстанции</label>
 												</div>
-												<div class="form-block__price js-check-form__calc-price"><span data-price="5000">5 000 &#8381;</span></div>
+												<div class="form-calc__price js-form__radio-price" data-price="5000">5 000 &#8381;</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</fieldset>
-							<div class="form-block__add-options form-block__add-options--no-text"></div>
-							<div class="form-block__wrapper js-check-form">
-								<div class="form-block__inner">
-									<div class="form-block__options form-block__options--sum"><span>Стоимость услуг</span></div>
-									<div class="form-block__price form-block__price--sum"><span class="js-check-form__price-sum" data-price="0">0 &#8381;</span></div>
+							<fieldset class="form-calc__block js-check-form">
+								<div class="form-calc__section">
+									<div class="form-calc__options form-calc__options--sum">Стоимость услуг</div>
+									<div class="form-calc__price form-calc__price--sum js-form__price-sum" data-price="0">0 &#8381;</div>
 								</div>
-								<button class="form-block__btn btn btn--full-width js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#expertise-request">Оформить заявку</button>
-								<p class="form-block__details"><small>Данный расчет стоимости носит информационный характер и&nbsp;не является публичной офертой (ст. 437 ГК РФ).</small></p>
-							</div>
+								<button class="form-calc__btn btn btn--full-width js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#expertise-request">Оформить заявку</button>
+								<p class="form-calc__details"><small>Данный расчет стоимости носит информационный характер и&nbsp;не является публичной офертой (ст. 437 ГК РФ).</small></p>
+							</fieldset>
 						</form>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="tooltip-templates">
-			<div class="tooltip-templates__wrapper" id="tooltip-templates__content">
-				<p class="tooltip-templates__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat?</p>
 			</div>
 		</div>
 	</section>
@@ -369,7 +367,9 @@
 			<div class="call-us__right-col">
 				<div class="call-us__col-inner">
 					<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
-					<div class="call-us__text">Ваш промо-код: 29755<br/><a class="link link--dotted-border link--icon-phone-after js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div>
+					<div class="call-us__text">Ваш промо-код: 29755<br/>
+						<button class="icon-link icon-link--phone-after icon-link--centered-up-to-lg js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -459,7 +459,7 @@
 					<div class="service-card service-card--gray">
 						<div class="service-card__img service-card__img--align-top service-card__img--apartment"><img src="../../assets/images/img-house.png" alt="Поврежденный автомобиль"/></div>
 						<div class="service-card__text">
-							<h2 class="service-card__title"><a href="">Оценка ущерба от&nbsp;залива квартиры</a></h2>
+							<h2 class="service-card__title"><a href="#">Оценка ущерба от&nbsp;залива квартиры</a></h2>
 							<p>Оценка ущерба автомобиля за 2 часа</p>
 						</div>
 					</div>
@@ -478,60 +478,62 @@
 			<div class="call-us__right-col">
 				<div class="call-us__col-inner">
 					<div class="call-us__title call-us__title--phone-number">+7 (495) 995-82-58</div>
-					<div class="call-us__text">Ваш промо-код: 29755<br/><a class="link link--dotted-border link--icon-phone-after js-fancy-modal" href="#phone-call-order--full-version">Заказать обратный звонок</a></div>
+					<div class="call-us__text">Ваш промо-код: 29755<br/>
+						<button class="icon-link icon-link--phone-after icon-link--centered-up-to-lg js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order--full-version"><span>Заказать обратный звонок</span></button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<section class="section">
 		<div class="container">
-			<h2><a href="">Новости и статьи</a></h2>
+			<h2><a href="#">Новости и статьи</a></h2>
 			<div class="slider-news section__last-block">
 				<div class="js-slider-news">
 					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item1-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Как сделать бесплатный ремонт по ОСАГО в случае не новой машины</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="">Новости Honest</a>
+									<time datetime="2014-03-04">4 марта 2014</time> <a class="news-preview__tag" href="#">Новости Honest</a>
 								</div>
 							</div>
 						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Послезавтра. Тарифы на ОСАГО</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item3-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Послезавтра. Тарифы на ОСАГО</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="">Новости Honest</a> <a class="news-preview__tag" href="">Наши расследования</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
-								<div class="news-preview__meta">
-									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
-								</div>
-							</div>
-						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
-								<div class="news-preview__meta">
-									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-09-29">29 сентября 2014</time> <a class="news-preview__tag" href="#">Новости Honest</a> <a class="news-preview__tag" href="#">Наши расследования</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="slider-news__slide">
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Какие бывают юристы и адвокаты</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Какие бывают юристы и адвокаты</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
 								</div>
 							</div>
 						</div>
-						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" alt=""/>
-							<div class="news-preview__text"><a class="news-preview__title" href="">Самый интересный суд в мире</a>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Самый интересный суд в мире</a>
 								<div class="news-preview__meta">
-									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="">Байки эксперта</a> <a class="news-preview__tag" href="">Полезные инструкции</a>
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-news__slide">
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item2-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Какие бывают юристы и адвокаты</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-09-23">23 сентября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
+								</div>
+							</div>
+						</div>
+						<div class="news-preview"><img class="news-preview__img" src="../../assets/images/img-news--item4-min.jpg" width="161" height="127" alt=""/>
+							<div class="news-preview__text"><a class="news-preview__title" href="#">Самый интересный суд в мире</a>
+								<div class="news-preview__meta">
+									<time datetime="2014-10-10">10 октября 2014</time> <a class="news-preview__tag" href="#">Байки эксперта</a> <a class="news-preview__tag" href="#">Полезные инструкции</a>
 								</div>
 							</div>
 						</div>
@@ -544,7 +546,7 @@
 		<div class="container">
 			<div class="row-lg">
 				<div class="col-1-2-lg">
-					<h2><a href="">Отзывы клиентов</a></h2>
+					<h2><a href="#">Отзывы клиентов</a></h2>
 					<ul class="reviews">
 						<li class="reviews__item">
 							<blockquote class="review js-show-content js-show-content--toggle">
@@ -552,7 +554,7 @@
 									<cite>Игорь</cite><span class="review__service review__service--car-damage">Opel Astra</span>
 								</footer>
 								<p>«Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить... <span class="is-hide">Спасибо Кристине Роговой (делопроизводитель). Сразу понимает вопрос клиента; правильно адресует к нужному специалисту; не забывает ответить»</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -562,7 +564,7 @@
 									<cite>Владимир</cite><span class="review__service review__service--realty-damage">Залив</span>
 								</footer>
 								<p>«Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы... <span class="is-hide">Спасибо Илье и Сергею за помощь,внимание,отличную работу. Вопросы со страховой после экспертизы решились в досудебном порядке. Хотя изначально мы»</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -572,7 +574,7 @@
 									<cite>Елена</cite><span class="review__service review__service--legal">Юридические услуги</span>
 								</footer>
 								<p>«Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest... <span class="is-hide">Здравствуйте! Заказывали экспертизу по недоплате страховой по ОСАГО аж в марте и только сейчас суд добрался до судебной экспертизы. СПАСИБО Honest</span> 
-									<button class="link link--dotted-border link--has-arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
+									<button class="icon-link icon-link--arrow review__show-more js-show-content__btn" type="button"><span>продолжение</span></button>
 								</p>
 							</blockquote>
 						</li>
@@ -648,7 +650,7 @@
 		<div class="form__group">
 			<input class="btn" type="submit" value="Оформить заявку"/>
 		</div>
-		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--underlined link--black" href="#">обработку своих персональных данных</a></small></div>
 	</form>
 </div>
 <footer class="page-footer">
@@ -662,12 +664,13 @@
 					<li><a class="social-links__link social-links__link--ok" href="http://ok.ru/honest.expert" target="_blank" rel="noopener noreferrer">Одноклассники</a></li>
 					<li><a class="social-links__link social-links__link--google" href="https://plus.google.com/u/0/102624426359032386043/posts" target="_blank" rel="noopener noreferrer">Google Plus</a></li>
 				</ul>
-				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link link--dotted-border" href="">Схема проезда</a>
+				<address class="page-footer__address">Рязанский проспект<br> 109456, г. Москва,<br> Рязанский проспект, д. 75,<br>корп. 4, 2-я башня, 1-й этаж</address><a class="link" href="#">Схема проезда</a>
 			</div>
 			<div class="page-footer__col">
 				<div class="page-footer__promo">
 					<address class="page-footer__phone"><a href="tel:+74959958292">+7 (495) 995-82-92</a></address>Ваш промо-код: 28925
-				</div><a class="link link--dotted-border js-fancy-modal" href="#phone-call-order">Заказать обратный звонок</a>
+				</div>
+				<button class="link link--centered-up-to-md js-fancy-modal" type="button" data-fancybox-type="inline" data-fancybox-href="#phone-call-order"><span>Заказать обратный звонок</span></button>
 				<table class="page-footer__working-hours">
 					<tbody>
 						<tr>
@@ -687,25 +690,25 @@
 			</div>
 			<div class="page-footer__col">
 				<ul class="page-footer__nav">
-					<li><a href="">Независимая автоэкспертиза</a></li>
-					<li><a href="">Оценка ущерба: залив</a></li>
-					<li><a href="">20+ видов экспертиз</a></li>
-					<li><a href="">Юристы (суд)</a></li>
-					<li><a href="">Судебная экспертиза</a></li>
-					<li><a href="">Выкуп долга ОСАГО за 1 день</a></li>
-					<li><a href="">Бесплатный ремонт по ОСАГО</a></li>
-					<li><a href="">Партнерская программа</a></li>
-					<li><a href="">Корпоративным клиентам</a></li>
+					<li><a href="#">Независимая автоэкспертиза</a></li>
+					<li><a href="#">Оценка ущерба: залив</a></li>
+					<li><a href="#">20+ видов экспертиз</a></li>
+					<li><a href="#">Юристы (суд)</a></li>
+					<li><a href="#">Судебная экспертиза</a></li>
+					<li><a href="#">Выкуп долга ОСАГО за 1 день</a></li>
+					<li><a href="#">Бесплатный ремонт по ОСАГО</a></li>
+					<li><a href="#">Партнерская программа</a></li>
+					<li><a href="#">Корпоративным клиентам</a></li>
 				</ul>
 			</div>
 			<div class="page-footer__col">
-				<div class="page-footer__author">Разработка сайта —<br/><img src="../../assets/images/logo-efectum-min.png" alt="Логотип компании Эфектум"/></div>
+				<div class="page-footer__author">Разработка сайта —<br/><a class="page-footer__author-link" href="http://efffe.ru/"><img src="../../assets/images/logo-efectum-min.png" width="136" height="36" alt="ЭФЕКТУМ - создание и продвижение сайтов"/></a></div>
 				<ul class="payment-systems page-footer__payment-systems">
 					<li class="payment-systems__item--visa">Платежная система Visa</li>
 					<li class="payment-systems__item--mastercard">Платежная система MasterCard</li>
 				</ul>
 				<div class="page-footer__other-companies js-show-content">Другие компании<br/> консалтинговой группы<br/>
-					<button class="link link--dotted-border link--has-arrow js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
+					<button class="icon-link icon-link--arrow icon-link--aligned-right js-show-content__btn" type="button" data-attribute="other-wiseadvice-companies" data-scroll-to="true"><span>Wiseadvice</span></button>
 				</div>
 			</div>
 		</div>
@@ -760,7 +763,7 @@
 		<div class="form__group">
 			<input class="btn" type="submit" value="Заказать"/>
 		</div>
-		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--black" href="">обработку своих персональных данных</a></small></div>
+		<div class="form__group"><small class="form__info">Мы гарантируем сохранность ваших персональных данных и не будет передавать ваши контакты третьим лицам. Нажимая на кнопку «Заказать», вы даете согласие на <a class="link link--underlined link--black" href="#">обработку своих персональных данных</a></small></div>
 	</form>
 </div>
 <script type="text/javascript" src="../../js/vendor.js"></script>
