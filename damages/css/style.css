@@ -12711,6 +12711,9 @@ span.que:hover::before {
   background: none;
   border: none;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .icon-link span {
   border-bottom: 1px dotted rgba(203,19,19,0.5);
