@@ -12711,9 +12711,6 @@ span.que:hover::before {
   background: none;
   border: none;
   cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 .icon-link span {
   border-bottom: 1px dotted rgba(203,19,19,0.5);
@@ -12722,6 +12719,11 @@ span.que:hover::before {
 }
 .icon-link:hover span {
   border-bottom-color: #cb1313;
+}
+.icon-link[type="button"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .icon-link--underlined span {
   border-bottom-style: solid;
@@ -12763,9 +12765,6 @@ span.que:hover::before {
     background-image: url("../assets/sprites/sprite@2x.png");
     background-size: 108px 4414px;
   }
-}
-[class*="icon-link--metro"] {
-  padding-left: 23px;
 }
 [class*="icon-link--metro"]::before {
   content: "";
